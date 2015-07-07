@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/javascript/jquery-ui-1.11.4.custom/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/main.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,400italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/jquery.select-to-autocomplete.js"></script>
+    <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="/javascript/main.js"></script>
     <title>EveryPolitician</title>
 </head>
@@ -33,7 +39,8 @@
                 </div>
                 <div class="site-header__navigation site-header__navigation--secondary">
                     <nav role="navigation">
-                        <a href="/">View by country</a>
+                        <a href="/">Data</a>
+                        <a href="http://everypolitician.org/about">About</a>
                     </nav>
                 </div>
             </div>
@@ -41,7 +48,10 @@
 
         <div class="site-content">
             <div class="page-section" id="home">
+  
     <div class="container">
+        <div id="vmap" style="width: 100%; height: 400px; margin-bottom: 2em"></div>
+
         <ul class="grid-list">
           
             <li>
@@ -585,22 +595,204 @@
     </div>
 </div>
 
+<script type="text/javascript">
+  var ep_countries = {};
+  
+    ep_countries['AX'] = 'aland';
+  
+    ep_countries['AD'] = 'andorra';
+  
+    ep_countries['AO'] = 'angola';
+  
+    ep_countries['AU'] = 'australia';
+  
+    ep_countries['BD'] = 'bangladesh';
+  
+    ep_countries['BY'] = 'belarus';
+  
+    ep_countries['BJ'] = 'benin';
+  
+    ep_countries['BM'] = 'bermuda';
+  
+    ep_countries['BT'] = 'bhutan';
+  
+    ep_countries['BW'] = 'botswana';
+  
+    ep_countries['BR'] = 'brazil';
+  
+    ep_countries['BF'] = 'burkina-faso';
+  
+    ep_countries['BI'] = 'burundi';
+  
+    ep_countries['CV'] = 'cabo-verde';
+  
+    ep_countries['CM'] = 'cameroon';
+  
+    ep_countries['CA'] = 'canada';
+  
+    ep_countries['TD'] = 'chad';
+  
+    ep_countries['CL'] = 'chile';
+  
+    ep_countries['CG'] = 'congo-brazzaville';
+  
+    ep_countries['CW'] = 'curacao';
+  
+    ep_countries['CZ'] = 'czech-republic';
+  
+    ep_countries['DK'] = 'denmark';
+  
+    ep_countries['DO'] = 'dominican-republic';
+  
+    ep_countries['EE'] = 'estonia';
+  
+    ep_countries['FI'] = 'finland';
+  
+    ep_countries['GA'] = 'gabon';
+  
+    ep_countries['DE'] = 'germany';
+  
+    ep_countries['GH'] = 'ghana';
+  
+    ep_countries['GL'] = 'greenland';
+  
+    ep_countries['HU'] = 'hungary';
+  
+    ep_countries['IS'] = 'iceland';
+  
+    ep_countries['IR'] = 'iran';
+  
+    ep_countries['IT'] = 'italy';
+  
+    ep_countries['CI'] = 'ivory-coast';
+  
+    ep_countries['JE'] = 'jersey';
+  
+    ep_countries['KZ'] = 'kazakhstan';
+  
+    ep_countries['XK'] = 'kosovo';
+  
+    ep_countries['LS'] = 'lesotho';
+  
+    ep_countries['LR'] = 'liberia';
+  
+    ep_countries['LY'] = 'libya';
+  
+    ep_countries['MG'] = 'madagascar';
+  
+    ep_countries['MW'] = 'malawi';
+  
+    ep_countries['MY'] = 'malaysia';
+  
+    ep_countries['MR'] = 'mauritania';
+  
+    ep_countries['FM'] = 'micronesia';
+  
+    ep_countries['MD'] = 'moldova';
+  
+    ep_countries['MC'] = 'monaco';
+  
+    ep_countries['MN'] = 'mongolia';
+  
+    ep_countries['ME'] = 'montenegro';
+  
+    ep_countries['MZ'] = 'mozambique';
+  
+    ep_countries['NA'] = 'namibia';
+  
+    ep_countries['NZ'] = 'new-zealand';
+  
+    ep_countries['NE'] = 'niger';
+  
+    ep_countries['GB-NIR'] = 'northern-ireland';
+  
+    ep_countries['PK'] = 'pakistan';
+  
+    ep_countries['PG'] = 'papua-new-guinea';
+  
+    ep_countries['PY'] = 'paraguay';
+  
+    ep_countries['PH'] = 'philippines';
+  
+    ep_countries['PT'] = 'portugal';
+  
+    ep_countries['RW'] = 'rwanda';
+  
+    ep_countries['SM'] = 'san-marino';
+  
+    ep_countries['GB-SCT'] = 'scotland';
+  
+    ep_countries['SC'] = 'seychelles';
+  
+    ep_countries['SL'] = 'sierra-leone';
+  
+    ep_countries['SS'] = 'south-sudan';
+  
+    ep_countries['ES'] = 'spain';
+  
+    ep_countries['SR'] = 'suriname';
+  
+    ep_countries['SZ'] = 'swaziland';
+  
+    ep_countries['TZ'] = 'tanzania';
+  
+    ep_countries['TG'] = 'togo';
+  
+    ep_countries['TO'] = 'tonga';
+  
+    ep_countries['TR'] = 'turkey';
+  
+    ep_countries['GB'] = 'uk';
+  
+    ep_countries['GB-WLS'] = 'wales';
+  
+    ep_countries['ZM'] = 'zambia';
+  
+    ep_countries['ZW'] = 'zimbabwe';
+      ep_countries['_0'] = 'kosovo';
+
+  var draw_map = function() {
+    var colors = {}
+    $.each(Object.keys(ep_countries), function(i, v) { colors[v] = '#01BFA9' });
+
+    $('#vmap').vectorMap({
+      map: 'world_mill_en',
+      normalizeFunction: 'polynomial',
+      backgroundColor: 'white',
+      regionStyle: { initial: { fill: '#f4f3f0' }},
+      hoverColor: false,
+      series: {
+        regions: [{
+          values: colors,
+          attribute: 'fill'
+        }]
+      },
+      onRegionClick: function(event, code, region) { 
+        event.preventDefault();
+        if(ep_link = ep_countries[code]) { 
+          var url = 'http://data.everypolitician.org/' + ep_link;
+          window.location = url;
+        } 
+        return false;
+      },
+    });
+  };
+  jQuery(document).ready(draw_map());
+</script>
+
+
         </div>
 
-        <footer class="site-footer">
+        <footer class="site-footer ms-footer">
             <div class="container">
                 <div class="column-five-twelfths">
                     <div class="footer__about">
-                        <h2 class="tiny-logo">EveryPolitician</h2>
-                        <p>EveryPolitician is a project from the folks that brought you <a href="http://mapit.poplus.org/">MapIt</a>, <a href="http://sayit.poplus.org/">SayIt</a> &amp; <a href="http://popit.poplus.org/">PopIt</a>. EveryPolitician is a <a href="http://poplus.org">Poplus</a> project</p>
+                        <h2 class="ms-footer__logo"><a href="http://www.mysociety.org">mySociety</a></h2>
+                        <p>EveryPolitician is another project from the awesome people at mySociety.</p>
+                        <p>You might also want to check out <a href="http://mapit.poplus.org/">MapIt</a>, which makes dealing with geographic boundaries a breeze, and <a href="http://sayit.poplus.org/">SayIt</a>, a beautiful interface for organising, reading, and searching speeches and debates.</p>
                     </div>
                 </div>
                 <div class="column-seven-twelfths">
-                    <div class="footer__about">
-                        <nav role="navigation">
-                            <a href="http://everypolitician.org/about">About</a>
-                        </nav>
-                    </div>
                 </div>
             </div>
         </footer>
