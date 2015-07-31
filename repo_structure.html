@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/javascript/jquery-ui-1.11.4.custom/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/jquery.select-to-autocomplete.js"></script>
+    <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/main.js"></script>
+    <title>EveryPolitician</title>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-660910-34', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header__logo">
+                    <h2>
+                      
+                        <a href="/"><span class="header-logo">EveryPolitician</span></a>
+                      
+                    </h2>
+                </div>
+                <div class="site-header__navigation site-header__navigation--primary">
+                    <nav role="navigation">
+                      
+                    </nav>
+                </div>
+                <div class="site-header__navigation site-header__navigation--secondary">
+                    <nav role="navigation">
+                        <a href="/countries.html">Data</a>
+                        <a href="/about.html">About</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="site-content">
+            <div class="container" id="about">
+  <div class="page-section">
+
+    <h1> Getting the most recent data </h1>
+    <p>
+      If you just browse the site, you’ll find that EveryPolitician links to
+      the most recently updated version of its data files.
+    </p>
+    <p>
+      But if you’re accessing the data programmatically, that won’t work nicely
+      for you because the data is hosted on github, which doesn’t serve the
+      right MIME type when your application fetches the data. Instead, you
+      should pull it via RawGit, and to do that you’ll need to know the URL of
+      the most recent data &mdash; and that means determining the SHA of the git
+      commit that put it there. The SHA may be different for each legislature
+      (because we rebuild the data as changes and additions come in on a
+      per-legislature basis), so to find that out, you need to look in
+      <code>countries.json</code>.
+    </p>
+    <h3>
+      Explaining <code>countries.json</code>
+    </h3>
+    <p>
+      EveryPolitician publishes a list in JSON format of
+      all the countries we have data for:
+      <a href="https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json"><code>countries.json</code></a>.
+      This file includes metadata about what’s available to download.
+    </p>
+    <p>
+      Key fields that <code>countries.json</code> has for each country include:
+    </p>
+    <ul>
+      <li>
+        <code>name</code>:
+        the name of the country to help human-reading of the data
+      </li>
+      <li>
+        <code>slug</code>:
+        the name with spaces replaced by hyphens and punctuation
+        stripped, so suitable for use in URLs and directory names
+      </li>
+      <li>
+        <code>code</code>:
+        the country code (for example, <code>EE</code> for Estonia),
+        which helps with programmatic lookups. We’re using 
+        <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
+        country codes where possible (with additional ISO 3166-2 
+        three-letter codes where appropriate: for example, <code>GB-WLS</code> for Wales).
+      </li>
+      <li>
+        <code>legislatures</code>:
+        a list of legislatures within this county.  There are lots of
+        ways governments are organised. Some have a single house, others
+        have separate upper and lower chambers. Sometimes a country
+        changes its entire legislative process completely, such as the
+        Council of Deputies in Libya replaced the General National
+        Congress. We separate each of these out individually.
+      </li>
+    </ul>
+    <p>
+      Within the legislatures, in addition to a similar <code>name</code>
+      and <code>slug</code>, these fields help you identify and locate the
+      data you want:
+    </p>
+    <ul>
+      <li>
+        <code>popolo</code>:
+        the path to the Popolo JSON file
+      </li>
+      <li>
+        <code>lastmod</code>:
+        Unix time when the data was last modified
+      </li>
+      <li>
+        <code>sha</code>:
+        git’s hash for the commit in which the data was last modified (see following section)
+      </li>
+      <li>
+        <code>legislative_periods</code>:
+        a list of each of the terms, or periods. Each one of those has these fields:
+        <ul>
+          <li><code>id</code>, <code>name</code>, <code>start_date</code>, and <code>slug</code></li>
+          <li>
+            and also a path (from the directory containing <code>countries.json</code>) to the CSV file containing the data for this term of this legislature
+            (for example, <code>data/Bangladesh/House/term-10.csv</code>)
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h3>
+      How to get the most up-to-date version of the data
+    </h3>
+    <p>
+      EveryPolitician’s data is being updated frequently. 
+    </p>
+    <p>
+      The EveryPolitician website offers up the most recent versions of its
+      files, so <strong>if you’re just browsing, then you’ll be getting the latest
+      data</strong>. But if you’re working with the data programmatically (for example,
+      in a client-side app making calls to the data), that won’t work for you.
+      GitHub won’t send the right headers, because it’s not really a data
+      store. So instead, use the RawGit URL and the most recent SHA, shown as
+      <code>sha</code> in the <code>countries.json</code> file, for the data
+      for the legislature you want.
+    </p>
+    <p>
+      If you’re writing an app and you want to cache the data files locally,
+      it’s probably better to do that based on the SHA, and refresh on change.
+    </p>
+    
+  </div>
+</div>
+
+        </div>
+
+        <footer class="site-footer ms-footer">
+            <div class="container">
+                <div class="column-five-twelfths">
+                    <div class="footer__about">
+                        <h2 class="ms-footer__logo"><a href="http://www.mysociety.org">mySociety</a></h2>
+                        <p>EveryPolitician is another democracy-boosting project from mySociety and Poplus.</p>
+                        <p>You might also enjoy <a href="http://mapit.poplus.org/">MapIt</a>, for matching geographic points to administrative areas, and <a href="http://sayit.poplus.org/">SayIt</a>, a beautiful interface for organising, reading, and searching speeches and debates.</p>
+                    </div>
+                </div>
+                <div class="column-seven-twelfths">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+  </body>
+</html>
+
