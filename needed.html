@@ -625,13 +625,6 @@
                 </li>
               
                 <li>
-                    <a class="avatar-unit" href="https://github.com/everypolitician/everypolitician-data/issues/121/">
-                        <span class="avatar"><i class="fa fa-users"></i></span>
-                        <h3>Sri Lanka</h3>
-                    </a>
-                </li>
-              
-                <li>
                     <a class="avatar-unit" href="https://github.com/everypolitician/everypolitician-data/issues/453/">
                         <span class="avatar"><i class="fa fa-users"></i></span>
                         <h3>Sweden</h3>
@@ -738,9 +731,23 @@
                 </li>
               
                 <li>
+                    <a class="avatar-unit" href="https://github.com/everypolitician/everypolitician-data/issues/669/">
+                        <span class="avatar"><i class="fa fa-users"></i></span>
+                        <h3>Russia</h3>
+                    </a>
+                </li>
+              
+                <li>
                     <a class="avatar-unit" href="https://github.com/everypolitician/everypolitician-data/issues/540/">
                         <span class="avatar"><i class="fa fa-users"></i></span>
                         <h3>Slovakia</h3>
+                    </a>
+                </li>
+              
+                <li>
+                    <a class="avatar-unit" href="https://github.com/everypolitician/everypolitician-data/issues/121/">
+                        <span class="avatar"><i class="fa fa-users"></i></span>
+                        <h3>Sri Lanka</h3>
                     </a>
                 </li>
               
@@ -785,6 +792,14 @@
         return make_node(issue.title, issue.html_url);
       });
       $(".scraper-needed").html(new_nodes);
+    });
+
+    var to_scrape_url = 'https://api.github.com/repos/everypolitician/everypolitician-data/issues?labels=new%20country,3%20-%20WIP;per_page=100'
+    $.get(to_scrape_url).done(function(data) {
+      var new_nodes = $.map(data.sort(by_country), function(issue, n) { 
+        return make_node(issue.title, issue.html_url);
+      });
+      $(".scraper-progress").html(new_nodes);
     });
 
   });
