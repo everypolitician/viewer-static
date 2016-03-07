@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="First House of Assembly" />
     <meta property="og:type" content="article" />
@@ -194,7 +197,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-unknown"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -206,251 +209,506 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/14fbeec/data/Gibraltar/Parliament/term-1.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/14fbeec/data/Gibraltar/Parliament/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/43a6021/data/Gibraltar/Parliament/term-1.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/43a6021/data/Gibraltar/Parliament/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-34328435-d155-4611-be08-ff24fac4fa78">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34328435-d155-4611-be08-ff24fac4fa78">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">A J Gache</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="A J Gache">A J Gache</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d8c09785-a180-477c-aa73-20e82d36a6e0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d8c09785-a180-477c-aa73-20e82d36a6e0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">A P Montegriffo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="A P Montegriffo">A P Montegriffo</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-65089a84-da8b-455b-9619-9b43f6d89409">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-65089a84-da8b-455b-9619-9b43f6d89409">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">A W Serfaty</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="A W Serfaty">A W Serfaty</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c4520ab6-dc17-4a3c-aacc-572d891d289e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c4520ab6-dc17-4a3c-aacc-572d891d289e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C Anes</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="C Anes">C Anes</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-21f20cc7-4a6f-4ad4-9707-8fa959e7d222">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-21f20cc7-4a6f-4ad4-9707-8fa959e7d222">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C B O’Beirne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="C B O’Beirne">C B O’Beirne</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fd8ac78f-7ed0-4973-85d3-8fa941ce423f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd8ac78f-7ed0-4973-85d3-8fa941ce423f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">E H Davies</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="E H Davies">E H Davies</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fc9bbcdc-9ff6-48f4-b062-afb0521d99df">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc9bbcdc-9ff6-48f4-b062-afb0521d99df">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">E J Alvarez</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="E J Alvarez">E J Alvarez</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-703708a9-848f-4129-a025-df0907092519">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-703708a9-848f-4129-a025-df0907092519">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">I Abecasis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="I Abecasis">I Abecasis</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c13f2c7c-b6cc-4a88-bf2a-5a5e8dfd4164">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c13f2c7c-b6cc-4a88-bf2a-5a5e8dfd4164">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J Caruana</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="J Caruana">J Caruana</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2838ed52-858c-473d-8141-9954125aef33">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2838ed52-858c-473d-8141-9954125aef33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J L Hoare</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="J L Hoare">J L Hoare</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-232013da-1f82-4512-9ea9-6cea7c470e66">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-232013da-1f82-4512-9ea9-6cea7c470e66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/232013da-1f82-4512-9ea9-6cea7c470e66/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/232013da-1f82-4512-9ea9-6cea7c470e66/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joshua Hassan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Joshua Hassan">Joshua Hassan</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fb24caca-894d-4945-bbfe-0fb1a083bec8">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fb24caca-894d-4945-bbfe-0fb1a083bec8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">L Devincenzi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="L Devincenzi">L Devincenzi</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-66dc58c0-5cba-406e-8451-707d263fdbb6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66dc58c0-5cba-406e-8451-707d263fdbb6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M K Featherstone</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="M K Featherstone">M K Featherstone</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7d8c2b3b-c516-4ee8-ad2b-02e7db23011c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d8c2b3b-c516-4ee8-ad2b-02e7db23011c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M Xiberras</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="M Xiberras">M Xiberras</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fd92cdef-51cc-44d4-8d66-244e0ed3ed09">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd92cdef-51cc-44d4-8d66-244e0ed3ed09">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">P J Isola</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="P J Isola">P J Isola</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6ffe17fb-24d1-4dc3-b44b-068e76baad64">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ffe17fb-24d1-4dc3-b44b-068e76baad64">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">R J Peliza</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="R J Peliza">R J Peliza</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6c093d83-2782-4c2d-8b32-006f85df137f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6c093d83-2782-4c2d-8b32-006f85df137f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">W M Isola</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="W M Isola">W M Isola</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

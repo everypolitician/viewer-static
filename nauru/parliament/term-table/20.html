@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="20th Parliament" />
     <meta property="og:type" content="article" />
@@ -136,7 +139,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-non-partisan"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -154,263 +157,549 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/e544e72/data/Nauru/Parliament/term-20.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/e544e72/data/Nauru/Parliament/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/e544e72/data/Nauru/Parliament/term-20.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/e544e72/data/Nauru/Parliament/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-7dc035f8-4ac0-4bbb-9f33-500d44987588">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7dc035f8-4ac0-4bbb-9f33-500d44987588">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Aloysius Amwano</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Ubenide
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Aloysius Amwano">Aloysius Amwano</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Ubenide</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-802e8e7a-ee52-44ef-840a-0e83f06c7d12">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-802e8e7a-ee52-44ef-840a-0e83f06c7d12">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/802e8e7a-ee52-44ef-840a-0e83f06c7d12/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/802e8e7a-ee52-44ef-840a-0e83f06c7d12/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Baron Waqa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Boe
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Baron Waqa">Baron Waqa</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Boe</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-50732d43-5318-409a-a5ca-29670f1bb846">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50732d43-5318-409a-a5ca-29670f1bb846">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/50732d43-5318-409a-a5ca-29670f1bb846/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/50732d43-5318-409a-a5ca-29670f1bb846/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">David Adeang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nauru First — Ubenide
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="David Adeang">David Adeang</td>
-                      
-                        <td>Nauru First</td>
-                        <td>Ubenide</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f93ec602-3952-4e59-b351-ffa789487add">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f93ec602-3952-4e59-b351-ffa789487add">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dominic Tabuna</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Yaren
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Dominic Tabuna">Dominic Tabuna</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Yaren</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8485f19e-98c9-43f5-80be-555e1d129794">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8485f19e-98c9-43f5-80be-555e1d129794">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Frederick Pitcher</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nauru First — Ubenide
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Frederick Pitcher">Frederick Pitcher</td>
-                      
-                        <td>Nauru First</td>
-                        <td>Ubenide</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-dd4c4957-518b-4346-a99c-b3deb1e2fa82">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd4c4957-518b-4346-a99c-b3deb1e2fa82">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Godfrey Thoma</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Aiwo
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Godfrey Thoma">Godfrey Thoma</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Aiwo</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-692cc1e8-af7d-4b14-8d54-aeda57338c7d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-692cc1e8-af7d-4b14-8d54-aeda57338c7d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kieren Keke</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nauru First — Yaren
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Kieren Keke">Kieren Keke</td>
-                      
-                        <td>Nauru First</td>
-                        <td>Yaren</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-312b2e05-eb0c-4009-b7c0-5f43e48dfc10">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-312b2e05-eb0c-4009-b7c0-5f43e48dfc10">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Landon Deireragea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Anetan
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Landon Deireragea">Landon Deireragea</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Anetan</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-bcfd822d-1212-4022-9cda-236751e4cf3b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bcfd822d-1212-4022-9cda-236751e4cf3b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/bcfd822d-1212-4022-9cda-236751e4cf3b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/bcfd822d-1212-4022-9cda-236751e4cf3b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ludwig Scotty</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Anabar
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ludwig Scotty">Ludwig Scotty</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Anabar</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-165c68e4-b9eb-4dc1-87fb-8b7c7b6df6db">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-165c68e4-b9eb-4dc1-87fb-8b7c7b6df6db">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/165c68e4-b9eb-4dc1-87fb-8b7c7b6df6db/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/165c68e4-b9eb-4dc1-87fb-8b7c7b6df6db/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marcus Stephen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Anetan
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Marcus Stephen">Marcus Stephen</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Anetan</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6b84796d-bbd7-4b09-bd94-cfda16785bd1">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6b84796d-bbd7-4b09-bd94-cfda16785bd1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mathew Batsiua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Boe
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mathew Batsiua">Mathew Batsiua</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Boe</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-39ac2f15-513d-4c90-ac24-3a8108bea3e4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-39ac2f15-513d-4c90-ac24-3a8108bea3e4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Milton Dube</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Aiwo
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Milton Dube">Milton Dube</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Aiwo</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-80626a5a-33a8-47e7-88ca-0fcd5f2e26fe">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-80626a5a-33a8-47e7-88ca-0fcd5f2e26fe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Riddell Akua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nauru First — Anabar
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Riddell Akua">Riddell Akua</td>
-                      
-                        <td>Nauru First</td>
-                        <td>Anabar</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e7634741-ca86-422e-b17d-ea888f598b95">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e7634741-ca86-422e-b17d-ea888f598b95">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Roland Kun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nauru First — Buada
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Roland Kun">Roland Kun</td>
-                      
-                        <td>Nauru First</td>
-                        <td>Buada</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-75a6a60b-f042-461f-8f41-020247f493d6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-75a6a60b-f042-461f-8f41-020247f493d6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rykers Solomon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Meneng
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Rykers Solomon">Rykers Solomon</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Meneng</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-50886da6-8654-4790-89d5-528ed7d8c876">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50886da6-8654-4790-89d5-528ed7d8c876">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Shadlog Bernicke</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Buada
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Shadlog Bernicke">Shadlog Bernicke</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Buada</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-081d97c0-d123-4e48-ba6d-59cdfe0e9e23">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-081d97c0-d123-4e48-ba6d-59cdfe0e9e23">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/081d97c0-d123-4e48-ba6d-59cdfe0e9e23/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Nauru/Parliament/081d97c0-d123-4e48-ba6d-59cdfe0e9e23/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sprent Dabwido</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nauru First — Meneng
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sprent Dabwido">Sprent Dabwido</td>
-                      
-                        <td>Nauru First</td>
-                        <td>Meneng</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-17405a38-3a25-4c51-ad86-3794742f9540">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-17405a38-3a25-4c51-ad86-3794742f9540">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Valdon Dowiyogo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-partisan — Ubenide
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Valdon Dowiyogo">Valdon Dowiyogo</td>
-                      
-                        <td>Non-partisan</td>
-                        <td>Ubenide</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

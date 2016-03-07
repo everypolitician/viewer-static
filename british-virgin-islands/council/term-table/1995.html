@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="13th Council" />
     <meta property="og:type" content="article" />
@@ -178,7 +181,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-vip"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -208,203 +211,398 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/080d748/data/British_Virgin_Islands/Council/term-1995.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/080d748/data/British_Virgin_Islands/Council/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/080d748/data/British_Virgin_Islands/Council/term-1995.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/080d748/data/British_Virgin_Islands/Council/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-13a8c30d-25d0-4e68-a3c9-d34fdea5a05d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13a8c30d-25d0-4e68-a3c9-d34fdea5a05d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alred FRETT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VIP — At large
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alred FRETT">Alred FRETT</td>
-                      
-                        <td>VIP</td>
-                        <td>At large</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-9012d29f-5937-4f7a-8047-2fda57766551">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9012d29f-5937-4f7a-8047-2fda57766551">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alvin CHRISTOPHER</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              IND — District 2
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alvin CHRISTOPHER">Alvin CHRISTOPHER</td>
-                      
-                        <td>IND</td>
-                        <td>District 2</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2ae84a9b-552c-4cad-84b8-3607926ef9f5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2ae84a9b-552c-4cad-84b8-3607926ef9f5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Andre PENN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UP — District 8
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Andre PENN">Andre PENN</td>
-                      
-                        <td>UP</td>
-                        <td>District 8</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f882dc15-4b27-4fa2-a96b-b2e15827722c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f882dc15-4b27-4fa2-a96b-b2e15827722c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Conrad Maduro</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UP — At large
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Conrad Maduro">Conrad Maduro</td>
-                      
-                        <td>UP</td>
-                        <td>At large</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-85fdf223-058a-4aaf-9da6-191ef2237ee4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85fdf223-058a-4aaf-9da6-191ef2237ee4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eileene PARSONS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              IND — At large
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Eileene PARSONS">Eileene PARSONS</td>
-                      
-                        <td>IND</td>
-                        <td>At large</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-684c573d-9665-4882-8b64-cae7be83d09a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-684c573d-9665-4882-8b64-cae7be83d09a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ethlyn Eugenie SMITH</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              IND — District 5
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ethlyn Eugenie SMITH">Ethlyn Eugenie SMITH</td>
-                      
-                        <td>IND</td>
-                        <td>District 5</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4688c799-618c-4401-80b8-e9d87c9e195b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4688c799-618c-4401-80b8-e9d87c9e195b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">H. Lavity STOUTT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VIP — District 1
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="H. Lavity STOUTT">H. Lavity STOUTT</td>
-                      
-                        <td>VIP</td>
-                        <td>District 1</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-44b52ad7-b048-41d1-b5be-3837c9860161">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-44b52ad7-b048-41d1-b5be-3837c9860161">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Oliver CILLS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VIP — District 3
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Oliver CILLS">Oliver CILLS</td>
-                      
-                        <td>VIP</td>
-                        <td>District 3</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ad1d5fea-0bb3-4694-899a-cf4f688979b1">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ad1d5fea-0bb3-4694-899a-cf4f688979b1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Omar HODGE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CCM — District 6
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Omar HODGE">Omar HODGE</td>
-                      
-                        <td>CCM</td>
-                        <td>District 6</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e26204ed-de4b-457b-8123-b3cfcdd73f9f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e26204ed-de4b-457b-8123-b3cfcdd73f9f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/British-Virgin-Islands/Council/e26204ed-de4b-457b-8123-b3cfcdd73f9f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/British-Virgin-Islands/Council/e26204ed-de4b-457b-8123-b3cfcdd73f9f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ralph T. O'NEAL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VIP — District 9
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ralph T. O'NEAL">Ralph T. O'NEAL</td>
-                      
-                        <td>VIP</td>
-                        <td>District 9</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-624a36ca-799f-4089-bfff-a2e406f58d71">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-624a36ca-799f-4089-bfff-a2e406f58d71">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Reeial George</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VIP — At large
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Reeial George">Reeial George</td>
-                      
-                        <td>VIP</td>
-                        <td>At large</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-edd9d1c8-17d8-411b-9487-2455189b51f6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-edd9d1c8-17d8-411b-9487-2455189b51f6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Terrence LETTSOME</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VIP — District 7
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Terrence LETTSOME">Terrence LETTSOME</td>
-                      
-                        <td>VIP</td>
-                        <td>District 7</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f5c6c044-a5df-4605-9b97-da389e51e5d9">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5c6c044-a5df-4605-9b97-da389e51e5d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Walwyn BREWLEY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CCM — District 4
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Walwyn BREWLEY">Walwyn BREWLEY</td>
-                      
-                        <td>CCM</td>
-                        <td>District 4</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

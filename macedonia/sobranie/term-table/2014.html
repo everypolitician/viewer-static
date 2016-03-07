@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2014–2018" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-vmro-dpmne"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -173,1151 +176,2895 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/af6fa64/data/Macedonia/Sobranie/term-2014.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/af6fa64/data/Macedonia/Sobranie/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/af6fa64/data/Macedonia/Sobranie/term-2014.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/af6fa64/data/Macedonia/Sobranie/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-dd11dc41-556c-4f00-8bcd-f0c23889c531">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Aleksandar Nikoloski">Aleksandar Nikoloski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d8eca104-e8a1-487d-a734-1e0988b130ae">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Aleksandar Stojkoski">Aleksandar Stojkoski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-31be7a64-8b23-4a10-844a-ef23bf410cc4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ali Ahmeti">Ali Ahmeti</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8756cf1a-8d61-4f38-8c55-384aa5946214">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alim Bilali">Alim Bilali</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6316072d-5a99-4432-8ba0-568d84bb2c03">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amdi Bajram">Amdi Bajram</td>
-                      
-                        <td>Union of Roma of Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b9f39c23-6276-45e5-8e1d-cbe1c3db44ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Andon Cibisev">Andon Cibisev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ebbe68a8-dc10-4002-acd3-56dd3cfea49c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ane Laskoska">Ane Laskoska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-851fa6cc-6dff-4f8b-8e65-3821b012f44e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Antonijo Milososki">Antonijo Milososki</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0a25e3b6-8a44-4bb5-829c-97614a87c4dd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Artan Grubi">Artan Grubi</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a3143a3c-a022-43de-bb0c-5d2531184477">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Avdija Pepik">Avdija Pepik</td>
-                      
-                        <td>Party for Democratic Action of Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2c112b5b-8b91-43dd-8ca5-aa8264a7059d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bekim Fazliu">Bekim Fazliu</td>
-                      
-                        <td>Democratic Party of Albanians</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-27fc3c43-5400-4889-a853-b86cc08e0e9b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Blagica Lasovska">Blagica Lasovska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fc7412a1-acd0-40fe-98d2-64ce753aca21">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Blagoja Despotovski">Blagoja Despotovski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4b1526a9-6d6c-4b39-b127-9debb8314f7c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Blagorodna Bojadzieva">Blagorodna Bojadzieva</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b0ef4a95-79fb-4243-9beb-1367fd4f255b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chedomir Sazdovski">Chedomir Sazdovski</td>
-                      
-                        <td>GROM</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fc6daa63-6136-44f1-a8ef-352f1a80a80d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Daniela Rangelova">Daniela Rangelova</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-046fad6d-206a-4848-8b1f-327894630cb9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dimitar Stevanandzija">Dimitar Stevanandzija</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7ec31ee-6130-4919-ad5e-78bf8f7bfe36">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dragan Cuklev">Dragan Cuklev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ac4af5c-cd6c-44a2-9c4f-78ae3bee62a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dragan Danev">Dragan Danev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e0a1dd0-dd8a-4aad-8c9c-819d03bdae69">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ejup Rustemi">Ejup Rustemi</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f2b6e36a-f92a-4d3f-9599-a53ae789b021">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emil Dimitriev">Emil Dimitriev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-71600864-6d7b-4faa-bd9a-faa89f06a4d8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ermira Mehmeti">Ermira Mehmeti</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a5b562ff-87c0-47f0-bcd4-a90cf91004df">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ernad Fejzula">Ernad Fejzula</td>
-                      
-                        <td>Democratic Party of Albanians</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-64384263-11f6-4928-a7fa-a18a33b68b92">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fatmir Imeroski">Fatmir Imeroski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1379e9f8-4f2e-46ca-8f84-6651087132ab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gazmend Aliji">Gazmend Aliji</td>
-                      
-                        <td>Democratic Party of Albanians</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e09704a6-4601-4898-b4c0-f991c79a4bcd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gjoko Kamcev">Gjoko Kamcev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-69d80493-08f8-401c-af92-e5b18b0a3a18">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gjorgji Kodzabasiev">Gjorgji Kodzabasiev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-945e9702-ce37-4f29-b59f-8181437f14ef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hazbi LJika">Hazbi LJika</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d482e080-b0ff-486b-b3cc-4b934804cd7f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ilija Dimovski">Ilija Dimovski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e09bc82f-a3a9-406e-bcaa-b996a00bb620">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Imer Aliu">Imer Aliu</td>
-                      
-                        <td>Democratic Party of Albanians</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-40172fe5-7606-483c-9a20-80eae9068781">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ivan Ivanov">Ivan Ivanov</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9c44a801-17a5-4c9d-8280-3a91dfda77a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ivan Stoilkovik">Ivan Stoilkovik</td>
-                      
-                        <td>Democratic Party of Serbs in Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1358ca20-9245-47ed-aa2a-6ef38acc56a2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jamin Sinani">Jamin Sinani</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-efa8539f-cb81-4188-a5c8-b68a2920fb6a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jasminka Damceska">Jasminka Damceska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-210aae99-bec4-4ab2-9a8d-a4722b22d8e6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kaltrina Azizi">Kaltrina Azizi</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b1b5ca60-2848-478e-8189-21ae7279f97b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kenan Hasipi">Kenan Hasipi</td>
-                      
-                        <td>Democratic Part of the Turks in Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-076b1abc-b09e-4331-b3fe-6c9605b9cbea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Krsto Mukoski">Krsto Mukoski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a89701d6-e9f8-4308-817e-cb7b5beaf574">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LJubica Buralieva">LJubica Buralieva</td>
-                      
-                        <td>Independent Members</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d6cb301e-2019-4400-ad11-5e7a9635c179">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Liljana Kuzmanovska">Liljana Kuzmanovska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-878e7e2a-bc4b-4bde-a6b5-900484d2ae2b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Liljana Popovska">Liljana Popovska</td>
-                      
-                        <td>Democratic Renewal of Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-303d9624-01ad-4518-a8ad-ede754ffa358">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Liljana Zaturoska">Liljana Zaturoska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fc155feb-4d9f-453a-bf28-8aba5f15f3c2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ljupco Dimovski">Ljupco Dimovski</td>
-                      
-                        <td>Socialist Party of Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c2375d01-6636-4179-ab61-fef4b94dbc7f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Magdalena Manaskova">Magdalena Manaskova</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9db6b4d0-142c-47d0-8cf7-14fd5c152f25">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marija Angelova">Marija Angelova</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1d0e8635-544d-4bd5-91f1-ceee7737f380">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marjanco Kolevski">Marjanco Kolevski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-37d06487-1337-4d5e-8c38-622bc378c9d2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Menduh Taci">Menduh Taci</td>
-                      
-                        <td>Democratic Party of Albanians</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b0b8a1ca-3aad-410d-a26f-fc34435e5ec4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Meral Uzeiri-Ferati">Meral Uzeiri-Ferati</td>
-                      
-                        <td>Democratic Party of Albanians</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-71a34911-01f3-4073-a0d9-e64244e8e979">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mirjana Hadzievska">Mirjana Hadzievska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9b86e4cd-c98f-4da9-a747-467309d61b7f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mirsada Emini Asani">Mirsada Emini Asani</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c45c9ab1-0f15-4d2e-83b4-098701b2e25d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mirvan DZemailji">Mirvan DZemailji</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8272c80e-2691-4213-946d-ff6b365cf216">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Momcilo Avramoski">Momcilo Avramoski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8eebda6d-6375-47b1-81ee-3ed9919cf826">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Musa Ibraimi">Musa Ibraimi</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-25775e78-c9af-4e2d-95e0-17484fbc49fc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nada Cipuseva">Nada Cipuseva</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dff455c7-614c-4bc9-bc0f-b237a043e234">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nikola Micevski">Nikola Micevski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-70bf998c-6362-449c-bd50-ac8b9e3cea44">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nola Ismajloska-Starova">Nola Ismajloska-Starova</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d825ea85-2ce3-454c-b31e-a53417f6658b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nora Aliti">Nora Aliti</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1a5135c6-98b2-4651-8ef0-6cfb3110f8ab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Olga Najdenovska">Olga Najdenovska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-505e9fd9-df84-4b3c-9ae3-64fb3cb7b35e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Orhan Ibraim">Orhan Ibraim</td>
-                      
-                        <td>Democratic Party of Albanians</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4300a503-09ea-4153-aebf-d4a3a695e7ab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pavle Sazdov">Pavle Sazdov</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-02df0c53-8b1f-4045-b46e-1a6845362508">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pavle Trajanov">Pavle Trajanov</td>
-                      
-                        <td>Democratic Union</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-78e2d2d6-3f18-4120-bd5b-55d83f29a7df">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rafis Aljiti">Rafis Aljiti</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7fe7e6fa-89f5-4755-92c3-be60eebed75d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ramiz Merko">Ramiz Merko</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-06a33f60-abba-408c-94d7-4a17dac91711">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Redzailj Ismaili">Redzailj Ismaili</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-017a8605-ef8a-4bb1-abfa-8bd99565dcb0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Risto Mancev">Risto Mancev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-85f3d047-8b8e-4f52-a724-0fb4f6365799">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Romeo Trenov">Romeo Trenov</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-15914f41-dcd4-49b5-a5c6-e00d89f10f0e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Roza Topuzova-Karevska">Roza Topuzova-Karevska</td>
-                      
-                        <td>Liberal - Democratic Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c3095de7-ad1b-4842-a4fa-119b9aff31ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saso Akimoski">Saso Akimoski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-27d438a2-6559-4548-9813-4d8f65d65378">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saso Vasilevski">Saso Vasilevski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0adb2b9d-b081-4165-9435-2fcb05d04fe2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Selvije Saliu">Selvije Saliu</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01c8ec58-bc48-47ed-b21c-12ffdddcca68">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Shpresa Hadri">Shpresa Hadri</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1e34432e-f161-4fc3-a7c4-6b157d99c9d6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Silvana Boneva">Silvana Boneva</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5fe3b602-f91c-44ee-96fb-6384f18f51c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Slagjana Mitovska">Slagjana Mitovska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6c3cb61d-bab9-4638-a0fb-54e36576bb3c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Slave Gosev">Slave Gosev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9cda2f5c-8720-4ff6-9d5d-9bbc6dd356b3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Solza Grceva">Solza Grceva</td>
-                      
-                        <td>Independent Members</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9d3eeea1-a116-4089-8034-c1809d4cd7a7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sonja Talevska">Sonja Talevska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-22d87c76-eeb2-4d5d-a195-3a67bbb68430">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Stojan Milanov">Stojan Milanov</td>
-                      
-                        <td>Socialist Party of Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-67b73831-ab21-41fc-9eee-173015df11a3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Suzana Sekulovska">Suzana Sekulovska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d328fb5c-06b6-43f3-86f3-ab5c7412eecb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Svetlana Jakimovska">Svetlana Jakimovska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a8847f0-430c-4602-af38-466167a20c78">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Svetlana Karapetrova">Svetlana Karapetrova</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4916ca5e-0d2c-4a87-bd75-88e4502dcc07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Talat DZaferi">Talat DZaferi</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b5c045b6-d7fa-4966-a2fb-79e5a23003cc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Trajco Dimkov">Trajco Dimkov</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-71f1ba5e-6f9d-42bf-a7ca-4e289b3abc6f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vasil Pisev">Vasil Pisev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d924a60b-31c8-4a65-9a34-67bbb40febe1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vasko Naumovski">Vasko Naumovski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-259c83e9-dedf-4866-a06f-d5a9e0048124">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vesna Damcevska-Ilievska">Vesna Damcevska-Ilievska</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f5a77e8a-5973-4d57-8981-2a3afeaf1efb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vesna Pemova">Vesna Pemova</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1889ae1b-5584-44f9-b681-f2839095413a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vjolca Mehmeti-Nuredini">Vjolca Mehmeti-Nuredini</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-53435cb4-2191-4c1b-8fd5-3db51d2b98a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vladanka Avirovik">Vladanka Avirovik</td>
-                      
-                        <td>Socialist Party of Macedonia</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1b7560ed-6e71-4e61-a4f6-0c9e04b1bfc3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vladimir Gjorchev">Vladimir Gjorchev</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e716fd9-c094-4882-9dbd-f8726d8dd0c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xhevat Ademi">Xhevat Ademi</td>
-                      
-                        <td>Democratic Union for Integration</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c77c4658-a5be-47c1-b8a1-bf93ea63247d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zoran Gjorgjievski">Zoran Gjorgjievski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0bf5a867-e953-4eab-b3dd-4766f375bffd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zoran Ilioski">Zoran Ilioski</td>
-                      
-                        <td>VMRO-DPMNE</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ca823796-7651-4e64-b61f-c2326763e530">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zulfi Adili">Zulfi Adili</td>
-                      
-                        <td>Independent Members</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd11dc41-556c-4f00-8bcd-f0c23889c531">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/dd11dc41-556c-4f00-8bcd-f0c23889c531/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/dd11dc41-556c-4f00-8bcd-f0c23889c531/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Aleksandar Nikoloski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d8eca104-e8a1-487d-a734-1e0988b130ae">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d8eca104-e8a1-487d-a734-1e0988b130ae/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d8eca104-e8a1-487d-a734-1e0988b130ae/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Aleksandar Stojkoski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-31be7a64-8b23-4a10-844a-ef23bf410cc4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/31be7a64-8b23-4a10-844a-ef23bf410cc4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/31be7a64-8b23-4a10-844a-ef23bf410cc4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ali Ahmeti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8756cf1a-8d61-4f38-8c55-384aa5946214">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8756cf1a-8d61-4f38-8c55-384aa5946214/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8756cf1a-8d61-4f38-8c55-384aa5946214/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alim Bilali</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6316072d-5a99-4432-8ba0-568d84bb2c03">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/6316072d-5a99-4432-8ba0-568d84bb2c03/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/6316072d-5a99-4432-8ba0-568d84bb2c03/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Amdi Bajram</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union of Roma of Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b9f39c23-6276-45e5-8e1d-cbe1c3db44ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b9f39c23-6276-45e5-8e1d-cbe1c3db44ce/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b9f39c23-6276-45e5-8e1d-cbe1c3db44ce/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Andon Cibisev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ebbe68a8-dc10-4002-acd3-56dd3cfea49c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/ebbe68a8-dc10-4002-acd3-56dd3cfea49c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/ebbe68a8-dc10-4002-acd3-56dd3cfea49c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ane Laskoska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-851fa6cc-6dff-4f8b-8e65-3821b012f44e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/851fa6cc-6dff-4f8b-8e65-3821b012f44e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/851fa6cc-6dff-4f8b-8e65-3821b012f44e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Antonijo Milososki</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0a25e3b6-8a44-4bb5-829c-97614a87c4dd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0a25e3b6-8a44-4bb5-829c-97614a87c4dd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0a25e3b6-8a44-4bb5-829c-97614a87c4dd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Artan Grubi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a3143a3c-a022-43de-bb0c-5d2531184477">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/a3143a3c-a022-43de-bb0c-5d2531184477/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/a3143a3c-a022-43de-bb0c-5d2531184477/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Avdija Pepik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party for Democratic Action of Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2c112b5b-8b91-43dd-8ca5-aa8264a7059d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/2c112b5b-8b91-43dd-8ca5-aa8264a7059d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/2c112b5b-8b91-43dd-8ca5-aa8264a7059d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bekim Fazliu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Albanians
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-27fc3c43-5400-4889-a853-b86cc08e0e9b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/27fc3c43-5400-4889-a853-b86cc08e0e9b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/27fc3c43-5400-4889-a853-b86cc08e0e9b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Blagica Lasovska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc7412a1-acd0-40fe-98d2-64ce753aca21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/fc7412a1-acd0-40fe-98d2-64ce753aca21/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/fc7412a1-acd0-40fe-98d2-64ce753aca21/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Blagoja Despotovski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4b1526a9-6d6c-4b39-b127-9debb8314f7c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/4b1526a9-6d6c-4b39-b127-9debb8314f7c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/4b1526a9-6d6c-4b39-b127-9debb8314f7c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Blagorodna Bojadzieva</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b0ef4a95-79fb-4243-9beb-1367fd4f255b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b0ef4a95-79fb-4243-9beb-1367fd4f255b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b0ef4a95-79fb-4243-9beb-1367fd4f255b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chedomir Sazdovski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              GROM
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc6daa63-6136-44f1-a8ef-352f1a80a80d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/fc6daa63-6136-44f1-a8ef-352f1a80a80d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/fc6daa63-6136-44f1-a8ef-352f1a80a80d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Daniela Rangelova</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-046fad6d-206a-4848-8b1f-327894630cb9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/046fad6d-206a-4848-8b1f-327894630cb9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/046fad6d-206a-4848-8b1f-327894630cb9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dimitar Stevanandzija</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7ec31ee-6130-4919-ad5e-78bf8f7bfe36">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b7ec31ee-6130-4919-ad5e-78bf8f7bfe36/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b7ec31ee-6130-4919-ad5e-78bf8f7bfe36/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dragan Cuklev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ac4af5c-cd6c-44a2-9c4f-78ae3bee62a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8ac4af5c-cd6c-44a2-9c4f-78ae3bee62a5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8ac4af5c-cd6c-44a2-9c4f-78ae3bee62a5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dragan Danev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e0a1dd0-dd8a-4aad-8c9c-819d03bdae69">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0e0a1dd0-dd8a-4aad-8c9c-819d03bdae69/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0e0a1dd0-dd8a-4aad-8c9c-819d03bdae69/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ejup Rustemi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f2b6e36a-f92a-4d3f-9599-a53ae789b021">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/f2b6e36a-f92a-4d3f-9599-a53ae789b021/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/f2b6e36a-f92a-4d3f-9599-a53ae789b021/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emil Dimitriev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-71600864-6d7b-4faa-bd9a-faa89f06a4d8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/71600864-6d7b-4faa-bd9a-faa89f06a4d8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/71600864-6d7b-4faa-bd9a-faa89f06a4d8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ermira Mehmeti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a5b562ff-87c0-47f0-bcd4-a90cf91004df">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/a5b562ff-87c0-47f0-bcd4-a90cf91004df/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/a5b562ff-87c0-47f0-bcd4-a90cf91004df/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ernad Fejzula</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Albanians
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-64384263-11f6-4928-a7fa-a18a33b68b92">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/64384263-11f6-4928-a7fa-a18a33b68b92/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/64384263-11f6-4928-a7fa-a18a33b68b92/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Fatmir Imeroski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1379e9f8-4f2e-46ca-8f84-6651087132ab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1379e9f8-4f2e-46ca-8f84-6651087132ab/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1379e9f8-4f2e-46ca-8f84-6651087132ab/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gazmend Aliji</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Albanians
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e09704a6-4601-4898-b4c0-f991c79a4bcd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/e09704a6-4601-4898-b4c0-f991c79a4bcd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/e09704a6-4601-4898-b4c0-f991c79a4bcd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gjoko Kamcev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-69d80493-08f8-401c-af92-e5b18b0a3a18">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/69d80493-08f8-401c-af92-e5b18b0a3a18/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/69d80493-08f8-401c-af92-e5b18b0a3a18/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gjorgji Kodzabasiev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-945e9702-ce37-4f29-b59f-8181437f14ef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/945e9702-ce37-4f29-b59f-8181437f14ef/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/945e9702-ce37-4f29-b59f-8181437f14ef/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Hazbi LJika</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d482e080-b0ff-486b-b3cc-4b934804cd7f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d482e080-b0ff-486b-b3cc-4b934804cd7f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d482e080-b0ff-486b-b3cc-4b934804cd7f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ilija Dimovski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e09bc82f-a3a9-406e-bcaa-b996a00bb620">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/e09bc82f-a3a9-406e-bcaa-b996a00bb620/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/e09bc82f-a3a9-406e-bcaa-b996a00bb620/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Imer Aliu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Albanians
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-40172fe5-7606-483c-9a20-80eae9068781">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/40172fe5-7606-483c-9a20-80eae9068781/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/40172fe5-7606-483c-9a20-80eae9068781/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ivan Ivanov</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9c44a801-17a5-4c9d-8280-3a91dfda77a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9c44a801-17a5-4c9d-8280-3a91dfda77a4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9c44a801-17a5-4c9d-8280-3a91dfda77a4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ivan Stoilkovik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Serbs in Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1358ca20-9245-47ed-aa2a-6ef38acc56a2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1358ca20-9245-47ed-aa2a-6ef38acc56a2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1358ca20-9245-47ed-aa2a-6ef38acc56a2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jamin Sinani</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-efa8539f-cb81-4188-a5c8-b68a2920fb6a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/efa8539f-cb81-4188-a5c8-b68a2920fb6a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/efa8539f-cb81-4188-a5c8-b68a2920fb6a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jasminka Damceska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-210aae99-bec4-4ab2-9a8d-a4722b22d8e6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/210aae99-bec4-4ab2-9a8d-a4722b22d8e6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/210aae99-bec4-4ab2-9a8d-a4722b22d8e6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kaltrina Azizi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b1b5ca60-2848-478e-8189-21ae7279f97b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b1b5ca60-2848-478e-8189-21ae7279f97b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b1b5ca60-2848-478e-8189-21ae7279f97b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kenan Hasipi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Part of the Turks in Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-076b1abc-b09e-4331-b3fe-6c9605b9cbea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/076b1abc-b09e-4331-b3fe-6c9605b9cbea/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/076b1abc-b09e-4331-b3fe-6c9605b9cbea/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Krsto Mukoski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a89701d6-e9f8-4308-817e-cb7b5beaf574">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/a89701d6-e9f8-4308-817e-cb7b5beaf574/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/a89701d6-e9f8-4308-817e-cb7b5beaf574/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LJubica Buralieva</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent Members
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d6cb301e-2019-4400-ad11-5e7a9635c179">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d6cb301e-2019-4400-ad11-5e7a9635c179/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d6cb301e-2019-4400-ad11-5e7a9635c179/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Liljana Kuzmanovska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-878e7e2a-bc4b-4bde-a6b5-900484d2ae2b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/878e7e2a-bc4b-4bde-a6b5-900484d2ae2b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/878e7e2a-bc4b-4bde-a6b5-900484d2ae2b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Liljana Popovska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Renewal of Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-303d9624-01ad-4518-a8ad-ede754ffa358">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/303d9624-01ad-4518-a8ad-ede754ffa358/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/303d9624-01ad-4518-a8ad-ede754ffa358/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Liljana Zaturoska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc155feb-4d9f-453a-bf28-8aba5f15f3c2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/fc155feb-4d9f-453a-bf28-8aba5f15f3c2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/fc155feb-4d9f-453a-bf28-8aba5f15f3c2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ljupco Dimovski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socialist Party of Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c2375d01-6636-4179-ab61-fef4b94dbc7f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c2375d01-6636-4179-ab61-fef4b94dbc7f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c2375d01-6636-4179-ab61-fef4b94dbc7f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Magdalena Manaskova</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9db6b4d0-142c-47d0-8cf7-14fd5c152f25">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9db6b4d0-142c-47d0-8cf7-14fd5c152f25/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9db6b4d0-142c-47d0-8cf7-14fd5c152f25/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marija Angelova</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1d0e8635-544d-4bd5-91f1-ceee7737f380">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1d0e8635-544d-4bd5-91f1-ceee7737f380/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1d0e8635-544d-4bd5-91f1-ceee7737f380/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marjanco Kolevski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-37d06487-1337-4d5e-8c38-622bc378c9d2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/37d06487-1337-4d5e-8c38-622bc378c9d2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/37d06487-1337-4d5e-8c38-622bc378c9d2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Menduh Taci</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Albanians
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b0b8a1ca-3aad-410d-a26f-fc34435e5ec4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b0b8a1ca-3aad-410d-a26f-fc34435e5ec4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b0b8a1ca-3aad-410d-a26f-fc34435e5ec4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Meral Uzeiri-Ferati</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Albanians
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-71a34911-01f3-4073-a0d9-e64244e8e979">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/71a34911-01f3-4073-a0d9-e64244e8e979/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/71a34911-01f3-4073-a0d9-e64244e8e979/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mirjana Hadzievska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9b86e4cd-c98f-4da9-a747-467309d61b7f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9b86e4cd-c98f-4da9-a747-467309d61b7f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9b86e4cd-c98f-4da9-a747-467309d61b7f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mirsada Emini Asani</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c45c9ab1-0f15-4d2e-83b4-098701b2e25d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c45c9ab1-0f15-4d2e-83b4-098701b2e25d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c45c9ab1-0f15-4d2e-83b4-098701b2e25d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mirvan DZemailji</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8272c80e-2691-4213-946d-ff6b365cf216">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8272c80e-2691-4213-946d-ff6b365cf216/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8272c80e-2691-4213-946d-ff6b365cf216/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Momcilo Avramoski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8eebda6d-6375-47b1-81ee-3ed9919cf826">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8eebda6d-6375-47b1-81ee-3ed9919cf826/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/8eebda6d-6375-47b1-81ee-3ed9919cf826/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Musa Ibraimi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-25775e78-c9af-4e2d-95e0-17484fbc49fc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/25775e78-c9af-4e2d-95e0-17484fbc49fc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/25775e78-c9af-4e2d-95e0-17484fbc49fc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nada Cipuseva</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dff455c7-614c-4bc9-bc0f-b237a043e234">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/dff455c7-614c-4bc9-bc0f-b237a043e234/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/dff455c7-614c-4bc9-bc0f-b237a043e234/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nikola Micevski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70bf998c-6362-449c-bd50-ac8b9e3cea44">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/70bf998c-6362-449c-bd50-ac8b9e3cea44/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/70bf998c-6362-449c-bd50-ac8b9e3cea44/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nola Ismajloska-Starova</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d825ea85-2ce3-454c-b31e-a53417f6658b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d825ea85-2ce3-454c-b31e-a53417f6658b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d825ea85-2ce3-454c-b31e-a53417f6658b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nora Aliti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1a5135c6-98b2-4651-8ef0-6cfb3110f8ab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1a5135c6-98b2-4651-8ef0-6cfb3110f8ab/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1a5135c6-98b2-4651-8ef0-6cfb3110f8ab/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Olga Najdenovska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-505e9fd9-df84-4b3c-9ae3-64fb3cb7b35e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/505e9fd9-df84-4b3c-9ae3-64fb3cb7b35e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/505e9fd9-df84-4b3c-9ae3-64fb3cb7b35e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Orhan Ibraim</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Albanians
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4300a503-09ea-4153-aebf-d4a3a695e7ab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/4300a503-09ea-4153-aebf-d4a3a695e7ab/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/4300a503-09ea-4153-aebf-d4a3a695e7ab/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Pavle Sazdov</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-02df0c53-8b1f-4045-b46e-1a6845362508">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/02df0c53-8b1f-4045-b46e-1a6845362508/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/02df0c53-8b1f-4045-b46e-1a6845362508/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Pavle Trajanov</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-78e2d2d6-3f18-4120-bd5b-55d83f29a7df">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/78e2d2d6-3f18-4120-bd5b-55d83f29a7df/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/78e2d2d6-3f18-4120-bd5b-55d83f29a7df/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rafis Aljiti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7fe7e6fa-89f5-4755-92c3-be60eebed75d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/7fe7e6fa-89f5-4755-92c3-be60eebed75d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/7fe7e6fa-89f5-4755-92c3-be60eebed75d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ramiz Merko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-06a33f60-abba-408c-94d7-4a17dac91711">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/06a33f60-abba-408c-94d7-4a17dac91711/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/06a33f60-abba-408c-94d7-4a17dac91711/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Redzailj Ismaili</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-017a8605-ef8a-4bb1-abfa-8bd99565dcb0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/017a8605-ef8a-4bb1-abfa-8bd99565dcb0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/017a8605-ef8a-4bb1-abfa-8bd99565dcb0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Risto Mancev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85f3d047-8b8e-4f52-a724-0fb4f6365799">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/85f3d047-8b8e-4f52-a724-0fb4f6365799/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/85f3d047-8b8e-4f52-a724-0fb4f6365799/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Romeo Trenov</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15914f41-dcd4-49b5-a5c6-e00d89f10f0e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/15914f41-dcd4-49b5-a5c6-e00d89f10f0e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/15914f41-dcd4-49b5-a5c6-e00d89f10f0e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Roza Topuzova-Karevska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal - Democratic Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c3095de7-ad1b-4842-a4fa-119b9aff31ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c3095de7-ad1b-4842-a4fa-119b9aff31ee/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c3095de7-ad1b-4842-a4fa-119b9aff31ee/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saso Akimoski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-27d438a2-6559-4548-9813-4d8f65d65378">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/27d438a2-6559-4548-9813-4d8f65d65378/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/27d438a2-6559-4548-9813-4d8f65d65378/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saso Vasilevski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0adb2b9d-b081-4165-9435-2fcb05d04fe2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0adb2b9d-b081-4165-9435-2fcb05d04fe2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0adb2b9d-b081-4165-9435-2fcb05d04fe2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Selvije Saliu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01c8ec58-bc48-47ed-b21c-12ffdddcca68">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/01c8ec58-bc48-47ed-b21c-12ffdddcca68/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/01c8ec58-bc48-47ed-b21c-12ffdddcca68/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Shpresa Hadri</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1e34432e-f161-4fc3-a7c4-6b157d99c9d6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1e34432e-f161-4fc3-a7c4-6b157d99c9d6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1e34432e-f161-4fc3-a7c4-6b157d99c9d6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Silvana Boneva</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5fe3b602-f91c-44ee-96fb-6384f18f51c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/5fe3b602-f91c-44ee-96fb-6384f18f51c9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/5fe3b602-f91c-44ee-96fb-6384f18f51c9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Slagjana Mitovska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6c3cb61d-bab9-4638-a0fb-54e36576bb3c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/6c3cb61d-bab9-4638-a0fb-54e36576bb3c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/6c3cb61d-bab9-4638-a0fb-54e36576bb3c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Slave Gosev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9cda2f5c-8720-4ff6-9d5d-9bbc6dd356b3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9cda2f5c-8720-4ff6-9d5d-9bbc6dd356b3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9cda2f5c-8720-4ff6-9d5d-9bbc6dd356b3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Solza Grceva</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent Members
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d3eeea1-a116-4089-8034-c1809d4cd7a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9d3eeea1-a116-4089-8034-c1809d4cd7a7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/9d3eeea1-a116-4089-8034-c1809d4cd7a7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sonja Talevska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-22d87c76-eeb2-4d5d-a195-3a67bbb68430">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/22d87c76-eeb2-4d5d-a195-3a67bbb68430/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/22d87c76-eeb2-4d5d-a195-3a67bbb68430/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Stojan Milanov</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socialist Party of Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-67b73831-ab21-41fc-9eee-173015df11a3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/67b73831-ab21-41fc-9eee-173015df11a3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/67b73831-ab21-41fc-9eee-173015df11a3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Suzana Sekulovska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d328fb5c-06b6-43f3-86f3-ab5c7412eecb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d328fb5c-06b6-43f3-86f3-ab5c7412eecb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d328fb5c-06b6-43f3-86f3-ab5c7412eecb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Svetlana Jakimovska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a8847f0-430c-4602-af38-466167a20c78">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/5a8847f0-430c-4602-af38-466167a20c78/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/5a8847f0-430c-4602-af38-466167a20c78/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Svetlana Karapetrova</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4916ca5e-0d2c-4a87-bd75-88e4502dcc07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/4916ca5e-0d2c-4a87-bd75-88e4502dcc07/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/4916ca5e-0d2c-4a87-bd75-88e4502dcc07/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Talat DZaferi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5c045b6-d7fa-4966-a2fb-79e5a23003cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b5c045b6-d7fa-4966-a2fb-79e5a23003cc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/b5c045b6-d7fa-4966-a2fb-79e5a23003cc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Trajco Dimkov</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-71f1ba5e-6f9d-42bf-a7ca-4e289b3abc6f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/71f1ba5e-6f9d-42bf-a7ca-4e289b3abc6f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/71f1ba5e-6f9d-42bf-a7ca-4e289b3abc6f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vasil Pisev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d924a60b-31c8-4a65-9a34-67bbb40febe1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d924a60b-31c8-4a65-9a34-67bbb40febe1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/d924a60b-31c8-4a65-9a34-67bbb40febe1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vasko Naumovski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-259c83e9-dedf-4866-a06f-d5a9e0048124">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/259c83e9-dedf-4866-a06f-d5a9e0048124/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/259c83e9-dedf-4866-a06f-d5a9e0048124/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vesna Damcevska-Ilievska</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5a77e8a-5973-4d57-8981-2a3afeaf1efb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/f5a77e8a-5973-4d57-8981-2a3afeaf1efb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/f5a77e8a-5973-4d57-8981-2a3afeaf1efb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vesna Pemova</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1889ae1b-5584-44f9-b681-f2839095413a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1889ae1b-5584-44f9-b681-f2839095413a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1889ae1b-5584-44f9-b681-f2839095413a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vjolca Mehmeti-Nuredini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-53435cb4-2191-4c1b-8fd5-3db51d2b98a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/53435cb4-2191-4c1b-8fd5-3db51d2b98a4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/53435cb4-2191-4c1b-8fd5-3db51d2b98a4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vladanka Avirovik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socialist Party of Macedonia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1b7560ed-6e71-4e61-a4f6-0c9e04b1bfc3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1b7560ed-6e71-4e61-a4f6-0c9e04b1bfc3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/1b7560ed-6e71-4e61-a4f6-0c9e04b1bfc3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vladimir Gjorchev</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e716fd9-c094-4882-9dbd-f8726d8dd0c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0e716fd9-c094-4882-9dbd-f8726d8dd0c0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0e716fd9-c094-4882-9dbd-f8726d8dd0c0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Xhevat Ademi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Union for Integration
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c77c4658-a5be-47c1-b8a1-bf93ea63247d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c77c4658-a5be-47c1-b8a1-bf93ea63247d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/c77c4658-a5be-47c1-b8a1-bf93ea63247d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zoran Gjorgjievski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0bf5a867-e953-4eab-b3dd-4766f375bffd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0bf5a867-e953-4eab-b3dd-4766f375bffd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/0bf5a867-e953-4eab-b3dd-4766f375bffd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zoran Ilioski</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VMRO-DPMNE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ca823796-7651-4e64-b61f-c2326763e530">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/ca823796-7651-4e64-b61f-c2326763e530/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Macedonia/Sobranie/ca823796-7651-4e64-b61f-c2326763e530/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zulfi Adili</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent Members
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

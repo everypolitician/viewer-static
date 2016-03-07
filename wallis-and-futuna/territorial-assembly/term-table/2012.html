@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2012–" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-non-inscrits_divers_gauche"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -125,287 +128,583 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59116d6/data/Wallis_and_Futuna/Territorial_Assembly/term-2012.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59116d6/data/Wallis_and_Futuna/Territorial_Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59116d6/data/Wallis_and_Futuna/Territorial_Assembly/term-2012.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59116d6/data/Wallis_and_Futuna/Territorial_Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-27a7925a-8a28-48f6-bd70-e2f5ec326beb">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-27a7925a-8a28-48f6-bd70-e2f5ec326beb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Atoloto Kolokilagi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe RPWF-UMP — Hihifo, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Atoloto Kolokilagi">Atoloto Kolokilagi</td>
-                      
-                        <td>Groupe RPWF-UMP</td>
-                        <td>Hihifo, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-004d331c-886c-4ee9-8b5c-0960d464c497">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-004d331c-886c-4ee9-8b5c-0960d464c497">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bernard Taufana</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Mua, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bernard Taufana">Bernard Taufana</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Mua, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8277e5e2-5983-4f6f-8553-97af9a89aebb">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8277e5e2-5983-4f6f-8553-97af9a89aebb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">David Vergé</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Hahake, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="David Vergé">David Vergé</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Hahake, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-bf7400dc-d5d0-4654-b778-31d102a15a28">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bf7400dc-d5d0-4654-b778-31d102a15a28">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Emile Selui</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers droite — Mua, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Emile Selui">Emile Selui</td>
-                      
-                        <td>Non-inscrits divers droite</td>
-                        <td>Mua, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-eef98109-a6a7-4efc-842a-11f5e9a5aa58">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eef98109-a6a7-4efc-842a-11f5e9a5aa58">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eselone Ikai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Mua, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Eselone Ikai">Eselone Ikai</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Mua, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-27da5858-53fe-4e9f-b132-c51af634e3d5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-27da5858-53fe-4e9f-b132-c51af634e3d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Frédéric Baudry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Alo, Futuna
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Frédéric Baudry">Frédéric Baudry</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Alo, Futuna</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-226a2eee-70a5-4c46-8fcb-51dc7c429d59">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-226a2eee-70a5-4c46-8fcb-51dc7c429d59">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mikaele Kulimoetoke</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Hahake, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mikaele Kulimoetoke">Mikaele Kulimoetoke</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Hahake, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c4409077-d6dc-459a-a04d-fa64166d4cc8">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c4409077-d6dc-459a-a04d-fa64166d4cc8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mireille Laufilitoga</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers droite — Mua, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mireille Laufilitoga">Mireille Laufilitoga</td>
-                      
-                        <td>Non-inscrits divers droite</td>
-                        <td>Mua, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d3004f1c-3337-40ee-9df2-724d66a18060">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d3004f1c-3337-40ee-9df2-724d66a18060">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Munipoese Muliakaaka</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Mua, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Munipoese Muliakaaka">Munipoese Muliakaaka</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Mua, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8e96f804-14ba-4e54-8254-3ca5b40fecff">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e96f804-14ba-4e54-8254-3ca5b40fecff">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nivaleta Iloai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Hihifo, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nivaleta Iloai">Nivaleta Iloai</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Hihifo, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-df04c47d-defa-4cea-8b77-0b9c117cdd25">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-df04c47d-defa-4cea-8b77-0b9c117cdd25">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pasikale Niutoua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe centriste — Sigave, Futuna
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Pasikale Niutoua">Pasikale Niutoua</td>
-                      
-                        <td>Groupe centriste</td>
-                        <td>Sigave, Futuna</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6d2748c9-a149-4a46-a940-dd2edc6cdf47">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6d2748c9-a149-4a46-a940-dd2edc6cdf47">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Patalione Kanimoa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe RPWF-UMP — Hahake, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Patalione Kanimoa">Patalione Kanimoa</td>
-                      
-                        <td>Groupe RPWF-UMP</td>
-                        <td>Hahake, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a348be19-6dd8-4447-b268-65b4e99faa64">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a348be19-6dd8-4447-b268-65b4e99faa64">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Petelo Falelavaki</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Sigave, Futuna
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Petelo Falelavaki">Petelo Falelavaki</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Sigave, Futuna</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c74d59f7-1ff8-4ce0-b4a9-c0af07a92a4a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c74d59f7-1ff8-4ce0-b4a9-c0af07a92a4a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Petelo Hanisi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers gauche — Hahake, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Petelo Hanisi">Petelo Hanisi</td>
-                      
-                        <td>Non-inscrits divers gauche</td>
-                        <td>Hahake, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-9b72848f-83e1-44df-9552-52ca9f1c5352">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9b72848f-83e1-44df-9552-52ca9f1c5352">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Savelina Vea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe USPWF — Sigave, Futuna
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Savelina Vea">Savelina Vea</td>
-                      
-                        <td>Groupe USPWF</td>
-                        <td>Sigave, Futuna</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a73fc470-8769-41ac-893d-b07798cfbf11">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a73fc470-8769-41ac-893d-b07798cfbf11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sosefo Motuku</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe centriste — Alo, Futuna
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sosefo Motuku">Sosefo Motuku</td>
-                      
-                        <td>Groupe centriste</td>
-                        <td>Alo, Futuna</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8d4e3072-b63e-4bf5-80e0-b69f3ad3674b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8d4e3072-b63e-4bf5-80e0-b69f3ad3674b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sosefo Suve</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non-inscrits divers droite — Hihifo, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sosefo Suve">Sosefo Suve</td>
-                      
-                        <td>Non-inscrits divers droite</td>
-                        <td>Hihifo, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a6274631-0ee9-4446-bb00-30db59151434">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6274631-0ee9-4446-bb00-30db59151434">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Toma Savea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe RPWF-UMP — Alo, Futuna
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Toma Savea">Toma Savea</td>
-                      
-                        <td>Groupe RPWF-UMP</td>
-                        <td>Alo, Futuna</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-04e6ef40-7a5a-4aa8-a696-2447361145e2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-04e6ef40-7a5a-4aa8-a696-2447361145e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Vetelino Nau</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe USPWF — Alo, Futuna
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Vetelino Nau">Vetelino Nau</td>
-                      
-                        <td>Groupe USPWF</td>
-                        <td>Alo, Futuna</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d674f7fb-51e8-4228-94aa-a7c7700038cf">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d674f7fb-51e8-4228-94aa-a7c7700038cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Yannick Feleu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Groupe RPWF-UMP — Mua, Wallis
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Yannick Feleu">Yannick Feleu</td>
-                      
-                        <td>Groupe RPWF-UMP</td>
-                        <td>Mua, Wallis</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

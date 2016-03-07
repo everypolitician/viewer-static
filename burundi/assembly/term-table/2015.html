@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2015–" />
     <meta property="og:type" content="article" />
@@ -124,7 +127,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-CNDD-FDD"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -166,1499 +169,3310 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b280ca0/data/Burundi/Assembly/term-2015.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b280ca0/data/Burundi/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b280ca0/data/Burundi/Assembly/term-2015.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b280ca0/data/Burundi/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-4c56a67b-9ccb-4e4f-a7eb-75a5400faa07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AHISHAKIYE Gloriose">AHISHAKIYE Gloriose</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eccf8fba-9422-4de8-90bf-bd658c265ad5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BANYIKWA Adolphe">BANYIKWA Adolphe</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>BUJUMBURA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2ba9eed7-f938-42e4-abe8-0c7795ddedf3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BARAMPAMA Chantal">BARAMPAMA Chantal</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUJUMBURA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c5471c98-86a0-4af7-bdc6-2d6d12fe2a2d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BARANYANKA Joselyne">BARANYANKA Joselyne</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41ee5a47-7195-416f-8522-169505478ccf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BARANYIZIGIYE Jacqueline">BARANYIZIGIYE Jacqueline</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CANKUZO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-22cfd2d8-7ab4-4829-b28b-3c3520e9c318">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BASHINGWA Evole">BASHINGWA Evole</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAIRIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6d2e14d6-94ad-4c71-8a5e-d21ff13c06d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAVAKURE Domitien">BAVAKURE Domitien</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KARUSI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7953bd8b-b7b4-4c71-a537-5dffefaf94f2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAZIRAHOMPONYO YE Rémégie">BAZIRAHOMPONYO YE Rémégie</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MURAMVYA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-43218df8-945f-48ca-850f-c78706ff10ea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BIKORIMANA Jérôme">BIKORIMANA Jérôme</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BURURI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e016132b-b7fb-4b38-957f-c20788f42e6c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BIZIMUNGU Simon">BIZIMUNGU Simon</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>CIBITOKE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dd9a1b3a-7784-41fc-a5d0-4fe5bfe64ce8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BIZUMUREMYI Pascal">BIZUMUREMYI Pascal</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>RUYIGI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4f4c7bf-cf2d-40ea-9aca-9f5f336b16a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BUKURU Renate">BUKURU Renate</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUYIGI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f0fd32dd-b8b2-4786-adc1-453104cd90a8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BURIKUKIYE Victor">BURIKUKIYE Victor</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a545b677-c325-4097-a6ce-3fee7604347f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BUSOKOZA Bernard">BUSOKOZA Bernard</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MAIRIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0b9b9623-000e-4695-861d-3f60a539fc0a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CIMPAYE Spéciose">CIMPAYE Spéciose</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MURAMVYA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e75b787-e64a-4f7e-89bf-3cc2105150af">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CIZA Angèle">CIZA Angèle</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a298bf35-ad5d-44e0-b441-bd8cb8e7b8eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="COYITUNGIYE Claver">COYITUNGIYE Claver</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>KARUSI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e4e2a519-b30b-4106-b828-0caf44764f3b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DUKUNDANE Fleurette">DUKUNDANE Fleurette</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9d5a1a2d-489d-4058-8ac8-e1887fa68e06">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. BIGIRINDAVYI Ildéphonse">Dr. BIGIRINDAVYI Ildéphonse</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MURAMVYA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2a716955-56f5-422b-b43f-cefc2ff0ff86">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GAFURERO Léocadie">GAFURERO Léocadie</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUBANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-122c6c1b-0f84-4289-bdfa-99f36fd13d74">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GAKOBWA Séraphine">GAKOBWA Séraphine</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAKAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-69a358c8-a5b7-4d49-a783-d1a2a377d70c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GASUHUKE Jacques">GASUHUKE Jacques</td>
-                      
-                        <td>AMIZERO</td>
-                        <td>CANKUZO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-78565ddb-4bea-4f6e-a246-c2d3310797d4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HABONIMANA Odette">HABONIMANA Odette</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUMONGE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a7ee3ff-14e2-4400-a6ba-37aa70016554">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAKIZIMANA Léopold">HAKIZIMANA Léopold</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2e083b50-0cef-4e90-9e5f-a26498232cfe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAKIZIMANA Pascal">HAKIZIMANA Pascal</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-80ee716a-3439-45d6-bc42-81a315e87296">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HATUNGIMANA Godeberthe">HATUNGIMANA Godeberthe</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>RUTANA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1d56b9f3-b771-45b4-b9ec-2cfe627fdf45">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HATUNGIMANA Venant">HATUNGIMANA Venant</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e0bbc63-85a0-4d8e-b457-0d182a6eb977">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAVYARIMANA Juvénal">HAVYARIMANA Juvénal</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUBANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7973f34-367e-4aae-8351-d823c869423b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="INABIGENDERA Mireille">INABIGENDERA Mireille</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>KARUSI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-51c91b28-2131-4db0-b5e9-dc6dd0db063c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IRAKOZE Caritas">IRAKOZE Caritas</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAKAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-43a60ed0-31e4-4109-9124-d2e75cfc3ab8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IRAKOZE Lydia">IRAKOZE Lydia</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAIRIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-445c3bda-d92c-47da-816f-9ca2dd723f29">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IRAMBONA Joséphine">IRAMBONA Joséphine</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KARUSI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1a060f38-e074-4aec-92b3-33b99218fe29">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KABANGO Georges">KABANGO Georges</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KARUSI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-40e7cc98-ed59-4e97-ba33-e61c2e2632e7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KAMERE Ange Denise">KAMERE Ange Denise</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e0070362-465f-4ab3-bab6-54c4baaa9b85">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KARERA Denis">KARERA Denis</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-80233e23-ffa5-4daf-bf15-fa2b2e6fd47d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KARERWA MO- MAMO">KARERWA MO- MAMO</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-08a4f930-a732-4f7f-a0d4-d3af77f683ff">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MALAYIKA Pamphile">MALAYIKA Pamphile</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2468739b-e1a6-42ba-be7c-3cf0dc3b6366">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MANIRAKIZA Anatole">MANIRAKIZA Anatole</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CIBITOKE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1f9c4878-8d29-4061-8631-0fd4115e0a52">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MANIRAKIZA Pascasie">MANIRAKIZA Pascasie</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c17b8a39-1509-4e67-9be0-02727ecd5e8d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MANIRAMBONA Térence">MANIRAMBONA Térence</td>
-                      
-                        <td>ABIGENGA MIZERO</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cb648189-8293-4a69-8bfe-ae6766c68b4a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBONEKO Sauda">MBONEKO Sauda</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUJUMBURA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5723754f-eed8-47b9-b1bf-8b2bb42d48a1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBONIGABA Noé">MBONIGABA Noé</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>RUYIGI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-87b4ea17-b4c3-4d60-8478-7dd924d3ff30">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBONIHANKUYE François">MBONIHANKUYE François</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KARUSI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4010172-f70f-4a1c-9257-eb99352dcd6d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBONIMPA Adolphe">MBONIMPA Adolphe</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6bc92fe2-acb4-4ea9-b2b5-d78594ed1129">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBONIMPA Freddy">MBONIMPA Freddy</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAIRIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a03bc93-1824-4490-946e-7f66691043fc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBONINYIBUKA Gilbert">MBONINYIBUKA Gilbert</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAKAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f12b34af-6c36-4483-b7c7-2f53e7b83b28">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MISAGO Amédée">MISAGO Amédée</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-02ede8e7-a29b-4f23-a8a0-0b4d4720e20f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MIZERO Mireille">MIZERO Mireille</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f1036a0c-11f5-4d8a-bc74-06346c6478a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MPITABAVUMA François">MPITABAVUMA François</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-34538c23-f9cc-4dca-b298-4952d8f9aced">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUHIMPUNDU Xavière">MUHIMPUNDU Xavière</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KARUSI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-614e0d82-4da7-4d13-b354-270f64c3b9c2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUHUNGU Jean Bosco">MUHUNGU Jean Bosco</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUTANA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc45f4e5-f4c0-405c-810f-8c7579ef0072">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKESHIMANA Léonidas">MUKESHIMANA Léonidas</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUMONGE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fae9f241-e916-4fbb-a196-5e2ea30060b0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUREKERISONI Jeanine">MUREKERISONI Jeanine</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-be0660f7-f801-4d25-8209-37cf6e0a2e9c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MVUYEKURE Lazare">MVUYEKURE Lazare</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0f1fbd62-f1f2-4b55-8f22-4675e1702e9c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MWIDOGO Persille">MWIDOGO Persille</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f5a5d101-bf4a-44ec-8bee-3e77346250eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NAHAYO Claude">NAHAYO Claude</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-13194acd-365c-4d0d-b1e9-b2b0933bb304">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NAHAYO Immaculée">NAHAYO Immaculée</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e119e46f-5211-46c9-a85d-fe25ac81148f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NAHINTIJE Julienne">NAHINTIJE Julienne</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c7132d13-891c-4726-902c-4dd7a1fc3d7a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDABIRABE Gélase">NDABIRABE Gélase</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d833c69-aad5-49c4-98e2-fb4a36b2963d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDARUVUKANYE Zénon">NDARUVUKANYE Zénon</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUJUMBURA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a5d62e6-4fb4-495e-987d-f76c99444abc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDAYIMANISHA Canisius">NDAYIMANISHA Canisius</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ffd6092-2cc2-4d28-943a-ea5ac7d3227a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDAYIRAGIJE Juvénal">NDAYIRAGIJE Juvénal</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUTANA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-03924d4d-c277-466e-99c8-11246db62aab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDAYISENGA Bernard">NDAYISENGA Bernard</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MAI RIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6399bf4e-52fa-4b1c-bfcd-d65144f21206">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDAYIZAMBA André">NDAYIZAMBA André</td>
-                      
-                        <td>UPRONA</td>
-                        <td>BURURI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a9a9542b-2557-4f1b-9b23-c69ed6382626">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDAYIZEYE Gloriose">NDAYIZEYE Gloriose</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f71a31a-b933-4da0-90ff-b943108d38b5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDIHOKUBWAYO Angèle">NDIHOKUBWAYO Angèle</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BURURI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ee207ba3-1e40-4543-8eed-a3b738087d93">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDIKUMANA Pierre Célestin">NDIKUMANA Pierre Célestin</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>BUJUMBURA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-503a0dbb-0738-48c4-9e6a-cd07c848e1bb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDIKUMASABO Terence">NDIKUMASABO Terence</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MWARO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4641e869-9acf-4cc9-aab0-b7e3d7f11755">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDITIJE Charles">NDITIJE Charles</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>BURURI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4bd095d-3195-4291-ab36-35dda267cc7a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDUWAYO Gilbert">NDUWAYO Gilbert</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAKAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4b1d5336-fa9e-47b0-aea2-e7c65e42a993">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDUWIMANA Déogratias">NDUWIMANA Déogratias</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f8fbb64-e45e-43bd-b48b-1c319dc63787">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDUWIMANA Dévote">NDUWIMANA Dévote</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-559bccb6-c211-4838-a0c9-f673ce090c17">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDUWIMANA Edouard">NDUWIMANA Edouard</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-795bf7b1-21d0-4b38-a5c1-545bb028856f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDUWUMWAMI Rénovat">NDUWUMWAMI Rénovat</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MAKAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d8b0d291-48bf-411b-ad87-590f1f43f621">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGAYIMPENDA Evariste">NGAYIMPENDA Evariste</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>RUTANA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f5158cf0-521f-45e1-a41f-6ec53ea9e5ea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGENDABANKA Anglebert">NGENDABANKA Anglebert</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CANKUZO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-58c6f4e1-e0a6-4e61-aaef-33749d456d5c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGERAGEZE Egide">NGERAGEZE Egide</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUYIGI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c60876fd-2c37-4616-a28f-f5a270072ec8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIBIGIRA Ezéchiel">NIBIGIRA Ezéchiel</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUJUMBURA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5b4a0b5d-a38e-4600-9197-357f4070391f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIMENYA Gloriose">NIMENYA Gloriose</td>
-                      
-                        <td>UPRONA</td>
-                        <td>RUMONGE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-35e8c9d8-45e9-495c-9c7f-663f803a5c68">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NININAHAZWE Godelieve">NININAHAZWE Godelieve</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MWARO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-236c1083-0f34-484a-80f7-454ff86c6528">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIRAGIRA Félix">NIRAGIRA Félix</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-79b02b69-6cfd-433f-8b7a-5f80a9bbbcc1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIYOBUHUNGIRO Justin">NIYOBUHUNGIRO Justin</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CIBITOKE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-96599818-74b9-4f13-9b28-bb279620488a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIYONGABO Justine">NIYONGABO Justine</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CANKUZO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-899bdc7a-d0b8-4b74-95a4-4d28288ae16d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIYONSENGA Gloriose">NIYONSENGA Gloriose</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-688f40fa-f13a-4883-9be1-50ff722aaf7c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIYONZIMA Constantin">NIYONZIMA Constantin</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5dae3040-eb1f-448b-b58b-d9789f76803a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIYUKURI Salvator">NIYUKURI Salvator</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUTANA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e5312c2c-4f35-447e-aeb0-a7a10f760ea0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NKUNZIMANA Jean Claude">NKUNZIMANA Jean Claude</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUYIGI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-93a7f87c-268c-4410-b567-4819ba8b0920">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NKURUNZIZA Jockie Chantal">NKURUNZIZA Jockie Chantal</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUYIGI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f4cb317f-c0ce-4900-aeee-adeb6ca57273">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NSHAMAJE Hillarie">NSHAMAJE Hillarie</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>BUBANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3490d32e-9de3-4145-95d3-8732f49b4235">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NSHIMIRIMANA Georges">NSHIMIRIMANA Georges</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-81eb597a-5516-416e-a78b-cb06e8029795">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NSHIMIRIMANA Marie Chantal">NSHIMIRIMANA Marie Chantal</td>
-                      
-                        <td>-</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d439608-c06a-4629-96ca-9b182fd06d76">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTAGAHORAHO Jeanne Marie">NTAGAHORAHO Jeanne Marie</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c0a49e88-cd92-41e9-8b02-4e23886a3df6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTAHIMPERA Apollinaire">NTAHIMPERA Apollinaire</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MURAMVYA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5b8ed852-9cc2-4a27-8d2d-f66dc7e77c03">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTAHONDEREYE Adolphe">NTAHONDEREYE Adolphe</td>
-                      
-                        <td>-</td>
-                        <td>MAIRIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea60ceb7-f175-4552-9bc2-1e3658a54e46">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTAKIRUTIMANA Aloys">NTAKIRUTIMANA Aloys</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CIBITOKE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eaca964f-f2c6-44e3-8d6c-41c93821461b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTAKIYIRUTA Obed">NTAKIYIRUTA Obed</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>RUMONGE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f7f97f7a-d245-42b8-b44c-6de78514b8b0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTEZUKOBAGIRA Emmanuel">NTEZUKOBAGIRA Emmanuel</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BURURI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8892106-29ff-4756-9daf-4d8a2a76f4f5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTIBASHARWA Ruth">NTIBASHARWA Ruth</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CIBITOKE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-782a6d24-cbe2-4295-b185-bffd9e2cb129">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTIMPIRANGEZA Grégoire">NTIMPIRANGEZA Grégoire</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0c121ac7-6366-474a-9e60-ee3395397be9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTIRANDEKURA Gaudence">NTIRANDEKURA Gaudence</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MWARO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f7602a80-d626-46fb-8cc4-3924ae53f1c2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTISEZERANA Gabriel">NTISEZERANA Gabriel</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUBANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-171e29d9-3b22-413a-aec4-f0431178496c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYABENDA Pascal">NYABENDA Pascal</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUBANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c7fb5844-c79d-4ab2-b897-feb2ec49b145">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYANDWI Adrien">NYANDWI Adrien</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KAYANZA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f7ae845-617e-45f9-9055-08ffe16e8f91">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYANDWI Claire">NYANDWI Claire</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MAKAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-58c60cf8-16dc-4abe-befe-d9d389044479">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZEYIMANA Nestor">NZEYIMANA Nestor</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e0a29ed-254f-4dd8-964d-6443de9fc9d0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZEYIMANA Séraphine">NZEYIMANA Séraphine</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>RUMONGE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc82d775-92d3-4a7c-a25f-fe14eec5d2a9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZIGAMASABO J Baptiste">NZIGAMASABO J Baptiste</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ceb6aa95-0ea8-4e15-9632-547266a23f91">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZIGAMASABO Révérien">NZIGAMASABO Révérien</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-34d1cde2-9f2d-45a7-ae38-ee5d56db8ee3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZIGAMISONI Consolate">NZIGAMISONI Consolate</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>CIBITOKE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-edd6d213-97d4-43dd-b3a6-72ae84119616">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RURAHINDA Bénigne">RURAHINDA Bénigne</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAIRIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8af9b1b4-8e96-4b7c-afd2-e4f891c1b972">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RWASA Agathon">RWASA Agathon</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>NGOZI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-60cd4841-2ea1-4ab8-be1f-4f65d82c7c8b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SAHINGUVU Yves">SAHINGUVU Yves</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>MURAMVYA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-029aeb84-9327-488a-8591-62a04c9f4d90">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SAMAGORWA James">SAMAGORWA James</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>CIBITOKE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cce06ae6-5d43-465e-ad84-fca6b0f8c004">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SIBOMANA Thacien">SIBOMANA Thacien</td>
-                      
-                        <td>ABIGENGA MIZERO Y’ABARUNDI</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d107c613-35b3-46ca-b164-7af5d862fff5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SINDAYIGAYA Eric">SINDAYIGAYA Eric</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MAIRIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a9a5a1bd-5c04-436e-b646-77848484a857">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SINDAYIHEBURA Sylvestre">SINDAYIHEBURA Sylvestre</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-65384d75-dd29-47b1-b71b-38c8c549e811">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SINZINKAYO Jean Pierre">SINZINKAYO Jean Pierre</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>BUJUMBURA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6d479ec7-639e-45b5-ba58-c33ab6ff2a67">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SUKUNOBA Vincent">SUKUNOBA Vincent</td>
-                      
-                        <td>-</td>
-                        <td>GITEGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d1e70cde-c7cb-4491-8d3a-dda7bff088cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TUYAGA Anicet">TUYAGA Anicet</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MWARO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d9fe7e4-7665-4c09-8732-d52ef00f0b89">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="UWIZEYE Ibrahim">UWIZEYE Ibrahim</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>MUYINGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b2703fb1-2767-4e73-b498-8eff13ebe1e1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="YAMUREMYE Léocadie">YAMUREMYE Léocadie</td>
-                      
-                        <td>CNDD-FDD</td>
-                        <td>KIRUNDO</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4c56a67b-9ccb-4e4f-a7eb-75a5400faa07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AHISHAKIYE Gloriose</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eccf8fba-9422-4de8-90bf-bd658c265ad5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BANYIKWA Adolphe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — BUJUMBURA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2ba9eed7-f938-42e4-abe8-0c7795ddedf3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BARAMPAMA Chantal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUJUMBURA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c5471c98-86a0-4af7-bdc6-2d6d12fe2a2d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BARANYANKA Joselyne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41ee5a47-7195-416f-8522-169505478ccf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BARANYIZIGIYE Jacqueline</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CANKUZO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-22cfd2d8-7ab4-4829-b28b-3c3520e9c318">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BASHINGWA Evole</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAIRIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6d2e14d6-94ad-4c71-8a5e-d21ff13c06d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BAVAKURE Domitien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KARUSI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7953bd8b-b7b4-4c71-a537-5dffefaf94f2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BAZIRAHOMPONYO YE Rémégie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MURAMVYA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-43218df8-945f-48ca-850f-c78706ff10ea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BIKORIMANA Jérôme</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BURURI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e016132b-b7fb-4b38-957f-c20788f42e6c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BIZIMUNGU Simon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — CIBITOKE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd9a1b3a-7784-41fc-a5d0-4fe5bfe64ce8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BIZUMUREMYI Pascal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — RUYIGI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4f4c7bf-cf2d-40ea-9aca-9f5f336b16a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BUKURU Renate</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUYIGI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f0fd32dd-b8b2-4786-adc1-453104cd90a8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BURIKUKIYE Victor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a545b677-c325-4097-a6ce-3fee7604347f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BUSOKOZA Bernard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MAIRIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0b9b9623-000e-4695-861d-3f60a539fc0a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CIMPAYE Spéciose</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MURAMVYA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e75b787-e64a-4f7e-89bf-3cc2105150af">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CIZA Angèle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a298bf35-ad5d-44e0-b441-bd8cb8e7b8eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">COYITUNGIYE Claver</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — KARUSI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e4e2a519-b30b-4106-b828-0caf44764f3b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DUKUNDANE Fleurette</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d5a1a2d-489d-4058-8ac8-e1887fa68e06">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dr. BIGIRINDAVYI Ildéphonse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MURAMVYA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2a716955-56f5-422b-b43f-cefc2ff0ff86">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GAFURERO Léocadie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUBANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-122c6c1b-0f84-4289-bdfa-99f36fd13d74">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GAKOBWA Séraphine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAKAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-69a358c8-a5b7-4d49-a783-d1a2a377d70c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GASUHUKE Jacques</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AMIZERO — CANKUZO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-78565ddb-4bea-4f6e-a246-c2d3310797d4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HABONIMANA Odette</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUMONGE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a7ee3ff-14e2-4400-a6ba-37aa70016554">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAKIZIMANA Léopold</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2e083b50-0cef-4e90-9e5f-a26498232cfe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAKIZIMANA Pascal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-80ee716a-3439-45d6-bc42-81a315e87296">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HATUNGIMANA Godeberthe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — RUTANA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1d56b9f3-b771-45b4-b9ec-2cfe627fdf45">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HATUNGIMANA Venant</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e0bbc63-85a0-4d8e-b457-0d182a6eb977">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAVYARIMANA Juvénal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUBANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7973f34-367e-4aae-8351-d823c869423b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">INABIGENDERA Mireille</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — KARUSI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-51c91b28-2131-4db0-b5e9-dc6dd0db063c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IRAKOZE Caritas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAKAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-43a60ed0-31e4-4109-9124-d2e75cfc3ab8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IRAKOZE Lydia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAIRIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-445c3bda-d92c-47da-816f-9ca2dd723f29">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IRAMBONA Joséphine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KARUSI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1a060f38-e074-4aec-92b3-33b99218fe29">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KABANGO Georges</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KARUSI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-40e7cc98-ed59-4e97-ba33-e61c2e2632e7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KAMERE Ange Denise</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e0070362-465f-4ab3-bab6-54c4baaa9b85">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KARERA Denis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-80233e23-ffa5-4daf-bf15-fa2b2e6fd47d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KARERWA MO- MAMO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-08a4f930-a732-4f7f-a0d4-d3af77f683ff">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MALAYIKA Pamphile</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2468739b-e1a6-42ba-be7c-3cf0dc3b6366">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MANIRAKIZA Anatole</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CIBITOKE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1f9c4878-8d29-4061-8631-0fd4115e0a52">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MANIRAKIZA Pascasie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c17b8a39-1509-4e67-9be0-02727ecd5e8d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MANIRAMBONA Térence</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cb648189-8293-4a69-8bfe-ae6766c68b4a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBONEKO Sauda</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUJUMBURA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5723754f-eed8-47b9-b1bf-8b2bb42d48a1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBONIGABA Noé</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — RUYIGI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-87b4ea17-b4c3-4d60-8478-7dd924d3ff30">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBONIHANKUYE François</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KARUSI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4010172-f70f-4a1c-9257-eb99352dcd6d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBONIMPA Adolphe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6bc92fe2-acb4-4ea9-b2b5-d78594ed1129">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBONIMPA Freddy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAIRIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a03bc93-1824-4490-946e-7f66691043fc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBONINYIBUKA Gilbert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAKAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f12b34af-6c36-4483-b7c7-2f53e7b83b28">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MISAGO Amédée</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-02ede8e7-a29b-4f23-a8a0-0b4d4720e20f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MIZERO Mireille</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f1036a0c-11f5-4d8a-bc74-06346c6478a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MPITABAVUMA François</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34538c23-f9cc-4dca-b298-4952d8f9aced">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MUHIMPUNDU Xavière</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KARUSI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-614e0d82-4da7-4d13-b354-270f64c3b9c2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MUHUNGU Jean Bosco</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUTANA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc45f4e5-f4c0-405c-810f-8c7579ef0072">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MUKESHIMANA Léonidas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUMONGE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fae9f241-e916-4fbb-a196-5e2ea30060b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MUREKERISONI Jeanine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-be0660f7-f801-4d25-8209-37cf6e0a2e9c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MVUYEKURE Lazare</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0f1fbd62-f1f2-4b55-8f22-4675e1702e9c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MWIDOGO Persille</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5a5d101-bf4a-44ec-8bee-3e77346250eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NAHAYO Claude</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13194acd-365c-4d0d-b1e9-b2b0933bb304">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NAHAYO Immaculée</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e119e46f-5211-46c9-a85d-fe25ac81148f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NAHINTIJE Julienne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c7132d13-891c-4726-902c-4dd7a1fc3d7a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDABIRABE Gélase</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d833c69-aad5-49c4-98e2-fb4a36b2963d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDARUVUKANYE Zénon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUJUMBURA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a5d62e6-4fb4-495e-987d-f76c99444abc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDAYIMANISHA Canisius</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ffd6092-2cc2-4d28-943a-ea5ac7d3227a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDAYIRAGIJE Juvénal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUTANA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-03924d4d-c277-466e-99c8-11246db62aab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDAYISENGA Bernard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MAI RIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6399bf4e-52fa-4b1c-bfcd-d65144f21206">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDAYIZAMBA André</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UPRONA — BURURI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a9a9542b-2557-4f1b-9b23-c69ed6382626">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDAYIZEYE Gloriose</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f71a31a-b933-4da0-90ff-b943108d38b5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDIHOKUBWAYO Angèle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BURURI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee207ba3-1e40-4543-8eed-a3b738087d93">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDIKUMANA Pierre Célestin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — BUJUMBURA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-503a0dbb-0738-48c4-9e6a-cd07c848e1bb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDIKUMASABO Terence</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MWARO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4641e869-9acf-4cc9-aab0-b7e3d7f11755">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDITIJE Charles</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — BURURI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4bd095d-3195-4291-ab36-35dda267cc7a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDUWAYO Gilbert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAKAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4b1d5336-fa9e-47b0-aea2-e7c65e42a993">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDUWIMANA Déogratias</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f8fbb64-e45e-43bd-b48b-1c319dc63787">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDUWIMANA Dévote</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-559bccb6-c211-4838-a0c9-f673ce090c17">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDUWIMANA Edouard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-795bf7b1-21d0-4b38-a5c1-545bb028856f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDUWUMWAMI Rénovat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MAKAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d8b0d291-48bf-411b-ad87-590f1f43f621">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGAYIMPENDA Evariste</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — RUTANA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5158cf0-521f-45e1-a41f-6ec53ea9e5ea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGENDABANKA Anglebert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CANKUZO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58c6f4e1-e0a6-4e61-aaef-33749d456d5c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGERAGEZE Egide</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUYIGI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c60876fd-2c37-4616-a28f-f5a270072ec8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIBIGIRA Ezéchiel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUJUMBURA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5b4a0b5d-a38e-4600-9197-357f4070391f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIMENYA Gloriose</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UPRONA — RUMONGE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-35e8c9d8-45e9-495c-9c7f-663f803a5c68">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NININAHAZWE Godelieve</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MWARO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-236c1083-0f34-484a-80f7-454ff86c6528">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIRAGIRA Félix</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-79b02b69-6cfd-433f-8b7a-5f80a9bbbcc1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIYOBUHUNGIRO Justin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CIBITOKE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-96599818-74b9-4f13-9b28-bb279620488a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIYONGABO Justine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CANKUZO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-899bdc7a-d0b8-4b74-95a4-4d28288ae16d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIYONSENGA Gloriose</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-688f40fa-f13a-4883-9be1-50ff722aaf7c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIYONZIMA Constantin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5dae3040-eb1f-448b-b58b-d9789f76803a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIYUKURI Salvator</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUTANA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e5312c2c-4f35-447e-aeb0-a7a10f760ea0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NKUNZIMANA Jean Claude</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUYIGI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-93a7f87c-268c-4410-b567-4819ba8b0920">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NKURUNZIZA Jockie Chantal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUYIGI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f4cb317f-c0ce-4900-aeee-adeb6ca57273">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NSHAMAJE Hillarie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — BUBANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3490d32e-9de3-4145-95d3-8732f49b4235">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NSHIMIRIMANA Georges</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-81eb597a-5516-416e-a78b-cb06e8029795">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NSHIMIRIMANA Marie Chantal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              - — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d439608-c06a-4629-96ca-9b182fd06d76">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTAGAHORAHO Jeanne Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c0a49e88-cd92-41e9-8b02-4e23886a3df6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTAHIMPERA Apollinaire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MURAMVYA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5b8ed852-9cc2-4a27-8d2d-f66dc7e77c03">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTAHONDEREYE Adolphe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              - — MAIRIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea60ceb7-f175-4552-9bc2-1e3658a54e46">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTAKIRUTIMANA Aloys</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CIBITOKE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eaca964f-f2c6-44e3-8d6c-41c93821461b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTAKIYIRUTA Obed</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — RUMONGE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f7f97f7a-d245-42b8-b44c-6de78514b8b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTEZUKOBAGIRA Emmanuel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BURURI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8892106-29ff-4756-9daf-4d8a2a76f4f5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTIBASHARWA Ruth</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CIBITOKE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-782a6d24-cbe2-4295-b185-bffd9e2cb129">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTIMPIRANGEZA Grégoire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0c121ac7-6366-474a-9e60-ee3395397be9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTIRANDEKURA Gaudence</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MWARO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f7602a80-d626-46fb-8cc4-3924ae53f1c2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTISEZERANA Gabriel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUBANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-171e29d9-3b22-413a-aec4-f0431178496c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NYABENDA Pascal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUBANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c7fb5844-c79d-4ab2-b897-feb2ec49b145">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NYANDWI Adrien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KAYANZA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f7ae845-617e-45f9-9055-08ffe16e8f91">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NYANDWI Claire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MAKAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58c60cf8-16dc-4abe-befe-d9d389044479">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZEYIMANA Nestor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e0a29ed-254f-4dd8-964d-6443de9fc9d0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZEYIMANA Séraphine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — RUMONGE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc82d775-92d3-4a7c-a25f-fe14eec5d2a9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZIGAMASABO J Baptiste</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ceb6aa95-0ea8-4e15-9632-547266a23f91">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZIGAMASABO Révérien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34d1cde2-9f2d-45a7-ae38-ee5d56db8ee3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZIGAMISONI Consolate</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — CIBITOKE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-edd6d213-97d4-43dd-b3a6-72ae84119616">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">RURAHINDA Bénigne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAIRIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8af9b1b4-8e96-4b7c-afd2-e4f891c1b972">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">RWASA Agathon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — NGOZI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-60cd4841-2ea1-4ab8-be1f-4f65d82c7c8b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SAHINGUVU Yves</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — MURAMVYA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-029aeb84-9327-488a-8591-62a04c9f4d90">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SAMAGORWA James</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — CIBITOKE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cce06ae6-5d43-465e-ad84-fca6b0f8c004">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SIBOMANA Thacien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABIGENGA MIZERO Y’ABARUNDI — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d107c613-35b3-46ca-b164-7af5d862fff5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SINDAYIGAYA Eric</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MAIRIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a9a5a1bd-5c04-436e-b646-77848484a857">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SINDAYIHEBURA Sylvestre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-65384d75-dd29-47b1-b71b-38c8c549e811">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SINZINKAYO Jean Pierre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — BUJUMBURA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6d479ec7-639e-45b5-ba58-c33ab6ff2a67">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SUKUNOBA Vincent</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              - — GITEGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d1e70cde-c7cb-4491-8d3a-dda7bff088cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TUYAGA Anicet</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MWARO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d9fe7e4-7665-4c09-8732-d52ef00f0b89">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">UWIZEYE Ibrahim</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — MUYINGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b2703fb1-2767-4e73-b498-8eff13ebe1e1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">YAMUREMYE Léocadie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CNDD-FDD — KIRUNDO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

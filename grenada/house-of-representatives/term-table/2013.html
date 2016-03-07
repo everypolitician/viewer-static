@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2013" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-NNP"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -101,227 +104,448 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/681a50e/data/Grenada/House_of_Representatives/term-2013.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/681a50e/data/Grenada/House_of_Representatives/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/681a50e/data/Grenada/House_of_Representatives/term-2013.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/681a50e/data/Grenada/House_of_Representatives/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-b5455097-fb8f-43c2-9d65-19cfcaf816fb">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5455097-fb8f-43c2-9d65-19cfcaf816fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alexandera Otway-Noel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. George South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alexandera Otway-Noel">Alexandera Otway-Noel</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. George South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-26554846-d524-4b28-b792-67d76c4b6dac">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-26554846-d524-4b28-b792-67d76c4b6dac">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alvin Dabreo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. John
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alvin Dabreo">Alvin Dabreo</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. John</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5f0f7828-86b2-45bf-8702-7693a5bf1add">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5f0f7828-86b2-45bf-8702-7693a5bf1add">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Anthony Boatswain</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. Patrick West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Anthony Boatswain">Anthony Boatswain</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. Patrick West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c0aa1982-d245-492b-81cf-c726e04eec66">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c0aa1982-d245-492b-81cf-c726e04eec66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Clarice Modeste-Curwen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. Mark
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Clarice Modeste-Curwen">Clarice Modeste-Curwen</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. Mark</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f41ff57a-cac7-4a74-9e8b-f8e996aaf17b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f41ff57a-cac7-4a74-9e8b-f8e996aaf17b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Clifton Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. Patrick East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Clifton Paul">Clifton Paul</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. Patrick East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1abe5f5d-bf7f-484c-9f13-57e4fe199836">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1abe5f5d-bf7f-484c-9f13-57e4fe199836">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Delma Thomas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. Andrew North West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Delma Thomas">Delma Thomas</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. Andrew North West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8382e395-4ded-4fe1-beec-47ebe03a04d9">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8382e395-4ded-4fe1-beec-47ebe03a04d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Elvin Nimrod</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — Carriacou & Petite Martinique
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Elvin Nimrod">Elvin Nimrod</td>
-                      
-                        <td>New National Party</td>
-                        <td>Carriacou & Petite Martinique</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-dbb8bdf4-44f1-482d-8d5c-7f337a2ef007">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dbb8bdf4-44f1-482d-8d5c-7f337a2ef007">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Emmalin Pierre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. Andrew South East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Emmalin Pierre">Emmalin Pierre</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. Andrew South East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1157cb6e-07d5-4b2e-9781-62ac9092923f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1157cb6e-07d5-4b2e-9781-62ac9092923f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gregory Bowen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. George South East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Gregory Bowen">Gregory Bowen</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. George South East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-52b8e1e9-1f0b-4f12-b54d-74dbd8276bb2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-52b8e1e9-1f0b-4f12-b54d-74dbd8276bb2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Keith Mitchell</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. George North West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Keith Mitchell">Keith Mitchell</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. George North West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5f9cf687-ccc1-4239-9f29-53366cfc97bf">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5f9cf687-ccc1-4239-9f29-53366cfc97bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Niickolas Steele</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — Town of St. George
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Niickolas Steele">Niickolas Steele</td>
-                      
-                        <td>New National Party</td>
-                        <td>Town of St. George</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b67d3c7c-d1a2-4361-bec4-2569abf3b443">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b67d3c7c-d1a2-4361-bec4-2569abf3b443">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Oliver Joseph</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. David
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Oliver Joseph">Oliver Joseph</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. David</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a718a9c1-7ab1-4878-9854-dde543a3ee26">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a718a9c1-7ab1-4878-9854-dde543a3ee26">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Roland Bhola</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. Andrew North East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Roland Bhola">Roland Bhola</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. Andrew North East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-072d419e-3c44-4fe9-8344-f5ae623cf752">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-072d419e-3c44-4fe9-8344-f5ae623cf752">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tobias Clement</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. George North East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tobias Clement">Tobias Clement</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. George North East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6ae2797c-a980-4866-bf73-79fa09757365">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ae2797c-a980-4866-bf73-79fa09757365">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Yolande Bain - Horseford</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New National Party — St. Andrew South West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Yolande Bain - Horseford">Yolande Bain - Horseford</td>
-                      
-                        <td>New National Party</td>
-                        <td>St. Andrew South West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

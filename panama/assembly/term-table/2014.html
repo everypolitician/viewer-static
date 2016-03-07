@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2014–" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-partido_revolucionario_democrático"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -131,899 +134,2236 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/4b2e187/data/Panama/Assembly/term-2014.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/4b2e187/data/Panama/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/4b2e187/data/Panama/Assembly/term-2014.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/4b2e187/data/Panama/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-369a017c-e9e5-4364-95b0-66c7ea57f8d1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ABSALON HERRERA GARCIA">H.D. ABSALON HERRERA GARCIA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>10-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5ab4e5d8-bc3c-432a-b9bd-d5b6c43a7719">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ADOLFO T. VALDERRAMA RODRIGUEZ">H.D. ADOLFO T. VALDERRAMA RODRIGUEZ</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>8-7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f3c11b3e-ef7d-42ef-a36c-deeed99a34f0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. AIBAN JESUS VELARDE">H.D. AIBAN JESUS VELARDE</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>10-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f7093c11-f6a3-46c2-a9ff-c84903327a9b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ALFREDO VICTOR PEREZ DIA">H.D. ALFREDO VICTOR PEREZ DIA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b23a569b-3920-4a7d-8621-238c511b8c46">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ANA MATILDE GOMEZ RUILOBA">H.D. ANA MATILDE GOMEZ RUILOBA</td>
-                      
-                        <td>Independiente</td>
-                        <td>8-7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fe32555a-72dd-4f86-8283-26ed7e75584b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ARISTIDES DE ICAZA HIDALGO">H.D. ARISTIDES DE ICAZA HIDALGO</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7dd66d9c-b1a3-4cc9-b975-b6a67bffc903">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ATHENAS ATHANASIADIS ROJAS">H.D. ATHENAS ATHANASIADIS ROJAS</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>4-5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-931aa29d-293e-45c1-b438-5e2ca3e910af">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. AUSENCIO EUSEBIO PALACIO PINEDA">H.D. AUSENCIO EUSEBIO PALACIO PINEDA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>12-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1854e487-6519-4d6d-8b00-2bbed01707ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. BENICIO E. ROBINSON G">H.D. BENICIO E. ROBINSON G</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>1-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-06627fcf-559a-4cc1-bbeb-8a4129608009">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. CARLOS AGUSTIN AFU DECEREGA">H.D. CARLOS AGUSTIN AFU DECEREGA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>7-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cac1e466-d275-4a6f-824d-994ef017dd11">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. CARLOS ALBERTO MOTTA NUQUES">H.D. CARLOS ALBERTO MOTTA NUQUES</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>4-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-96ab17ed-43c0-42e8-a0cf-7ca08eb6a85a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. CARLOS ELICEO SANTANA AIZPRUA">H.D. CARLOS ELICEO SANTANA AIZPRUA</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>9-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-09e0618f-4b95-40e0-ac5e-5595284c376a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. CRESCENCIA PRADO GARCIA">H.D. CRESCENCIA PRADO GARCIA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>12-3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3043df83-6a5b-4721-b8ac-40806e0787c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. CRISPIANO ADAMES NAVARRO">H.D. CRISPIANO ADAMES NAVARRO</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c20075de-71b5-45fe-9115-a0578ef4a837">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. DALIA M. BERNAL Y">H.D. DALIA M. BERNAL Y</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea11345d-1ac9-4510-9a58-41c53050fe70">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. DANA D. CASTAÑEDA G.">H.D. DANA D. CASTAÑEDA G.</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>2-3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e80146d7-0473-4a40-a0a6-811cce202d69">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. DIOGENES VERGARA">H.D. DIOGENES VERGARA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bb14920d-a17d-4bbe-9796-1539568995d4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. EDWIN ALBERTO ZUÑIGA">H.D. EDWIN ALBERTO ZUÑIGA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3f7a66a7-bf78-4fe6-b9e6-899b594bfbd2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ELIAS ARIEL CASTILLO GONZALEZ">H.D. ELIAS ARIEL CASTILLO GONZALEZ</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2e0e9d38-2026-42fa-a7d5-5b407c670ed1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. FELIPE VARGAS VARGAS">H.D. FELIPE VARGAS VARGAS</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>5-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4d5aad62-f4f9-447e-994d-64998a62d6a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. FERNANDO GUILLERMO CARRILLO SILVESTRI">H.D. FERNANDO GUILLERMO CARRILLO SILVESTRI</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a424481b-db59-424b-b452-ba06ab6f0c1f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. FLORENTINO ABREGO LEZCANO">H.D. FLORENTINO ABREGO LEZCANO</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>4-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2c3b7fad-63d1-4278-82fb-1cfee1a46149">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. FRANCISCO JOSE ALEMAN MENDOZA">H.D. FRANCISCO JOSE ALEMAN MENDOZA</td>
-                      
-                        <td>Partido Molirena</td>
-                        <td>8-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-80910669-5ee5-4b34-8b94-8e776e3eaf4b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. GABRIEL SOTO MARTINEZ">H.D. GABRIEL SOTO MARTINEZ</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>8-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6114e1f0-953b-4070-89f3-aa3b765f77be">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. HECTOR EDUARDO APARICIO DIAZ">H.D. HECTOR EDUARDO APARICIO DIAZ</td>
-                      
-                        <td>Partido Molirena</td>
-                        <td>9-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-da27ea79-bb6d-4f5d-98bd-cbdb1220a8d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. HECTOR VALDES CARRASQUILLA">H.D. HECTOR VALDES CARRASQUILLA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4726f81b-5fa3-413b-804d-ca4aa1d3683f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. IRACEMA AYARZA DE">H.D. IRACEMA AYARZA DE</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>3-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-92cbd6c6-7899-4678-84ad-208c91c1380e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. IVAN PICOTA BENITEZ">H.D. IVAN PICOTA BENITEZ</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-02e39786-b075-4736-a24e-47d4a6fc0b13">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JAIME PEDROL GUERRA">H.D. JAIME PEDROL GUERRA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>12-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6218249f-cb9d-43f9-aef1-66e998617aba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JAVIER O. ORTEGA S">H.D. JAVIER O. ORTEGA S</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4dbbbd47-9739-4291-850a-b8f2ea2808d6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JORGE ALBERTO ROSAS">H.D. JORGE ALBERTO ROSAS</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>4-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fd5f21dc-2449-4642-af7c-a857a6775ae4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JORGE IVAN ARROCHA ROSARIO">H.D. JORGE IVAN ARROCHA ROSARIO</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>2-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ba6e5f58-c098-4099-b849-07a960589a5d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JOSE ANTONIO DOMINGUEZ ALVAREZ">H.D. JOSE ANTONIO DOMINGUEZ ALVAREZ</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>8-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-abe1b66c-a783-4549-bf50-e37cd7b89d59">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JOSE LUIS VARELA RODRIGUEZ">H.D. JOSE LUIS VARELA RODRIGUEZ</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>6-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0738e0f7-a3da-438d-9c42-24abbd1af8c1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JOSE MUÑOZ MOLINA">H.D. JOSE MUÑOZ MOLINA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-37a42792-4e08-4c8e-aca9-b507a398e5bd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JUAN B. MOYA M">H.D. JUAN B. MOYA M</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>8-8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-34d2c04e-9178-4490-9c88-ba4c52a4214b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JUAN CARLOS ARANGO REESE">H.D. JUAN CARLOS ARANGO REESE</td>
-                      
-                        <td>Partido Popular</td>
-                        <td>8-3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-74570774-8a67-471b-8c69-582e6b080043">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JUAN MANUEL POVEDA GUEVARA">H.D. JUAN MANUEL POVEDA GUEVARA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>9-4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c3da4c8-3e54-4d73-9823-81264e04ab19">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. JUAN MIGUEL RIOS GONZALEZ">H.D. JUAN MIGUEL RIOS GONZALEZ</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>6-3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c2f6fbf2-aa1a-4b83-bfa5-8a76b650859d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. KATLEEN LEVY G">H.D. KATLEEN LEVY G</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>8-10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e7df97a0-d60f-431a-8fec-c305ebc9cf40">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. LEANDRO AVILA">H.D. LEANDRO AVILA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7037fe81-3c4b-4175-9c20-b85b4709ffbf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. LUIS ALEXANDER BARRIA MOSCOSO">H.D. LUIS ALEXANDER BARRIA MOSCOSO</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>8-9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bab33cb2-e0b7-402c-82cf-f1de3099f27d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. LUIS EDUARDO QUIROS">H.D. LUIS EDUARDO QUIROS</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>8-8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9ce6502c-cd0e-4e8f-9dfa-2956ffe4aa41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MANUEL COHEN SALERNO">H.D. MANUEL COHEN SALERNO</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>6-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6b206955-c484-4b4f-9f44-801d72d6566a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MARIA DEL CARMEN DELGADO BLANDON">H.D. MARIA DEL CARMEN DELGADO BLANDON</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>3-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c3093c34-2e9d-4a75-9cd6-98a8d9bf4e21">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MARIELA DEL C. VEGA DE DONOSO">H.D. MARIELA DEL C. VEGA DE DONOSO</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>7-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b8d43739-465b-4e3b-a5a4-ec1ba2c0858d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MARIO AUGUSTO LAZARUS NAVALO">H.D. MARIO AUGUSTO LAZARUS NAVALO</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>3-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e563cbe0-011c-4b79-8d3d-e08e4e9553cd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MARIO B. MILLER L">H.D. MARIO B. MILLER L</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>1-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-25e1b4d1-caff-4ae1-89be-6d5e56d86a2c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MARYLIN E. VALLARINO DE SELLHORN">H.D. MARYLIN E. VALLARINO DE SELLHORN</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c773baa6-0ce0-4a46-90eb-6873049b09ff">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MIGUEL FANOVICH">H.D. MIGUEL FANOVICH</td>
-                      
-                        <td>Partido Molirena</td>
-                        <td>4-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3bfa5dd5-ee01-4b8e-b7a2-745e865538a7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. MIGUEL LORENZO SALAS OGLESBY">H.D. MIGUEL LORENZO SALAS OGLESBY</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>3-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ef6cea0-a9cc-4161-82c0-035a8731de85">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. NELSON JACKSON PALMA">H.D. NELSON JACKSON PALMA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>3-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3ac52bb0-3d83-42f2-be15-63662b7a1103">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. NESTOR A. GUARDIA JAEN">H.D. NESTOR A. GUARDIA JAEN</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>2-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a3eeac9-3fdb-433f-ad52-e7badd661e93">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. NORIEL SALERNO ESTEVEZ">H.D. NORIEL SALERNO ESTEVEZ</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>2-4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-958edd3a-c3d1-4736-8397-55e0a946e9b9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. PEDRO MIGUEL GONZALEZ PINZON">H.D. PEDRO MIGUEL GONZALEZ PINZON</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>9-3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1f6a9383-4e44-408a-b806-b99e5a3e8ba4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. QUIBIAN TERIBE PANAY GONZALEZ">H.D. QUIBIAN TERIBE PANAY GONZALEZ</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d833d06e-25cb-4ff4-85f4-d342df52c77d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. RAUL A. HERNANDEZ L">H.D. RAUL A. HERNANDEZ L</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>2-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a6316cd-a9d0-4a7c-8905-3916da8c6de5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. RAUL GILBERTO PINEDA VERGARA">H.D. RAUL GILBERTO PINEDA VERGARA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ed9db70e-8dd7-4a86-9f48-f835ae9d406e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ROBERTO ANTONIO AYALA">H.D. ROBERTO ANTONIO AYALA</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eb000d2a-d20b-4b48-af87-516d31628310">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. RONY RONALD ARAUZ GONZALEZ">H.D. RONY RONALD ARAUZ GONZALEZ</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>4-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-44d359bb-2a45-43a1-b010-446e7b2c4955">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ROSA CANTO">H.D. ROSA CANTO</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-af706d23-67b7-4e77-bafc-f12a8ff38b2d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. RUBEN DARIO FRIAS ORTEGA">H.D. RUBEN DARIO FRIAS ORTEGA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e896aaf7-421e-4e7e-93f5-5cabd6d41b8f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. RUBEN DE LEON SANCHEZ">H.D. RUBEN DE LEON SANCHEZ</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>9-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7e6e506b-6659-4b6e-85f7-5ec49896c5b2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. SALVADOR REAL CHEN">H.D. SALVADOR REAL CHEN</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>5-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eefdae25-b947-42ba-817a-7fba61cf43eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. SAMIR GOZAINE ABDELMALAK">H.D. SAMIR GOZAINE ABDELMALAK</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>4-1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f4bbb602-55c3-4633-9b7c-2fda68db4f7e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. SERGIO RAFAEL GALVEZ EVERS">H.D. SERGIO RAFAEL GALVEZ EVERS</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3c17c264-eb7d-40db-8b80-f2dff28c3f87">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. VIDAL GARCIA">H.D. VIDAL GARCIA</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7bea76f8-0df9-4f0f-b583-55ac265e3466">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. YANIBEL ABREGO SMITH">H.D. YANIBEL ABREGO SMITH</td>
-                      
-                        <td>Partido Cambio Democrático</td>
-                        <td>8-2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7ba6966e-75ec-48b9-8a82-dd896abb61a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="H.D. ZULAY LEYSET RODRIGUEZ LU">H.D. ZULAY LEYSET RODRIGUEZ LU</td>
-                      
-                        <td>Partido Revolucionario Democrático</td>
-                        <td>8-6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1561aeab-2eaa-416b-a03f-b29f53c938ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HD JOSÉ LUIS CASTILLO GÓMEZ">HD JOSÉ LUIS CASTILLO GÓMEZ</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>4-3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fb8f2a9d-1d4f-49bc-9283-8bdd7598630f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HD JUAN BAUTISTA SERRANO JIMENEZ">HD JUAN BAUTISTA SERRANO JIMENEZ</td>
-                      
-                        <td>Partido Panameñista</td>
-                        <td>4-4</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-369a017c-e9e5-4364-95b0-66c7ea57f8d1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/369a017c-e9e5-4364-95b0-66c7ea57f8d1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/369a017c-e9e5-4364-95b0-66c7ea57f8d1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ABSALON HERRERA GARCIA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 10-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5ab4e5d8-bc3c-432a-b9bd-d5b6c43a7719">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/5ab4e5d8-bc3c-432a-b9bd-d5b6c43a7719/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/5ab4e5d8-bc3c-432a-b9bd-d5b6c43a7719/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ADOLFO T. VALDERRAMA RODRIGUEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 8-7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f3c11b3e-ef7d-42ef-a36c-deeed99a34f0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/f3c11b3e-ef7d-42ef-a36c-deeed99a34f0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/f3c11b3e-ef7d-42ef-a36c-deeed99a34f0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. AIBAN JESUS VELARDE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 10-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f7093c11-f6a3-46c2-a9ff-c84903327a9b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/f7093c11-f6a3-46c2-a9ff-c84903327a9b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/f7093c11-f6a3-46c2-a9ff-c84903327a9b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ALFREDO VICTOR PEREZ DIA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b23a569b-3920-4a7d-8621-238c511b8c46">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/b23a569b-3920-4a7d-8621-238c511b8c46/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/b23a569b-3920-4a7d-8621-238c511b8c46/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ANA MATILDE GOMEZ RUILOBA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independiente — 8-7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fe32555a-72dd-4f86-8283-26ed7e75584b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/fe32555a-72dd-4f86-8283-26ed7e75584b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/fe32555a-72dd-4f86-8283-26ed7e75584b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ARISTIDES DE ICAZA HIDALGO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7dd66d9c-b1a3-4cc9-b975-b6a67bffc903">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7dd66d9c-b1a3-4cc9-b975-b6a67bffc903/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7dd66d9c-b1a3-4cc9-b975-b6a67bffc903/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ATHENAS ATHANASIADIS ROJAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 4-5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-931aa29d-293e-45c1-b438-5e2ca3e910af">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/931aa29d-293e-45c1-b438-5e2ca3e910af/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/931aa29d-293e-45c1-b438-5e2ca3e910af/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. AUSENCIO EUSEBIO PALACIO PINEDA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 12-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1854e487-6519-4d6d-8b00-2bbed01707ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/1854e487-6519-4d6d-8b00-2bbed01707ee/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/1854e487-6519-4d6d-8b00-2bbed01707ee/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. BENICIO E. ROBINSON G</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 1-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-06627fcf-559a-4cc1-bbeb-8a4129608009">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/06627fcf-559a-4cc1-bbeb-8a4129608009/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/06627fcf-559a-4cc1-bbeb-8a4129608009/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. CARLOS AGUSTIN AFU DECEREGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 7-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cac1e466-d275-4a6f-824d-994ef017dd11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/cac1e466-d275-4a6f-824d-994ef017dd11/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/cac1e466-d275-4a6f-824d-994ef017dd11/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. CARLOS ALBERTO MOTTA NUQUES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 4-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-96ab17ed-43c0-42e8-a0cf-7ca08eb6a85a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/96ab17ed-43c0-42e8-a0cf-7ca08eb6a85a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/96ab17ed-43c0-42e8-a0cf-7ca08eb6a85a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. CARLOS ELICEO SANTANA AIZPRUA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 9-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-09e0618f-4b95-40e0-ac5e-5595284c376a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/09e0618f-4b95-40e0-ac5e-5595284c376a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/09e0618f-4b95-40e0-ac5e-5595284c376a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. CRESCENCIA PRADO GARCIA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 12-3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3043df83-6a5b-4721-b8ac-40806e0787c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3043df83-6a5b-4721-b8ac-40806e0787c9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3043df83-6a5b-4721-b8ac-40806e0787c9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. CRISPIANO ADAMES NAVARRO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c20075de-71b5-45fe-9115-a0578ef4a837">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c20075de-71b5-45fe-9115-a0578ef4a837/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c20075de-71b5-45fe-9115-a0578ef4a837/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. DALIA M. BERNAL Y</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea11345d-1ac9-4510-9a58-41c53050fe70">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/ea11345d-1ac9-4510-9a58-41c53050fe70/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/ea11345d-1ac9-4510-9a58-41c53050fe70/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. DANA D. CASTAÑEDA G.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 2-3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e80146d7-0473-4a40-a0a6-811cce202d69">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e80146d7-0473-4a40-a0a6-811cce202d69/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e80146d7-0473-4a40-a0a6-811cce202d69/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. DIOGENES VERGARA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bb14920d-a17d-4bbe-9796-1539568995d4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/bb14920d-a17d-4bbe-9796-1539568995d4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/bb14920d-a17d-4bbe-9796-1539568995d4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. EDWIN ALBERTO ZUÑIGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3f7a66a7-bf78-4fe6-b9e6-899b594bfbd2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3f7a66a7-bf78-4fe6-b9e6-899b594bfbd2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3f7a66a7-bf78-4fe6-b9e6-899b594bfbd2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ELIAS ARIEL CASTILLO GONZALEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2e0e9d38-2026-42fa-a7d5-5b407c670ed1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/2e0e9d38-2026-42fa-a7d5-5b407c670ed1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/2e0e9d38-2026-42fa-a7d5-5b407c670ed1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. FELIPE VARGAS VARGAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 5-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4d5aad62-f4f9-447e-994d-64998a62d6a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/4d5aad62-f4f9-447e-994d-64998a62d6a5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/4d5aad62-f4f9-447e-994d-64998a62d6a5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. FERNANDO GUILLERMO CARRILLO SILVESTRI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a424481b-db59-424b-b452-ba06ab6f0c1f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/a424481b-db59-424b-b452-ba06ab6f0c1f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/a424481b-db59-424b-b452-ba06ab6f0c1f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. FLORENTINO ABREGO LEZCANO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 4-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2c3b7fad-63d1-4278-82fb-1cfee1a46149">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/2c3b7fad-63d1-4278-82fb-1cfee1a46149/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/2c3b7fad-63d1-4278-82fb-1cfee1a46149/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. FRANCISCO JOSE ALEMAN MENDOZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Molirena — 8-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-80910669-5ee5-4b34-8b94-8e776e3eaf4b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/80910669-5ee5-4b34-8b94-8e776e3eaf4b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/80910669-5ee5-4b34-8b94-8e776e3eaf4b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. GABRIEL SOTO MARTINEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 8-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6114e1f0-953b-4070-89f3-aa3b765f77be">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/6114e1f0-953b-4070-89f3-aa3b765f77be/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/6114e1f0-953b-4070-89f3-aa3b765f77be/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. HECTOR EDUARDO APARICIO DIAZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Molirena — 9-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-da27ea79-bb6d-4f5d-98bd-cbdb1220a8d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/da27ea79-bb6d-4f5d-98bd-cbdb1220a8d3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/da27ea79-bb6d-4f5d-98bd-cbdb1220a8d3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. HECTOR VALDES CARRASQUILLA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4726f81b-5fa3-413b-804d-ca4aa1d3683f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/4726f81b-5fa3-413b-804d-ca4aa1d3683f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/4726f81b-5fa3-413b-804d-ca4aa1d3683f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. IRACEMA AYARZA DE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 3-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-92cbd6c6-7899-4678-84ad-208c91c1380e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/92cbd6c6-7899-4678-84ad-208c91c1380e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/92cbd6c6-7899-4678-84ad-208c91c1380e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. IVAN PICOTA BENITEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-02e39786-b075-4736-a24e-47d4a6fc0b13">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/02e39786-b075-4736-a24e-47d4a6fc0b13/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/02e39786-b075-4736-a24e-47d4a6fc0b13/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JAIME PEDROL GUERRA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 12-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6218249f-cb9d-43f9-aef1-66e998617aba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/6218249f-cb9d-43f9-aef1-66e998617aba/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/6218249f-cb9d-43f9-aef1-66e998617aba/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JAVIER O. ORTEGA S</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4dbbbd47-9739-4291-850a-b8f2ea2808d6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/4dbbbd47-9739-4291-850a-b8f2ea2808d6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/4dbbbd47-9739-4291-850a-b8f2ea2808d6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JORGE ALBERTO ROSAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 4-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd5f21dc-2449-4642-af7c-a857a6775ae4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/fd5f21dc-2449-4642-af7c-a857a6775ae4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/fd5f21dc-2449-4642-af7c-a857a6775ae4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JORGE IVAN ARROCHA ROSARIO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 2-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ba6e5f58-c098-4099-b849-07a960589a5d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/ba6e5f58-c098-4099-b849-07a960589a5d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/ba6e5f58-c098-4099-b849-07a960589a5d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JOSE ANTONIO DOMINGUEZ ALVAREZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 8-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-abe1b66c-a783-4549-bf50-e37cd7b89d59">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/abe1b66c-a783-4549-bf50-e37cd7b89d59/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/abe1b66c-a783-4549-bf50-e37cd7b89d59/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JOSE LUIS VARELA RODRIGUEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 6-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0738e0f7-a3da-438d-9c42-24abbd1af8c1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/0738e0f7-a3da-438d-9c42-24abbd1af8c1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/0738e0f7-a3da-438d-9c42-24abbd1af8c1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JOSE MUÑOZ MOLINA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-37a42792-4e08-4c8e-aca9-b507a398e5bd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/37a42792-4e08-4c8e-aca9-b507a398e5bd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/37a42792-4e08-4c8e-aca9-b507a398e5bd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JUAN B. MOYA M</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 8-8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34d2c04e-9178-4490-9c88-ba4c52a4214b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/34d2c04e-9178-4490-9c88-ba4c52a4214b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/34d2c04e-9178-4490-9c88-ba4c52a4214b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JUAN CARLOS ARANGO REESE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Popular — 8-3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-74570774-8a67-471b-8c69-582e6b080043">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/74570774-8a67-471b-8c69-582e6b080043/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/74570774-8a67-471b-8c69-582e6b080043/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JUAN MANUEL POVEDA GUEVARA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 9-4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c3da4c8-3e54-4d73-9823-81264e04ab19">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/8c3da4c8-3e54-4d73-9823-81264e04ab19/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/8c3da4c8-3e54-4d73-9823-81264e04ab19/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. JUAN MIGUEL RIOS GONZALEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 6-3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c2f6fbf2-aa1a-4b83-bfa5-8a76b650859d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c2f6fbf2-aa1a-4b83-bfa5-8a76b650859d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c2f6fbf2-aa1a-4b83-bfa5-8a76b650859d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. KATLEEN LEVY G</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 8-10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e7df97a0-d60f-431a-8fec-c305ebc9cf40">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e7df97a0-d60f-431a-8fec-c305ebc9cf40/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e7df97a0-d60f-431a-8fec-c305ebc9cf40/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. LEANDRO AVILA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7037fe81-3c4b-4175-9c20-b85b4709ffbf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7037fe81-3c4b-4175-9c20-b85b4709ffbf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7037fe81-3c4b-4175-9c20-b85b4709ffbf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. LUIS ALEXANDER BARRIA MOSCOSO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 8-9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bab33cb2-e0b7-402c-82cf-f1de3099f27d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/bab33cb2-e0b7-402c-82cf-f1de3099f27d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/bab33cb2-e0b7-402c-82cf-f1de3099f27d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. LUIS EDUARDO QUIROS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 8-8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9ce6502c-cd0e-4e8f-9dfa-2956ffe4aa41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/9ce6502c-cd0e-4e8f-9dfa-2956ffe4aa41/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/9ce6502c-cd0e-4e8f-9dfa-2956ffe4aa41/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MANUEL COHEN SALERNO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 6-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6b206955-c484-4b4f-9f44-801d72d6566a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/6b206955-c484-4b4f-9f44-801d72d6566a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/6b206955-c484-4b4f-9f44-801d72d6566a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MARIA DEL CARMEN DELGADO BLANDON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 3-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c3093c34-2e9d-4a75-9cd6-98a8d9bf4e21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c3093c34-2e9d-4a75-9cd6-98a8d9bf4e21/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c3093c34-2e9d-4a75-9cd6-98a8d9bf4e21/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MARIELA DEL C. VEGA DE DONOSO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 7-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b8d43739-465b-4e3b-a5a4-ec1ba2c0858d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/b8d43739-465b-4e3b-a5a4-ec1ba2c0858d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/b8d43739-465b-4e3b-a5a4-ec1ba2c0858d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MARIO AUGUSTO LAZARUS NAVALO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 3-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e563cbe0-011c-4b79-8d3d-e08e4e9553cd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e563cbe0-011c-4b79-8d3d-e08e4e9553cd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e563cbe0-011c-4b79-8d3d-e08e4e9553cd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MARIO B. MILLER L</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 1-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-25e1b4d1-caff-4ae1-89be-6d5e56d86a2c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/25e1b4d1-caff-4ae1-89be-6d5e56d86a2c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/25e1b4d1-caff-4ae1-89be-6d5e56d86a2c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MARYLIN E. VALLARINO DE SELLHORN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c773baa6-0ce0-4a46-90eb-6873049b09ff">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c773baa6-0ce0-4a46-90eb-6873049b09ff/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/c773baa6-0ce0-4a46-90eb-6873049b09ff/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MIGUEL FANOVICH</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Molirena — 4-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3bfa5dd5-ee01-4b8e-b7a2-745e865538a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3bfa5dd5-ee01-4b8e-b7a2-745e865538a7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3bfa5dd5-ee01-4b8e-b7a2-745e865538a7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. MIGUEL LORENZO SALAS OGLESBY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 3-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ef6cea0-a9cc-4161-82c0-035a8731de85">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/8ef6cea0-a9cc-4161-82c0-035a8731de85/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/8ef6cea0-a9cc-4161-82c0-035a8731de85/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. NELSON JACKSON PALMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 3-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3ac52bb0-3d83-42f2-be15-63662b7a1103">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3ac52bb0-3d83-42f2-be15-63662b7a1103/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3ac52bb0-3d83-42f2-be15-63662b7a1103/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. NESTOR A. GUARDIA JAEN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 2-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a3eeac9-3fdb-433f-ad52-e7badd661e93">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/5a3eeac9-3fdb-433f-ad52-e7badd661e93/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/5a3eeac9-3fdb-433f-ad52-e7badd661e93/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. NORIEL SALERNO ESTEVEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 2-4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-958edd3a-c3d1-4736-8397-55e0a946e9b9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/958edd3a-c3d1-4736-8397-55e0a946e9b9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/958edd3a-c3d1-4736-8397-55e0a946e9b9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. PEDRO MIGUEL GONZALEZ PINZON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 9-3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1f6a9383-4e44-408a-b806-b99e5a3e8ba4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/1f6a9383-4e44-408a-b806-b99e5a3e8ba4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/1f6a9383-4e44-408a-b806-b99e5a3e8ba4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. QUIBIAN TERIBE PANAY GONZALEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d833d06e-25cb-4ff4-85f4-d342df52c77d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/d833d06e-25cb-4ff4-85f4-d342df52c77d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/d833d06e-25cb-4ff4-85f4-d342df52c77d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. RAUL A. HERNANDEZ L</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 2-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a6316cd-a9d0-4a7c-8905-3916da8c6de5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/8a6316cd-a9d0-4a7c-8905-3916da8c6de5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/8a6316cd-a9d0-4a7c-8905-3916da8c6de5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. RAUL GILBERTO PINEDA VERGARA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ed9db70e-8dd7-4a86-9f48-f835ae9d406e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/ed9db70e-8dd7-4a86-9f48-f835ae9d406e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/ed9db70e-8dd7-4a86-9f48-f835ae9d406e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ROBERTO ANTONIO AYALA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb000d2a-d20b-4b48-af87-516d31628310">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/eb000d2a-d20b-4b48-af87-516d31628310/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/eb000d2a-d20b-4b48-af87-516d31628310/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. RONY RONALD ARAUZ GONZALEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 4-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-44d359bb-2a45-43a1-b010-446e7b2c4955">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/44d359bb-2a45-43a1-b010-446e7b2c4955/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/44d359bb-2a45-43a1-b010-446e7b2c4955/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ROSA CANTO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-af706d23-67b7-4e77-bafc-f12a8ff38b2d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/af706d23-67b7-4e77-bafc-f12a8ff38b2d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/af706d23-67b7-4e77-bafc-f12a8ff38b2d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. RUBEN DARIO FRIAS ORTEGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e896aaf7-421e-4e7e-93f5-5cabd6d41b8f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e896aaf7-421e-4e7e-93f5-5cabd6d41b8f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/e896aaf7-421e-4e7e-93f5-5cabd6d41b8f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. RUBEN DE LEON SANCHEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 9-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7e6e506b-6659-4b6e-85f7-5ec49896c5b2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7e6e506b-6659-4b6e-85f7-5ec49896c5b2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7e6e506b-6659-4b6e-85f7-5ec49896c5b2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. SALVADOR REAL CHEN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 5-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eefdae25-b947-42ba-817a-7fba61cf43eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/eefdae25-b947-42ba-817a-7fba61cf43eb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/eefdae25-b947-42ba-817a-7fba61cf43eb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. SAMIR GOZAINE ABDELMALAK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 4-1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f4bbb602-55c3-4633-9b7c-2fda68db4f7e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/f4bbb602-55c3-4633-9b7c-2fda68db4f7e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/f4bbb602-55c3-4633-9b7c-2fda68db4f7e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. SERGIO RAFAEL GALVEZ EVERS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3c17c264-eb7d-40db-8b80-f2dff28c3f87">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3c17c264-eb7d-40db-8b80-f2dff28c3f87/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/3c17c264-eb7d-40db-8b80-f2dff28c3f87/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. VIDAL GARCIA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7bea76f8-0df9-4f0f-b583-55ac265e3466">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7bea76f8-0df9-4f0f-b583-55ac265e3466/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7bea76f8-0df9-4f0f-b583-55ac265e3466/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. YANIBEL ABREGO SMITH</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Cambio Democrático — 8-2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7ba6966e-75ec-48b9-8a82-dd896abb61a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7ba6966e-75ec-48b9-8a82-dd896abb61a5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Panama/Assembly/7ba6966e-75ec-48b9-8a82-dd896abb61a5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">H.D. ZULAY LEYSET RODRIGUEZ LU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Revolucionario Democrático — 8-6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1561aeab-2eaa-416b-a03f-b29f53c938ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HD JOSÉ LUIS CASTILLO GÓMEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 4-3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fb8f2a9d-1d4f-49bc-9283-8bdd7598630f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HD JUAN BAUTISTA SERRANO JIMENEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partido Panameñista — 4-4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

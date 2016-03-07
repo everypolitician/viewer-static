@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="9th Parliament" />
     <meta property="og:type" content="article" />
@@ -124,7 +127,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-unknown"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -136,659 +139,1420 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/44c58bd/data/Swaziland/Assembly/term-9.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/44c58bd/data/Swaziland/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/44c58bd/data/Swaziland/Assembly/term-9.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/44c58bd/data/Swaziland/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-8a56f664-86dc-43bf-b620-cf452455e2c7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a56f664-86dc-43bf-b620-cf452455e2c7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Aaron Dladla</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nkwene
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Aaron Dladla">Aaron Dladla</td>
-                      
-                        <td>unknown</td>
-                        <td>Nkwene</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7e427517-c9f3-40d3-9249-f8a344951e69">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7e427517-c9f3-40d3-9249-f8a344951e69">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Benedict Xaba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Shiselweni II
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Benedict Xaba">Benedict Xaba</td>
-                      
-                        <td>unknown</td>
-                        <td>Shiselweni II</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d449d97e-f637-4795-86ed-b3d6badff08c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d449d97e-f637-4795-86ed-b3d6badff08c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bennedict Xaba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Shiselweni II
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bennedict Xaba">Bennedict Xaba</td>
-                      
-                        <td>unknown</td>
-                        <td>Shiselweni II</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-68d1b0ab-9ec0-4aa5-941b-3f9115f44249">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-68d1b0ab-9ec0-4aa5-941b-3f9115f44249">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Big Boy Mamba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Ngudzeni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Big Boy Mamba">Big Boy Mamba</td>
-                      
-                        <td>unknown</td>
-                        <td>Ngudzeni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6ddf6c37-a840-4afe-93db-26046b4348f2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ddf6c37-a840-4afe-93db-26046b4348f2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bongani Mdluli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Madlangempisi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bongani Mdluli">Bongani Mdluli</td>
-                      
-                        <td>unknown</td>
-                        <td>Madlangempisi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-09705986-4e68-46cd-b945-968ba868bde2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-09705986-4e68-46cd-b945-968ba868bde2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Charles Myeza</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Khubuta
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Charles Myeza">Charles Myeza</td>
-                      
-                        <td>unknown</td>
-                        <td>Khubuta</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1eac67b8-99aa-4a95-92b1-f5e64475a7fc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1eac67b8-99aa-4a95-92b1-f5e64475a7fc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Clement Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kukhanyeni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Clement Dlamini">Clement Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Kukhanyeni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6157ae44-9160-4088-8765-88201837e2e3">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6157ae44-9160-4088-8765-88201837e2e3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Doward Sihlongonye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Somntongo
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Doward Sihlongonye">Doward Sihlongonye</td>
-                      
-                        <td>unknown</td>
-                        <td>Somntongo</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-23448a56-fe3b-47f3-8682-880a24f641d5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-23448a56-fe3b-47f3-8682-880a24f641d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Enock Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nkhaba
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Enock Dlamini">Enock Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Nkhaba</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-092b9424-2e66-4049-8200-2e85dfd2883e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-092b9424-2e66-4049-8200-2e85dfd2883e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Esther Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mbabane East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Esther Dlamini">Esther Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Mbabane East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c1598183-b9d5-4208-b5a3-b875f420756b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c1598183-b9d5-4208-b5a3-b875f420756b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Frans Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nhlambeni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Frans Dlamini">Frans Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Nhlambeni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d89dd9ce-a95c-4507-8151-e804fb5a6d3f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d89dd9ce-a95c-4507-8151-e804fb5a6d3f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gibson Hlophe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sandleni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Gibson Hlophe">Gibson Hlophe</td>
-                      
-                        <td>unknown</td>
-                        <td>Sandleni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-9347ee5e-204a-4df9-a8c5-a53f8c8e95ce">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9347ee5e-204a-4df9-a8c5-a53f8c8e95ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gundwane Gamedze</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Siphofaneni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Gundwane Gamedze">Gundwane Gamedze</td>
-                      
-                        <td>unknown</td>
-                        <td>Siphofaneni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-cc6370e8-bcdf-426f-aad7-14d4e545d982">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cc6370e8-bcdf-426f-aad7-14d4e545d982">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Henry Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Ntfonjeni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Henry Dlamini">Henry Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Ntfonjeni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a667759d-b7e8-4850-93c8-1c626be7a4fb">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a667759d-b7e8-4850-93c8-1c626be7a4fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hlobsile Ndlovu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pigg’s Peak
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Hlobsile Ndlovu">Hlobsile Ndlovu</td>
-                      
-                        <td>unknown</td>
-                        <td>Pigg’s Peak</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-70fe0f48-9ad7-4500-a0f4-5c9b53ca27af">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70fe0f48-9ad7-4500-a0f4-5c9b53ca27af">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jennifer du Pont</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Timphisini
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jennifer du Pont">Jennifer du Pont</td>
-                      
-                        <td>unknown</td>
-                        <td>Timphisini</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2ec37f4e-0e93-43a8-a508-a52dd247555f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2ec37f4e-0e93-43a8-a508-a52dd247555f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Johane Shongwe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mbabane West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Johane Shongwe">Johane Shongwe</td>
-                      
-                        <td>unknown</td>
-                        <td>Mbabane West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-9b7720a0-95ed-436d-b698-9c6b4204c853">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9b7720a0-95ed-436d-b698-9c6b4204c853">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Johannes Ndlangamandla</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Zombodze
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Johannes Ndlangamandla">Johannes Ndlangamandla</td>
-                      
-                        <td>unknown</td>
-                        <td>Zombodze</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b378841a-0106-4eaf-b4df-996dd12be546">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b378841a-0106-4eaf-b4df-996dd12be546">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joseph Souza</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lugongolweni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Souza">Joseph Souza</td>
-                      
-                        <td>unknown</td>
-                        <td>Lugongolweni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2d965489-143f-4748-a12c-c1e9e77a01ed">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2d965489-143f-4748-a12c-c1e9e77a01ed">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lutfo Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Ndzingeni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Lutfo Dlamini">Lutfo Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Ndzingeni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d38291f6-6e27-494b-8265-158b652a1c62">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d38291f6-6e27-494b-8265-158b652a1c62">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mabhanisi Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kwaluseni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mabhanisi Dlamini">Mabhanisi Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Kwaluseni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5d6ed8b6-e723-47d0-96e9-cb9392530837">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d6ed8b6-e723-47d0-96e9-cb9392530837">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Macford Sibandze</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Manzini North
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Macford Sibandze">Macford Sibandze</td>
-                      
-                        <td>unknown</td>
-                        <td>Manzini North</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-15a0a7de-e78a-4bfd-8369-ecb44b5a9d21">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15a0a7de-e78a-4bfd-8369-ecb44b5a9d21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Magobetane Mamba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sithobela
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Magobetane Mamba">Magobetane Mamba</td>
-                      
-                        <td>unknown</td>
-                        <td>Sithobela</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-070e6ada-af0a-4b63-a2ad-28505acfcad4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-070e6ada-af0a-4b63-a2ad-28505acfcad4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Majahodvwa Khumalo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lobamba
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Majahodvwa Khumalo">Majahodvwa Khumalo</td>
-                      
-                        <td>unknown</td>
-                        <td>Lobamba</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b5bec349-8398-477e-a301-be4361dd479b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5bec349-8398-477e-a301-be4361dd479b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marwick Khumalo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lobamba Lomdzala
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Marwick Khumalo">Marwick Khumalo</td>
-                      
-                        <td>unknown</td>
-                        <td>Lobamba Lomdzala</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-46e2f037-cdf0-46cb-8740-db4153e3ac15">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-46e2f037-cdf0-46cb-8740-db4153e3ac15">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mbalekelwa Ndwandwe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mhlangatane
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mbalekelwa Ndwandwe">Mbalekelwa Ndwandwe</td>
-                      
-                        <td>unknown</td>
-                        <td>Mhlangatane</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4d8022e1-c4c8-45de-9508-6e56e60a491a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4d8022e1-c4c8-45de-9508-6e56e60a491a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mduduzi Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mangcongco
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mduduzi Dlamini">Mduduzi Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Mangcongco</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b598e5c8-7d17-49a0-a2f2-655feb284a41">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b598e5c8-7d17-49a0-a2f2-655feb284a41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mduduzi Mabuza</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Hosea
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mduduzi Mabuza">Mduduzi Mabuza</td>
-                      
-                        <td>unknown</td>
-                        <td>Hosea</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-20d9e32d-ece7-4a0e-895f-bb265d912223">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-20d9e32d-ece7-4a0e-895f-bb265d912223">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mduduzi Magagula</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Hlane
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mduduzi Magagula">Mduduzi Magagula</td>
-                      
-                        <td>unknown</td>
-                        <td>Hlane</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-81b1e033-1d4b-4966-9ae6-55b9f99fd418">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-81b1e033-1d4b-4966-9ae6-55b9f99fd418">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mduduzi ‘Small Joe’ Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Maseyisini
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mduduzi ‘Small Joe’ Dlamini">Mduduzi ‘Small Joe’ Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Maseyisini</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ce46d870-3037-4dcc-8c72-19518805ba8a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ce46d870-3037-4dcc-8c72-19518805ba8a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mlamuli Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mstambama
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mlamuli Dlamini">Mlamuli Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Mstambama</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2f64a920-5aa6-4a8e-ac0a-565e642ba24e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2f64a920-5aa6-4a8e-ac0a-565e642ba24e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Musa Kunene</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gege
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Musa Kunene">Musa Kunene</td>
-                      
-                        <td>unknown</td>
-                        <td>Gege</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-94c650d6-cf6a-44ac-b7ab-499eaa5abaf5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-94c650d6-cf6a-44ac-b7ab-499eaa5abaf5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Musa Ngcobo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mahlangatja
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Musa Ngcobo">Musa Ngcobo</td>
-                      
-                        <td>unknown</td>
-                        <td>Mahlangatja</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f27ae022-b8b8-49c2-97ec-3554754d5b64">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f27ae022-b8b8-49c2-97ec-3554754d5b64">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nicodemus Mashwama</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mpolonjeni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nicodemus Mashwama">Nicodemus Mashwama</td>
-                      
-                        <td>unknown</td>
-                        <td>Mpolonjeni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8b62c199-0806-4f0b-8c71-973c683dc5c6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b62c199-0806-4f0b-8c71-973c683dc5c6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nkululeko Mbhamali</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Matsanjeni North
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nkululeko Mbhamali">Nkululeko Mbhamali</td>
-                      
-                        <td>unknown</td>
-                        <td>Matsanjeni North</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6fa3a9b2-61b7-4b15-95c0-62bcdffc638d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6fa3a9b2-61b7-4b15-95c0-62bcdffc638d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nonhlanhla Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Ludzeludze
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nonhlanhla Dlamini">Nonhlanhla Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Ludzeludze</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-014c8c11-2e68-4c75-8489-54bb31b23cf8">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-014c8c11-2e68-4c75-8489-54bb31b23cf8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ntuthuko Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lamgabhi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ntuthuko Dlamini">Ntuthuko Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Lamgabhi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3ff57481-3386-41c7-8a9b-01ae9cee6e8e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3ff57481-3386-41c7-8a9b-01ae9cee6e8e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Patrick Gamedze</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mtfongwaneni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Patrick Gamedze">Patrick Gamedze</td>
-                      
-                        <td>unknown</td>
-                        <td>Mtfongwaneni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-847d8827-0413-4fd8-8138-017283e1213b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-847d8827-0413-4fd8-8138-017283e1213b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Peter Ngwenya</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Ntondozi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Peter Ngwenya">Peter Ngwenya</td>
-                      
-                        <td>unknown</td>
-                        <td>Ntondozi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-aadd9774-058e-425a-8d45-9dbcacc076fa">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aadd9774-058e-425a-8d45-9dbcacc076fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Petros Mavimbela</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mhlambanyatsi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Petros Mavimbela">Petros Mavimbela</td>
-                      
-                        <td>unknown</td>
-                        <td>Mhlambanyatsi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-56ea0430-38bb-4bc0-876d-b0638ed38ba1">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-56ea0430-38bb-4bc0-876d-b0638ed38ba1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Qedusizi Ndlovu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Matsanjeni South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Qedusizi Ndlovu">Qedusizi Ndlovu</td>
-                      
-                        <td>unknown</td>
-                        <td>Matsanjeni South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3b7c7c15-f790-4a3f-b084-3f57840c208a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b7c7c15-f790-4a3f-b084-3f57840c208a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Robert Magongo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Motshane
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Robert Magongo">Robert Magongo</td>
-                      
-                        <td>unknown</td>
-                        <td>Motshane</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-febf940a-973c-4ced-8d9a-2d9620f216fe">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-febf940a-973c-4ced-8d9a-2d9620f216fe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rogers Mamba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mkhiweni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Rogers Mamba">Rogers Mamba</td>
-                      
-                        <td>unknown</td>
-                        <td>Mkhiweni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-eb35c7ca-a339-45f3-b952-eed0c88749ac">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb35c7ca-a339-45f3-b952-eed0c88749ac">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sicelo Dlamini</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Maphalaleni
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sicelo Dlamini">Sicelo Dlamini</td>
-                      
-                        <td>unknown</td>
-                        <td>Maphalaleni</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-edd6271e-40d0-4d70-a58b-ac8db1dd7369">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-edd6271e-40d0-4d70-a58b-ac8db1dd7369">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sifiso Matsebula</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mayiwane
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sifiso Matsebula">Sifiso Matsebula</td>
-                      
-                        <td>unknown</td>
-                        <td>Mayiwane</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fc02108b-5853-4361-a56c-19a1f9e838a3">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc02108b-5853-4361-a56c-19a1f9e838a3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sivumelwano Nxumalo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sigwe
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sivumelwano Nxumalo">Sivumelwano Nxumalo</td>
-                      
-                        <td>unknown</td>
-                        <td>Sigwe</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a0df373d-d05c-413b-adc1-349fd1425d2e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a0df373d-d05c-413b-adc1-349fd1425d2e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Thandi Nxumalo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Manzini South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Thandi Nxumalo">Thandi Nxumalo</td>
-                      
-                        <td>unknown</td>
-                        <td>Manzini South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ff0f5343-f0c3-4d94-9293-7b848bf8a923">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ff0f5343-f0c3-4d94-9293-7b848bf8a923">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Timothy Myeni</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lubulini
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Timothy Myeni">Timothy Myeni</td>
-                      
-                        <td>unknown</td>
-                        <td>Lubulini</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-11cfbd97-7861-4793-8f76-177ba081cb90">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-11cfbd97-7861-4793-8f76-177ba081cb90">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Trusty Gina</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nkilongo
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Trusty Gina">Trusty Gina</td>
-                      
-                        <td>unknown</td>
-                        <td>Nkilongo</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f96aaca0-860d-4b49-8c5f-760e6f11480b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f96aaca0-860d-4b49-8c5f-760e6f11480b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Veli Shongwe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Ngwemphisi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Veli Shongwe">Veli Shongwe</td>
-                      
-                        <td>unknown</td>
-                        <td>Ngwemphisi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-930ace57-6cc9-4577-8e20-14bfc1d0ea6f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-930ace57-6cc9-4577-8e20-14bfc1d0ea6f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wilson Ntshangase</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Shiselweni I
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Wilson Ntshangase">Wilson Ntshangase</td>
-                      
-                        <td>unknown</td>
-                        <td>Shiselweni I</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

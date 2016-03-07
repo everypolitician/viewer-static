@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="7th National Assembly" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-SMC"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -149,1127 +152,3363 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/4882957/data/Slovenia/National_Assembly/term-7.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/4882957/data/Slovenia/National_Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/0640fac/data/Slovenia/National_Assembly/term-7.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/0640fac/data/Slovenia/National_Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-e3a69b19-1c20-435f-81d6-4b6fbea2807c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Andrej Čuš">Andrej Čuš</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VIII Ptuj I 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-679de284-6350-454b-9940-238800ab4060">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Andreja Potočnik">Andreja Potočnik</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>I Tržič 7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2257c608-0977-4a4c-89be-1cfdc77fc1b0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Anita Koleša">Anita Koleša</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>V Šentjur 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-003496de-ed57-4d0d-bb43-e6f9644f76af">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Anja Bah Žibert">Anja Bah Žibert</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VI Novo mesto I 2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fadbe7be-383d-4f9c-9199-d7e02404587f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Benedikt Kopmajer">Benedikt Kopmajer</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>V Dravograd - Radlje 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c5bb70e-26e4-48df-b9e3-156f573e6d13">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bojan Podkrajšek">Bojan Podkrajšek</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VII Slovenske Konjice 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-df7483c6-92ab-4f9d-b81f-39d067907b48">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Branko Zorman">Branko Zorman</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>I Kranj I 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5dbc7ac7-afd6-4e49-b0ec-015dda0b71fe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Danijel Krivec">Danijel Krivec</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>II Tolmin 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6310bb95-31bc-4aed-8729-85f41cbda068">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Danilo Anton Ranc">Danilo Anton Ranc</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>V Ravne na Koroškem 10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f7d20ca0-e611-444f-9541-4427a9aabb16">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Bojan Dobovšek">Dr. Bojan Dobovšek</td>
-                      
-                        <td>Nepovezani poslanec</td>
-                        <td>IV Ljubljana - Bežigrad I 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-782b9453-406a-442a-afcd-37d704aa3d7c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Dragan Matić">Dr. Dragan Matić</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>IV Ljubljana - Moste-Polje II 6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-607bb6ea-e300-4eb4-8533-4b974c5cdc4c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Franc Trček">Dr. Franc Trček</td>
-                      
-                        <td>United Left</td>
-                        <td>VII Maribor IV 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-72f4c9f6-622e-4a03-9a38-f74c439a106c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Jasna Murgel">Dr. Jasna Murgel</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VII Maribor V 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-87ad147e-d8e0-4b56-aee7-41fd41c3f077">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. László Göncz">Dr. László Göncz</td>
-                      
-                        <td>Italian and Hungarian National Communities</td>
-                        <td>X Lendava 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7932c11b-6ae5-4416-85d1-408d3f358612">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Matej Tašner Vatovec">Dr. Matej Tašner Vatovec</td>
-                      
-                        <td>United Left</td>
-                        <td>II Koper I 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc065e46-5ed5-423a-a09b-ff1244199de7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Milan Brglez">Dr. Milan Brglez</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>IV Ljubljana - Bežigrad II 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-82aef5a0-ff42-4e96-95d8-61328e030b1d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Mitja Horvat">Dr. Mitja Horvat</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>III Ljubljana - Vič Rudnik II 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-85de866c-a620-4ea6-a7fc-3c1a93db7200">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Simona Kustec Lipicer">Dr. Simona Kustec Lipicer</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>III Ljubljana - Šiška I 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-19abb711-8c59-4c1f-80ba-5b43f2714ca6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Vinko Gorenak">Dr. Vinko Gorenak</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VII Šmarje pri Jelšah 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-43a02b80-71ef-4b3d-8f97-b5370abbf6a9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dušan Radič">Dušan Radič</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VIII Murska Sobota II 5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a0a080b-e5e0-4e5d-b340-90662a09d0eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Erika Dekleva">Erika Dekleva</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>II Postojna 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ceb8251-0aba-410f-a0a7-dd7075ad47de">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Eva Irgl">Eva Irgl</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>II Ajdovščina 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-135fd192-8621-4031-a1ea-2f9e9f3ae58c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Franc Breznik">Franc Breznik</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VIII Lenart 7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1605dcf-172c-4e69-b75f-b70862a889d5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Franc Jurša">Franc Jurša</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>VIII Ljutomer 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b4a5a98c-4126-4e78-bf0e-c75729ff1bb3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Franc Laj">Franc Laj</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VIII Lendava 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d5da89d6-3756-4755-894f-534cf3e11a08">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Igor Zorčič">Igor Zorčič</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VI Brežice 5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-da90f3ef-5e9c-40b0-b005-370713ff8c20">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Irena Grošelj Košnik">Irena Grošelj Košnik</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VI Trbovlje 10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7b9f7b00-4fbe-4b83-a54e-03b1b932c900">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Irena Kotnik">Irena Kotnik</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>I Radovljica II 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4c7558ed-ef97-455b-b0f7-632cde5e2656">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Iva Dimic">Iva Dimic</td>
-                      
-                        <td>New Slovenia - Christian Democrats</td>
-                        <td>III Cerknica in Logatec 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a36ebef7-01f2-4ea3-a9d2-b4f4f88ae0a2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ivan Hršak">Ivan Hršak</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>VI Hrastnik 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b9e2a89c-1168-47af-8707-62715b78467e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ivan Prelog">Ivan Prelog</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VII Maribor I 5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7051d331-7b63-4882-bea6-794c0aa108a6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ivan Škodnik">Ivan Škodnik</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>V Dravograd - Radlje 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f04e3896-aca9-4199-9d3d-0366b070df99">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jan Škoberne">Jan Škoberne</td>
-                      
-                        <td>Social Democrats</td>
-                        <td>V Velenje II 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2e6bec82-c5a7-489b-aed4-c1b9afe30c35">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Janez (Ivan) Janša">Janez (Ivan) Janša</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>IV Grosuplje 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b82a6b6f-1a7d-46d4-b2ea-838a81312033">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jani (Janko) Möderndorfer">Jani (Janko) Möderndorfer</td>
-                      
-                        <td>Alliance of Alenka Bratušek</td>
-                        <td>IV Ljubljana - Bežigrad II 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9adf3fbe-6d96-4513-8481-4a04ebd56434">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Janja Sluga">Janja Sluga</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>V Celje II 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8fe33fe6-146b-444d-b205-faedfa821bd1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Janko Veber">Janko Veber</td>
-                      
-                        <td>Social Democrats</td>
-                        <td>IV Kočevje 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ed65470-cbe3-4371-86c7-fe4454553538">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jelka Godec">Jelka Godec</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>V Šentjur 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bec881f1-8c02-4c0a-af94-bebb91e286d1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jernej Vrtovec">Jernej Vrtovec</td>
-                      
-                        <td>New Slovenia - Christian Democrats</td>
-                        <td>II Ajdovščina 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4c652ca3-44e7-41f9-9271-4034e1304f35">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jože Tanko">Jože Tanko</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>IV Ribnica 2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8cb444a0-9d05-47c4-a29f-fade2c998446">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jožef Horvat">Jožef Horvat</td>
-                      
-                        <td>New Slovenia - Christian Democrats</td>
-                        <td>VIII Lendava 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-987ff118-aa06-4074-b500-0b02af109531">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kamal Izidor Shaker">Kamal Izidor Shaker</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>IV Domžale II 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-538a3317-bfea-4973-bf7a-f7174d6a3c37">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ksenija Korenjak Kramar">Ksenija Korenjak Kramar</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VII Maribor II 6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e024ed5e-ccd4-4d71-a6fa-caec266573b5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ljubo Žnidar">Ljubo Žnidar</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>V Žalec I 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d07617bc-6545-4076-8919-a666bfd7ddf8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ljudmila Novak">Ljudmila Novak</td>
-                      
-                        <td>New Slovenia - Christian Democrats</td>
-                        <td>IV Ribnica 2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4d577194-acf2-42d1-b7dc-ce5ec7fa672e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luka Mesec">Luka Mesec</td>
-                      
-                        <td>United Left</td>
-                        <td>VI Trbovlje 10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4157e900-9289-49d5-ac94-b3c4ca554b29">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Aleksander Kavčič">Mag. Aleksander Kavčič</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VIII Ljutomer 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dd06ea1e-f88c-42d3-b021-651d3f1bc7b6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Alenka Bratušek">Mag. Alenka Bratušek</td>
-                      
-                        <td>Alliance of Alenka Bratušek</td>
-                        <td>I Kranj I 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aae9aa63-0efa-42e2-af1f-09f075747ca8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Andrej Šircelj">Mag. Andrej Šircelj</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>III Cerknica in Logatec 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e7eb5b01-8378-4b35-a8bb-ae398166b738">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Anže Logar">Mag. Anže Logar</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>III Ljubljana - Vič-Rudnik IV 6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2a4c3376-1a08-47c9-9f02-b8310a820d0e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Bojan Krajnc">Mag. Bojan Krajnc</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VII Maribor III, Maribor IV 7, 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-19751c40-4c69-45c4-9f87-c6c6343da258">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Bojana Muršič">Mag. Bojana Muršič</td>
-                      
-                        <td>Social Democrats</td>
-                        <td>VII Ruše 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bf3064fa-9612-483c-b346-c1e501be1194">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Branislav Rajić">Mag. Branislav Rajić</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VII Maribor VII 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d8cece0-464f-4b87-8852-cbd66a77a3e1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Branko Grims">Mag. Branko Grims</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>I Kranj III 6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ac5e8c7e-cfc2-467c-b764-1fd6cb8b418f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Jana Jenko">Mag. Jana Jenko</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>I Tržič 7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9183e29d-7d65-45e8-bced-76ee21a1dc4f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Lilijana Kozlovič">Mag. Lilijana Kozlovič</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>II Koper II 5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d8ad580c-c5e6-4187-838c-b9a97dcbc5c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Marko Pogačnik">Mag. Marko Pogačnik</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>I Škofja Loka I 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c2e2e3ae-aa17-4ae6-bf52-5eba43cbd92d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Matej Tonin">Mag. Matej Tonin</td>
-                      
-                        <td>New Slovenia - Christian Democrats</td>
-                        <td>I Kamnik 10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-98ddc266-133b-49e9-85f7-924a1dcf04e7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Mirjam Bon Klanjšček">Mag. Mirjam Bon Klanjšček</td>
-                      
-                        <td>Alliance of Alenka Bratušek</td>
-                        <td>II Nova Gorica II 10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e0c5a23d-5df8-4b64-87e1-e702e8a91e44">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mag. Tanja Cink">Mag. Tanja Cink</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>III Ljubljana - Šiška II 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01e0b17c-90d5-4362-abcd-e91b77ee11e5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marija Antonija Kovačič">Marija Antonija Kovačič</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>V Velenje I 7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c8b0151e-a19c-44fb-9a2c-51e738d27d0d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marija Bačič">Marija Bačič</td>
-                      
-                        <td>Social Democrats</td>
-                        <td>VIII Murska Sobota I 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c302bfca-a52f-4c06-8e6a-0bba712dc970">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marijan Pojbič">Marijan Pojbič</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VIII Pesnica 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-345917c5-88b9-4a6a-8b97-46f51de29a0e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marinka Levičar">Marinka Levičar</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>IV Kočevje 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c7d6f9d8-96d6-451f-9c45-2216e6dcf961">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marjan Dolinšek">Marjan Dolinšek</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VI Zagorje 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-87daecaf-5404-41dd-ac9e-b7b676bd100f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marjana Kotnik Poropat">Marjana Kotnik Poropat</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>VII Ruše 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6da15273-8d67-4196-8741-f7e425c3a529">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marko Ferluga">Marko Ferluga</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>II Koper I 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-479fbfaa-84f9-4314-a73f-dc5069131b2f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maruša Škopac">Maruša Škopac</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>I Jesenice 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-12fc9986-7cab-4219-bf17-f93df3e76e86">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Matjaž Han">Matjaž Han</td>
-                      
-                        <td>Social Democrats</td>
-                        <td>VI Laško 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c9b906dc-025c-45f8-be9c-f6a8651ba207">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Matjaž Hanžek">Matjaž Hanžek</td>
-                      
-                        <td>United Left</td>
-                        <td>IV Ljubljana - Bežigrad II 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ba8af9d6-a674-4b72-bec3-e8ae6ca882ec">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Matjaž Nemec">Matjaž Nemec</td>
-                      
-                        <td>Social Democrats</td>
-                        <td>II Nova Gorica I 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8d25b224-f880-48f3-921f-530bc1159941">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Miha Kordiš">Miha Kordiš</td>
-                      
-                        <td>United Left</td>
-                        <td>I Škofja Loka I 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0d295a47-c43d-4536-9512-1a23829daf3b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nada Brinovšek">Nada Brinovšek</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>V Mozirje 6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc980141-0f2d-4339-9aec-e7e10a58496b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Peter Vilfan">Peter Vilfan</td>
-                      
-                        <td>Alliance of Alenka Bratušek</td>
-                        <td>III Ljubljana - Šiška II 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bead19b8-5c20-4a23-8121-f3b6d45a0a53">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Primož Hainz">Primož Hainz</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>III Vrhnika 2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d642b5a2-0a73-4717-80c9-8316002e886d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Roberto Battelli">Roberto Battelli</td>
-                      
-                        <td>Italian and Hungarian National Communities</td>
-                        <td>IX Koper 1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f6a2bc8-24f5-4937-b89e-cb3f162ea1bf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saša Tabaković">Saša Tabaković</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>V Velenje I 7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7da00f17-943a-490e-b59f-86e8e626e1fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Simon Zajc">Simon Zajc</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>III Ljubljana - Šiška III 10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a6f2e1da-27a6-4c35-b4d1-68eac9455b93">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Suzana Lep Šimenko">Suzana Lep Šimenko</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VIII Ptuj III 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7946523a-bd3f-4cfa-af0f-fb636742d2e8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tilen Božič">Tilen Božič</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>II Izola 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dea6f610-aafb-4416-9e68-e25d5ced64e2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tomaž Gantar">Tomaž Gantar</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>II Piran 2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d2af444a-2d55-490e-bc1e-0f9c6255f3bb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tomaž Lisec">Tomaž Lisec</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VI Sevnica 7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-14272ee3-403c-4cb8-902b-8bb38017dc47">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Uroš Prikl">Uroš Prikl</td>
-                      
-                        <td>Democratic Party of Pensioners of Slovenia</td>
-                        <td>VII Maribor VII 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aed794f0-9c15-4ca7-9fe6-d83113a96a60">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Urška Ban">Urška Ban</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VI Novo mesto II 3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8824bda7-6de3-415f-9c3d-02a74f54591b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vesna Vervega">Vesna Vervega</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VIII Pesnica 8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cf39ebca-466e-40bd-bd09-345c617e1806">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Violeta Tomić">Violeta Tomić</td>
-                      
-                        <td>United Left</td>
-                        <td>III Ljubljana - Center 7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5d9f1472-c90b-4ca3-8f90-ee26f2378e16">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vojka Šergan">Vojka Šergan</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>VI Hrastnik 9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc2af42e-dfb8-4b7b-a214-f10a21ca3808">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zvonko Lah">Zvonko Lah</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>VI Trebnje 4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fcc37637-a589-47df-beba-7a0bdae696eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="mag. Dušan Verbič">mag. Dušan Verbič</td>
-                      
-                        <td>Party of Modern Centre</td>
-                        <td>III Ljubljana Šiška IV 11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4efef6b2-3e10-46fe-a881-5027cc095621">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Žan Mahnič">Žan Mahnič</td>
-                      
-                        <td>Slovenian Democratic Party</td>
-                        <td>I Škofja Loka II 9</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e3a69b19-1c20-435f-81d6-4b6fbea2807c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e3a69b19-1c20-435f-81d6-4b6fbea2807c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e3a69b19-1c20-435f-81d6-4b6fbea2807c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Andrej Čuš</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VIII Ptuj I 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-679de284-6350-454b-9940-238800ab4060">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/679de284-6350-454b-9940-238800ab4060/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/679de284-6350-454b-9940-238800ab4060/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Andreja Potočnik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — I Tržič 7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2257c608-0977-4a4c-89be-1cfdc77fc1b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/2257c608-0977-4a4c-89be-1cfdc77fc1b0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/2257c608-0977-4a4c-89be-1cfdc77fc1b0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Anita Koleša</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — V Šentjur 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-003496de-ed57-4d0d-bb43-e6f9644f76af">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/003496de-ed57-4d0d-bb43-e6f9644f76af/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/003496de-ed57-4d0d-bb43-e6f9644f76af/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Anja Bah Žibert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VI Novo mesto I 2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/ANJABAHZIBERT">@ANJABAHZIBERT</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/anja.bah.zibert">anja.bah.zibert</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fadbe7be-383d-4f9c-9199-d7e02404587f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/fadbe7be-383d-4f9c-9199-d7e02404587f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/fadbe7be-383d-4f9c-9199-d7e02404587f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Benedikt Kopmajer</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — V Dravograd - Radlje 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c5bb70e-26e4-48df-b9e3-156f573e6d13">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8c5bb70e-26e4-48df-b9e3-156f573e6d13/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8c5bb70e-26e4-48df-b9e3-156f573e6d13/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bojan Podkrajšek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VII Slovenske Konjice 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/b_podkrajsek">@b_podkrajsek</a>
+                            </p>
+                          
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-df7483c6-92ab-4f9d-b81f-39d067907b48">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/df7483c6-92ab-4f9d-b81f-39d067907b48/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/df7483c6-92ab-4f9d-b81f-39d067907b48/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Branko Zorman</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — I Kranj I 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/branko.zorman">branko.zorman</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5dbc7ac7-afd6-4e49-b0ec-015dda0b71fe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/5dbc7ac7-afd6-4e49-b0ec-015dda0b71fe/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/5dbc7ac7-afd6-4e49-b0ec-015dda0b71fe/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Danijel Krivec</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — II Tolmin 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6310bb95-31bc-4aed-8729-85f41cbda068">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/6310bb95-31bc-4aed-8729-85f41cbda068/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/6310bb95-31bc-4aed-8729-85f41cbda068/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Danilo Anton Ranc</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — V Ravne na Koroškem 10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/Danilo-Anton-Ranc-647966008626858">Danilo-Anton-Ranc-647966008626858</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f7d20ca0-e611-444f-9541-4427a9aabb16">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/f7d20ca0-e611-444f-9541-4427a9aabb16/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/f7d20ca0-e611-444f-9541-4427a9aabb16/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Bojan Dobovšek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nepovezani poslanec — IV Ljubljana - Bežigrad I 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-782b9453-406a-442a-afcd-37d704aa3d7c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/782b9453-406a-442a-afcd-37d704aa3d7c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/782b9453-406a-442a-afcd-37d704aa3d7c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Dragan Matić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — IV Ljubljana - Moste-Polje II 6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/DraganMaticSMC">DraganMaticSMC</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-607bb6ea-e300-4eb4-8533-4b974c5cdc4c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/607bb6ea-e300-4eb4-8533-4b974c5cdc4c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/607bb6ea-e300-4eb4-8533-4b974c5cdc4c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Franc Trček</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Left — VII Maribor IV 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-72f4c9f6-622e-4a03-9a38-f74c439a106c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/72f4c9f6-622e-4a03-9a38-f74c439a106c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/72f4c9f6-622e-4a03-9a38-f74c439a106c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Jasna Murgel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VII Maribor V 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/JasnaMurgel">@JasnaMurgel</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/jasna.murgel">jasna.murgel</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-87ad147e-d8e0-4b56-aee7-41fd41c3f077">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/87ad147e-d8e0-4b56-aee7-41fd41c3f077/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/87ad147e-d8e0-4b56-aee7-41fd41c3f077/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. László Göncz</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Italian and Hungarian National Communities — X Lendava 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7932c11b-6ae5-4416-85d1-408d3f358612">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7932c11b-6ae5-4416-85d1-408d3f358612/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7932c11b-6ae5-4416-85d1-408d3f358612/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Matej Tašner Vatovec</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Left — II Koper I 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/Matej_T_Vatovec">@Matej_T_Vatovec</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/matej.t.vatovec">matej.t.vatovec</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc065e46-5ed5-423a-a09b-ff1244199de7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dc065e46-5ed5-423a-a09b-ff1244199de7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dc065e46-5ed5-423a-a09b-ff1244199de7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Milan Brglez</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — IV Ljubljana - Bežigrad II 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-82aef5a0-ff42-4e96-95d8-61328e030b1d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/82aef5a0-ff42-4e96-95d8-61328e030b1d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/82aef5a0-ff42-4e96-95d8-61328e030b1d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Mitja Horvat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — III Ljubljana - Vič Rudnik II 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85de866c-a620-4ea6-a7fc-3c1a93db7200">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/85de866c-a620-4ea6-a7fc-3c1a93db7200/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/85de866c-a620-4ea6-a7fc-3c1a93db7200/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Simona Kustec Lipicer</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — III Ljubljana - Šiška I 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-19abb711-8c59-4c1f-80ba-5b43f2714ca6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/19abb711-8c59-4c1f-80ba-5b43f2714ca6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/19abb711-8c59-4c1f-80ba-5b43f2714ca6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr. Vinko Gorenak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VII Šmarje pri Jelšah 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-43a02b80-71ef-4b3d-8f97-b5370abbf6a9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/43a02b80-71ef-4b3d-8f97-b5370abbf6a9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/43a02b80-71ef-4b3d-8f97-b5370abbf6a9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dušan Radič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VIII Murska Sobota II 5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a0a080b-e5e0-4e5d-b340-90662a09d0eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8a0a080b-e5e0-4e5d-b340-90662a09d0eb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8a0a080b-e5e0-4e5d-b340-90662a09d0eb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Erika Dekleva</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — II Postojna 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/ErikaDekleva">@ErikaDekleva</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/erika.dekleva">erika.dekleva</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ceb8251-0aba-410f-a0a7-dd7075ad47de">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8ceb8251-0aba-410f-a0a7-dd7075ad47de/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8ceb8251-0aba-410f-a0a7-dd7075ad47de/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Eva Irgl</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — II Ajdovščina 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-135fd192-8621-4031-a1ea-2f9e9f3ae58c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/135fd192-8621-4031-a1ea-2f9e9f3ae58c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/135fd192-8621-4031-a1ea-2f9e9f3ae58c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Franc Breznik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VIII Lenart 7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1605dcf-172c-4e69-b75f-b70862a889d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e1605dcf-172c-4e69-b75f-b70862a889d5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e1605dcf-172c-4e69-b75f-b70862a889d5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Franc Jurša</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — VIII Ljutomer 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b4a5a98c-4126-4e78-bf0e-c75729ff1bb3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/b4a5a98c-4126-4e78-bf0e-c75729ff1bb3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/b4a5a98c-4126-4e78-bf0e-c75729ff1bb3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Franc Laj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VIII Lendava 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/franc.laj">franc.laj</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d5da89d6-3756-4755-894f-534cf3e11a08">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d5da89d6-3756-4755-894f-534cf3e11a08/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d5da89d6-3756-4755-894f-534cf3e11a08/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Igor Zorčič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VI Brežice 5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-da90f3ef-5e9c-40b0-b005-370713ff8c20">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/da90f3ef-5e9c-40b0-b005-370713ff8c20/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/da90f3ef-5e9c-40b0-b005-370713ff8c20/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Irena Grošelj Košnik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VI Trbovlje 10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/irena.groseljkosnik">irena.groseljkosnik</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7b9f7b00-4fbe-4b83-a54e-03b1b932c900">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7b9f7b00-4fbe-4b83-a54e-03b1b932c900/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7b9f7b00-4fbe-4b83-a54e-03b1b932c900/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Irena Kotnik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — I Radovljica II 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4c7558ed-ef97-455b-b0f7-632cde5e2656">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4c7558ed-ef97-455b-b0f7-632cde5e2656/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4c7558ed-ef97-455b-b0f7-632cde5e2656/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Iva Dimic</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New Slovenia - Christian Democrats — III Cerknica in Logatec 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a36ebef7-01f2-4ea3-a9d2-b4f4f88ae0a2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/a36ebef7-01f2-4ea3-a9d2-b4f4f88ae0a2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/a36ebef7-01f2-4ea3-a9d2-b4f4f88ae0a2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ivan Hršak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — VI Hrastnik 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/hrsakivan">hrsakivan</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b9e2a89c-1168-47af-8707-62715b78467e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/b9e2a89c-1168-47af-8707-62715b78467e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/b9e2a89c-1168-47af-8707-62715b78467e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ivan Prelog</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VII Maribor I 5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7051d331-7b63-4882-bea6-794c0aa108a6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7051d331-7b63-4882-bea6-794c0aa108a6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7051d331-7b63-4882-bea6-794c0aa108a6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ivan Škodnik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — V Dravograd - Radlje 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f04e3896-aca9-4199-9d3d-0366b070df99">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/f04e3896-aca9-4199-9d3d-0366b070df99/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/f04e3896-aca9-4199-9d3d-0366b070df99/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jan Škoberne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democrats — V Velenje II 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/jan_skoberne">@jan_skoberne</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/skoberne.jan">skoberne.jan</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2e6bec82-c5a7-489b-aed4-c1b9afe30c35">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/2e6bec82-c5a7-489b-aed4-c1b9afe30c35/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/2e6bec82-c5a7-489b-aed4-c1b9afe30c35/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Janez (Ivan) Janša</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — IV Grosuplje 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b82a6b6f-1a7d-46d4-b2ea-838a81312033">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/b82a6b6f-1a7d-46d4-b2ea-838a81312033/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/b82a6b6f-1a7d-46d4-b2ea-838a81312033/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jani (Janko) Möderndorfer</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance of Alenka Bratušek — IV Ljubljana - Bežigrad II 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/JaniModern">@JaniModern</a>
+                            </p>
+                          
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9adf3fbe-6d96-4513-8481-4a04ebd56434">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/9adf3fbe-6d96-4513-8481-4a04ebd56434/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/9adf3fbe-6d96-4513-8481-4a04ebd56434/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Janja Sluga</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — V Celje II 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/SMC_JanjaSluga">@SMC_JanjaSluga</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/SMCJanjaSluga">SMCJanjaSluga</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8fe33fe6-146b-444d-b205-faedfa821bd1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8fe33fe6-146b-444d-b205-faedfa821bd1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8fe33fe6-146b-444d-b205-faedfa821bd1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Janko Veber</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democrats — IV Kočevje 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/JankoVeber">@JankoVeber</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/janko.veber">janko.veber</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ed65470-cbe3-4371-86c7-fe4454553538">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8ed65470-cbe3-4371-86c7-fe4454553538/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8ed65470-cbe3-4371-86c7-fe4454553538/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jelka Godec</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — V Šentjur 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/jelka_godec">@jelka_godec</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/jelka.godec">jelka.godec</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bec881f1-8c02-4c0a-af94-bebb91e286d1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bec881f1-8c02-4c0a-af94-bebb91e286d1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bec881f1-8c02-4c0a-af94-bebb91e286d1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jernej Vrtovec</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New Slovenia - Christian Democrats — II Ajdovščina 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4c652ca3-44e7-41f9-9271-4034e1304f35">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4c652ca3-44e7-41f9-9271-4034e1304f35/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4c652ca3-44e7-41f9-9271-4034e1304f35/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jože Tanko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — IV Ribnica 2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8cb444a0-9d05-47c4-a29f-fade2c998446">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8cb444a0-9d05-47c4-a29f-fade2c998446/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8cb444a0-9d05-47c4-a29f-fade2c998446/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jožef Horvat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New Slovenia - Christian Democrats — VIII Lendava 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/jozefhorvat">@jozefhorvat</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/horvatjozef">horvatjozef</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-987ff118-aa06-4074-b500-0b02af109531">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/987ff118-aa06-4074-b500-0b02af109531/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/987ff118-aa06-4074-b500-0b02af109531/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kamal Izidor Shaker</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — IV Domžale II 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/kizidor">@kizidor</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/kamalizidorshaker82">kamalizidorshaker82</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-538a3317-bfea-4973-bf7a-f7174d6a3c37">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/538a3317-bfea-4973-bf7a-f7174d6a3c37/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/538a3317-bfea-4973-bf7a-f7174d6a3c37/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ksenija Korenjak Kramar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VII Maribor II 6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/ksenijakk">ksenijakk</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e024ed5e-ccd4-4d71-a6fa-caec266573b5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e024ed5e-ccd4-4d71-a6fa-caec266573b5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e024ed5e-ccd4-4d71-a6fa-caec266573b5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ljubo Žnidar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — V Žalec I 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d07617bc-6545-4076-8919-a666bfd7ddf8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d07617bc-6545-4076-8919-a666bfd7ddf8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d07617bc-6545-4076-8919-a666bfd7ddf8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ljudmila Novak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New Slovenia - Christian Democrats — IV Ribnica 2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4d577194-acf2-42d1-b7dc-ce5ec7fa672e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4d577194-acf2-42d1-b7dc-ce5ec7fa672e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4d577194-acf2-42d1-b7dc-ce5ec7fa672e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Luka Mesec</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Left — VI Trbovlje 10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/mesec.luka">mesec.luka</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4157e900-9289-49d5-ac94-b3c4ca554b29">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4157e900-9289-49d5-ac94-b3c4ca554b29/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4157e900-9289-49d5-ac94-b3c4ca554b29/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Aleksander Kavčič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VIII Ljutomer 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/aleksande">@aleksande</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/AleksanderKaucic">AleksanderKaucic</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd06ea1e-f88c-42d3-b021-651d3f1bc7b6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dd06ea1e-f88c-42d3-b021-651d3f1bc7b6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dd06ea1e-f88c-42d3-b021-651d3f1bc7b6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Alenka Bratušek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance of Alenka Bratušek — I Kranj I 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aae9aa63-0efa-42e2-af1f-09f075747ca8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/aae9aa63-0efa-42e2-af1f-09f075747ca8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/aae9aa63-0efa-42e2-af1f-09f075747ca8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Andrej Šircelj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — III Cerknica in Logatec 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e7eb5b01-8378-4b35-a8bb-ae398166b738">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e7eb5b01-8378-4b35-a8bb-ae398166b738/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e7eb5b01-8378-4b35-a8bb-ae398166b738/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Anže Logar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — III Ljubljana - Vič-Rudnik IV 6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/AnzeLog">@AnzeLog</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/anze.logar.75">anze.logar.75</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2a4c3376-1a08-47c9-9f02-b8310a820d0e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/2a4c3376-1a08-47c9-9f02-b8310a820d0e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/2a4c3376-1a08-47c9-9f02-b8310a820d0e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Bojan Krajnc</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VII Maribor III, Maribor IV 7, 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-19751c40-4c69-45c4-9f87-c6c6343da258">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/19751c40-4c69-45c4-9f87-c6c6343da258/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/19751c40-4c69-45c4-9f87-c6c6343da258/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Bojana Muršič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democrats — VII Ruše 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/BMursic">@BMursic</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/bojana.mursic.5">bojana.mursic.5</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bf3064fa-9612-483c-b346-c1e501be1194">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bf3064fa-9612-483c-b346-c1e501be1194/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bf3064fa-9612-483c-b346-c1e501be1194/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Branislav Rajić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VII Maribor VII 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/branislav.r.bane.5">branislav.r.bane.5</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d8cece0-464f-4b87-8852-cbd66a77a3e1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/3d8cece0-464f-4b87-8852-cbd66a77a3e1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/3d8cece0-464f-4b87-8852-cbd66a77a3e1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Branko Grims</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — I Kranj III 6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ac5e8c7e-cfc2-467c-b764-1fd6cb8b418f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/ac5e8c7e-cfc2-467c-b764-1fd6cb8b418f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/ac5e8c7e-cfc2-467c-b764-1fd6cb8b418f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Jana Jenko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — I Tržič 7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9183e29d-7d65-45e8-bced-76ee21a1dc4f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/9183e29d-7d65-45e8-bced-76ee21a1dc4f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/9183e29d-7d65-45e8-bced-76ee21a1dc4f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Lilijana Kozlovič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — II Koper II 5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/lilijana.kozlovic">lilijana.kozlovic</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d8ad580c-c5e6-4187-838c-b9a97dcbc5c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d8ad580c-c5e6-4187-838c-b9a97dcbc5c9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d8ad580c-c5e6-4187-838c-b9a97dcbc5c9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Marko Pogačnik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — I Škofja Loka I 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c2e2e3ae-aa17-4ae6-bf52-5eba43cbd92d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c2e2e3ae-aa17-4ae6-bf52-5eba43cbd92d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c2e2e3ae-aa17-4ae6-bf52-5eba43cbd92d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Matej Tonin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New Slovenia - Christian Democrats — I Kamnik 10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/Matej-Tonin">Matej-Tonin</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-98ddc266-133b-49e9-85f7-924a1dcf04e7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/98ddc266-133b-49e9-85f7-924a1dcf04e7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/98ddc266-133b-49e9-85f7-924a1dcf04e7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Mirjam Bon Klanjšček</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance of Alenka Bratušek — II Nova Gorica II 10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e0c5a23d-5df8-4b64-87e1-e702e8a91e44">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e0c5a23d-5df8-4b64-87e1-e702e8a91e44/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/e0c5a23d-5df8-4b64-87e1-e702e8a91e44/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mag. Tanja Cink</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — III Ljubljana - Šiška II 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/Mag-Tanja-Cink-598430986938814">Mag-Tanja-Cink-598430986938814</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01e0b17c-90d5-4362-abcd-e91b77ee11e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/01e0b17c-90d5-4362-abcd-e91b77ee11e5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/01e0b17c-90d5-4362-abcd-e91b77ee11e5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marija Antonija Kovačič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — V Velenje I 7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c8b0151e-a19c-44fb-9a2c-51e738d27d0d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c8b0151e-a19c-44fb-9a2c-51e738d27d0d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c8b0151e-a19c-44fb-9a2c-51e738d27d0d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marija Bačič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democrats — VIII Murska Sobota I 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c302bfca-a52f-4c06-8e6a-0bba712dc970">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c302bfca-a52f-4c06-8e6a-0bba712dc970/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c302bfca-a52f-4c06-8e6a-0bba712dc970/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marijan Pojbič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VIII Pesnica 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-345917c5-88b9-4a6a-8b97-46f51de29a0e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/345917c5-88b9-4a6a-8b97-46f51de29a0e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/345917c5-88b9-4a6a-8b97-46f51de29a0e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marinka Levičar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — IV Kočevje 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c7d6f9d8-96d6-451f-9c45-2216e6dcf961">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c7d6f9d8-96d6-451f-9c45-2216e6dcf961/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c7d6f9d8-96d6-451f-9c45-2216e6dcf961/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marjan Dolinšek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VI Zagorje 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-87daecaf-5404-41dd-ac9e-b7b676bd100f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/87daecaf-5404-41dd-ac9e-b7b676bd100f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/87daecaf-5404-41dd-ac9e-b7b676bd100f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marjana Kotnik Poropat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — VII Ruše 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6da15273-8d67-4196-8741-f7e425c3a529">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/6da15273-8d67-4196-8741-f7e425c3a529/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/6da15273-8d67-4196-8741-f7e425c3a529/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marko Ferluga</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — II Koper I 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/public/Marko-Ferluga">public/Marko-Ferluga</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-479fbfaa-84f9-4314-a73f-dc5069131b2f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/479fbfaa-84f9-4314-a73f-dc5069131b2f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/479fbfaa-84f9-4314-a73f-dc5069131b2f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Maruša Škopac</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — I Jesenice 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/marusa.skopac">marusa.skopac</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-12fc9986-7cab-4219-bf17-f93df3e76e86">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/12fc9986-7cab-4219-bf17-f93df3e76e86/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/12fc9986-7cab-4219-bf17-f93df3e76e86/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Matjaž Han</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democrats — VI Laško 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/han.matjaz">han.matjaz</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c9b906dc-025c-45f8-be9c-f6a8651ba207">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c9b906dc-025c-45f8-be9c-f6a8651ba207/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/c9b906dc-025c-45f8-be9c-f6a8651ba207/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Matjaž Hanžek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Left — IV Ljubljana - Bežigrad II 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ba8af9d6-a674-4b72-bec3-e8ae6ca882ec">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/ba8af9d6-a674-4b72-bec3-e8ae6ca882ec/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/ba8af9d6-a674-4b72-bec3-e8ae6ca882ec/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Matjaž Nemec</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democrats — II Nova Gorica I 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/matjanemec">@matjanemec</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/matjaz.nemec">matjaz.nemec</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8d25b224-f880-48f3-921f-530bc1159941">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8d25b224-f880-48f3-921f-530bc1159941/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8d25b224-f880-48f3-921f-530bc1159941/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Miha Kordiš</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Left — I Škofja Loka I 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/miha.kordis">miha.kordis</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0d295a47-c43d-4536-9512-1a23829daf3b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/0d295a47-c43d-4536-9512-1a23829daf3b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/0d295a47-c43d-4536-9512-1a23829daf3b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nada Brinovšek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — V Mozirje 6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/brinovseknada">@brinovseknada</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/nada.brinovsek">nada.brinovsek</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc980141-0f2d-4339-9aec-e7e10a58496b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dc980141-0f2d-4339-9aec-e7e10a58496b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dc980141-0f2d-4339-9aec-e7e10a58496b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Peter Vilfan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance of Alenka Bratušek — III Ljubljana - Šiška II 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bead19b8-5c20-4a23-8121-f3b6d45a0a53">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bead19b8-5c20-4a23-8121-f3b6d45a0a53/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bead19b8-5c20-4a23-8121-f3b6d45a0a53/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Primož Hainz</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — III Vrhnika 2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d642b5a2-0a73-4717-80c9-8316002e886d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d642b5a2-0a73-4717-80c9-8316002e886d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d642b5a2-0a73-4717-80c9-8316002e886d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Roberto Battelli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Italian and Hungarian National Communities — IX Koper 1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f6a2bc8-24f5-4937-b89e-cb3f162ea1bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/6f6a2bc8-24f5-4937-b89e-cb3f162ea1bf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/6f6a2bc8-24f5-4937-b89e-cb3f162ea1bf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saša Tabaković</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — V Velenje I 7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7da00f17-943a-490e-b59f-86e8e626e1fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7da00f17-943a-490e-b59f-86e8e626e1fb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7da00f17-943a-490e-b59f-86e8e626e1fb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Simon Zajc</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — III Ljubljana - Šiška III 10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/simonzajcSMC">simonzajcSMC</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6f2e1da-27a6-4c35-b4d1-68eac9455b93">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/a6f2e1da-27a6-4c35-b4d1-68eac9455b93/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/a6f2e1da-27a6-4c35-b4d1-68eac9455b93/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Suzana Lep Šimenko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VIII Ptuj III 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/lepsimenko">@lepsimenko</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/suzana.lepsimenko">suzana.lepsimenko</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7946523a-bd3f-4cfa-af0f-fb636742d2e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7946523a-bd3f-4cfa-af0f-fb636742d2e8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/7946523a-bd3f-4cfa-af0f-fb636742d2e8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tilen Božič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — II Izola 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dea6f610-aafb-4416-9e68-e25d5ced64e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dea6f610-aafb-4416-9e68-e25d5ced64e2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/dea6f610-aafb-4416-9e68-e25d5ced64e2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tomaž Gantar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — II Piran 2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d2af444a-2d55-490e-bc1e-0f9c6255f3bb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d2af444a-2d55-490e-bc1e-0f9c6255f3bb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/d2af444a-2d55-490e-bc1e-0f9c6255f3bb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tomaž Lisec</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VI Sevnica 7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/TomazLisec">@TomazLisec</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/Tomaz.Lisec">Tomaz.Lisec</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14272ee3-403c-4cb8-902b-8bb38017dc47">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/14272ee3-403c-4cb8-902b-8bb38017dc47/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/14272ee3-403c-4cb8-902b-8bb38017dc47/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Uroš Prikl</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party of Pensioners of Slovenia — VII Maribor VII 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aed794f0-9c15-4ca7-9fe6-d83113a96a60">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/aed794f0-9c15-4ca7-9fe6-d83113a96a60/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/aed794f0-9c15-4ca7-9fe6-d83113a96a60/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Urška Ban</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VI Novo mesto II 3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/100006207436460">100006207436460</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8824bda7-6de3-415f-9c3d-02a74f54591b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8824bda7-6de3-415f-9c3d-02a74f54591b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/8824bda7-6de3-415f-9c3d-02a74f54591b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vesna Vervega</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VIII Pesnica 8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/vesna.vervega">vesna.vervega</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cf39ebca-466e-40bd-bd09-345c617e1806">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/cf39ebca-466e-40bd-bd09-345c617e1806/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/cf39ebca-466e-40bd-bd09-345c617e1806/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Violeta Tomić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Left — III Ljubljana - Center 7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/public/Violeta-Tomic">public/Violeta-Tomic</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d9f1472-c90b-4ca3-8f90-ee26f2378e16">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/5d9f1472-c90b-4ca3-8f90-ee26f2378e16/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/5d9f1472-c90b-4ca3-8f90-ee26f2378e16/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vojka Šergan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — VI Hrastnik 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc2af42e-dfb8-4b7b-a214-f10a21ca3808">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bc2af42e-dfb8-4b7b-a214-f10a21ca3808/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/bc2af42e-dfb8-4b7b-a214-f10a21ca3808/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zvonko Lah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — VI Trebnje 4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fcc37637-a589-47df-beba-7a0bdae696eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/fcc37637-a589-47df-beba-7a0bdae696eb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/fcc37637-a589-47df-beba-7a0bdae696eb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">mag. Dušan Verbič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Party of Modern Centre — III Ljubljana Šiška IV 11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4efef6b2-3e10-46fe-a881-5027cc095621">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4efef6b2-3e10-46fe-a881-5027cc095621/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Slovenia/National-Assembly/4efef6b2-3e10-46fe-a881-5027cc095621/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Žan Mahnič</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Slovenian Democratic Party — I Škofja Loka II 9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/ZanMahnic">@ZanMahnic</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/%C5%BDan-Mahni%C4%8D-1416268151994443">%C5%BDan-Mahni%C4%8D-1416268151994443</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

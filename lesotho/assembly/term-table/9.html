@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="9th Parliament" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-dc"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -161,1487 +164,3283 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9ee94cc/data/Lesotho/Assembly/term-9.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9ee94cc/data/Lesotho/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9ee94cc/data/Lesotho/Assembly/term-9.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9ee94cc/data/Lesotho/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-93031b43-807a-44d6-bae6-842503eb861d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="'Maboiketlo Maliehe">'Maboiketlo Maliehe</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dad5c322-c9c4-442e-80ce-4df9ad0aac02">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="'Maneo 'Mathabo Nelly Moremoholo">'Maneo 'Mathabo Nelly Moremoholo</td>
-                      
-                        <td>DC</td>
-                        <td>Thaba-Tseka</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-48803272-e768-4625-8ee5-ac9307a944a7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="'Marefuoe Alice 'Muso">'Marefuoe Alice 'Muso</td>
-                      
-                        <td>DC</td>
-                        <td>Ketane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-67b080a8-20bd-434e-89d8-cc5a2b81c2ec">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="'Masuthang A. Taole">'Masuthang A. Taole</td>
-                      
-                        <td>DC</td>
-                        <td>Mantšonyane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0a9409d3-7d3b-4896-a510-744882d10ba7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="'Matebatso Doti">'Matebatso Doti</td>
-                      
-                        <td>ABC</td>
-                        <td>Lithabaneng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aa69426f-51a2-4890-bc77-77836474ed62">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="'Mathabiseng Arcylia Phohleli">'Mathabiseng Arcylia Phohleli</td>
-                      
-                        <td>DC</td>
-                        <td>Rothe</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9379007c-9f63-4e3f-b7a9-55da87162b84">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Boomo Frank Sofonia">Boomo Frank Sofonia</td>
-                      
-                        <td>ABC</td>
-                        <td>Thaba - Bosiu</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9de92e1e-a2bd-49ba-87e3-844d5ea203c8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chalane Cletus Phori">Chalane Cletus Phori</td>
-                      
-                        <td>ABC</td>
-                        <td>Qoaling</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-521e3854-7ad7-4902-b00b-b2b504523123">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Motsoahae Thabane">Dr. Motsoahae Thabane</td>
-                      
-                        <td>ABC</td>
-                        <td>Abia</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-11feeed3-497a-4d88-aafc-1d151e42ce80">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Pakalitha B. Mosisili">Dr. Pakalitha B. Mosisili</td>
-                      
-                        <td>DC</td>
-                        <td>Tsoelike</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8e30cab6-e8a3-43b7-ac97-ec0bc3df00a8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Pontšo Susan 'Matumelo Sekatle">Dr. Pontšo Susan 'Matumelo Sekatle</td>
-                      
-                        <td>DC</td>
-                        <td>Qacha's Nek</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7aae119-84c4-42a0-af54-1001a594b0ed">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Habofanoe Sixtus Lehana">Habofanoe Sixtus Lehana</td>
-                      
-                        <td>ABC</td>
-                        <td>Khafung</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a5a1e55e-320e-432a-a63c-c6e7cbf58f68">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Halebonoe James Setsabi">Halebonoe James Setsabi</td>
-                      
-                        <td>ABC</td>
-                        <td>Kolonyama</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-71d42e1c-b63b-4b87-ae9f-3fa7119226f4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joang Molapo">Joang Molapo</td>
-                      
-                        <td>BNP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41f65de5-05b1-4246-8f7b-d0412f83088d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jobo Sekautu">Jobo Sekautu</td>
-                      
-                        <td>DC</td>
-                        <td>Semena</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-31c90c11-df12-46f7-8cbd-2272d0968a45">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kabelo Mafura">Kabelo Mafura</td>
-                      
-                        <td>DC</td>
-                        <td>Sebapala</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-beb6b168-d0e7-4969-bb10-3a303daff5bb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kamoho Joseph Moroeng">Kamoho Joseph Moroeng</td>
-                      
-                        <td>DC</td>
-                        <td>Mekaling</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ada555f9-d628-4bb5-a48b-9a56645060a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Keketso 'Manthabiseng Rants'o">Keketso 'Manthabiseng Rants'o</td>
-                      
-                        <td>RCL</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1df66364-5bfe-45c5-aece-32da45dc3599">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Keketso Utloang Sello">Keketso Utloang Sello</td>
-                      
-                        <td>ABC</td>
-                        <td>Hlotse</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ebf34aa-61b5-410f-92bd-867037c679d5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Khotso Elias Letsatsi">Khotso Elias Letsatsi</td>
-                      
-                        <td>DC</td>
-                        <td>Likhoele</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aa8e680c-a32b-44c3-931f-d1ef51fe11a1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kimetso Mathaba">Kimetso Mathaba</td>
-                      
-                        <td>NIP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50aef317-b776-4438-b96c-22e7fbbe02b7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kose Julius Makoa">Kose Julius Makoa</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9faa3ee4-e945-4d74-b257-e8f1569595b4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kotiti Lawson Diholo">Kotiti Lawson Diholo</td>
-                      
-                        <td>DC</td>
-                        <td>Maletsunyane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4ab525f0-a9e5-496f-a0b1-72b617850fa9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Leboea Mothuku">Leboea Mothuku</td>
-                      
-                        <td>ABC</td>
-                        <td>Qalo</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2a288956-6439-4fce-a35c-2c657dcf527c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lechoo D. Setenane">Lechoo D. Setenane</td>
-                      
-                        <td>ABC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ad55707d-6676-48f8-96ee-9d8960c3c84d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lefu Clement Hlomelang">Lefu Clement Hlomelang</td>
-                      
-                        <td>ABC</td>
-                        <td>'Makhoroana</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4cee954e-8358-4a92-8973-fa8a675e77f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lehlohonolo Hlapisi">Lehlohonolo Hlapisi</td>
-                      
-                        <td>DC</td>
-                        <td>Maliepetsane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a299790-f663-46a9-bcdb-309094491173">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lehlohonolo Moramotse">Lehlohonolo Moramotse</td>
-                      
-                        <td>ABC</td>
-                        <td>Lithoteng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f8054f66-a4b2-4bf9-bd6f-bce07bb05c61">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lejaka Lesoma">Lejaka Lesoma</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-33700b91-2172-423a-9805-0f1015ab6506">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lekhetho Mosito">Lekhetho Mosito</td>
-                      
-                        <td>ABC</td>
-                        <td>Likhetlane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-352545ec-bd02-46f2-aad9-ad8f064a1a35">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lekhetho Rakuoane">Lekhetho Rakuoane</td>
-                      
-                        <td>PFD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9797a8c8-152a-45ec-a79c-a5ac01c4fc41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lesego Casayel Makgothi">Lesego Casayel Makgothi</td>
-                      
-                        <td>ABC</td>
-                        <td>Maseru</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4bbb005c-5062-466f-99c2-1ddff527955e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Leshoboro Mohlajoa">Leshoboro Mohlajoa</td>
-                      
-                        <td>ABC</td>
-                        <td>Malimong</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-952fc903-9fc4-4d3d-b24c-58443e3f964c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lesojane F. Leuta">Lesojane F. Leuta</td>
-                      
-                        <td>BNP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ee1cb3f4-2eea-49c1-9c11-593fd09d5abb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lethusang Daniel Kompi">Lethusang Daniel Kompi</td>
-                      
-                        <td>DC</td>
-                        <td>Qaqatu</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50c2b0d6-760f-4be4-bb2e-4eb61483b898">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Likeleli Tampane - Monare">Likeleli Tampane - Monare</td>
-                      
-                        <td>DC</td>
-                        <td>Senqu</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a3d2347-fbab-498d-b57e-a1709327f50b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Likopo Remington Mahase">Likopo Remington Mahase</td>
-                      
-                        <td>ABC</td>
-                        <td>Khubetsoana</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6444f656-d621-4e21-8c5e-94ce3df680f2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lineo Irene Molise">Lineo Irene Molise</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-746bf64f-edf4-4d72-bfd2-1a9f6c7b5cd6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Liteboho Kompi">Liteboho Kompi</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e371b49-96ce-4d39-b1f9-e3e2f329699c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lits'oane Lits'oane">Lits'oane Lits'oane</td>
-                      
-                        <td>ABC</td>
-                        <td>Bela-Bela</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d0646ca8-3c1c-4dc1-b236-44e2d7283a49">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mabatsoeneng E. Sibolla">Mabatsoeneng E. Sibolla</td>
-                      
-                        <td>ABC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e6f86017-2b3e-4d8a-b718-dd2373b86f68">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mafako Molefe">Mafako Molefe</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bab8e1c8-947b-4426-ad0c-cef78dc20e4f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mahala Molapo">Mahala Molapo</td>
-                      
-                        <td>ABC</td>
-                        <td>Thaba-Phatšoa</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b678ece7-0d5c-4be1-b4c5-c8d2d3be329a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mahali Agnes Phamotse">Mahali Agnes Phamotse</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-216a235f-5673-49a1-8cf7-b53865cae9e8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maimane Philemon Maphathe">Maimane Philemon Maphathe</td>
-                      
-                        <td>DC</td>
-                        <td>Matelile</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3b88ecf9-4546-42ce-a31d-7c96081619c5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Majoro N. Mohapi">Majoro N. Mohapi</td>
-                      
-                        <td>ABC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-14547855-d20e-4327-b361-bea55d027373">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Makhotso Matsumunyane">Makhotso Matsumunyane</td>
-                      
-                        <td>BNP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-115224b0-8696-4163-9033-26db1ef2ee66">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maliehe Prince Maliehe">Maliehe Prince Maliehe</td>
-                      
-                        <td>ABC</td>
-                        <td>Teyateyaneng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dbfa734e-008d-49cd-8a73-73eb2dc0b284">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mamahele Radebe">Mamahele Radebe</td>
-                      
-                        <td>ABC</td>
-                        <td>Hololo</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7a17462-7ef4-4ec8-a177-ba69071e6672">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mamandla Musa">Mamandla Musa</td>
-                      
-                        <td>ABC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc8005c2-1aad-4191-964c-c0efad923f3a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mamosa Molapo">Mamosa Molapo</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0b3d1f8c-f25f-4429-97d4-29e2497b1e50">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mamoshoeshoe Molapo">Mamoshoeshoe Molapo</td>
-                      
-                        <td>BNP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5d5bca53-07c8-4c18-99f5-90cfafaa8864">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mamotikoe Khiba">Mamotikoe Khiba</td>
-                      
-                        <td>PFD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6e011f52-10a4-4b50-8927-43ba16218f7c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mamotsie V. Motsie">Mamotsie V. Motsie</td>
-                      
-                        <td>ABC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea0fc143-7969-4116-a2d8-245fc1efc40f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mampho M. Mokhele">Mampho M. Mokhele</td>
-                      
-                        <td>ABC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dd633596-9cd7-44cc-95ca-69f133ab80f9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mankoe James Maime">Mankoe James Maime</td>
-                      
-                        <td>ABC</td>
-                        <td>Maama</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50d00955-d743-4b08-b8f1-f14defd3f087">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mapalesa Mothokho">Mapalesa Mothokho</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3553ccb4-d1c7-405b-a80a-e1bd9565aa17">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mathabo Shao">Mathabo Shao</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3110a319-c395-44b2-9cea-20dd31f40de3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mathibeli Edwin Mokhothu">Mathibeli Edwin Mokhothu</td>
-                      
-                        <td>DC</td>
-                        <td>Qhoali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-46a471b3-36a4-4792-a0c3-dfb246fc470f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Matlosa Lebusa">Matlosa Lebusa</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-47bc10d3-1382-4e1f-97fe-486bdd0a11c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mohau Hlalele">Mohau Hlalele</td>
-                      
-                        <td>DC</td>
-                        <td>Thaba - Phechela</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-86f17fb8-b1c2-4636-88db-8239ca67b105">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mokhele Stephen Moletsane">Mokhele Stephen Moletsane</td>
-                      
-                        <td>DC</td>
-                        <td>Matsieng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d799493a-aa3c-4ca7-a723-a274399d96dc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mokherane Tsatsanyane">Mokherane Tsatsanyane</td>
-                      
-                        <td>ABC</td>
-                        <td>Stadium Area</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-191159aa-3c0b-49f5-9ef9-6b2e46c9a2ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mokoinihi Thinyane">Mokoinihi Thinyane</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-25e83737-8f93-4a6d-a5ef-e4f66d383277">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mokoto Francis Hloaele">Mokoto Francis Hloaele</td>
-                      
-                        <td>DC</td>
-                        <td>Maliba-Matšo</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bdde3184-4202-4bc2-a325-5cfb0f981cbe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Molahlehi Tiisetso Letlotlo">Molahlehi Tiisetso Letlotlo</td>
-                      
-                        <td>LPC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d09fdef0-09c7-4d1f-8122-476c342f0097">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Molefi Africa Simon Makakane">Molefi Africa Simon Makakane</td>
-                      
-                        <td>ABC</td>
-                        <td>Thupa-Kubu</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ee994402-ff07-4072-ab72-8b698c370ee2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Molobeli Soulo">Molobeli Soulo</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2c735ed9-5e23-42fc-a824-4ff0329bb312">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Monaphathi Maraka">Monaphathi Maraka</td>
-                      
-                        <td>ABC</td>
-                        <td>Berea</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a9638b83-0419-48a7-b779-cfd3739d00d5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Monyane Moleleki">Monyane Moleleki</td>
-                      
-                        <td>DC</td>
-                        <td>Machache</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-17e1969d-af61-4b42-aa52-f6f476a0c710">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mooki Jobo Sello">Mooki Jobo Sello</td>
-                      
-                        <td>ABC</td>
-                        <td>Bobatsi</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a585a777-2218-44fb-8244-441f6e9b6393">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mootsi Samuel Lehata">Mootsi Samuel Lehata</td>
-                      
-                        <td>DC</td>
-                        <td>Makhaleng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-233b48be-0d3d-46ea-a1af-6669a3af4fd5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Moshe Leoma">Moshe Leoma</td>
-                      
-                        <td>ABC</td>
-                        <td>Matlakeng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-14cd531f-dd01-4add-a62c-950da21fdf76">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Moshoeshoe Fako">Moshoeshoe Fako</td>
-                      
-                        <td>ABC</td>
-                        <td>Mabote</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d1c92e22-90d2-4699-8c00-4894fa1f5406">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Motebang Koma">Motebang Koma</td>
-                      
-                        <td>ABC</td>
-                        <td>Koro - Koro</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d06807ea-ddba-4813-a1ea-5d1e49b591f6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mothejoa Metsing">Mothejoa Metsing</td>
-                      
-                        <td>LCD</td>
-                        <td>Mahobong</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a9cbed8f-b04a-46a1-a854-8a665c29f27c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mothepu Moliko">Mothepu Moliko</td>
-                      
-                        <td>BNP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e9a61eaf-d26f-41e6-a53b-2879ab92d720">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Motlalentoa Letsosa">Motlalentoa Letsosa</td>
-                      
-                        <td>DC</td>
-                        <td>Qalabane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c093d2d9-9b17-4f45-b624-bd3985f480da">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Motloheloa Phooko">Motloheloa Phooko</td>
-                      
-                        <td>RCL</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cadd080c-d452-4441-989f-7457a7d99855">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Motlohi Maliehe">Motlohi Maliehe</td>
-                      
-                        <td>ABC</td>
-                        <td>Botha-Bothe</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c3cee34c-af0c-46b5-87a5-96744dbb384b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ndiwuhleli Ndlomose">Ndiwuhleli Ndlomose</td>
-                      
-                        <td>DC</td>
-                        <td>Tele</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-039a8cbd-0aa7-4df4-92f4-5d710ea9393c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nkaku Ernest Kabi">Nkaku Ernest Kabi</td>
-                      
-                        <td>ABC</td>
-                        <td>Qeme</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-53c3f234-6a7f-4931-b4df-a14946d463e4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nthabiseng Lucia Makoae">Nthabiseng Lucia Makoae</td>
-                      
-                        <td>BNP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e2de8f1-3344-4365-b7fa-1fea08664634">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ntlhoi Motsamai">Ntlhoi Motsamai</td>
-                      
-                        <td>DC</td>
-                        <td>Hloahloeng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c18fa321-3d3a-47f0-8433-7a1b78797944">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nyapane Edward Kaya">Nyapane Edward Kaya</td>
-                      
-                        <td>ABC</td>
-                        <td>Mechachane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5cb3bfec-0a11-4c08-9d8f-ab2ef11d543c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Palo Leteetee">Palo Leteetee</td>
-                      
-                        <td>DC</td>
-                        <td>Qhalasi</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01fab1db-9250-4f2b-9c55-ece7607c6da2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Phakiso Edwill Khama">Phakiso Edwill Khama</td>
-                      
-                        <td>DC</td>
-                        <td>Mphosong</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-42993ec3-0252-4837-a170-ac92ea28e2bd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Phallang Eliot Monare">Phallang Eliot Monare</td>
-                      
-                        <td>DC</td>
-                        <td>Taung</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5d3e5708-e5d7-4891-be00-e498d554c0da">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Phutuhelo Daniel Mafereka">Phutuhelo Daniel Mafereka</td>
-                      
-                        <td>DC</td>
-                        <td>Mpharane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d160c605-a9f4-41ce-9d65-8e5f5d4bb2b5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pitso Maisa">Pitso Maisa</td>
-                      
-                        <td>ABC</td>
-                        <td>Motimposo</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-04246f47-8b5b-4c8f-86c1-8ab3fb874823">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ralechate Mokose">Ralechate Mokose</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-53c9ff92-74e3-4339-a4e1-11b35e717904">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rapitso Mahooana George Khati">Rapitso Mahooana George Khati</td>
-                      
-                        <td>DC</td>
-                        <td>Moyeni</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a1af50d8-6875-443e-b1dd-9355fd0e4342">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Refiloe Litjobo">Refiloe Litjobo</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eb9bbe18-078a-4676-b546-fafa81cb5ed4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rethabile Marumo">Rethabile Marumo</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cc7065aa-77ea-4e5c-b20f-80650e467c07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Samonyane Ntsekele">Samonyane Ntsekele</td>
-                      
-                        <td>ABC</td>
-                        <td>Tsikoane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3ec6c64e-a2fd-4ebf-9d31-2a741901a680">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sekoboto Gilbert Molise">Sekoboto Gilbert Molise</td>
-                      
-                        <td>ABC</td>
-                        <td>Thetsane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c96ec2a1-5c3f-4a2b-be6d-f786a7ba7a47">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Selibe Machoboroane">Selibe Machoboroane</td>
-                      
-                        <td>LCD</td>
-                        <td>Thabana-Morena</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-49fa9a4e-03ee-410d-843d-8e36064fdeba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Semano Henry Sekatle">Semano Henry Sekatle</td>
-                      
-                        <td>DC</td>
-                        <td>Lebakeng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-68f98519-ca75-462c-beda-c98a2d159daf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sentje Leornad Lebona">Sentje Leornad Lebona</td>
-                      
-                        <td>ABC</td>
-                        <td>Mohale's Hoek</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f157300-13a9-4abe-8902-2bc00aa08f5f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Serialong Qoo">Serialong Qoo</td>
-                      
-                        <td>DC</td>
-                        <td>Malingoaneng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01de6347-61b2-48e1-ab70-d7f779e5b84c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sotlehang Sidwell Sekhamane">Sotlehang Sidwell Sekhamane</td>
-                      
-                        <td>ABC</td>
-                        <td>Maputsoe</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-969f6e66-555c-4473-9750-279cba99e1ef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Teboho Poul Lehloenya">Teboho Poul Lehloenya</td>
-                      
-                        <td>DC</td>
-                        <td>Kolo</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8909cee1-9eb0-4d23-b322-cd71344b595f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tefo Fabian Mapasela">Tefo Fabian Mapasela</td>
-                      
-                        <td>unknown</td>
-                        <td>Mokhotlong</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc884450-01cf-447c-9bec-4a2e62f0472a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Temeki Phoenix Tsólo">Temeki Phoenix Tsólo</td>
-                      
-                        <td>ABC</td>
-                        <td>Mafeteng</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2701e2ce-9a5a-40d7-a4e2-f992eca3d726">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Thabang Pheko">Thabang Pheko</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b248fbd0-2d7c-4573-97f5-a29de2793111">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Thesele John Maseribane">Thesele John Maseribane</td>
-                      
-                        <td>BNP</td>
-                        <td>Mount Moorosi</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5bf07ee3-ccb6-4f49-abfc-88ece7071ccd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tieho Gilbert Mamasiane">Tieho Gilbert Mamasiane</td>
-                      
-                        <td>DC</td>
-                        <td>Pela-Tšoeu</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0cbe0e76-382e-4bef-b251-ce5810c35e85">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tjoetsane Alexis Seoka">Tjoetsane Alexis Seoka</td>
-                      
-                        <td>DC</td>
-                        <td>Thaba-Moea</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7b558a69-4918-4900-949d-f52107844635">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tlali Khasu">Tlali Khasu</td>
-                      
-                        <td>ABC</td>
-                        <td>Peka</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c0b35d77-324a-4502-8463-551d9d6d47bf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tlohang Sekhamane">Tlohang Sekhamane</td>
-                      
-                        <td>DC</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea041021-dd18-4424-85f8-e3bb132571fa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsehlo Moses Ramarou">Tsehlo Moses Ramarou</td>
-                      
-                        <td>ABC</td>
-                        <td>Leribe</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1097bcfe-9b4c-46f5-921f-6c6500326b92">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tseleng Mosenyehi">Tseleng Mosenyehi</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae77a0a1-36a1-4e97-bcca-1ec480f00dc3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsoanelo Ramakeoane">Tsoanelo Ramakeoane</td>
-                      
-                        <td>LCD</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2632fc4b-e280-464a-9c46-39cc04cceb4b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsoeu Thulo Mahlakeng">Tsoeu Thulo Mahlakeng</td>
-                      
-                        <td>BCP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-81e7d54d-5868-4465-97e5-341c1d986787">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsoinyana Samuel Rapapa">Tsoinyana Samuel Rapapa</td>
-                      
-                        <td>ABC</td>
-                        <td>Mosalemane</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8559555-fdeb-4ed4-9798-02d01e855823">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsukutlane Au">Tsukutlane Au</td>
-                      
-                        <td>DC</td>
-                        <td>Thaba - Putsoa</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-81e4fadf-171c-4b78-9efa-c0b452705639">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsóeu Molise">Tsóeu Molise</td>
-                      
-                        <td>ABC</td>
-                        <td>Tsóana Makhulo</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5114ab09-9534-47ec-b6c7-4de941e49d1f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tumaole Clement Lerafa">Tumaole Clement Lerafa</td>
-                      
-                        <td>DC</td>
-                        <td>Moteete</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8d5c677c-8b39-4a6e-aa5d-de4fceb0c63a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tšoeu Phineas Mokeretla">Tšoeu Phineas Mokeretla</td>
-                      
-                        <td>DC</td>
-                        <td>Mashai</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ec41f87-dde9-4cc1-81ae-9b8ce20bcf3e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vincent M. Malebo">Vincent M. Malebo</td>
-                      
-                        <td>MFP</td>
-                        <td>Proportional Representation</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-93031b43-807a-44d6-bae6-842503eb861d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">'Maboiketlo Maliehe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dad5c322-c9c4-442e-80ce-4df9ad0aac02">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">'Maneo 'Mathabo Nelly Moremoholo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Thaba-Tseka
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-48803272-e768-4625-8ee5-ac9307a944a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">'Marefuoe Alice 'Muso</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Ketane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-67b080a8-20bd-434e-89d8-cc5a2b81c2ec">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">'Masuthang A. Taole</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Mantšonyane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0a9409d3-7d3b-4896-a510-744882d10ba7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">'Matebatso Doti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Lithabaneng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa69426f-51a2-4890-bc77-77836474ed62">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">'Mathabiseng Arcylia Phohleli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Rothe
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9379007c-9f63-4e3f-b7a9-55da87162b84">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Boomo Frank Sofonia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Thaba - Bosiu
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9de92e1e-a2bd-49ba-87e3-844d5ea203c8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Chalane Cletus Phori</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Qoaling
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-521e3854-7ad7-4902-b00b-b2b504523123">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dr. Motsoahae Thabane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Abia
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-11feeed3-497a-4d88-aafc-1d151e42ce80">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dr. Pakalitha B. Mosisili</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Tsoelike
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e30cab6-e8a3-43b7-ac97-ec0bc3df00a8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dr. Pontšo Susan 'Matumelo Sekatle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Qacha's Nek
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7aae119-84c4-42a0-af54-1001a594b0ed">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Habofanoe Sixtus Lehana</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Khafung
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a5a1e55e-320e-432a-a63c-c6e7cbf58f68">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Halebonoe James Setsabi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Kolonyama
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-71d42e1c-b63b-4b87-ae9f-3fa7119226f4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joang Molapo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BNP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41f65de5-05b1-4246-8f7b-d0412f83088d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jobo Sekautu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Semena
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-31c90c11-df12-46f7-8cbd-2272d0968a45">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kabelo Mafura</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Sebapala
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-beb6b168-d0e7-4969-bb10-3a303daff5bb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kamoho Joseph Moroeng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Mekaling
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ada555f9-d628-4bb5-a48b-9a56645060a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Keketso 'Manthabiseng Rants'o</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RCL — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1df66364-5bfe-45c5-aece-32da45dc3599">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Keketso Utloang Sello</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Hlotse
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ebf34aa-61b5-410f-92bd-867037c679d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Khotso Elias Letsatsi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Likhoele
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa8e680c-a32b-44c3-931f-d1ef51fe11a1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kimetso Mathaba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NIP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50aef317-b776-4438-b96c-22e7fbbe02b7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kose Julius Makoa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9faa3ee4-e945-4d74-b257-e8f1569595b4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kotiti Lawson Diholo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Maletsunyane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4ab525f0-a9e5-496f-a0b1-72b617850fa9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Leboea Mothuku</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Qalo
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2a288956-6439-4fce-a35c-2c657dcf527c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lechoo D. Setenane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ad55707d-6676-48f8-96ee-9d8960c3c84d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lefu Clement Hlomelang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — 'Makhoroana
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4cee954e-8358-4a92-8973-fa8a675e77f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lehlohonolo Hlapisi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Maliepetsane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a299790-f663-46a9-bcdb-309094491173">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lehlohonolo Moramotse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Lithoteng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f8054f66-a4b2-4bf9-bd6f-bce07bb05c61">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lejaka Lesoma</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-33700b91-2172-423a-9805-0f1015ab6506">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lekhetho Mosito</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Likhetlane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-352545ec-bd02-46f2-aad9-ad8f064a1a35">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lekhetho Rakuoane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PFD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9797a8c8-152a-45ec-a79c-a5ac01c4fc41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lesego Casayel Makgothi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Maseru
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4bbb005c-5062-466f-99c2-1ddff527955e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Leshoboro Mohlajoa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Malimong
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-952fc903-9fc4-4d3d-b24c-58443e3f964c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lesojane F. Leuta</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BNP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee1cb3f4-2eea-49c1-9c11-593fd09d5abb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lethusang Daniel Kompi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Qaqatu
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50c2b0d6-760f-4be4-bb2e-4eb61483b898">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Likeleli Tampane - Monare</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Senqu
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a3d2347-fbab-498d-b57e-a1709327f50b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Likopo Remington Mahase</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Khubetsoana
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6444f656-d621-4e21-8c5e-94ce3df680f2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lineo Irene Molise</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-746bf64f-edf4-4d72-bfd2-1a9f6c7b5cd6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Liteboho Kompi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e371b49-96ce-4d39-b1f9-e3e2f329699c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lits'oane Lits'oane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Bela-Bela
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0646ca8-3c1c-4dc1-b236-44e2d7283a49">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mabatsoeneng E. Sibolla</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e6f86017-2b3e-4d8a-b718-dd2373b86f68">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mafako Molefe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bab8e1c8-947b-4426-ad0c-cef78dc20e4f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mahala Molapo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Thaba-Phatšoa
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b678ece7-0d5c-4be1-b4c5-c8d2d3be329a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mahali Agnes Phamotse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-216a235f-5673-49a1-8cf7-b53865cae9e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maimane Philemon Maphathe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Matelile
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b88ecf9-4546-42ce-a31d-7c96081619c5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Majoro N. Mohapi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14547855-d20e-4327-b361-bea55d027373">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Makhotso Matsumunyane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BNP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-115224b0-8696-4163-9033-26db1ef2ee66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maliehe Prince Maliehe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Teyateyaneng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dbfa734e-008d-49cd-8a73-73eb2dc0b284">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mamahele Radebe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Hololo
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7a17462-7ef4-4ec8-a177-ba69071e6672">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mamandla Musa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc8005c2-1aad-4191-964c-c0efad923f3a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mamosa Molapo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0b3d1f8c-f25f-4429-97d4-29e2497b1e50">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mamoshoeshoe Molapo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BNP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d5bca53-07c8-4c18-99f5-90cfafaa8864">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mamotikoe Khiba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PFD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6e011f52-10a4-4b50-8927-43ba16218f7c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mamotsie V. Motsie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea0fc143-7969-4116-a2d8-245fc1efc40f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mampho M. Mokhele</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd633596-9cd7-44cc-95ca-69f133ab80f9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mankoe James Maime</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Maama
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50d00955-d743-4b08-b8f1-f14defd3f087">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mapalesa Mothokho</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3553ccb4-d1c7-405b-a80a-e1bd9565aa17">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mathabo Shao</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3110a319-c395-44b2-9cea-20dd31f40de3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mathibeli Edwin Mokhothu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Qhoali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-46a471b3-36a4-4792-a0c3-dfb246fc470f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Matlosa Lebusa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-47bc10d3-1382-4e1f-97fe-486bdd0a11c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mohau Hlalele</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Thaba - Phechela
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-86f17fb8-b1c2-4636-88db-8239ca67b105">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mokhele Stephen Moletsane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Matsieng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d799493a-aa3c-4ca7-a723-a274399d96dc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mokherane Tsatsanyane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Stadium Area
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-191159aa-3c0b-49f5-9ef9-6b2e46c9a2ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mokoinihi Thinyane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-25e83737-8f93-4a6d-a5ef-e4f66d383277">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mokoto Francis Hloaele</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Maliba-Matšo
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bdde3184-4202-4bc2-a325-5cfb0f981cbe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Molahlehi Tiisetso Letlotlo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LPC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d09fdef0-09c7-4d1f-8122-476c342f0097">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Molefi Africa Simon Makakane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Thupa-Kubu
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee994402-ff07-4072-ab72-8b698c370ee2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Molobeli Soulo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2c735ed9-5e23-42fc-a824-4ff0329bb312">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Monaphathi Maraka</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Berea
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a9638b83-0419-48a7-b779-cfd3739d00d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Monyane Moleleki</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Machache
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-17e1969d-af61-4b42-aa52-f6f476a0c710">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mooki Jobo Sello</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Bobatsi
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a585a777-2218-44fb-8244-441f6e9b6393">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mootsi Samuel Lehata</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Makhaleng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-233b48be-0d3d-46ea-a1af-6669a3af4fd5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Moshe Leoma</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Matlakeng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14cd531f-dd01-4add-a62c-950da21fdf76">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Moshoeshoe Fako</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Mabote
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d1c92e22-90d2-4699-8c00-4894fa1f5406">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Motebang Koma</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Koro - Koro
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d06807ea-ddba-4813-a1ea-5d1e49b591f6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mothejoa Metsing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Mahobong
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a9cbed8f-b04a-46a1-a854-8a665c29f27c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mothepu Moliko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BNP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e9a61eaf-d26f-41e6-a53b-2879ab92d720">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Motlalentoa Letsosa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Qalabane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c093d2d9-9b17-4f45-b624-bd3985f480da">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Motloheloa Phooko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RCL — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cadd080c-d452-4441-989f-7457a7d99855">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Motlohi Maliehe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Botha-Bothe
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c3cee34c-af0c-46b5-87a5-96744dbb384b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ndiwuhleli Ndlomose</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Tele
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-039a8cbd-0aa7-4df4-92f4-5d710ea9393c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nkaku Ernest Kabi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Qeme
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-53c3f234-6a7f-4931-b4df-a14946d463e4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nthabiseng Lucia Makoae</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BNP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e2de8f1-3344-4365-b7fa-1fea08664634">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ntlhoi Motsamai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Hloahloeng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c18fa321-3d3a-47f0-8433-7a1b78797944">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nyapane Edward Kaya</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Mechachane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5cb3bfec-0a11-4c08-9d8f-ab2ef11d543c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Palo Leteetee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Qhalasi
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01fab1db-9250-4f2b-9c55-ece7607c6da2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Phakiso Edwill Khama</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Mphosong
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-42993ec3-0252-4837-a170-ac92ea28e2bd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Phallang Eliot Monare</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Taung
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d3e5708-e5d7-4891-be00-e498d554c0da">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Phutuhelo Daniel Mafereka</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Mpharane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d160c605-a9f4-41ce-9d65-8e5f5d4bb2b5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pitso Maisa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Motimposo
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-04246f47-8b5b-4c8f-86c1-8ab3fb874823">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ralechate Mokose</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-53c9ff92-74e3-4339-a4e1-11b35e717904">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rapitso Mahooana George Khati</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Moyeni
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a1af50d8-6875-443e-b1dd-9355fd0e4342">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Refiloe Litjobo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb9bbe18-078a-4676-b546-fafa81cb5ed4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rethabile Marumo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cc7065aa-77ea-4e5c-b20f-80650e467c07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Samonyane Ntsekele</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Tsikoane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3ec6c64e-a2fd-4ebf-9d31-2a741901a680">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sekoboto Gilbert Molise</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Thetsane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c96ec2a1-5c3f-4a2b-be6d-f786a7ba7a47">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Selibe Machoboroane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Thabana-Morena
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-49fa9a4e-03ee-410d-843d-8e36064fdeba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Semano Henry Sekatle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Lebakeng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-68f98519-ca75-462c-beda-c98a2d159daf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sentje Leornad Lebona</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Mohale's Hoek
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f157300-13a9-4abe-8902-2bc00aa08f5f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Serialong Qoo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Malingoaneng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01de6347-61b2-48e1-ab70-d7f779e5b84c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sotlehang Sidwell Sekhamane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Maputsoe
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-969f6e66-555c-4473-9750-279cba99e1ef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Teboho Poul Lehloenya</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Kolo
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8909cee1-9eb0-4d23-b322-cd71344b595f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tefo Fabian Mapasela</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mokhotlong
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc884450-01cf-447c-9bec-4a2e62f0472a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Temeki Phoenix Tsólo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Mafeteng
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2701e2ce-9a5a-40d7-a4e2-f992eca3d726">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Thabang Pheko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b248fbd0-2d7c-4573-97f5-a29de2793111">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Thesele John Maseribane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BNP — Mount Moorosi
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5bf07ee3-ccb6-4f49-abfc-88ece7071ccd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tieho Gilbert Mamasiane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Pela-Tšoeu
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0cbe0e76-382e-4bef-b251-ce5810c35e85">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tjoetsane Alexis Seoka</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Thaba-Moea
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7b558a69-4918-4900-949d-f52107844635">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tlali Khasu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Peka
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c0b35d77-324a-4502-8463-551d9d6d47bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tlohang Sekhamane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea041021-dd18-4424-85f8-e3bb132571fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tsehlo Moses Ramarou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Leribe
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1097bcfe-9b4c-46f5-921f-6c6500326b92">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tseleng Mosenyehi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae77a0a1-36a1-4e97-bcca-1ec480f00dc3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tsoanelo Ramakeoane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LCD — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2632fc4b-e280-464a-9c46-39cc04cceb4b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tsoeu Thulo Mahlakeng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              BCP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-81e7d54d-5868-4465-97e5-341c1d986787">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tsoinyana Samuel Rapapa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Mosalemane
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8559555-fdeb-4ed4-9798-02d01e855823">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tsukutlane Au</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Thaba - Putsoa
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-81e4fadf-171c-4b78-9efa-c0b452705639">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tsóeu Molise</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ABC — Tsóana Makhulo
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5114ab09-9534-47ec-b6c7-4de941e49d1f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tumaole Clement Lerafa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Moteete
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8d5c677c-8b39-4a6e-aa5d-de4fceb0c63a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tšoeu Phineas Mokeretla</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DC — Mashai
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ec41f87-dde9-4cc1-81ae-9b8ce20bcf3e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Vincent M. Malebo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MFP — Proportional Representation
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

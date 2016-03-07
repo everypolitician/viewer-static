@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="State Grand Khural 2012–" />
     <meta property="og:type" content="article" />
@@ -124,7 +127,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-democratic_party"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -160,959 +163,3190 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/09c5fe6/data/Mongolia/Assembly/term-2012.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/09c5fe6/data/Mongolia/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/0640fac/data/Mongolia/Assembly/term-2012.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/0640fac/data/Mongolia/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-4bf70f7d-d11e-4326-8522-8a2013feae9e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Agipar BAKEI">Agilapyn Bakei</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Bayan-Ölgii</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2b08df74-7880-43c9-a2be-91681ebea545">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Almalik TLEIKHAN">Almalikyn Tleikhan</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Bayan-Ölgii</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a23a6c6-216c-4b87-a08a-3a526ca4dcbe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Badmaanyambuu BAT-ERDENE">Badmaanyambuugiin Bat-Erdene</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Khentii</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-966ee42e-ac5e-42c2-93c0-0c74b9b3270e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Batkhüügiin Garamgaibaatar">Batkhüügiin Garamgaibaatar</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Khentii</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6512664b-8106-4dc8-a822-76d6d9810515">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Batsukh NARANKHUU">Batsükhiin Narankhüü</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Dundgovi</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-63d33048-8f25-4674-b96d-6df3c6d3ef6b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Battogtokh CHOIJILSUREN">Battogtokhyn Choijilsüren</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Uvs</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fdb19fce-977e-4aba-8c42-148cbceae5c1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bayarbaatar BOLOR">Bayarbaataryn Bolor</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Arkhangai</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f85e7e30-eb6a-4a7f-88f9-ec7b22470886">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chimed KHURELBAATAR">Chimediin Khürelbaatar</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Uvs</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7e35947-42fe-4949-973b-25b2a2129514">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chimed SAIKHANBILEG">Chimediin Saikhanbileg</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a38867dc-73e6-4990-90df-cf89f0b25be5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chultem ULAAN">Chültemiin Ulaan</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-45406a4d-857a-4252-9ec9-146573a09636">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Damdin DEMBEREL">Damdingiin Demberel</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6aeb9550-7d70-4ce2-a67c-ccadc9516ed1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Damdin KHAYANKHYARVAA">Damdingiin Khayankhyarvaa</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Darkhan-Uul</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50218128-a922-4256-addf-b6c82e312a73">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Danzan LUNDEEJANTSAN">Danzangiin Lündeejantsan</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-033995bf-e413-445b-ae6c-bfd601a1a0fa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dashdemberel BAT-ERDENE">Dashdembereliin Bat-Erdene</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ömnögovi</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01fb02cf-2cd1-418b-9746-18bd7ed1efa1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dashdondog GANBAT">Dashdondogiin Ganbat</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Bayankhongor</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ca30348a-a09b-4d17-8dc7-1a3d76946265">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dashjamts ARVIN">Dashjamtsyn Arvin</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Bayanzürkh•Nalaikh</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-270bfd69-81e8-4789-903c-75d9627fddf5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dashzevegiin Zorigt">Dashzevegiin Zorigt</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Övörkhangai</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41065287-b891-4c42-892e-fb5d8a825b69">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Davaajav GANKHUAYG">Davaajavyn Gankhuyag</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Bayanzürkh•Nalaikh</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9398cdb6-d8de-45f4-9e84-ff1c65616c44">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dendev TERBISHDAVGA">Dendeviin Terbishdagva</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ae12efe-54ea-43a5-b91d-718807da3202">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dogsom BATTSOGT">Dogsomyn Battsogt</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>Khovd</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-90b77768-c1e7-465d-ae9e-2d6e125be1e9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dolgorsürengiin Sumyaabazar">Dolgorsürengiin Sumyaabazar</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Ulaanbaatar — Songino Khairkhan</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-19444af9-ff6c-46c3-95cc-cc90be718fbf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dondogdorj ERDENEBAT">Dondogdorjiin Erdenebat</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-86ca7119-76eb-40e9-8b26-72de2184b70b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dulamsuren OYUNKHOROL">Dulamsürengiin Oyuunkhorol</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Zavkhan</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9d93666a-7b22-4170-b990-53c91537731f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gantumur UYANGA">Gantömöriin Uyanga</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>Ulaanbaatar — Chingeltei</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-621f0e59-e228-455b-b7c8-539a3103645b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Garidkhuu BAYARSAIKHAN">Garidkhüügiin Bayarsaikhan</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Chingeltei</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc60b97c-6c66-4034-b79d-77ddbd1f86d1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gavaa BATKHUU">Gavaagiin Batkhüü</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Övörkhangai</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-11454c5e-ebf6-4a0d-826f-37e4a0f6e01e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jadamba ENKHBAYAR">Jadambyn Enkhbayar</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-48e5bda2-c6ed-4376-a4da-0081a59e546a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jalbasuren BATZANDAN">Jalbasürengiin Batzandan</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Bayanzürkh•Nalaikh</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-08f5f1a8-e3e7-4cd6-b437-f574d81fef03">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jamiyansuren BATSUURI">Jamyansürengiin Batsuuri</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Govisümber•Dornogovi</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fc0dd3ab-b36f-4bb8-ada2-a390e7b037fd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jargaltulga ERDENEBAT">Jargaltulgyn Erdenebat</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Selenge</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-affa1ab2-d95a-4132-9204-2fddde0fae93">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Khaltmaa BATTULGA">Khaltmaagiin Battulga</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Bayankhongor</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-70e525ac-89aa-4951-a711-630fab059ca6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Khayangaagiin Bolorchuluun">Khayangaagiin Bolorchuluun</td>
-                      
-                        <td>Independent</td>
-                        <td>Dornod</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4d7f7d25-3984-4977-ac99-bd5b3e8baa12">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Khishigdemberel TEMUUJIN">Khishigdembereliin Temüüjin</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7063f26d-b1af-4049-a98b-582bbe340e05">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Log TSOG">Logiin Tsog</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>Orkhon</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aa14c88c-838d-4c56-bf89-716b2c647b00">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luvsan ERDENECHIMEG">Luvsangiin Erdenechimeg</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Songino Khairkhan</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-34548447-e8d7-4808-8e24-1f0ef9bdb45e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luvsannyam GANTUMUR">Luvsannyamyn Gantömör</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Sükhbaatar</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7b67e3b-ec80-4b2f-bfc5-cfe3492b1eae">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luvsantseren ENKH-AMGALAN">Luvsantserengiin Enkh-Amgalan</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Khövsgöl</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-45a20ead-0d7d-440f-8a0e-dc322844803f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luvsanvandan BOLD">Luvsanvandangiin Bold</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Baganuur•Bagakhangai•Khan-Uul</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dcd67e5c-1d3f-43ec-81ac-4ac155dde61d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Migeddorj BATCHIMEG">Migeddorjiin Batchimeg</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5fcb6a5f-3134-4be2-a8dd-4cbe95501e42">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mishig SONOMPIL">Mishigiin Sonompil</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d19e82bf-0260-4e32-ad44-0b60a853e74c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Miyeegombyn Enkhbold">Miyeegombyn Enkhbold</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Töv</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-46bef770-e45f-47dc-9f37-bc23acb83b29">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Munkhchuluun ZORIGT">Mönkhchuluuny Zorigt</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Sükhbaatar</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-af638d58-f0bb-42be-a7a9-00a8356ca4d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Namdag BATTSEREG">Namdagiin Battsereg</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-de3fb53d-dc5d-438d-9335-32612345cbc4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Norov ALTANKHUYAG">Norovyn Altankhuyag</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d86ac537-e736-468c-8209-e04947449aaf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nyamaa ENKHBOLD">Nyamaagiin Enkhbold</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10d213c2-f622-42a5-bb57-6ecd60649e4c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nyamjav BATBAYAR">Nyamjavyn Batbayar</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Arkhangai</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fca41e77-1bd5-4ce5-b337-dfb88d5b031f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nyamtaishir NOMTOIBAYAR">Nyamtaishirgiin Nomtoibayar</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Dornod</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b975c75-0c33-4f69-bde4-90becca61dcf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Octyaber BAASANKHUU">Oktyabriin Baasankhüü</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6099d378-bcdb-4caf-8be9-100f469c946e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Otgonbileg SODBILEG">Otgonbilegiin Sodbileg</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Orkhon</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d2c9fdee-6212-42fa-a9c7-304602400562">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Radnaa BURMAA">Radnaagiin Burmaa</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-393615b1-c5d9-46bb-90bb-ad9b1547cf54">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Radnasumberel GONCHIGDORJ">Radnaasümbereliin Gonchigdorj</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-321601d6-b2aa-45fc-8909-51a915b9ae0c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rinchinnyam AMARJARGAL">Rinchinnyamyn Amarjargal</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Sükhbaatar</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-51470d6a-556e-4af8-b79d-5c8d4f62c013">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sainkhuu GANBAATAR">Sainkhüügiin Ganbaatar</td>
-                      
-                        <td>Independent</td>
-                        <td>Darkhan-Uul</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-52f7528b-97cf-446a-a656-0db19916d06c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saldan ODONTUYA">Saldangiin Odontuyaa</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Bayangol</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-465b4294-7e6c-42f0-bfec-949cb25c1414">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sambuu DEMBEREL">Sambuugiin Demberel</td>
-                      
-                        <td>Civil Will-Green Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a439cef5-2afe-47cb-ae83-34048790aa51">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sandag BYAMBATSOGT">Sandagiin Byambatsogt</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Khovd</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d64d96f9-480b-414c-a81c-826f54de2a80">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sangajavyn Bayarzsogt">Sangajavyn Bayarzsogt</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Selenge</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9be31e26-dc52-465f-9d00-2aa4fd3b187e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sanjaasuren OYUN">Sanjaasürengiin Oyuun</td>
-                      
-                        <td>Civil Will-Green Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e891f20f-c3b0-4813-bbd3-98dca0e603e5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sharavdorj TUVDENDORJ">Sharavdorjiin Tüvdendorj</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3329774a-83b0-4d41-89eb-c285a069201e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sodnomzundui ERDENE">Sodnomzunduin Erdene</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Bayangol</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e9db8a15-a158-458d-a772-e954888e6eb4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sukhbaatar BATBOLD">Sükhbaataryn Batbold</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Töv</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8567ab98-c0e6-4fd2-adfa-753d2e78c7f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sundui BATBOLD">Sunduin Batbold</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b95eab1d-6326-4ea8-8014-980c6f74583b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsedev DASHDORJ">Tsedeviin Dashdorj</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Govi-Altai</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-755cf1dd-26ee-498d-a03a-542fc38a50fa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsedevdamba OYUNGEREL">Tsedevdambyn Oyuungerel</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Ulaanbaatar — Baganuur•Bagakhangai•Khan-Uul</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a197aba-85e0-45e4-842d-e250f8a82f66">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsend NYAMDORJ">Tsendiin Nyamdorj</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-92232516-78e9-45ef-b04c-8c19a758bcb4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tserendash OYUNBAATAR">Tserendashiin Oyuunbaatar</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cbfe0c1a-aa0c-472d-bf35-5dbfa4a39af7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tserendash TSOLMON">Tserendashiin Tsolmon</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-65fdbb42-20e3-47cc-b7b5-450c496c9ac3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tserenpil DAVAASUREN">Tserenpiliin Davaasüren</td>
-                      
-                        <td>Independent</td>
-                        <td>Khövsgöl</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1d8956ab-a0c8-4e6f-a959-299d676c2f5a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsevelmaa BAYARSAIKHAN">Tsevelmaagiin Bayarsaikhan</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a44e20f9-6dbb-4df1-bafd-9369bdf66b74">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ukhnaagiin Xürelsükh">Ukhnaagiin Xürelsükh</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1f2733f3-fd76-4472-84cf-02c5dd68cce6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ulziisaikhan ENKHTUVSHIN">Ölziisaikhany Enkhtüvshin</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc99d8b9-8610-4164-a979-1a40cb91fbd2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yadamsuren SANJMYATAV">Yadamsürengiin Sanjmyatav</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Zavkhan</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b823623f-91a6-427a-95da-ea3d771e589c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yangug SODBAATAR">Yangugiin Sodbaatar</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-627f3663-3b34-4771-a9aa-8fba9e136fa5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yondon OTGONBAYAR">Yondongiin Otgonbayar</td>
-                      
-                        <td>Mongolian People's Party</td>
-                        <td>Bulgan</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29cc6cec-74ca-4fb8-9dbc-ae53ede1924c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zandaakhuu ENKHBOLD">Zandaakhüügiin Enkhbold</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8f70505-03c1-4ebe-b6ef-2b459f3fe714">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zangad BAYANSELENGE">Zangadyn Bayanselenge</td>
-                      
-                        <td>Justice Coalition</td>
-                        <td>n/a</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4bf70f7d-d11e-4326-8522-8a2013feae9e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/4bf70f7d-d11e-4326-8522-8a2013feae9e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/4bf70f7d-d11e-4326-8522-8a2013feae9e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Agilapyn Bakei</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Bayan-Ölgii
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/BakeyAgipar">@BakeyAgipar</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/bakey.agipar">bakey.agipar</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bakei@parliament.mn">bakei@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2b08df74-7880-43c9-a2be-91681ebea545">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/2b08df74-7880-43c9-a2be-91681ebea545/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/2b08df74-7880-43c9-a2be-91681ebea545/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Almalikyn Tleikhan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Bayan-Ölgii
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tleikhan@parliament.mn">tleikhan@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a23a6c6-216c-4b87-a08a-3a526ca4dcbe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8a23a6c6-216c-4b87-a08a-3a526ca4dcbe/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8a23a6c6-216c-4b87-a08a-3a526ca4dcbe/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Badmaanyambuugiin Bat-Erdene</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Khentii
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:baterdeneb@parliament.mn">baterdeneb@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-966ee42e-ac5e-42c2-93c0-0c74b9b3270e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Batkhüügiin Garamgaibaatar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Khentii
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6512664b-8106-4dc8-a822-76d6d9810515">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/6512664b-8106-4dc8-a822-76d6d9810515/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/6512664b-8106-4dc8-a822-76d6d9810515/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Batsükhiin Narankhüü</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Dundgovi
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:narankhuu@parliament.mn">narankhuu@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63d33048-8f25-4674-b96d-6df3c6d3ef6b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/63d33048-8f25-4674-b96d-6df3c6d3ef6b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/63d33048-8f25-4674-b96d-6df3c6d3ef6b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Battogtokhyn Choijilsüren</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Uvs
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:choijilsuren@parliament.mn">choijilsuren@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fdb19fce-977e-4aba-8c42-148cbceae5c1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/fdb19fce-977e-4aba-8c42-148cbceae5c1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/fdb19fce-977e-4aba-8c42-148cbceae5c1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bayarbaataryn Bolor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Arkhangai
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bolor@parliament.mn">bolor@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f85e7e30-eb6a-4a7f-88f9-ec7b22470886">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/f85e7e30-eb6a-4a7f-88f9-ec7b22470886/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/f85e7e30-eb6a-4a7f-88f9-ec7b22470886/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chimediin Khürelbaatar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Uvs
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:khurelbaatar@parliament.mn">khurelbaatar@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7e35947-42fe-4949-973b-25b2a2129514">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b7e35947-42fe-4949-973b-25b2a2129514/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b7e35947-42fe-4949-973b-25b2a2129514/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chimediin Saikhanbileg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:saikhanbileg@parliament.mn">saikhanbileg@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a38867dc-73e6-4990-90df-cf89f0b25be5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/a38867dc-73e6-4990-90df-cf89f0b25be5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/a38867dc-73e6-4990-90df-cf89f0b25be5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chültemiin Ulaan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ulaan@parliament.mn">ulaan@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-45406a4d-857a-4252-9ec9-146573a09636">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/45406a4d-857a-4252-9ec9-146573a09636/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/45406a4d-857a-4252-9ec9-146573a09636/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Damdingiin Demberel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:demberel@parliament.mn">demberel@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6aeb9550-7d70-4ce2-a67c-ccadc9516ed1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/6aeb9550-7d70-4ce2-a67c-ccadc9516ed1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/6aeb9550-7d70-4ce2-a67c-ccadc9516ed1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Damdingiin Khayankhyarvaa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Darkhan-Uul
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:khyankhyarvaa@parliament.mn">khyankhyarvaa@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50218128-a922-4256-addf-b6c82e312a73">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/50218128-a922-4256-addf-b6c82e312a73/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/50218128-a922-4256-addf-b6c82e312a73/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Danzangiin Lündeejantsan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:lundeejantsan@parliament.mn">lundeejantsan@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-033995bf-e413-445b-ae6c-bfd601a1a0fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/033995bf-e413-445b-ae6c-bfd601a1a0fa/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/033995bf-e413-445b-ae6c-bfd601a1a0fa/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dashdembereliin Bat-Erdene</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ömnögovi
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/d_baterdene">@d_baterdene</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/BaterdeneDashdemberel">BaterdeneDashdemberel</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:baterdened@parliament.mn">baterdened@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01fb02cf-2cd1-418b-9746-18bd7ed1efa1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/01fb02cf-2cd1-418b-9746-18bd7ed1efa1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/01fb02cf-2cd1-418b-9746-18bd7ed1efa1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dashdondogiin Ganbat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Bayankhongor
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ganbat@parliament.mn">ganbat@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ca30348a-a09b-4d17-8dc7-1a3d76946265">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/ca30348a-a09b-4d17-8dc7-1a3d76946265/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/ca30348a-a09b-4d17-8dc7-1a3d76946265/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dashjamtsyn Arvin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Bayanzürkh•Nalaikh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:arvin@parliament.mn">arvin@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-270bfd69-81e8-4789-903c-75d9627fddf5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dashzevegiin Zorigt</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Övörkhangai
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41065287-b891-4c42-892e-fb5d8a825b69">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/41065287-b891-4c42-892e-fb5d8a825b69/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/41065287-b891-4c42-892e-fb5d8a825b69/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Davaajavyn Gankhuyag</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Bayanzürkh•Nalaikh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gankhuyag@parliament.mn">gankhuyag@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9398cdb6-d8de-45f4-9e84-ff1c65616c44">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/9398cdb6-d8de-45f4-9e84-ff1c65616c44/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/9398cdb6-d8de-45f4-9e84-ff1c65616c44/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dendeviin Terbishdagva</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:terbishdagva@parliament.mn">terbishdagva@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ae12efe-54ea-43a5-b91d-718807da3202">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8ae12efe-54ea-43a5-b91d-718807da3202/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8ae12efe-54ea-43a5-b91d-718807da3202/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dogsomyn Battsogt</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — Khovd
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:battsogt@parliament.mn">battsogt@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-90b77768-c1e7-465d-ae9e-2d6e125be1e9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dolgorsürengiin Sumyaabazar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Ulaanbaatar — Songino Khairkhan
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-19444af9-ff6c-46c3-95cc-cc90be718fbf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/19444af9-ff6c-46c3-95cc-cc90be718fbf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/19444af9-ff6c-46c3-95cc-cc90be718fbf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dondogdorjiin Erdenebat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:erdenebatd@parliament.mn">erdenebatd@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-86ca7119-76eb-40e9-8b26-72de2184b70b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/86ca7119-76eb-40e9-8b26-72de2184b70b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/86ca7119-76eb-40e9-8b26-72de2184b70b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dulamsürengiin Oyuunkhorol</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Zavkhan
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:oyunkhorol@parliament.mn">oyunkhorol@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d93666a-7b22-4170-b990-53c91537731f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/9d93666a-7b22-4170-b990-53c91537731f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/9d93666a-7b22-4170-b990-53c91537731f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gantömöriin Uyanga</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — Ulaanbaatar — Chingeltei
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:uyanga@parliament.mn">uyanga@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-621f0e59-e228-455b-b7c8-539a3103645b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/621f0e59-e228-455b-b7c8-539a3103645b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/621f0e59-e228-455b-b7c8-539a3103645b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Garidkhüügiin Bayarsaikhan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Chingeltei
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bayarsaikhang@parliament.mn">bayarsaikhang@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc60b97c-6c66-4034-b79d-77ddbd1f86d1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/bc60b97c-6c66-4034-b79d-77ddbd1f86d1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/bc60b97c-6c66-4034-b79d-77ddbd1f86d1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gavaagiin Batkhüü</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Övörkhangai
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:batkhuu@parliament.mn">batkhuu@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-11454c5e-ebf6-4a0d-826f-37e4a0f6e01e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/11454c5e-ebf6-4a0d-826f-37e4a0f6e01e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/11454c5e-ebf6-4a0d-826f-37e4a0f6e01e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jadambyn Enkhbayar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:enkhbayar_j@parliament.mn">enkhbayar_j@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-48e5bda2-c6ed-4376-a4da-0081a59e546a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/48e5bda2-c6ed-4376-a4da-0081a59e546a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/48e5bda2-c6ed-4376-a4da-0081a59e546a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jalbasürengiin Batzandan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Bayanzürkh•Nalaikh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:batzandan@parliament.mn">batzandan@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-08f5f1a8-e3e7-4cd6-b437-f574d81fef03">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/08f5f1a8-e3e7-4cd6-b437-f574d81fef03/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/08f5f1a8-e3e7-4cd6-b437-f574d81fef03/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jamyansürengiin Batsuuri</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Govisümber•Dornogovi
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:batsuurij@parliament.mn">batsuurij@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc0dd3ab-b36f-4bb8-ada2-a390e7b037fd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/fc0dd3ab-b36f-4bb8-ada2-a390e7b037fd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/fc0dd3ab-b36f-4bb8-ada2-a390e7b037fd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jargaltulgyn Erdenebat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Selenge
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:erdenebat_ja@parliament.mn">erdenebat_ja@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-affa1ab2-d95a-4132-9204-2fddde0fae93">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/affa1ab2-d95a-4132-9204-2fddde0fae93/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/affa1ab2-d95a-4132-9204-2fddde0fae93/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Khaltmaagiin Battulga</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Bayankhongor
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:battulga@parliament.mn">battulga@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70e525ac-89aa-4951-a711-630fab059ca6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Khayangaagiin Bolorchuluun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Dornod
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4d7f7d25-3984-4977-ac99-bd5b3e8baa12">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/4d7f7d25-3984-4977-ac99-bd5b3e8baa12/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/4d7f7d25-3984-4977-ac99-bd5b3e8baa12/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Khishigdembereliin Temüüjin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:temuujin@parliament.mn">temuujin@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7063f26d-b1af-4049-a98b-582bbe340e05">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/7063f26d-b1af-4049-a98b-582bbe340e05/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/7063f26d-b1af-4049-a98b-582bbe340e05/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Logiin Tsog</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — Orkhon
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tsog@parliament.mn">tsog@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa14c88c-838d-4c56-bf89-716b2c647b00">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/aa14c88c-838d-4c56-bf89-716b2c647b00/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/aa14c88c-838d-4c56-bf89-716b2c647b00/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Luvsangiin Erdenechimeg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Songino Khairkhan
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:erdenechimeg@parliament.mn">erdenechimeg@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34548447-e8d7-4808-8e24-1f0ef9bdb45e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/34548447-e8d7-4808-8e24-1f0ef9bdb45e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/34548447-e8d7-4808-8e24-1f0ef9bdb45e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Luvsannyamyn Gantömör</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Sükhbaatar
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gantumur@parliament.mn">gantumur@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7b67e3b-ec80-4b2f-bfc5-cfe3492b1eae">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b7b67e3b-ec80-4b2f-bfc5-cfe3492b1eae/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b7b67e3b-ec80-4b2f-bfc5-cfe3492b1eae/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Luvsantserengiin Enkh-Amgalan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Khövsgöl
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:enkhamgalan@parliament.mn">enkhamgalan@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-45a20ead-0d7d-440f-8a0e-dc322844803f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/45a20ead-0d7d-440f-8a0e-dc322844803f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/45a20ead-0d7d-440f-8a0e-dc322844803f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Luvsanvandangiin Bold</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Baganuur•Bagakhangai•Khan-Uul
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bold_lu@parliament.mn">bold_lu@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dcd67e5c-1d3f-43ec-81ac-4ac155dde61d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/dcd67e5c-1d3f-43ec-81ac-4ac155dde61d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/dcd67e5c-1d3f-43ec-81ac-4ac155dde61d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Migeddorjiin Batchimeg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:batchimegm@parliament.mn">batchimegm@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5fcb6a5f-3134-4be2-a8dd-4cbe95501e42">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/5fcb6a5f-3134-4be2-a8dd-4cbe95501e42/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/5fcb6a5f-3134-4be2-a8dd-4cbe95501e42/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mishigiin Sonompil</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:sonompil@parliament.mn">sonompil@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d19e82bf-0260-4e32-ad44-0b60a853e74c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Miyeegombyn Enkhbold</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Töv
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-46bef770-e45f-47dc-9f37-bc23acb83b29">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/46bef770-e45f-47dc-9f37-bc23acb83b29/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/46bef770-e45f-47dc-9f37-bc23acb83b29/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mönkhchuluuny Zorigt</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Sükhbaatar
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:zorigtm@parliament.mn">zorigtm@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-af638d58-f0bb-42be-a7a9-00a8356ca4d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/af638d58-f0bb-42be-a7a9-00a8356ca4d3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/af638d58-f0bb-42be-a7a9-00a8356ca4d3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Namdagiin Battsereg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:battsereg@parliament.mn">battsereg@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-de3fb53d-dc5d-438d-9335-32612345cbc4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/de3fb53d-dc5d-438d-9335-32612345cbc4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/de3fb53d-dc5d-438d-9335-32612345cbc4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Norovyn Altankhuyag</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/altankhuyag_mn">@altankhuyag_mn</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/altankhuyag.norov">altankhuyag.norov</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:altankhuyag@parliament.mn">altankhuyag@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d86ac537-e736-468c-8209-e04947449aaf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/d86ac537-e736-468c-8209-e04947449aaf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/d86ac537-e736-468c-8209-e04947449aaf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nyamaagiin Enkhbold</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:enkhbold@parliament.mn">enkhbold@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10d213c2-f622-42a5-bb57-6ecd60649e4c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/10d213c2-f622-42a5-bb57-6ecd60649e4c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/10d213c2-f622-42a5-bb57-6ecd60649e4c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nyamjavyn Batbayar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Arkhangai
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:batbayar_n@parliament.mn">batbayar_n@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fca41e77-1bd5-4ce5-b337-dfb88d5b031f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/fca41e77-1bd5-4ce5-b337-dfb88d5b031f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/fca41e77-1bd5-4ce5-b337-dfb88d5b031f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nyamtaishirgiin Nomtoibayar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Dornod
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:nomtoibayar@parliament.mn">nomtoibayar@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b975c75-0c33-4f69-bde4-90becca61dcf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8b975c75-0c33-4f69-bde4-90becca61dcf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8b975c75-0c33-4f69-bde4-90becca61dcf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Oktyabriin Baasankhüü</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/baasankhuu_o">@baasankhuu_o</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/О.Баасанхүү /УИХ-ын гишүүн/">О.Баасанхүү /УИХ-ын гишүүн/</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:baasankhuu@parliament.mn">baasankhuu@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6099d378-bcdb-4caf-8be9-100f469c946e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/6099d378-bcdb-4caf-8be9-100f469c946e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/6099d378-bcdb-4caf-8be9-100f469c946e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Otgonbilegiin Sodbileg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Orkhon
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:sodbileg@parliament.mn">sodbileg@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d2c9fdee-6212-42fa-a9c7-304602400562">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/d2c9fdee-6212-42fa-a9c7-304602400562/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/d2c9fdee-6212-42fa-a9c7-304602400562/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Radnaagiin Burmaa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:burmaa@parliament.mn">burmaa@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-393615b1-c5d9-46bb-90bb-ad9b1547cf54">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/393615b1-c5d9-46bb-90bb-ad9b1547cf54/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/393615b1-c5d9-46bb-90bb-ad9b1547cf54/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Radnaasümbereliin Gonchigdorj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gonchigdorj@parliament.mn">gonchigdorj@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-321601d6-b2aa-45fc-8909-51a915b9ae0c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/321601d6-b2aa-45fc-8909-51a915b9ae0c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/321601d6-b2aa-45fc-8909-51a915b9ae0c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rinchinnyamyn Amarjargal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Sükhbaatar
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/AmarjargalR">@AmarjargalR</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/amarjargalorg">amarjargalorg</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:arinchin@parliament.mn">arinchin@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-51470d6a-556e-4af8-b79d-5c8d4f62c013">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/51470d6a-556e-4af8-b79d-5c8d4f62c013/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/51470d6a-556e-4af8-b79d-5c8d4f62c013/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sainkhüügiin Ganbaatar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Darkhan-Uul
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ganbaatar@parliament.mn">ganbaatar@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-52f7528b-97cf-446a-a656-0db19916d06c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/52f7528b-97cf-446a-a656-0db19916d06c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/52f7528b-97cf-446a-a656-0db19916d06c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saldangiin Odontuyaa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Bayangol
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:odontuya@parliament.mn">odontuya@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-465b4294-7e6c-42f0-bfec-949cb25c1414">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/465b4294-7e6c-42f0-bfec-949cb25c1414/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/465b4294-7e6c-42f0-bfec-949cb25c1414/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sambuugiin Demberel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Civil Will-Green Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:demberels@parliament.mn">demberels@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a439cef5-2afe-47cb-ae83-34048790aa51">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/a439cef5-2afe-47cb-ae83-34048790aa51/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/a439cef5-2afe-47cb-ae83-34048790aa51/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sandagiin Byambatsogt</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Khovd
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:byambatsogt@parliament.mn">byambatsogt@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d64d96f9-480b-414c-a81c-826f54de2a80">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sangajavyn Bayarzsogt</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Selenge
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9be31e26-dc52-465f-9d00-2aa4fd3b187e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/9be31e26-dc52-465f-9d00-2aa4fd3b187e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/9be31e26-dc52-465f-9d00-2aa4fd3b187e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sanjaasürengiin Oyuun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Civil Will-Green Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:oyuna@parliament.mn">oyuna@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e891f20f-c3b0-4813-bbd3-98dca0e603e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/e891f20f-c3b0-4813-bbd3-98dca0e603e5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/e891f20f-c3b0-4813-bbd3-98dca0e603e5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sharavdorjiin Tüvdendorj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tuvdendorj@parliament.mn">tuvdendorj@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3329774a-83b0-4d41-89eb-c285a069201e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/3329774a-83b0-4d41-89eb-c285a069201e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/3329774a-83b0-4d41-89eb-c285a069201e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sodnomzunduin Erdene</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Bayangol
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:erdene@parliament.mn">erdene@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e9db8a15-a158-458d-a772-e954888e6eb4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/e9db8a15-a158-458d-a772-e954888e6eb4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/e9db8a15-a158-458d-a772-e954888e6eb4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sükhbaataryn Batbold</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Töv
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:batbold_s@parliament.mn">batbold_s@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8567ab98-c0e6-4fd2-adfa-753d2e78c7f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8567ab98-c0e6-4fd2-adfa-753d2e78c7f7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8567ab98-c0e6-4fd2-adfa-753d2e78c7f7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sunduin Batbold</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:batbold@parliament.mn">batbold@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b95eab1d-6326-4ea8-8014-980c6f74583b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b95eab1d-6326-4ea8-8014-980c6f74583b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b95eab1d-6326-4ea8-8014-980c6f74583b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tsedeviin Dashdorj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Govi-Altai
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:dashdorj@parliament.mn">dashdorj@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-755cf1dd-26ee-498d-a03a-542fc38a50fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/755cf1dd-26ee-498d-a03a-542fc38a50fa/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/755cf1dd-26ee-498d-a03a-542fc38a50fa/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tsedevdambyn Oyuungerel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Ulaanbaatar — Baganuur•Bagakhangai•Khan-Uul
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:oyungerel@parliament.mn">oyungerel@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a197aba-85e0-45e4-842d-e250f8a82f66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8a197aba-85e0-45e4-842d-e250f8a82f66/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/8a197aba-85e0-45e4-842d-e250f8a82f66/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tsendiin Nyamdorj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:nyamdorj@parliament.mn">nyamdorj@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-92232516-78e9-45ef-b04c-8c19a758bcb4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/92232516-78e9-45ef-b04c-8c19a758bcb4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/92232516-78e9-45ef-b04c-8c19a758bcb4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tserendashiin Oyuunbaatar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:oyunbaatar@parliament.mn">oyunbaatar@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cbfe0c1a-aa0c-472d-bf35-5dbfa4a39af7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/cbfe0c1a-aa0c-472d-bf35-5dbfa4a39af7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/cbfe0c1a-aa0c-472d-bf35-5dbfa4a39af7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tserendashiin Tsolmon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tsolmon@parliament.mn">tsolmon@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-65fdbb42-20e3-47cc-b7b5-450c496c9ac3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/65fdbb42-20e3-47cc-b7b5-450c496c9ac3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/65fdbb42-20e3-47cc-b7b5-450c496c9ac3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tserenpiliin Davaasüren</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Khövsgöl
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:davaasuren@parliament.mn">davaasuren@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1d8956ab-a0c8-4e6f-a959-299d676c2f5a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/1d8956ab-a0c8-4e6f-a959-299d676c2f5a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/1d8956ab-a0c8-4e6f-a959-299d676c2f5a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tsevelmaagiin Bayarsaikhan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bayarsaikhants@parliament.mn">bayarsaikhants@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a44e20f9-6dbb-4df1-bafd-9369bdf66b74">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ukhnaagiin Xürelsükh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1f2733f3-fd76-4472-84cf-02c5dd68cce6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/1f2733f3-fd76-4472-84cf-02c5dd68cce6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/1f2733f3-fd76-4472-84cf-02c5dd68cce6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ölziisaikhany Enkhtüvshin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:enkhtuvshin@parliament.mn">enkhtuvshin@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc99d8b9-8610-4164-a979-1a40cb91fbd2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/bc99d8b9-8610-4164-a979-1a40cb91fbd2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/bc99d8b9-8610-4164-a979-1a40cb91fbd2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Yadamsürengiin Sanjmyatav</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Zavkhan
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:sanjmyatav@parliament.mn">sanjmyatav@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b823623f-91a6-427a-95da-ea3d771e589c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b823623f-91a6-427a-95da-ea3d771e589c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/b823623f-91a6-427a-95da-ea3d771e589c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Yangugiin Sodbaatar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:sodbaatar@parliament.mn">sodbaatar@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-627f3663-3b34-4771-a9aa-8fba9e136fa5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/627f3663-3b34-4771-a9aa-8fba9e136fa5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/627f3663-3b34-4771-a9aa-8fba9e136fa5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Yondongiin Otgonbayar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Mongolian People's Party — Bulgan
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:otgonbayar_yo@parliament.mn">otgonbayar_yo@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29cc6cec-74ca-4fb8-9dbc-ae53ede1924c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/29cc6cec-74ca-4fb8-9dbc-ae53ede1924c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/29cc6cec-74ca-4fb8-9dbc-ae53ede1924c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zandaakhüügiin Enkhbold</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/enkhboldz">@enkhboldz</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/Zandaakhuu.Enkhbold">Zandaakhuu.Enkhbold</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:enkhboldz@parliament.mn">enkhboldz@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8f70505-03c1-4ebe-b6ef-2b459f3fe714">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/a8f70505-03c1-4ebe-b6ef-2b459f3fe714/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Mongolia/Assembly/a8f70505-03c1-4ebe-b6ef-2b459f3fe714/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zangadyn Bayanselenge</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Justice Coalition — n/a
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bayanselenge@parliament.mn">bayanselenge@parliament.mn</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

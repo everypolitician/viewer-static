@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="Alþingi 1999" />
     <meta property="og:type" content="article" />
@@ -157,7 +160,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-independence_party"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -193,1151 +196,1996 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d112995/data/Iceland/Assembly/term-1999.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d112995/data/Iceland/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b2d2be3/data/Iceland/Assembly/term-1999.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b2d2be3/data/Iceland/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        <th>Dates</th>
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-098db7d2-20e5-42d1-a9f1-f53e7919f9cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Adolf Berndsen">Adolf Berndsen</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Northwest</td>
-                      
-                        
-                        
-                        <td>2003-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a64f0e70-4b9d-4c89-9f91-22748bf1ca88">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Arnbjörg Sveinsdóttir">Arnbjörg Sveinsdóttir</td>
-                      
-                        <td>Independence Party</td>
-                        <td>East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2c080608-ee4e-4dcf-8fe1-8e67ba4526d1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Björn Bjarnason">Björn Bjarnason</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-808050e6-e06f-4c30-8b69-22119b6940c6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bryndís Hlöðversdóttir">Bryndís Hlöðversdóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a5fde69-82cb-4331-8b31-2bf038081645">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Davíð Oddsson">Davíð Oddsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e00fefcc-1b8b-4f9b-8ded-c11cea816470">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Drífa Hjartardóttir">Drífa Hjartardóttir</td>
-                      
-                        <td>Independence Party</td>
-                        <td>South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3b32f34d-fd5a-4fea-b2c3-35284f78a8d9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Einar Guðfinnsson">Einar Guðfinnsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>West Fjords</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f821addb-3e20-493c-bd82-2f3df30795f0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Einar Kristjánsson">Einar Kristjánsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>West Fjords</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b5257ca3-6845-437f-8f39-5479e28e5dd4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Einar Sigurðsson">Einar Sigurðsson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0ae85462-ef42-4526-89d3-4846008e0f6b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Finnur Ingólfsson">Finnur Ingólfsson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td>-2000</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-681d378b-4af4-4b1b-bd3d-2adc2e952d35">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Geir Haarde">Geir Haarde</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f457020e-acd1-4240-bef8-d48892547d36">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gunnar Birgisson">Gunnar Birgisson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2aa6198f-d267-459e-bbb3-a0277e302d82">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guðjón Guðmundsson">Guðjón Guðmundsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-956f67aa-9fba-4a05-83b3-eeb850731b3f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guðjón Kristjánsson">Guðjón Kristjánsson</td>
-                      
-                        <td>Liberal Party</td>
-                        <td>West Fjords</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-497ea95e-8e18-44f6-9c8c-41e0d636571e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guðmundur Hallvarðsson">Guðmundur Hallvarðsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-917e81ee-81a7-4363-ab88-00b83df72fe5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guðmundur Stefánsson">Guðmundur Stefánsson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b2381c55-f20f-44d1-9652-9fdad8e35a4c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guðni Ágústsson">Guðni Ágústsson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a0ecf18d-9953-4c8c-9e35-a5711b01072a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guðrún Ögmundsdóttir">Guðrún Ögmundsdóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-564c8138-9c3e-4863-98ed-bd93599e7e50">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gísli Einarsson">Gísli Einarsson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3c5fdb48-50af-42ab-b227-085ad25afb8c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Halldór Blöndal">Halldór Blöndal</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Northeast</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2700a603-9941-4bd9-ae5b-4938fefa6789">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Halldór Ásgrímsson">Halldór Ásgrímsson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-628ec847-e8f2-449f-8c71-f350314560c5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hjálmar Jónsson">Hjálmar Jónsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Northwest</td>
-                      
-                        
-                        
-                        <td>-2001</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-671f1505-8740-4454-9b0f-2286c2522d87">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hjálmar Árnason">Hjálmar Árnason</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ff94d8d0-48d1-44e7-86f7-166fc68509b7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ingibjörg Pálmadóttir">Ingibjörg Pálmadóttir</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>West</td>
-                      
-                        
-                        
-                        <td>-2001</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fe5993c2-736c-47c2-9174-47eb39cfc0fd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jóhann Ársælsson">Jóhann Ársælsson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29c3e760-5ee1-4684-ac84-807216d722a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jóhanna Sigurðardóttir">Jóhanna Sigurðardóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8f35491-71e2-404d-8343-75e8e5dfdd03">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jón Bjarnason">Jón Bjarnason</td>
-                      
-                        <td>Left-Green Movement</td>
-                        <td>Northwest</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1bf2860-9ef9-466a-8994-8bd4c1c03e6c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jón Kristjánsson">Jón Kristjánsson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e834e45-88cb-480d-9b13-3e74232140c2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jónína Bjartmarz">Jónína Bjartmarz</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td>2000-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9c98c061-06f3-44ba-9160-8b33cfde5846">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Karl Matthíasson">Karl Matthíasson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>West Fjords</td>
-                      
-                        
-                        
-                        <td>2001-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-320b346b-4eb5-46b7-a243-aca78f8ba03d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Katrín Fjeldsted">Katrín Fjeldsted</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b063674e-06f1-4026-8c70-00302fd1d76e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kjartan Ólafsson">Kjartan Ólafsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>South</td>
-                      
-                        
-                        
-                        <td>2001-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2732cbb5-1a84-4181-9bc0-55627eb659a6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kolbrún Halldórsdóttir">Kolbrún Halldórsdóttir</td>
-                      
-                        <td>Left-Green Movement</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e09192de-66ce-431e-b5e4-8fbe46fe487c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kristinn Gunnarsson">Kristinn Gunnarsson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>West Fjords</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4073eeaf-6f3f-41d0-bd36-4f8c6d555313">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kristján Möller">Kristján Möller</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Northwest</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6423af04-e0d9-46eb-9207-ed2d319754ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kristján Pálsson">Kristján Pálsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e424fb3d-dcae-450a-b919-d1534e5aa4c8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lára Ragnarsdóttir">Lára Ragnarsdóttir</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4f8ed5bb-ca4d-4e45-b238-524a9872b18c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lúðvík Bergvinsson">Lúðvík Bergvinsson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-14404cb3-06e9-45a3-817f-d87b001d0bf3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Magnús Stefánsson">Magnús Stefánsson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>West</td>
-                      
-                        
-                        
-                        <td>2001-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d800c31e-fb95-40af-9b2d-d14ca2817502">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Margrét Frímannsdóttir">Margrét Frímannsdóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-73de31a9-77bc-49b3-8f85-68fd117ecd7c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Páll Pétursson">Páll Pétursson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>Northwest</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ded4ce0b-6d6e-44e5-a51a-48725c551255">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pétur Blöndal">Pétur Blöndal</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5c9f69ad-f124-492c-bce7-047fa11e7406">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rannveig Guðmundsdóttir">Rannveig Guðmundsdóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7c25fc62-611f-4d9a-818a-c913768c1a1c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sighvatur Björgvinsson">Sighvatur Björgvinsson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>West Fjords</td>
-                      
-                        
-                        
-                        <td>-2001</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cdbcc747-6167-44ed-84a6-700d440ee821">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sigríður Ingvarsdóttir">Sigríður Ingvarsdóttir</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Northwest</td>
-                      
-                        
-                        
-                        <td>2001-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ab86415c-22d3-40c8-b942-999aa6b64b1b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sigríður Jóhannesdóttir">Sigríður Jóhannesdóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae739e87-d61c-4177-8c1f-dcd20bfefc77">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sigríður Þórðardóttir">Sigríður Þórðardóttir</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f9664cf1-3728-47fd-9da0-f0149d3462ad">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Siv Friðleifsdóttir">Siv Friðleifsdóttir</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3cb3b7b3-387f-4e07-ab83-77cc67499551">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Steingrímur Sigfússon">Steingrímur Sigfússon</td>
-                      
-                        <td>Left-Green Movement</td>
-                        <td>Northeast</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f63d204-f8d3-43fd-847d-cdfe50f983cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sturla Böðvarsson">Sturla Böðvarsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c1dedb19-b442-424d-80d6-d37d5b4835d5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Svanfríður Jónasdóttir">Svanfríður Jónasdóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Northeast</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e5a8f2b-b45f-4496-93e1-d5a16e1fd9e2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sverrir Hermannsson">Sverrir Hermannsson</td>
-                      
-                        <td>Liberal Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-80ac14f1-98c3-4efc-aa24-99fe361339ca">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sólveig Pétursdóttir">Sólveig Pétursdóttir</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5bcbb5d4-b713-4e24-a457-580431744460">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tómas Olrich">Tómas Olrich</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Northeast</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2a5886f1-4049-412e-b363-d1703529e7f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Valgerður Sverrisdóttir">Valgerður Sverrisdóttir</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>Northeast</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0ea22e58-0614-45fd-9d13-7b3fb4a122f6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vilhjálmur Egilsson">Vilhjálmur Egilsson</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Northwest</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8389880d-afd1-4186-8a9b-8da0a2ecd154">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Árni Johnsen">Árni Johnsen</td>
-                      
-                        <td>Independence Party</td>
-                        <td>South</td>
-                      
-                        
-                        
-                        <td>-2001</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b0e49468-5903-4ecc-8b91-9169fdcbf089">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Árni Jóhannsson">Árni Jóhannsson</td>
-                      
-                        <td>Left-Green Movement</td>
-                        <td>Northeast</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fce4b7f2-5ce4-43cf-8235-e3cac4a95db8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Árni Mathiesen">Árni Mathiesen</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10ecce7c-c8d0-4751-a01d-6883feaf8eb1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Árni Árnason">Árni Árnason</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-133c04dd-f950-4a4a-9aa0-c8c9a82e7737">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ásta Jóhannesdóttir">Ásta Jóhannesdóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3e4d9afd-c40c-4afc-9e73-70c6d122f511">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ásta Möller">Ásta Möller</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a0d7743a-0cea-4b9b-8d47-2d8bfd79f358">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ísólfur Pálmason">Ísólfur Pálmason</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-21b7734b-5a90-4604-a557-c79660128d24">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ólafur Haraldsson">Ólafur Haraldsson</td>
-                      
-                        <td>Progressive Party</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d1b30e1b-9ae1-4804-be91-aede0eaf9dd7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ögmundur Jónasson">Ögmundur Jónasson</td>
-                      
-                        <td>Left-Green Movement</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1ec74dcb-a53d-4d5a-95c6-03c2cf424594">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Össur Skarphéðinsson">Össur Skarphéðinsson</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjavik</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c5b652e2-4034-470b-9093-fac3d3a37030">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Þorgerður Gunnarsdóttir">Þorgerður Gunnarsdóttir</td>
-                      
-                        <td>Independence Party</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c0e5e769-476b-44ed-b8eb-6c88bd86344d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Þuríður Backman">Þuríður Backman</td>
-                      
-                        <td>Left-Green Movement</td>
-                        <td>East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-da58fe8c-cc46-403f-9bdc-b4b475ff4db5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Þórunn Sveinbjarnardóttir">Þórunn Sveinbjarnardóttir</td>
-                      
-                        <td>Social Democratic Alliance</td>
-                        <td>Reykjanes</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-098db7d2-20e5-42d1-a9f1-f53e7919f9cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Adolf Berndsen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Northwest
+
+                              
+                                <span class="person-card__politics__date">(from 2003)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a64f0e70-4b9d-4c89-9f91-22748bf1ca88">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Arnbjörg Sveinsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2c080608-ee4e-4dcf-8fe1-8e67ba4526d1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2c080608-ee4e-4dcf-8fe1-8e67ba4526d1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2c080608-ee4e-4dcf-8fe1-8e67ba4526d1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Björn Bjarnason</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-808050e6-e06f-4c30-8b69-22119b6940c6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bryndís Hlöðversdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a5fde69-82cb-4331-8b31-2bf038081645">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/4a5fde69-82cb-4331-8b31-2bf038081645/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/4a5fde69-82cb-4331-8b31-2bf038081645/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Davíð Oddsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e00fefcc-1b8b-4f9b-8ded-c11cea816470">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Drífa Hjartardóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b32f34d-fd5a-4fea-b2c3-35284f78a8d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Einar Guðfinnsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — West Fjords
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f821addb-3e20-493c-bd82-2f3df30795f0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Einar Kristjánsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — West Fjords
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5257ca3-6845-437f-8f39-5479e28e5dd4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Einar Sigurðsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0ae85462-ef42-4526-89d3-4846008e0f6b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Finnur Ingólfsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — Reykjavik
+
+                              
+                                <span class="person-card__politics__date">(until 2000)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-681d378b-4af4-4b1b-bd3d-2adc2e952d35">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/681d378b-4af4-4b1b-bd3d-2adc2e952d35/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/681d378b-4af4-4b1b-bd3d-2adc2e952d35/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Geir Haarde</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f457020e-acd1-4240-bef8-d48892547d36">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gunnar Birgisson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2aa6198f-d267-459e-bbb3-a0277e302d82">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Guðjón Guðmundsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-956f67aa-9fba-4a05-83b3-eeb850731b3f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/956f67aa-9fba-4a05-83b3-eeb850731b3f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/956f67aa-9fba-4a05-83b3-eeb850731b3f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Guðjón Kristjánsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal Party — West Fjords
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-497ea95e-8e18-44f6-9c8c-41e0d636571e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Guðmundur Hallvarðsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-917e81ee-81a7-4363-ab88-00b83df72fe5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Guðmundur Stefánsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b2381c55-f20f-44d1-9652-9fdad8e35a4c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Guðni Ágústsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a0ecf18d-9953-4c8c-9e35-a5711b01072a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Guðrún Ögmundsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-564c8138-9c3e-4863-98ed-bd93599e7e50">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gísli Einarsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3c5fdb48-50af-42ab-b227-085ad25afb8c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Halldór Blöndal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Northeast
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2700a603-9941-4bd9-ae5b-4938fefa6789">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2700a603-9941-4bd9-ae5b-4938fefa6789/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2700a603-9941-4bd9-ae5b-4938fefa6789/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Halldór Ásgrímsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-628ec847-e8f2-449f-8c71-f350314560c5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hjálmar Jónsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Northwest
+
+                              
+                                <span class="person-card__politics__date">(until 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-671f1505-8740-4454-9b0f-2286c2522d87">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hjálmar Árnason</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ff94d8d0-48d1-44e7-86f7-166fc68509b7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ingibjörg Pálmadóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — West
+
+                              
+                                <span class="person-card__politics__date">(until 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fe5993c2-736c-47c2-9174-47eb39cfc0fd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jóhann Ársælsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29c3e760-5ee1-4684-ac84-807216d722a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/29c3e760-5ee1-4684-ac84-807216d722a5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/29c3e760-5ee1-4684-ac84-807216d722a5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jóhanna Sigurðardóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8f35491-71e2-404d-8343-75e8e5dfdd03">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jón Bjarnason</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Left-Green Movement — Northwest
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1bf2860-9ef9-466a-8994-8bd4c1c03e6c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jón Kristjánsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e834e45-88cb-480d-9b13-3e74232140c2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/5e834e45-88cb-480d-9b13-3e74232140c2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/5e834e45-88cb-480d-9b13-3e74232140c2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jónína Bjartmarz</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — Reykjavik
+
+                              
+                                <span class="person-card__politics__date">(from 2000)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9c98c061-06f3-44ba-9160-8b33cfde5846">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/9c98c061-06f3-44ba-9160-8b33cfde5846/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/9c98c061-06f3-44ba-9160-8b33cfde5846/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Karl Matthíasson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — West Fjords
+
+                              
+                                <span class="person-card__politics__date">(from 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-320b346b-4eb5-46b7-a243-aca78f8ba03d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Katrín Fjeldsted</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b063674e-06f1-4026-8c70-00302fd1d76e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kjartan Ólafsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — South
+
+                              
+                                <span class="person-card__politics__date">(from 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2732cbb5-1a84-4181-9bc0-55627eb659a6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2732cbb5-1a84-4181-9bc0-55627eb659a6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2732cbb5-1a84-4181-9bc0-55627eb659a6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kolbrún Halldórsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Left-Green Movement — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e09192de-66ce-431e-b5e4-8fbe46fe487c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/e09192de-66ce-431e-b5e4-8fbe46fe487c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/e09192de-66ce-431e-b5e4-8fbe46fe487c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kristinn Gunnarsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — West Fjords
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4073eeaf-6f3f-41d0-bd36-4f8c6d555313">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kristján Möller</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Northwest
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6423af04-e0d9-46eb-9207-ed2d319754ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kristján Pálsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e424fb3d-dcae-450a-b919-d1534e5aa4c8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lára Ragnarsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4f8ed5bb-ca4d-4e45-b238-524a9872b18c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lúðvík Bergvinsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14404cb3-06e9-45a3-817f-d87b001d0bf3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Magnús Stefánsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — West
+
+                              
+                                <span class="person-card__politics__date">(from 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d800c31e-fb95-40af-9b2d-d14ca2817502">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Margrét Frímannsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-73de31a9-77bc-49b3-8f85-68fd117ecd7c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Páll Pétursson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — Northwest
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ded4ce0b-6d6e-44e5-a51a-48725c551255">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pétur Blöndal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5c9f69ad-f124-492c-bce7-047fa11e7406">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rannveig Guðmundsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7c25fc62-611f-4d9a-818a-c913768c1a1c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sighvatur Björgvinsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — West Fjords
+
+                              
+                                <span class="person-card__politics__date">(until 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cdbcc747-6167-44ed-84a6-700d440ee821">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sigríður Ingvarsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Northwest
+
+                              
+                                <span class="person-card__politics__date">(from 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ab86415c-22d3-40c8-b942-999aa6b64b1b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sigríður Jóhannesdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae739e87-d61c-4177-8c1f-dcd20bfefc77">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sigríður Þórðardóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f9664cf1-3728-47fd-9da0-f0149d3462ad">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/f9664cf1-3728-47fd-9da0-f0149d3462ad/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/f9664cf1-3728-47fd-9da0-f0149d3462ad/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Siv Friðleifsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3cb3b7b3-387f-4e07-ab83-77cc67499551">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Steingrímur Sigfússon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Left-Green Movement — Northeast
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f63d204-f8d3-43fd-847d-cdfe50f983cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sturla Böðvarsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c1dedb19-b442-424d-80d6-d37d5b4835d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Svanfríður Jónasdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Northeast
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e5a8f2b-b45f-4496-93e1-d5a16e1fd9e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sverrir Hermannsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-80ac14f1-98c3-4efc-aa24-99fe361339ca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sólveig Pétursdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5bcbb5d4-b713-4e24-a457-580431744460">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tómas Olrich</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Northeast
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2a5886f1-4049-412e-b363-d1703529e7f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2a5886f1-4049-412e-b363-d1703529e7f7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/2a5886f1-4049-412e-b363-d1703529e7f7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Valgerður Sverrisdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — Northeast
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0ea22e58-0614-45fd-9d13-7b3fb4a122f6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Vilhjálmur Egilsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Northwest
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8389880d-afd1-4186-8a9b-8da0a2ecd154">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Árni Johnsen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — South
+
+                              
+                                <span class="person-card__politics__date">(until 2001)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b0e49468-5903-4ecc-8b91-9169fdcbf089">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Árni Jóhannsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Left-Green Movement — Northeast
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fce4b7f2-5ce4-43cf-8235-e3cac4a95db8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/fce4b7f2-5ce4-43cf-8235-e3cac4a95db8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/fce4b7f2-5ce4-43cf-8235-e3cac4a95db8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Árni Mathiesen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10ecce7c-c8d0-4751-a01d-6883feaf8eb1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Árni Árnason</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-133c04dd-f950-4a4a-9aa0-c8c9a82e7737">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/133c04dd-f950-4a4a-9aa0-c8c9a82e7737/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/133c04dd-f950-4a4a-9aa0-c8c9a82e7737/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ásta Jóhannesdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3e4d9afd-c40c-4afc-9e73-70c6d122f511">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ásta Möller</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a0d7743a-0cea-4b9b-8d47-2d8bfd79f358">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ísólfur Pálmason</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-21b7734b-5a90-4604-a557-c79660128d24">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ólafur Haraldsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Progressive Party — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d1b30e1b-9ae1-4804-be91-aede0eaf9dd7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ögmundur Jónasson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Left-Green Movement — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1ec74dcb-a53d-4d5a-95c6-03c2cf424594">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/1ec74dcb-a53d-4d5a-95c6-03c2cf424594/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/1ec74dcb-a53d-4d5a-95c6-03c2cf424594/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Össur Skarphéðinsson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjavik
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c5b652e2-4034-470b-9093-fac3d3a37030">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Þorgerður Gunnarsdóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independence Party — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c0e5e769-476b-44ed-b8eb-6c88bd86344d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/c0e5e769-476b-44ed-b8eb-6c88bd86344d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/c0e5e769-476b-44ed-b8eb-6c88bd86344d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Þuríður Backman</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Left-Green Movement — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-da58fe8c-cc46-403f-9bdc-b4b475ff4db5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/da58fe8c-cc46-403f-9bdc-b4b475ff4db5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Iceland/Assembly/da58fe8c-cc46-403f-9bdc-b4b475ff4db5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Þórunn Sveinbjarnardóttir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic Alliance — Reykjanes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

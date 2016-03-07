@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="1993 election" />
     <meta property="og:type" content="article" />
@@ -185,7 +188,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-independent"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -197,143 +200,263 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/term-1993.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/term-1993.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-ccf05e30-f369-49c9-917f-510ee6766e9e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ccf05e30-f369-49c9-917f-510ee6766e9e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bill Luxton</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Camp
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bill Luxton">Bill Luxton</td>
-                      
-                        <td>Independent</td>
-                        <td>Camp</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-02484ec3-0aeb-49d3-95d3-719d3aa0deb4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-02484ec3-0aeb-49d3-95d3-719d3aa0deb4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Charles Keenleyside</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Stanley
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Charles Keenleyside">Charles Keenleyside</td>
-                      
-                        <td>Independent</td>
-                        <td>Stanley</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e2a486d2-67d0-4799-a7de-470c18e66642">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e2a486d2-67d0-4799-a7de-470c18e66642">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eric Goss</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Camp
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Eric Goss">Eric Goss</td>
-                      
-                        <td>Independent</td>
-                        <td>Camp</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b7931470-f6cb-48cf-8e68-49f8e8878da0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7931470-f6cb-48cf-8e68-49f8e8878da0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Cheek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Stanley
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="John Cheek">John Cheek</td>
-                      
-                        <td>Independent</td>
-                        <td>Stanley</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-47dc5a4e-c2d0-40df-a000-e15ccd4820b7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-47dc5a4e-c2d0-40df-a000-e15ccd4820b7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Norma Edwards</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Camp
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Norma Edwards">Norma Edwards</td>
-                      
-                        <td>Independent</td>
-                        <td>Camp</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e4a0e919-192a-4b29-9215-90f8fa76eff6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e4a0e919-192a-4b29-9215-90f8fa76eff6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Richard Stevens</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Camp
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Richard Stevens">Richard Stevens</td>
-                      
-                        <td>Independent</td>
-                        <td>Camp</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7310dcc9-af69-4a8b-b7da-780dbb59a8e8">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7310dcc9-af69-4a8b-b7da-780dbb59a8e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Falkland-Islands/Assembly/7310dcc9-af69-4a8b-b7da-780dbb59a8e8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Falkland-Islands/Assembly/7310dcc9-af69-4a8b-b7da-780dbb59a8e8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sharon Halford</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Stanley
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sharon Halford">Sharon Halford</td>
-                      
-                        <td>Independent</td>
-                        <td>Stanley</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7a4be4f3-678a-41fa-817f-6209bd0a19bc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7a4be4f3-678a-41fa-817f-6209bd0a19bc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wendy Teggart</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Stanley
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Wendy Teggart">Wendy Teggart</td>
-                      
-                        <td>Independent</td>
-                        <td>Stanley</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

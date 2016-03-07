@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="15th Assembly" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-independent"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -101,287 +104,591 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d5180f0/data/Niue/Assembly/term-15.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d5180f0/data/Niue/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d5180f0/data/Niue/Assembly/term-15.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d5180f0/data/Niue/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-2433f849-5b66-476b-8560-fc5bc813662a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2433f849-5b66-476b-8560-fc5bc813662a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bill Vakaafi Motufoou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Mutalau
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bill Vakaafi Motufoou">Bill Vakaafi Motufoou</td>
-                      
-                        <td>Independent</td>
-                        <td>Mutalau</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-45b1d413-c111-4e9d-90a4-35cb8943c1a9">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-45b1d413-c111-4e9d-90a4-35cb8943c1a9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Billy Graham Talagi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Avatele
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Billy Graham Talagi">Billy Graham Talagi</td>
-                      
-                        <td>Independent</td>
-                        <td>Avatele</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-635aa6ac-82a7-40ef-b373-b5c53f3666da">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-635aa6ac-82a7-40ef-b373-b5c53f3666da">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Crossley Tatui</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Common Roll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Crossley Tatui">Crossley Tatui</td>
-                      
-                        <td>Independent</td>
-                        <td>Common Roll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-895e393d-ad87-44d8-9d25-19fb2325f216">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-895e393d-ad87-44d8-9d25-19fb2325f216">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dalton Tagelagi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Alofi South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Dalton Tagelagi">Dalton Tagelagi</td>
-                      
-                        <td>Independent</td>
-                        <td>Alofi South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-95471f12-f133-4f46-b650-a31d2017f85b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-95471f12-f133-4f46-b650-a31d2017f85b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dion Paki Taufitu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Toi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Dion Paki Taufitu">Dion Paki Taufitu</td>
-                      
-                        <td>Independent</td>
-                        <td>Toi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-58bdfc38-4a7d-4e3a-9498-b5ff0d4d993a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58bdfc38-4a7d-4e3a-9498-b5ff0d4d993a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fisa Igilisi Pihigia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Tuapa
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Fisa Igilisi Pihigia">Fisa Igilisi Pihigia</td>
-                      
-                        <td>Independent</td>
-                        <td>Tuapa</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-eb9f6d25-0749-470d-8c87-7fc0670e5dac">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb9f6d25-0749-470d-8c87-7fc0670e5dac">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jack Willie Lipitoa, QSM</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Namukulu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jack Willie Lipitoa, QSM">Jack Willie Lipitoa, QSM</td>
-                      
-                        <td>Independent</td>
-                        <td>Namukulu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2825c176-23e5-4252-90f2-b07790e6482c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2825c176-23e5-4252-90f2-b07790e6482c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joan Sisiata Tahafa Viliamu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Common Roll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Joan Sisiata Tahafa Viliamu">Joan Sisiata Tahafa Viliamu</td>
-                      
-                        <td>Independent</td>
-                        <td>Common Roll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3a98d3d6-42a2-4d3c-ba87-e831cf2986ae">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3a98d3d6-42a2-4d3c-ba87-e831cf2986ae">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kupa Magatogia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Lakepa
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Kupa Magatogia">Kupa Magatogia</td>
-                      
-                        <td>Independent</td>
-                        <td>Lakepa</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ef3d11bc-1f56-483b-9091-708b424b1c5a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ef3d11bc-1f56-483b-9091-708b424b1c5a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Niue/Assembly/ef3d11bc-1f56-483b-9091-708b424b1c5a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Niue/Assembly/ef3d11bc-1f56-483b-9091-708b424b1c5a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mititaiagimene Young Vivian</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Hakupu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mititaiagimene Young Vivian">Mititaiagimene Young Vivian</td>
-                      
-                        <td>Independent</td>
-                        <td>Hakupu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-68f60167-934b-41d7-89b7-23c8cd22dbbf">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-68f60167-934b-41d7-89b7-23c8cd22dbbf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Opili Talafasi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Hikutavake
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Opili Talafasi">Opili Talafasi</td>
-                      
-                        <td>Independent</td>
-                        <td>Hikutavake</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-86205035-9a47-40d7-94fd-204bd43e162c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-86205035-9a47-40d7-94fd-204bd43e162c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Peter Andrew Funaki</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Tamakautoga
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Peter Andrew Funaki">Peter Andrew Funaki</td>
-                      
-                        <td>Independent</td>
-                        <td>Tamakautoga</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-65f769e8-1fdb-4dec-9972-3becd2f646e3">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-65f769e8-1fdb-4dec-9972-3becd2f646e3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pokotoa Sipeli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Liku
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Pokotoa Sipeli">Pokotoa Sipeli</td>
-                      
-                        <td>Independent</td>
-                        <td>Liku</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-97b1bda1-748a-4be5-b931-a860ea92a4f2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-97b1bda1-748a-4be5-b931-a860ea92a4f2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Stanley Atuvaha Kalauni</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Common Roll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Stanley Atuvaha Kalauni">Stanley Atuvaha Kalauni</td>
-                      
-                        <td>Independent</td>
-                        <td>Common Roll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-48353385-ca1e-4746-924f-192f47340bfe">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-48353385-ca1e-4746-924f-192f47340bfe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Talaititama Talaiti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Vaiea
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Talaititama Talaiti">Talaititama Talaiti</td>
-                      
-                        <td>Independent</td>
-                        <td>Vaiea</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-80aa531f-d157-4cbf-b5d4-4b91a99054ca">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-80aa531f-d157-4cbf-b5d4-4b91a99054ca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Terry Donald Coe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Common Roll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Terry Donald Coe">Terry Donald Coe</td>
-                      
-                        <td>Independent</td>
-                        <td>Common Roll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-477030f6-fd85-44d8-9f75-118e1d0dd9e5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-477030f6-fd85-44d8-9f75-118e1d0dd9e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tofua Puletama</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Makefu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tofua Puletama">Tofua Puletama</td>
-                      
-                        <td>Independent</td>
-                        <td>Makefu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-17d1c196-37b4-4772-81da-e81339e32493">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-17d1c196-37b4-4772-81da-e81339e32493">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Togia Likalika Sioneholo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Common Roll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Togia Likalika Sioneholo">Togia Likalika Sioneholo</td>
-                      
-                        <td>Independent</td>
-                        <td>Common Roll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e8756496-590f-4fe7-aca5-2445161df2d2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e8756496-590f-4fe7-aca5-2445161df2d2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Niue/Assembly/e8756496-590f-4fe7-aca5-2445161df2d2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Niue/Assembly/e8756496-590f-4fe7-aca5-2445161df2d2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Toke Tufukia Talagi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Common Roll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Toke Tufukia Talagi">Toke Tufukia Talagi</td>
-                      
-                        <td>Independent</td>
-                        <td>Common Roll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ad03c9ec-fc45-4581-85b1-2e7dabd37cc0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ad03c9ec-fc45-4581-85b1-2e7dabd37cc0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Va’aiga Tukuitoga</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Alofi North
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Va’aiga Tukuitoga">Va’aiga Tukuitoga</td>
-                      
-                        <td>Independent</td>
-                        <td>Alofi North</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

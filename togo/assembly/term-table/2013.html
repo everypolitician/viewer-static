@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2013–" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-unir"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -137,1151 +140,2535 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/06d1a86/data/Togo/Assembly/term-2013.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/06d1a86/data/Togo/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/06d1a86/data/Togo/Assembly/term-2013.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/06d1a86/data/Togo/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-5c2f1a6e-6cbb-4d1e-b83a-db4de124fddb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ABIGUIME Petik-Abalo">M. ABIGUIME Petik-Abalo</td>
-                      
-                        <td>UNIR</td>
-                        <td>BINAH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d576bee9-848b-4d6c-8048-79def0dffbc2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ABOLU Yawo Afelete">M. ABOLU Yawo Afelete</td>
-                      
-                        <td>UNIR</td>
-                        <td>AVE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-33c2098b-0555-456a-9d00-6049b826d72c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ADJOR Akofi">M. ADJOR Akofi</td>
-                      
-                        <td>ANC</td>
-                        <td>AVE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-128bff8a-6062-44f1-b754-1381c793e9c8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. AFO ALEDJOU Mawé">M. AFO ALEDJOU Mawé</td>
-                      
-                        <td>UNIR</td>
-                        <td>TCHAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aaeb0389-9058-4385-878f-0eb9d4d5c323">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. AGBO KOMLAN">M. AGBO KOMLAN</td>
-                      
-                        <td>UNIR</td>
-                        <td>EST-MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cc828d68-466f-4c75-981c-ab2f4aed3293">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. AGBO Kokou">M. AGBO Kokou</td>
-                      
-                        <td>ARC-EN-CIEL</td>
-                        <td>YOTO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f5dc0e3-1ce2-4504-afcf-6497c287307e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ALONOU Kokou">M. ALONOU Kokou</td>
-                      
-                        <td>UNIR</td>
-                        <td>BLITTA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3838748b-5733-4dc8-8f50-7ef0f9c942c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. AMETODJI Yawovi">M. AMETODJI Yawovi</td>
-                      
-                        <td>UNIR</td>
-                        <td>OGOU-ANIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1028b507-de09-424f-9649-e20df7609a7c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. AMOUZOU Kodjovi">M. AMOUZOU Kodjovi</td>
-                      
-                        <td>UNIR</td>
-                        <td>HAHO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bdf4c911-99ee-4133-a1ce-722165a32987">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. APEKEY Assewouwokan">M. APEKEY Assewouwokan</td>
-                      
-                        <td>ANC</td>
-                        <td>VO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea86e52d-9813-457c-af1d-b5aaeb07e066">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. APEVON Kokou Dodji">M. APEVON Kokou Dodji</td>
-                      
-                        <td>ARC-EN-CIEL</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-75020ea7-5b29-4ab2-a89e-4f8f72dfd66c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. APEZOUKE Jean-Marie">M. APEZOUKE Jean-Marie</td>
-                      
-                        <td>UNIR</td>
-                        <td>VO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-861fce6b-bb23-47a6-8586-07b9e918bfac">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ARZOUMA Natchadja">M. ARZOUMA Natchadja</td>
-                      
-                        <td>UNIR</td>
-                        <td>KPENDJAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-df1ad960-3443-41c3-98f5-cdc3051108b7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ASSOUMA Derman">M. ASSOUMA Derman</td>
-                      
-                        <td>UNIR</td>
-                        <td>TCHAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-771133f1-035b-4c31-981e-9e4c8f2aa156">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ATAKPAMEY Kodjo">M. ATAKPAMEY Kodjo</td>
-                      
-                        <td>ANC</td>
-                        <td>OGOU-ANIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5f401570-c557-4a81-94ca-fd4d03f85382">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ATCHI N’Bouké Yao">M. ATCHI N’Bouké Yao</td>
-                      
-                        <td>UNIR</td>
-                        <td>MOYEN-MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-941781b1-9bc3-4a3c-bc49-933956bab7ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. AWATE Simala">M. AWATE Simala</td>
-                      
-                        <td>UNIR</td>
-                        <td>EST-MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9b6386e1-b52a-4fd4-88ca-ffc325030a07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. BANKATI Bolagbédé">M. BANKATI Bolagbédé</td>
-                      
-                        <td>UNIR</td>
-                        <td>OTI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9a7b391f-ac27-442c-97ab-98f0f94ff04f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. BARITSE Dametoti">M. BARITSE Dametoti</td>
-                      
-                        <td>UNIR</td>
-                        <td>KPENDJAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2ed0112f-4b0d-4ed2-8e9d-1e56f7dcc7f2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. BEGUEM Nakodja">M. BEGUEM Nakodja</td>
-                      
-                        <td>UNIR</td>
-                        <td>DANKPEN</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50d12269-0fc1-46d4-8569-067596b72610">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. BOINI Taaka">M. BOINI Taaka</td>
-                      
-                        <td>UNIR</td>
-                        <td>KERAN</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e03e15c9-98f4-4850-b7c2-bb10c9649fb6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. BOUWASSI Kédessa Datcha">M. BOUWASSI Kédessa Datcha</td>
-                      
-                        <td>UNIR</td>
-                        <td>KOZAH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0b3d06f4-17ea-41a7-83b7-6b2ba1dfe72c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. DOBOU Kwadzo Sedem">M. DOBOU Kwadzo Sedem</td>
-                      
-                        <td>UNIR</td>
-                        <td>AGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bd0f0b69-d966-49ec-9789-73c28d1bcf00">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. DOE-BRUCE Adama Koffi">M. DOE-BRUCE Adama Koffi</td>
-                      
-                        <td>ANC</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4c40cf41-3d31-48bf-aa0a-27bb011c2dc6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. DRA Kossi Seveamenou">M. DRA Kossi Seveamenou</td>
-                      
-                        <td>ANC</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f1b9a08f-9e19-468e-9fbe-e27ba0f01dd2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. DRAMANI Dama">M. DRAMANI Dama</td>
-                      
-                        <td>UNIR</td>
-                        <td>TCHAMBA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b6cfbedb-3712-4501-bd67-293a36cd7b82">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. EWOVOR Kossi Messan W.">M. EWOVOR Kossi Messan W.</td>
-                      
-                        <td>UNIR</td>
-                        <td>DANYI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-47cf2337-79e2-4e20-982e-12d91e75bd05">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. FABRE Jean-Pierre">M. FABRE Jean-Pierre</td>
-                      
-                        <td>ANC</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-530805ca-f086-49c3-bc42-7fd44affd1ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. FOFANA Soffoh">M. FOFANA Soffoh</td>
-                      
-                        <td>ANC</td>
-                        <td>ASSSOLI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c6147e30-3015-470c-bf2c-65436e513a8a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. GAGOU KOKOU">M. GAGOU KOKOU</td>
-                      
-                        <td>UNIR</td>
-                        <td>LACS-BAS MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5d5f3203-3255-4067-afb6-e8b92b640de8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. GNATCHO Komla Mawuena">M. GNATCHO Komla Mawuena</td>
-                      
-                        <td>UNIR</td>
-                        <td>AMOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0248fb7f-f799-4bb8-bfd8-5ffc7a16ac2a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. GNONGBO Tak Youssif">M. GNONGBO Tak Youssif</td>
-                      
-                        <td>UNIR</td>
-                        <td>ASSOLI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-72343d22-5d37-4208-be5f-1c18117d9013">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. GOGUE Tchaboure">M. GOGUE Tchaboure</td>
-                      
-                        <td>ADDI</td>
-                        <td>TANDJOUARE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ed59da8-b6e4-4cbc-b0da-2b0356cd1636">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. HODIN Eke Kokou">M. HODIN Eke Kokou</td>
-                      
-                        <td>UNIR</td>
-                        <td>OGOU-ANIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41e9bced-d5ea-4d36-a9f0-9604daf430b0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. HOWANOU Edoh">M. HOWANOU Edoh</td>
-                      
-                        <td>UNIR</td>
-                        <td>MOYEN-MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e0d45d5-d5c0-4e5c-b83c-c1f176d99880">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. JIMONGOU Sambiani Kpandou">M. JIMONGOU Sambiani Kpandou</td>
-                      
-                        <td>UFC</td>
-                        <td>TONE-CINKASSE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-154d18bb-4496-43f1-bfef-1a2ba5cffe3f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. JONDOH Comlavi Dzigbodi">M. JONDOH Comlavi Dzigbodi</td>
-                      
-                        <td>ANC</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1c8700d-a0cc-4bc4-b8b1-228c2694c565">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KAMPATIBE Nagbandja">M. KAMPATIBE Nagbandja</td>
-                      
-                        <td>ADDI</td>
-                        <td>TONE-CINKASSE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cf0cdea2-7102-406a-ad73-3412e1537f73">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KATAGNA Essodina">M. KATAGNA Essodina</td>
-                      
-                        <td>UNIR</td>
-                        <td>BINAH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-71848d0b-d804-46f7-b6a6-1989a08336c3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KATIN Djagre">M. KATIN Djagre</td>
-                      
-                        <td>UNIR</td>
-                        <td>BASSAR</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-408d02ef-6c40-4ffd-9e66-bf019f8081ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KERTCHO Komina">M. KERTCHO Komina</td>
-                      
-                        <td>UNIR</td>
-                        <td>WAWA-AKEBOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-164dd5d1-cc42-4de1-92d2-f47f75274f53">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KETOGLO Yao Victor">M. KETOGLO Yao Victor</td>
-                      
-                        <td>ANC</td>
-                        <td>ZIO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-76a4e5eb-97a6-45b6-855b-cf83e0bd4903">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KISSI Kofi Hotounou">M. KISSI Kofi Hotounou</td>
-                      
-                        <td>ARC-EN-CIEL</td>
-                        <td>VO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-15d0cbc9-7e5b-4c1c-bfc7-5d5dd4e9ba96">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KOFFI Kossiko Kalenyo">M. KOFFI Kossiko Kalenyo</td>
-                      
-                        <td>ARC-EN-CIEL</td>
-                        <td>YOTO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a87254d5-c94e-46fc-a199-945b194959cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KOLANI Kombate Douti">M. KOLANI Kombate Douti</td>
-                      
-                        <td>UFC</td>
-                        <td>OTI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f8076dd9-a328-4262-aba2-7dc8226d4817">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KPADENOU Amoussouvi">M. KPADENOU Amoussouvi</td>
-                      
-                        <td>ANC</td>
-                        <td>LACS-BAS MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6960079f-2697-4a90-96c7-3c1e0b7c680f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KPATCHA Komi">M. KPATCHA Komi</td>
-                      
-                        <td>UNIR</td>
-                        <td>KOZAH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d3f70de4-73d6-4fa0-97f0-70734a4ec7eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KPOGO Kodjo">M. KPOGO Kodjo</td>
-                      
-                        <td>ANC</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f0301b4e-dd64-40e1-b729-18b3102f667b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. KPOHOU Sim">M. KPOHOU Sim</td>
-                      
-                        <td>UNIR</td>
-                        <td>SOTOUBOUA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-07ad05ae-1284-4da4-a0b2-81821406feba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. LABITOKO Kadjila">M. LABITOKO Kadjila</td>
-                      
-                        <td>UNIR</td>
-                        <td>DOUFELGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-48d96724-0829-462a-a9ff-e52cc9e98b55">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. LAWSON Latevi Calvin Georges">M. LAWSON Latevi Calvin Georges</td>
-                      
-                        <td>ANC</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d021204e-864d-497b-bb51-9df1594d84ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. LAWSON-Banku Boevi Patrick">M. LAWSON-Banku Boevi Patrick</td>
-                      
-                        <td>ANC</td>
-                        <td>LACS-BAS MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f66a6e2-eeb8-4310-8729-595e76059294">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. MALLE Kayaba">M. MALLE Kayaba</td>
-                      
-                        <td>UNIR</td>
-                        <td>TONE-CINKASSE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f5495a4-d4a4-4986-890d-a9e1c9e35fb7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. NASSOU Alouadjou K.">M. NASSOU Alouadjou K.</td>
-                      
-                        <td>UNIR</td>
-                        <td>KERAN</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3c0d78f7-2902-44d5-aa0f-63157a341bea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. NAYO Koffi Bessewu">M. NAYO Koffi Bessewu</td>
-                      
-                        <td>UNIR</td>
-                        <td>AMOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a9c4083-2194-4499-ab8b-ec8a1cbb8e3e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. NONON K. Diera-Bariga">M. NONON K. Diera-Bariga</td>
-                      
-                        <td>UNIR</td>
-                        <td>BLITTA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-df6428b6-8787-4e32-a147-88eac720c40a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. OGBLOMESSE Koku M.">M. OGBLOMESSE Koku M.</td>
-                      
-                        <td>UNIR</td>
-                        <td>DANYI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b1ff66c6-1a6b-4a37-b67f-27c92b52e4d5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. ORE DJIMON">M. ORE DJIMON</td>
-                      
-                        <td>INDEPENDANT</td>
-                        <td>EST-MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7510eec8-6a4d-4215-9fcf-1500678788cc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. OSSEYI Yawovi">M. OSSEYI Yawovi</td>
-                      
-                        <td>UNIR</td>
-                        <td>AMOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d3fa5eb-cc83-4d30-b039-687e6b6eb377">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. OURO-AKPO Tchagnaou">M. OURO-AKPO Tchagnaou</td>
-                      
-                        <td>ANC</td>
-                        <td>TCHAOUDJO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-af7d2c5f-4301-4938-8371-0cc728c7713a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. PENN Lare Batouth">M. PENN Lare Batouth</td>
-                      
-                        <td>UNIR</td>
-                        <td>OTI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fa1f3b9e-18e4-4da2-b6c2-1db64ba15123">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. SAMBIANI Yentema A.">M. SAMBIANI Yentema A.</td>
-                      
-                        <td>UNIR</td>
-                        <td>KPENDJAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a7e6d0df-3b18-4d56-a1e0-d0d129db2060">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. SEGO Etse Franck">M. SEGO Etse Franck</td>
-                      
-                        <td>UNIR</td>
-                        <td>ZIO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea64e669-982e-4aa6-8abf-415179e06171">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. SENOU Komlan">M. SENOU Komlan</td>
-                      
-                        <td>ARC-EN-CIEL</td>
-                        <td>YOTO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cc05069b-2742-477b-8c3b-28223fac1893">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. SOGOYOU Bekeyi E.">M. SOGOYOU Bekeyi E.</td>
-                      
-                        <td>UNIR</td>
-                        <td>TCHAOUDJO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c76781cb-b418-40e9-9632-3952fa6532ab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. TARGONE Sambiri N’wakin">M. TARGONE Sambiri N’wakin</td>
-                      
-                        <td>ANC</td>
-                        <td>DANKPEN</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ccfb827f-c008-46ac-bc1c-77d57f0ab151">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. TCHAMON Abalea">M. TCHAMON Abalea</td>
-                      
-                        <td>UNIR</td>
-                        <td>DOUFELGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f9dda63b-83d9-465d-bc55-752bb8155c5e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. TCHAO Padumhekou">M. TCHAO Padumhekou</td>
-                      
-                        <td>UNIR</td>
-                        <td>SOTOUBOUA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-de665b53-e234-48bd-a500-19327fdee320">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. TCHASSE Awedeou">M. TCHASSE Awedeou</td>
-                      
-                        <td>UNIR</td>
-                        <td>SOTOUBOUA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-12a0cc3c-5de2-42d4-a79c-1dd490d16ff9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. TOUSSA Komi Gameli">M. TOUSSA Komi Gameli</td>
-                      
-                        <td>UNIR</td>
-                        <td>KLOTO-KPELE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2986fb08-912a-4570-aff3-6ea7e38246f6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. VODIS Yawo">M. VODIS Yawo</td>
-                      
-                        <td>ANC</td>
-                        <td>ZIO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d32515cb-889c-42c7-9da6-1e098e050e28">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. YAKPO Kossi">M. YAKPO Kossi</td>
-                      
-                        <td>UNIR</td>
-                        <td>WAWA-AKEBOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6099301a-1cf2-4309-aed3-75aa74c7a9cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M. YENTOUMI Kodjo Ikpaledou">M. YENTOUMI Kodjo Ikpaledou</td>
-                      
-                        <td>UNIR</td>
-                        <td>WAWA-AKEBOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-51dc5fb9-0bd2-423d-aff6-640669111f80">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M.BOURAIMA-DIABACTE K. Hamadou Brim">M.BOURAIMA-DIABACTE K. Hamadou Brim</td>
-                      
-                        <td>UFC</td>
-                        <td>OTI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bb67e2c1-97e2-40b2-9efb-8cb5456a11ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M.KOSSIGAN Kodjogan M.">M.KOSSIGAN Kodjogan M.</td>
-                      
-                        <td>UNIR</td>
-                        <td>HAHO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f72d8ee-5013-4b0c-bbbe-ac85acc98ffb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme AMEDJOGBE Akossiwa Olivia">Mme AMEDJOGBE Akossiwa Olivia</td>
-                      
-                        <td>UNIR</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-19ef806c-cdc4-420c-9204-f0bfc0e02721">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme AMEGANVI M.Isabelle D.">Mme AMEGANVI M.Isabelle D.</td>
-                      
-                        <td>ANC</td>
-                        <td>KLOTO-KPELE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cd393911-7fef-4a55-8dee-2c8ec502a755">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme AMENYO Afi Ntifa">Mme AMENYO Afi Ntifa</td>
-                      
-                        <td>UNIR</td>
-                        <td>AGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0ad8a456-ee30-415b-87e1-8c2d6ca441a2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme AMOUZOU DJAKE Kossiwa">Mme AMOUZOU DJAKE Kossiwa</td>
-                      
-                        <td>UNIR</td>
-                        <td>HAHO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-96131c37-f099-4b15-805b-c8a484abbbd1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme ARZOUMA Pomong Wuinekouma">Mme ARZOUMA Pomong Wuinekouma</td>
-                      
-                        <td>UNIR</td>
-                        <td>TONE-CINKASSE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8590d69d-8179-4257-b1cd-3cb2140ad7fa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme DAGBAN Ayawavi Djigbodi">Mme DAGBAN Ayawavi Djigbodi</td>
-                      
-                        <td>UNIR</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fcfe3bf8-441c-4e33-a5cb-9046e282b32e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme DJOBO Nassara Epse OURO BANGANA">Mme DJOBO Nassara Epse OURO BANGANA</td>
-                      
-                        <td>UNIR</td>
-                        <td>TCHAOUDJO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2dde6827-704d-4055-8f14-03127d3aa105">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme GNAKOUAFRE A. S. Suhn-Badu">Mme GNAKOUAFRE A. S. Suhn-Badu</td>
-                      
-                        <td>UNIR</td>
-                        <td>BLITTA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c6b3ca74-369f-4f0d-b996-e383fb0d82fd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme IBRAHIMA Memounatou">Mme IBRAHIMA Memounatou</td>
-                      
-                        <td>UNIR</td>
-                        <td>DANKPEN</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4bc0beb8-1bfd-4c9f-9a23-fdcedd35a144">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme KOLANI Yobate">Mme KOLANI Yobate</td>
-                      
-                        <td>UNIR</td>
-                        <td>TANDJOUARE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-42efc60a-67a5-4e6d-9959-2eda7cbd1285">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme KOUKPOKPA Issolemo Epse BAGNA">Mme KOUKPOKPA Issolemo Epse BAGNA</td>
-                      
-                        <td>Indépendant SURSAUT NATIONAL</td>
-                        <td>BASSAR</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9b5fde93-d987-4ef4-b343-69f9f4afbc97">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme SEWOA Adjoa M. S.">Mme SEWOA Adjoa M. S.</td>
-                      
-                        <td>UNIR</td>
-                        <td>ZIO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-13097aa9-c3c7-4cf5-9185-a17594cde69d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme TELOU Mila – Belle">Mme TELOU Mila – Belle</td>
-                      
-                        <td>UNIR</td>
-                        <td>KOZAH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-00498db7-0a4b-47b7-ab65-bda13cfd51f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme TIGNOKPA Ayawovi D.">Mme TIGNOKPA Ayawovi D.</td>
-                      
-                        <td>UNIR</td>
-                        <td>BASSAR</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2900c960-d7e8-4612-8181-9a4da1014282">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme TSEGAN Yawa Djigbodi">Mme TSEGAN Yawa Djigbodi</td>
-                      
-                        <td>UNIR</td>
-                        <td>KLOTO-KPELE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1dab4f34-7b73-4d7e-b516-c1a99e22552b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme. ADJAMAGBO Ayélo Okpé">Mme. ADJAMAGBO Ayélo Okpé</td>
-                      
-                        <td>UNIR</td>
-                        <td>OGOU-ANIE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-62712dce-cf36-408f-b4c2-d6a63adc72d7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme. AGBOKOU Kossiwa M. F.">Mme. AGBOKOU Kossiwa M. F.</td>
-                      
-                        <td>ANC</td>
-                        <td>GRAND LOME</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5c2f1a6e-6cbb-4d1e-b83a-db4de124fddb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ABIGUIME Petik-Abalo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — BINAH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d576bee9-848b-4d6c-8048-79def0dffbc2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ABOLU Yawo Afelete</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — AVE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-33c2098b-0555-456a-9d00-6049b826d72c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ADJOR Akofi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — AVE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-128bff8a-6062-44f1-b754-1381c793e9c8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. AFO ALEDJOU Mawé</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TCHAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aaeb0389-9058-4385-878f-0eb9d4d5c323">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. AGBO KOMLAN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — EST-MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cc828d68-466f-4c75-981c-ab2f4aed3293">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. AGBO Kokou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ARC-EN-CIEL — YOTO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f5dc0e3-1ce2-4504-afcf-6497c287307e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ALONOU Kokou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — BLITTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3838748b-5733-4dc8-8f50-7ef0f9c942c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. AMETODJI Yawovi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — OGOU-ANIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1028b507-de09-424f-9649-e20df7609a7c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. AMOUZOU Kodjovi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — HAHO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bdf4c911-99ee-4133-a1ce-722165a32987">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. APEKEY Assewouwokan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — VO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea86e52d-9813-457c-af1d-b5aaeb07e066">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. APEVON Kokou Dodji</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ARC-EN-CIEL — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-75020ea7-5b29-4ab2-a89e-4f8f72dfd66c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. APEZOUKE Jean-Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — VO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-861fce6b-bb23-47a6-8586-07b9e918bfac">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ARZOUMA Natchadja</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KPENDJAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-df1ad960-3443-41c3-98f5-cdc3051108b7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ASSOUMA Derman</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TCHAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-771133f1-035b-4c31-981e-9e4c8f2aa156">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ATAKPAMEY Kodjo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — OGOU-ANIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5f401570-c557-4a81-94ca-fd4d03f85382">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ATCHI N’Bouké Yao</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — MOYEN-MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-941781b1-9bc3-4a3c-bc49-933956bab7ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. AWATE Simala</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — EST-MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9b6386e1-b52a-4fd4-88ca-ffc325030a07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. BANKATI Bolagbédé</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — OTI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9a7b391f-ac27-442c-97ab-98f0f94ff04f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. BARITSE Dametoti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KPENDJAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2ed0112f-4b0d-4ed2-8e9d-1e56f7dcc7f2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. BEGUEM Nakodja</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — DANKPEN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50d12269-0fc1-46d4-8569-067596b72610">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. BOINI Taaka</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KERAN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e03e15c9-98f4-4850-b7c2-bb10c9649fb6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. BOUWASSI Kédessa Datcha</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KOZAH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0b3d06f4-17ea-41a7-83b7-6b2ba1dfe72c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. DOBOU Kwadzo Sedem</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — AGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bd0f0b69-d966-49ec-9789-73c28d1bcf00">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. DOE-BRUCE Adama Koffi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4c40cf41-3d31-48bf-aa0a-27bb011c2dc6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. DRA Kossi Seveamenou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f1b9a08f-9e19-468e-9fbe-e27ba0f01dd2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. DRAMANI Dama</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TCHAMBA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b6cfbedb-3712-4501-bd67-293a36cd7b82">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. EWOVOR Kossi Messan W.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — DANYI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-47cf2337-79e2-4e20-982e-12d91e75bd05">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Togo/Assembly/47cf2337-79e2-4e20-982e-12d91e75bd05/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Togo/Assembly/47cf2337-79e2-4e20-982e-12d91e75bd05/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">M. FABRE Jean-Pierre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-530805ca-f086-49c3-bc42-7fd44affd1ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. FOFANA Soffoh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — ASSSOLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c6147e30-3015-470c-bf2c-65436e513a8a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. GAGOU KOKOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — LACS-BAS MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d5f3203-3255-4067-afb6-e8b92b640de8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. GNATCHO Komla Mawuena</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — AMOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0248fb7f-f799-4bb8-bfd8-5ffc7a16ac2a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. GNONGBO Tak Youssif</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — ASSOLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-72343d22-5d37-4208-be5f-1c18117d9013">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. GOGUE Tchaboure</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ADDI — TANDJOUARE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ed59da8-b6e4-4cbc-b0da-2b0356cd1636">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. HODIN Eke Kokou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — OGOU-ANIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41e9bced-d5ea-4d36-a9f0-9604daf430b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. HOWANOU Edoh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — MOYEN-MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e0d45d5-d5c0-4e5c-b83c-c1f176d99880">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. JIMONGOU Sambiani Kpandou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UFC — TONE-CINKASSE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-154d18bb-4496-43f1-bfef-1a2ba5cffe3f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. JONDOH Comlavi Dzigbodi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1c8700d-a0cc-4bc4-b8b1-228c2694c565">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KAMPATIBE Nagbandja</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ADDI — TONE-CINKASSE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cf0cdea2-7102-406a-ad73-3412e1537f73">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KATAGNA Essodina</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — BINAH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-71848d0b-d804-46f7-b6a6-1989a08336c3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KATIN Djagre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — BASSAR
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-408d02ef-6c40-4ffd-9e66-bf019f8081ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KERTCHO Komina</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — WAWA-AKEBOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-164dd5d1-cc42-4de1-92d2-f47f75274f53">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KETOGLO Yao Victor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — ZIO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-76a4e5eb-97a6-45b6-855b-cf83e0bd4903">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KISSI Kofi Hotounou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ARC-EN-CIEL — VO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15d0cbc9-7e5b-4c1c-bfc7-5d5dd4e9ba96">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KOFFI Kossiko Kalenyo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ARC-EN-CIEL — YOTO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a87254d5-c94e-46fc-a199-945b194959cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KOLANI Kombate Douti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UFC — OTI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f8076dd9-a328-4262-aba2-7dc8226d4817">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KPADENOU Amoussouvi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — LACS-BAS MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6960079f-2697-4a90-96c7-3c1e0b7c680f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KPATCHA Komi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KOZAH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d3f70de4-73d6-4fa0-97f0-70734a4ec7eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KPOGO Kodjo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f0301b4e-dd64-40e1-b729-18b3102f667b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. KPOHOU Sim</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — SOTOUBOUA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-07ad05ae-1284-4da4-a0b2-81821406feba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. LABITOKO Kadjila</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — DOUFELGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-48d96724-0829-462a-a9ff-e52cc9e98b55">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. LAWSON Latevi Calvin Georges</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d021204e-864d-497b-bb51-9df1594d84ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. LAWSON-Banku Boevi Patrick</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — LACS-BAS MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f66a6e2-eeb8-4310-8729-595e76059294">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. MALLE Kayaba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TONE-CINKASSE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f5495a4-d4a4-4986-890d-a9e1c9e35fb7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. NASSOU Alouadjou K.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KERAN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3c0d78f7-2902-44d5-aa0f-63157a341bea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. NAYO Koffi Bessewu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — AMOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a9c4083-2194-4499-ab8b-ec8a1cbb8e3e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. NONON K. Diera-Bariga</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — BLITTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-df6428b6-8787-4e32-a147-88eac720c40a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. OGBLOMESSE Koku M.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — DANYI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b1ff66c6-1a6b-4a37-b67f-27c92b52e4d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. ORE DJIMON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INDEPENDANT — EST-MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7510eec8-6a4d-4215-9fcf-1500678788cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. OSSEYI Yawovi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — AMOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d3fa5eb-cc83-4d30-b039-687e6b6eb377">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. OURO-AKPO Tchagnaou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — TCHAOUDJO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-af7d2c5f-4301-4938-8371-0cc728c7713a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. PENN Lare Batouth</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — OTI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fa1f3b9e-18e4-4da2-b6c2-1db64ba15123">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. SAMBIANI Yentema A.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KPENDJAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a7e6d0df-3b18-4d56-a1e0-d0d129db2060">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. SEGO Etse Franck</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — ZIO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea64e669-982e-4aa6-8abf-415179e06171">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. SENOU Komlan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ARC-EN-CIEL — YOTO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cc05069b-2742-477b-8c3b-28223fac1893">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. SOGOYOU Bekeyi E.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TCHAOUDJO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c76781cb-b418-40e9-9632-3952fa6532ab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. TARGONE Sambiri N’wakin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — DANKPEN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ccfb827f-c008-46ac-bc1c-77d57f0ab151">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. TCHAMON Abalea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — DOUFELGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f9dda63b-83d9-465d-bc55-752bb8155c5e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. TCHAO Padumhekou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — SOTOUBOUA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-de665b53-e234-48bd-a500-19327fdee320">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. TCHASSE Awedeou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — SOTOUBOUA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-12a0cc3c-5de2-42d4-a79c-1dd490d16ff9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. TOUSSA Komi Gameli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KLOTO-KPELE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2986fb08-912a-4570-aff3-6ea7e38246f6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. VODIS Yawo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — ZIO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d32515cb-889c-42c7-9da6-1e098e050e28">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. YAKPO Kossi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — WAWA-AKEBOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6099301a-1cf2-4309-aed3-75aa74c7a9cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M. YENTOUMI Kodjo Ikpaledou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — WAWA-AKEBOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-51dc5fb9-0bd2-423d-aff6-640669111f80">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M.BOURAIMA-DIABACTE K. Hamadou Brim</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UFC — OTI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bb67e2c1-97e2-40b2-9efb-8cb5456a11ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M.KOSSIGAN Kodjogan M.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — HAHO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f72d8ee-5013-4b0c-bbbe-ac85acc98ffb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme AMEDJOGBE Akossiwa Olivia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-19ef806c-cdc4-420c-9204-f0bfc0e02721">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Togo/Assembly/19ef806c-cdc4-420c-9204-f0bfc0e02721/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Togo/Assembly/19ef806c-cdc4-420c-9204-f0bfc0e02721/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mme AMEGANVI M.Isabelle D.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — KLOTO-KPELE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cd393911-7fef-4a55-8dee-2c8ec502a755">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme AMENYO Afi Ntifa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — AGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0ad8a456-ee30-415b-87e1-8c2d6ca441a2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme AMOUZOU DJAKE Kossiwa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — HAHO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-96131c37-f099-4b15-805b-c8a484abbbd1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme ARZOUMA Pomong Wuinekouma</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TONE-CINKASSE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8590d69d-8179-4257-b1cd-3cb2140ad7fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme DAGBAN Ayawavi Djigbodi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fcfe3bf8-441c-4e33-a5cb-9046e282b32e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme DJOBO Nassara Epse OURO BANGANA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TCHAOUDJO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2dde6827-704d-4055-8f14-03127d3aa105">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme GNAKOUAFRE A. S. Suhn-Badu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — BLITTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c6b3ca74-369f-4f0d-b996-e383fb0d82fd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme IBRAHIMA Memounatou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — DANKPEN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4bc0beb8-1bfd-4c9f-9a23-fdcedd35a144">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme KOLANI Yobate</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — TANDJOUARE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-42efc60a-67a5-4e6d-9959-2eda7cbd1285">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme KOUKPOKPA Issolemo Epse BAGNA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Indépendant SURSAUT NATIONAL — BASSAR
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9b5fde93-d987-4ef4-b343-69f9f4afbc97">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme SEWOA Adjoa M. S.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — ZIO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13097aa9-c3c7-4cf5-9185-a17594cde69d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme TELOU Mila – Belle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KOZAH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-00498db7-0a4b-47b7-ab65-bda13cfd51f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme TIGNOKPA Ayawovi D.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — BASSAR
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2900c960-d7e8-4612-8181-9a4da1014282">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme TSEGAN Yawa Djigbodi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — KLOTO-KPELE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1dab4f34-7b73-4d7e-b516-c1a99e22552b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme. ADJAMAGBO Ayélo Okpé</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNIR — OGOU-ANIE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-62712dce-cf36-408f-b4c2-d6a63adc72d7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme. AGBOKOU Kossiwa M. F.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANC — GRAND LOME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

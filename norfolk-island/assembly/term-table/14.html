@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="14th Legislative Assembly" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-independent"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -101,155 +104,286 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d1eb4c7/data/Norfolk_Island/Assembly/term-14.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d1eb4c7/data/Norfolk_Island/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d1eb4c7/data/Norfolk_Island/Assembly/term-14.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/d1eb4c7/data/Norfolk_Island/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-b29ebeb2-e544-4bf9-9c49-d54e95f44f5c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b29ebeb2-e544-4bf9-9c49-d54e95f44f5c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">David E. Buffett</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="David E. Buffett">David E. Buffett</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7d6b5d3b-84a2-40f8-97fd-6476da99bb70">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d6b5d3b-84a2-40f8-97fd-6476da99bb70">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">David R. Porter</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="David R. Porter">David R. Porter</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8096d99f-f121-4162-92e8-5ab43be8ef5b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8096d99f-f121-4162-92e8-5ab43be8ef5b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Haydn P. Evans</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Haydn P. Evans">Haydn P. Evans</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6408bc28-6862-4791-b51e-74f0b34f7244">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6408bc28-6862-4791-b51e-74f0b34f7244">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lisle D.Snell</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Lisle D.Snell">Lisle D.Snell</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-898491b4-0ea0-4a71-99d4-a2eabbe3264e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-898491b4-0ea0-4a71-99d4-a2eabbe3264e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Melissa Ward</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Melissa Ward">Melissa Ward</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-98fc4630-25bd-426a-9e42-197c402eda04">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-98fc4630-25bd-426a-9e42-197c402eda04">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Robin E. Adams</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Robin E. Adams">Robin E. Adams</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ee4e3369-1acb-4207-919e-f1555d23bb47">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee4e3369-1acb-4207-919e-f1555d23bb47">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ronald C. Nobbs</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ronald C. Nobbs">Ronald C. Nobbs</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-20f7fa5e-d2e2-42de-a35b-52776cceb029">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-20f7fa5e-d2e2-42de-a35b-52776cceb029">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ronald J. Ward</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ronald J. Ward">Ronald J. Ward</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7de17b66-8b2e-4cf3-b9b8-f05aa0a82dfc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7de17b66-8b2e-4cf3-b9b8-f05aa0a82dfc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Timothy J.Sheridan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Timothy J.Sheridan">Timothy J.Sheridan</td>
-                      
-                        <td>Independent</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="Ninth House of Assembly" />
     <meta property="og:type" content="article" />
@@ -199,7 +202,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-gibraltar_social_democrats"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -223,251 +226,514 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/14fbeec/data/Gibraltar/Parliament/term-9.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/14fbeec/data/Gibraltar/Parliament/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/43a6021/data/Gibraltar/Parliament/term-9.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/43a6021/data/Gibraltar/Parliament/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-3099b9cf-5293-4c7f-8153-9afedb385499">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3099b9cf-5293-4c7f-8153-9afedb385499">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">K Azopardi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Azopardi, Keith">K Azopardi</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6ef5d761-fa51-4740-9750-8f262157495d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ef5d761-fa51-4740-9750-8f262157495d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J L Baldachino</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Socialist Labour Party / Gibraltar Liberal Party
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Baldachino, Joseph Louis">J L Baldachino</td>
-                      
-                        <td>Gibraltar Socialist Labour Party / Gibraltar Liberal Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-0ca908c5-3da4-437a-ab8d-a112b4dfd3be">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0ca908c5-3da4-437a-ab8d-a112b4dfd3be">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/0ca908c5-3da4-437a-ab8d-a112b4dfd3be/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/0ca908c5-3da4-437a-ab8d-a112b4dfd3be/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">J J Bossano</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Socialist Labour Party / Gibraltar Liberal Party
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bossano, Joseph John">J J Bossano</td>
-                      
-                        <td>Gibraltar Socialist Labour Party / Gibraltar Liberal Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-002fb389-0b12-440e-8a27-ccd1d6b0bfa5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-002fb389-0b12-440e-8a27-ccd1d6b0bfa5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">E M Britto</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Britto, Ernest Michael">E M Britto</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c9177bf4-70e0-4fac-8cf3-af46c22ca7d0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c9177bf4-70e0-4fac-8cf3-af46c22ca7d0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/c9177bf4-70e0-4fac-8cf3-af46c22ca7d0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/c9177bf4-70e0-4fac-8cf3-af46c22ca7d0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">P R Caruana</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Caruana, Peter Richard">P R Caruana</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1f2636f4-f471-49a8-8b22-a9529ce27671">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1f2636f4-f471-49a8-8b22-a9529ce27671">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">H A Corby</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Corby, Hubert Alfred">H A Corby</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8c79d590-059c-4afd-b639-235253d6df7d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c79d590-059c-4afd-b639-235253d6df7d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Y Del Agua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Del Agua, Yvette">Y Del Agua</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c867c252-ba93-4866-ac1d-bc95458c7346">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c867c252-ba93-4866-ac1d-bc95458c7346">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J J Garcia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Socialist Labour Party / Gibraltar Liberal Party
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Garcia, Joseph John">J J Garcia</td>
-                      
-                        <td>Gibraltar Socialist Labour Party / Gibraltar Liberal Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1b202dbb-ca61-482d-83f2-37c73e3030d2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1b202dbb-ca61-482d-83f2-37c73e3030d2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J J Holliday</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Holliday, Joseph John">J J Holliday</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-90885caf-bde4-4e2f-ab0b-fb283a57ccb7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-90885caf-bde4-4e2f-ab0b-fb283a57ccb7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">B A Linares</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Linares, Bernard Anthony">B A Linares</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3e3e02a9-07ac-47f9-b314-a57ef22b0ae1">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3e3e02a9-07ac-47f9-b314-a57ef22b0ae1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/3e3e02a9-07ac-47f9-b314-a57ef22b0ae1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gibraltar/Parliament/3e3e02a9-07ac-47f9-b314-a57ef22b0ae1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">S E Linares</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Socialist Labour Party / Gibraltar Liberal Party
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Linares, Steven Ernest">S E Linares</td>
-                      
-                        <td>Gibraltar Socialist Labour Party / Gibraltar Liberal Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f12c6767-ea05-4483-9799-e66c7481a874">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f12c6767-ea05-4483-9799-e66c7481a874">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M I Montegriffo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Socialist Labour Party / Gibraltar Liberal Party
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Montegriffo, Maria Isabel">M I Montegriffo</td>
-                      
-                        <td>Gibraltar Socialist Labour Party / Gibraltar Liberal Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b896fc31-50ca-42e7-afff-eacfaccc4bc8">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b896fc31-50ca-42e7-afff-eacfaccc4bc8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J J Netto</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Social Democrats
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Netto, James Joseph">J J Netto</td>
-                      
-                        <td>Gibraltar Social Democrats</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6e2b4d17-7337-4438-9520-336cd4527d07">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6e2b4d17-7337-4438-9520-336cd4527d07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J C Perez</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Socialist Labour Party / Gibraltar Liberal Party
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Perez, Juan Carlos">J C Perez</td>
-                      
-                        <td>Gibraltar Socialist Labour Party / Gibraltar Liberal Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-bf729a66-c3cb-4838-9a24-0005245edb73">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bf729a66-c3cb-4838-9a24-0005245edb73">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">R R Rhoda</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="R R Rhoda">R R Rhoda</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fb143303-a6cc-4cd0-867e-c7bcd4416c82">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fb143303-a6cc-4cd0-867e-c7bcd4416c82">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">T J Bristow</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="T J Bristow">T J Bristow</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d2ddbfac-beb6-4369-9dc6-ca194b57ae99">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d2ddbfac-beb6-4369-9dc6-ca194b57ae99">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">R G Valarino</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Gibraltar Socialist Labour Party / Gibraltar Liberal Party
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Valarino, Reginald G">R G Valarino</td>
-                      
-                        <td>Gibraltar Socialist Labour Party / Gibraltar Liberal Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

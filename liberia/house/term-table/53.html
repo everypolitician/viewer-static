@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="53rd Session" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-UP"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -161,923 +164,2306 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/525ef15/data/Liberia/House/term-53.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/525ef15/data/Liberia/House/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/525ef15/data/Liberia/House/term-53.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/525ef15/data/Liberia/House/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-55638013-b25c-40c2-90a5-eb1ce61a1e65">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Aaron Vincent">Aaron Vincent</td>
-                      
-                        <td>National Reformation Party</td>
-                        <td>Grand Cape Mount #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fa56533f-7f04-4eda-9c33-e5ded83296dc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Abraham V. Corneh III">Abraham V. Corneh III</td>
-                      
-                        <td>Independent</td>
-                        <td>Montserrado #14</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5793fb71-5021-4a63-9532-f8b8adcc298a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Acarous M. Gray">Acarous M. Gray</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Montserrado #8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-302712eb-4e55-4bd5-ab4f-62ea56c91867">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Adam Bill Corneh">Adam Bill Corneh</td>
-                      
-                        <td>National Patriotic Party</td>
-                        <td>Bong #6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-70b2882d-71e5-41b7-a8f4-cdea0609f23b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Adolph A. Lawrence">Adolph A. Lawrence</td>
-                      
-                        <td>Independent</td>
-                        <td>Montserrado # 15</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9b17d1ba-6bb1-4bd1-a533-edbc80022cc3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alex C. Grant">Alex C. Grant</td>
-                      
-                        <td>Independent</td>
-                        <td>Grand Gedeh #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6d724fa-2de4-4432-9ec0-319fa781a72d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alfred G. Juweh">Alfred G. Juweh</td>
-                      
-                        <td>Liberia Destiny Party</td>
-                        <td>River Cess #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e7c4ee7c-41a9-4c0c-a945-1d00ce7469e4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alfred Koiwood">Alfred Koiwood</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Gbarpolu #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9ab2ab9b-fc0b-4550-b69e-411bbb230424">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ballah G. Zayzay">Ballah G. Zayzay</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Margibi #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-516e3ee9-25a9-439e-b1c4-a4dcacac12e1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ben Fofana">Ben Fofana</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Margibi #4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eee8e178-f968-43eb-a26e-8292b1df6e15">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bhofal Chambers">Bhofal Chambers</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Maryland #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d9af2f10-7e24-4e9e-8316-382b55d6b56c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bill Twehway">Bill Twehway</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Montserrado #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f0d3c971-e74e-4eb9-b6fa-eb1858c03113">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Charles K. Bardyl">Charles K. Bardyl</td>
-                      
-                        <td>Unity Party</td>
-                        <td>River Gee #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-62809eb2-bd0c-4e3a-b506-4cdd1dd51dab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Christian S. Chea">Christian S. Chea</td>
-                      
-                        <td>Unity Party</td>
-                        <td>River Gee #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4fe3eb74-57ca-462c-847b-d5c836ffac5a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Clarance Massaquoi">Clarance Massaquoi</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Lofa #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6aac690-ebd7-49d5-a7ae-dd9d76d5e45c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Corpu G. Barclay">Corpu G. Barclay</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Bong #7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-085e09fe-54f7-49bc-83a4-453865dc3238">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edward Kafia">Edward Kafia</td>
-                      
-                        <td>National Democratic Coalition</td>
-                        <td>Bong #5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fdc997ef-32f7-44d8-ad88-73a5311f65e5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edward S. Forh">Edward S. Forh</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Montserrado # 16</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-32676098-936a-4d62-904c-b604945f5903">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edwin M. Snowe">Edwin M. Snowe</td>
-                      
-                        <td>Independent</td>
-                        <td>Montserrado #6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-587b8c94-faeb-430a-afd2-8959c96da5f8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emerson V. Kamara">Emerson V. Kamara</td>
-                      
-                        <td>Liberia Transformation Party</td>
-                        <td>Grand Cape Mount #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9a1f7bf3-59d6-4e7a-af34-3658cc9a7fb7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emmanuel Nuquay">Emmanuel Nuquay</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Margibi #5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6e091135-c596-4a6d-98b5-7db4b78135f9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Eugene F. Kparkar">Eugene F. Kparkar</td>
-                      
-                        <td>Liberty Party</td>
-                        <td>Lofa #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a73de7a7-d68d-46ce-99e1-28f62e2b0f63">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fofi Sahr Baimba">Fofi Sahr Baimba</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Lofa #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cbcbd63c-b976-4842-8f61-399e2cf85f8f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Francis S. Paye">Francis S. Paye</td>
-                      
-                        <td>Independent</td>
-                        <td>River Cess #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9acba24d-a2a0-4abf-b929-fe765bb4e094">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gabriel B. Smith">Gabriel B. Smith</td>
-                      
-                        <td>Independent</td>
-                        <td>Grand Bassa #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4ac86001-24a7-4300-bb3b-932e064c8dbf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gabriel Nyankan">Gabriel Nyankan</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Montserrado #11</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-40ec8cdd-9b89-444c-b7f5-161f17112015">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Garison Yealue">Garison Yealue</td>
-                      
-                        <td>National Union for Democratic Progress</td>
-                        <td>Nimba #4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7de81323-a765-4893-af6f-e4e4a54b0952">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="George S. Mulbah">George S. Mulbah</td>
-                      
-                        <td>National Patriotic Party</td>
-                        <td>Bong #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3b9e9854-23b4-4ed2-b4f4-c4d0acd5be20">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="George W. Blamoh">George W. Blamoh</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Grand Kru #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-59eb8df0-1a7d-4198-af32-91d1f52b245d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="George W. Blamoh">George W. Blamoh</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Grand Kru #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a1b344fd-1d78-4102-88df-f3f71976aa94">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gertrude T. Lamin">Gertrude T. Lamin</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Gbarpolu #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a42f14a4-f7d0-4b2c-87fe-ef04e97ec06a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Haja F. Siryon">Haja F. Siryon</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Bomi #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6c50eadc-fb64-49ec-9b0b-bcbd95249fa3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hans M. Barchue">Hans M. Barchue</td>
-                      
-                        <td>Independent</td>
-                        <td>Grand Bassa #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-babe92b7-6ad5-4e64-8086-96ebbfa54282">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Henry B. Fahnbulleh">Henry B. Fahnbulleh</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Montserrado #4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-114a0cc4-13c0-4d21-881f-60d341d07fb6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Isaac B. Roland">Isaac B. Roland</td>
-                      
-                        <td>Liberty Party</td>
-                        <td>Maryland #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3fe93393-c5c4-4417-a9e8-ce21880d2a45">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="J. Alex Tyler">J. Alex Tyler</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Bomi #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8d4c7295-24c7-4f94-9aca-32e322bcf340">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="J. Byron Browne">J. Byron Browne</td>
-                      
-                        <td>Liberty Party</td>
-                        <td>Grand Bassa #4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e00d0a9-2df8-41cf-a7ff-ea75453f11cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="James P. Biney">James P. Biney</td>
-                      
-                        <td>National Patriotic Party</td>
-                        <td>Maryland #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0eed336f-1f4b-4cb1-8a22-d04209ecb547">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jefferson S. Kanmoh">Jefferson S. Kanmoh</td>
-                      
-                        <td>Alliance for Peace and Democracy</td>
-                        <td>Sinoe #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cab0a1fc-13ee-4622-ab88-d2f8fdccbbbc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jeremiah K. Koung">Jeremiah K. Koung</td>
-                      
-                        <td>National Union for Democratic Progress</td>
-                        <td>Nimba #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1f0f58f7-0506-4918-9abe-a61e425a2de6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jeremiah W. N. McCaulay">Jeremiah W. N. McCaulay</td>
-                      
-                        <td>National Democratic Coalition</td>
-                        <td>Sinoe #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1fc705fd-1d64-4fde-92b6-d6051e43b039">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Johnson Toe Chea">Johnson Toe Chea</td>
-                      
-                        <td>Independent</td>
-                        <td>River Gee #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-680dd98f-b1bb-4f42-bc47-50ab3844244d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Josephine M.G. Francis">Josephine M.G. Francis</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Montserrado #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aa1908ec-2b06-46a0-8f6e-ba77512aaf07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Julius F. Berrian">Julius F. Berrian</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Montserrado #10</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5603a058-41da-4297-b8a0-73968dfb02d6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Larry P. Younquoi">Larry P. Younquoi</td>
-                      
-                        <td>Alliance for Peace and Democracy</td>
-                        <td>Nimba #8</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a957947d-3bb6-421d-8b6d-d474260a65a9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lester M. Paye">Lester M. Paye</td>
-                      
-                        <td>Independent</td>
-                        <td>Bong #4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-216d2c2c-377c-4bc9-818a-e31f8cb332ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Malai G. Gbogar">Malai G. Gbogar</td>
-                      
-                        <td>Liberty Party</td>
-                        <td>Gbarpolu #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1010227d-f345-4ba7-b35a-0fb442a9ed66">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mambu M. Sonii">Mambu M. Sonii</td>
-                      
-                        <td>Liberty Party</td>
-                        <td>Grand Cape Mount #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ab124481-f3f2-4507-ba4b-a6743c58224f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mariamu B. Fofana">Mariamu B. Fofana</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Lofa #4</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-73b9fa49-8984-4ab6-8294-8cee9112206b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mary Karwor">Mary Karwor</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Grand Bassa #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c21c3404-54da-404b-90b2-a1c210b81c07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mathew Zarzar">Mathew Zarzar</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Sinoe #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-60cccfb8-178a-4acc-b33d-39e1e83a9d2c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Moriais T. Waylee">Moriais T. Waylee</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Grand Gedeh #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-39968001-289a-43b7-a3da-69db6e3563c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Moses Y. Kollie">Moses Y. Kollie</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Lofa # 5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b2f8644c-9cde-417d-a9dd-7dcdb788ca19">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Munah E. Pelham">Munah E. Pelham</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Montserrado #9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-32972c3e-f978-4f1b-845a-8226d5c78866">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Namene T.H. Bartekwa">Namene T.H. Bartekwa</td>
-                      
-                        <td>Independent</td>
-                        <td>Grand Kru #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e9006ef3-35f2-4ecb-ae06-1d6d8fd7f1ad">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Prince K. Moye">Prince K. Moye</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Bong #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e95130fc-846b-4304-aee1-1f11897c2f7a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Prince Q. S. Tokpah">Prince Q. S. Tokpah</td>
-                      
-                        <td>National Union for Democratic Progress</td>
-                        <td>Nimba #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-afd50409-c2a0-4c92-ae30-6953ca93133e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="R. Matenokay Tingban">R. Matenokay Tingban</td>
-                      
-                        <td>Independent</td>
-                        <td>Nimba #9</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7aa652a6-dac9-444b-bf01-ece0e2803de6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Richmond S. Anderson">Richmond S. Anderson</td>
-                      
-                        <td>Liberty Party</td>
-                        <td>Montserrado #12</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1e723ef7-47cf-4766-8dd8-b8a6837fc20f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ricks Y. Toweh">Ricks Y. Toweh</td>
-                      
-                        <td>National Union for Democratic Progress</td>
-                        <td>Nimba #6</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6bfb36a4-78ff-4105-9005-f6a9448c0eab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Robertson N. Siaway">Robertson N. Siaway</td>
-                      
-                        <td>Alliance for Peace and Democracy</td>
-                        <td>Grand Bassa # 5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ab36e7ac-dcad-411e-bf34-63699deb6d14">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Roland O. Cooper">Roland O. Cooper</td>
-                      
-                        <td>Liberty Party</td>
-                        <td>Margibi #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae8ed016-f751-49d3-8b94-75bc650bda1e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saah H. Joseph">Saah H. Joseph</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Montserrado #13</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29e2570a-1a55-4a78-bb6f-c9a9bbe23c1a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Samuel G. Kogar">Samuel G. Kogar</td>
-                      
-                        <td>National Union for Democratic Progress</td>
-                        <td>Nimba #5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5bf85e04-0871-4cd2-a077-931031614f41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Samuel G. Z. Woleh">Samuel G. Z. Woleh</td>
-                      
-                        <td>National Union for Democratic Progress</td>
-                        <td>Nimba #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-23391c14-5f36-4f99-8975-4782de430ad7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Samuel Gayah Karmo">Samuel Gayah Karmo</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Bomi #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e77f8500-08cd-4b32-a44d-d488befa9b66">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sekou S. Kanneh">Sekou S. Kanneh</td>
-                      
-                        <td>Unity Party</td>
-                        <td>Montserrado #2</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f8c9907f-d60d-48f3-9214-c7f3fe04ef55">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Solomon C. George">Solomon C. George</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Montserrado #7</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-830904e0-f953-4a59-b6b8-2f369ac77094">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Stephen Kafi Jr">Stephen Kafi Jr</td>
-                      
-                        <td>Independent</td>
-                        <td>Margibi #3</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-354b57b5-dafb-4981-b82c-54e5447a0bb2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Thomas P. Fallah">Thomas P. Fallah</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Montserrado #5</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-162252bb-3ae6-4746-8b96-e29c20c19d69">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tokpah J. Mulbah">Tokpah J. Mulbah</td>
-                      
-                        <td>Congress for Democratic Change</td>
-                        <td>Bong #1</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c0e301af-b179-490e-b91c-21f43877d0c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="William V. Dakel, Sr">William V. Dakel, Sr</td>
-                      
-                        <td>National Democratic Coalition</td>
-                        <td>Montserrado # 17</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-16d00839-50e3-4d31-84e5-c8d28cc20d78">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zoe E. Pennue">Zoe E. Pennue</td>
-                      
-                        <td>Independent</td>
-                        <td>Grand Gedeh #1</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-55638013-b25c-40c2-90a5-eb1ce61a1e65">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/55638013-b25c-40c2-90a5-eb1ce61a1e65/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/55638013-b25c-40c2-90a5-eb1ce61a1e65/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Aaron Vincent</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Reformation Party — Grand Cape Mount #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fa56533f-7f04-4eda-9c33-e5ded83296dc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/fa56533f-7f04-4eda-9c33-e5ded83296dc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/fa56533f-7f04-4eda-9c33-e5ded83296dc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Abraham V. Corneh III</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Montserrado #14
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5793fb71-5021-4a63-9532-f8b8adcc298a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5793fb71-5021-4a63-9532-f8b8adcc298a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5793fb71-5021-4a63-9532-f8b8adcc298a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Acarous M. Gray</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Montserrado #8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-302712eb-4e55-4bd5-ab4f-62ea56c91867">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/302712eb-4e55-4bd5-ab4f-62ea56c91867/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/302712eb-4e55-4bd5-ab4f-62ea56c91867/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Adam Bill Corneh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Patriotic Party — Bong #6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70b2882d-71e5-41b7-a8f4-cdea0609f23b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/70b2882d-71e5-41b7-a8f4-cdea0609f23b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/70b2882d-71e5-41b7-a8f4-cdea0609f23b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Adolph A. Lawrence</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Montserrado # 15
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9b17d1ba-6bb1-4bd1-a533-edbc80022cc3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9b17d1ba-6bb1-4bd1-a533-edbc80022cc3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9b17d1ba-6bb1-4bd1-a533-edbc80022cc3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alex C. Grant</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Grand Gedeh #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6d724fa-2de4-4432-9ec0-319fa781a72d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f6d724fa-2de4-4432-9ec0-319fa781a72d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f6d724fa-2de4-4432-9ec0-319fa781a72d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alfred G. Juweh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberia Destiny Party — River Cess #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e7c4ee7c-41a9-4c0c-a945-1d00ce7469e4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e7c4ee7c-41a9-4c0c-a945-1d00ce7469e4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e7c4ee7c-41a9-4c0c-a945-1d00ce7469e4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alfred Koiwood</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Gbarpolu #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9ab2ab9b-fc0b-4550-b69e-411bbb230424">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9ab2ab9b-fc0b-4550-b69e-411bbb230424/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9ab2ab9b-fc0b-4550-b69e-411bbb230424/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ballah G. Zayzay</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Margibi #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-516e3ee9-25a9-439e-b1c4-a4dcacac12e1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/516e3ee9-25a9-439e-b1c4-a4dcacac12e1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/516e3ee9-25a9-439e-b1c4-a4dcacac12e1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ben Fofana</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Margibi #4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eee8e178-f968-43eb-a26e-8292b1df6e15">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/eee8e178-f968-43eb-a26e-8292b1df6e15/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/eee8e178-f968-43eb-a26e-8292b1df6e15/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bhofal Chambers</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Maryland #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d9af2f10-7e24-4e9e-8316-382b55d6b56c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/d9af2f10-7e24-4e9e-8316-382b55d6b56c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/d9af2f10-7e24-4e9e-8316-382b55d6b56c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bill Twehway</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Montserrado #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f0d3c971-e74e-4eb9-b6fa-eb1858c03113">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f0d3c971-e74e-4eb9-b6fa-eb1858c03113/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f0d3c971-e74e-4eb9-b6fa-eb1858c03113/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Charles K. Bardyl</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — River Gee #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-62809eb2-bd0c-4e3a-b506-4cdd1dd51dab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/62809eb2-bd0c-4e3a-b506-4cdd1dd51dab/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/62809eb2-bd0c-4e3a-b506-4cdd1dd51dab/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Christian S. Chea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — River Gee #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4fe3eb74-57ca-462c-847b-d5c836ffac5a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/4fe3eb74-57ca-462c-847b-d5c836ffac5a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/4fe3eb74-57ca-462c-847b-d5c836ffac5a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Clarance Massaquoi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Lofa #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6aac690-ebd7-49d5-a7ae-dd9d76d5e45c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f6aac690-ebd7-49d5-a7ae-dd9d76d5e45c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f6aac690-ebd7-49d5-a7ae-dd9d76d5e45c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Corpu G. Barclay</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Bong #7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-085e09fe-54f7-49bc-83a4-453865dc3238">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/085e09fe-54f7-49bc-83a4-453865dc3238/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/085e09fe-54f7-49bc-83a4-453865dc3238/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Edward Kafia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Democratic Coalition — Bong #5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fdc997ef-32f7-44d8-ad88-73a5311f65e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/fdc997ef-32f7-44d8-ad88-73a5311f65e5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/fdc997ef-32f7-44d8-ad88-73a5311f65e5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Edward S. Forh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Montserrado # 16
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-32676098-936a-4d62-904c-b604945f5903">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/32676098-936a-4d62-904c-b604945f5903/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/32676098-936a-4d62-904c-b604945f5903/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Edwin M. Snowe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Montserrado #6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-587b8c94-faeb-430a-afd2-8959c96da5f8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/587b8c94-faeb-430a-afd2-8959c96da5f8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/587b8c94-faeb-430a-afd2-8959c96da5f8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emerson V. Kamara</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberia Transformation Party — Grand Cape Mount #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9a1f7bf3-59d6-4e7a-af34-3658cc9a7fb7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9a1f7bf3-59d6-4e7a-af34-3658cc9a7fb7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9a1f7bf3-59d6-4e7a-af34-3658cc9a7fb7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emmanuel Nuquay</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Margibi #5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6e091135-c596-4a6d-98b5-7db4b78135f9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/6e091135-c596-4a6d-98b5-7db4b78135f9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/6e091135-c596-4a6d-98b5-7db4b78135f9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Eugene F. Kparkar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberty Party — Lofa #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a73de7a7-d68d-46ce-99e1-28f62e2b0f63">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a73de7a7-d68d-46ce-99e1-28f62e2b0f63/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a73de7a7-d68d-46ce-99e1-28f62e2b0f63/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Fofi Sahr Baimba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Lofa #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cbcbd63c-b976-4842-8f61-399e2cf85f8f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/cbcbd63c-b976-4842-8f61-399e2cf85f8f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/cbcbd63c-b976-4842-8f61-399e2cf85f8f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Francis S. Paye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — River Cess #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9acba24d-a2a0-4abf-b929-fe765bb4e094">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9acba24d-a2a0-4abf-b929-fe765bb4e094/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/9acba24d-a2a0-4abf-b929-fe765bb4e094/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gabriel B. Smith</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Grand Bassa #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4ac86001-24a7-4300-bb3b-932e064c8dbf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/4ac86001-24a7-4300-bb3b-932e064c8dbf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/4ac86001-24a7-4300-bb3b-932e064c8dbf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gabriel Nyankan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Montserrado #11
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-40ec8cdd-9b89-444c-b7f5-161f17112015">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/40ec8cdd-9b89-444c-b7f5-161f17112015/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/40ec8cdd-9b89-444c-b7f5-161f17112015/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Garison Yealue</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Union for Democratic Progress — Nimba #4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7de81323-a765-4893-af6f-e4e4a54b0952">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/7de81323-a765-4893-af6f-e4e4a54b0952/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/7de81323-a765-4893-af6f-e4e4a54b0952/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">George S. Mulbah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Patriotic Party — Bong #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b9e9854-23b4-4ed2-b4f4-c4d0acd5be20">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/3b9e9854-23b4-4ed2-b4f4-c4d0acd5be20/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/3b9e9854-23b4-4ed2-b4f4-c4d0acd5be20/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">George W. Blamoh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Grand Kru #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-59eb8df0-1a7d-4198-af32-91d1f52b245d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/59eb8df0-1a7d-4198-af32-91d1f52b245d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/59eb8df0-1a7d-4198-af32-91d1f52b245d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">George W. Blamoh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Grand Kru #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a1b344fd-1d78-4102-88df-f3f71976aa94">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a1b344fd-1d78-4102-88df-f3f71976aa94/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a1b344fd-1d78-4102-88df-f3f71976aa94/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gertrude T. Lamin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Gbarpolu #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a42f14a4-f7d0-4b2c-87fe-ef04e97ec06a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a42f14a4-f7d0-4b2c-87fe-ef04e97ec06a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a42f14a4-f7d0-4b2c-87fe-ef04e97ec06a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Haja F. Siryon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Bomi #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6c50eadc-fb64-49ec-9b0b-bcbd95249fa3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/6c50eadc-fb64-49ec-9b0b-bcbd95249fa3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/6c50eadc-fb64-49ec-9b0b-bcbd95249fa3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Hans M. Barchue</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Grand Bassa #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-babe92b7-6ad5-4e64-8086-96ebbfa54282">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/babe92b7-6ad5-4e64-8086-96ebbfa54282/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/babe92b7-6ad5-4e64-8086-96ebbfa54282/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Henry B. Fahnbulleh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Montserrado #4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-114a0cc4-13c0-4d21-881f-60d341d07fb6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/114a0cc4-13c0-4d21-881f-60d341d07fb6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/114a0cc4-13c0-4d21-881f-60d341d07fb6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Isaac B. Roland</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberty Party — Maryland #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3fe93393-c5c4-4417-a9e8-ce21880d2a45">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/3fe93393-c5c4-4417-a9e8-ce21880d2a45/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/3fe93393-c5c4-4417-a9e8-ce21880d2a45/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">J. Alex Tyler</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Bomi #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8d4c7295-24c7-4f94-9aca-32e322bcf340">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/8d4c7295-24c7-4f94-9aca-32e322bcf340/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/8d4c7295-24c7-4f94-9aca-32e322bcf340/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">J. Byron Browne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberty Party — Grand Bassa #4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e00d0a9-2df8-41cf-a7ff-ea75453f11cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5e00d0a9-2df8-41cf-a7ff-ea75453f11cb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5e00d0a9-2df8-41cf-a7ff-ea75453f11cb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">James P. Biney</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Patriotic Party — Maryland #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0eed336f-1f4b-4cb1-8a22-d04209ecb547">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/0eed336f-1f4b-4cb1-8a22-d04209ecb547/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/0eed336f-1f4b-4cb1-8a22-d04209ecb547/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jefferson S. Kanmoh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance for Peace and Democracy — Sinoe #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cab0a1fc-13ee-4622-ab88-d2f8fdccbbbc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/cab0a1fc-13ee-4622-ab88-d2f8fdccbbbc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/cab0a1fc-13ee-4622-ab88-d2f8fdccbbbc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jeremiah K. Koung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Union for Democratic Progress — Nimba #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1f0f58f7-0506-4918-9abe-a61e425a2de6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1f0f58f7-0506-4918-9abe-a61e425a2de6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1f0f58f7-0506-4918-9abe-a61e425a2de6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jeremiah W. N. McCaulay</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Democratic Coalition — Sinoe #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1fc705fd-1d64-4fde-92b6-d6051e43b039">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1fc705fd-1d64-4fde-92b6-d6051e43b039/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1fc705fd-1d64-4fde-92b6-d6051e43b039/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Johnson Toe Chea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — River Gee #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-680dd98f-b1bb-4f42-bc47-50ab3844244d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/680dd98f-b1bb-4f42-bc47-50ab3844244d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/680dd98f-b1bb-4f42-bc47-50ab3844244d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Josephine M.G. Francis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Montserrado #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa1908ec-2b06-46a0-8f6e-ba77512aaf07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/aa1908ec-2b06-46a0-8f6e-ba77512aaf07/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/aa1908ec-2b06-46a0-8f6e-ba77512aaf07/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Julius F. Berrian</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Montserrado #10
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5603a058-41da-4297-b8a0-73968dfb02d6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5603a058-41da-4297-b8a0-73968dfb02d6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5603a058-41da-4297-b8a0-73968dfb02d6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Larry P. Younquoi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance for Peace and Democracy — Nimba #8
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a957947d-3bb6-421d-8b6d-d474260a65a9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a957947d-3bb6-421d-8b6d-d474260a65a9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/a957947d-3bb6-421d-8b6d-d474260a65a9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lester M. Paye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Bong #4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-216d2c2c-377c-4bc9-818a-e31f8cb332ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/216d2c2c-377c-4bc9-818a-e31f8cb332ba/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/216d2c2c-377c-4bc9-818a-e31f8cb332ba/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Malai G. Gbogar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberty Party — Gbarpolu #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1010227d-f345-4ba7-b35a-0fb442a9ed66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1010227d-f345-4ba7-b35a-0fb442a9ed66/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1010227d-f345-4ba7-b35a-0fb442a9ed66/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mambu M. Sonii</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberty Party — Grand Cape Mount #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ab124481-f3f2-4507-ba4b-a6743c58224f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/ab124481-f3f2-4507-ba4b-a6743c58224f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/ab124481-f3f2-4507-ba4b-a6743c58224f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mariamu B. Fofana</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Lofa #4
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-73b9fa49-8984-4ab6-8294-8cee9112206b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/73b9fa49-8984-4ab6-8294-8cee9112206b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/73b9fa49-8984-4ab6-8294-8cee9112206b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mary Karwor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Grand Bassa #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c21c3404-54da-404b-90b2-a1c210b81c07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/c21c3404-54da-404b-90b2-a1c210b81c07/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/c21c3404-54da-404b-90b2-a1c210b81c07/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mathew Zarzar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Sinoe #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-60cccfb8-178a-4acc-b33d-39e1e83a9d2c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/60cccfb8-178a-4acc-b33d-39e1e83a9d2c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/60cccfb8-178a-4acc-b33d-39e1e83a9d2c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Moriais T. Waylee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Grand Gedeh #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-39968001-289a-43b7-a3da-69db6e3563c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/39968001-289a-43b7-a3da-69db6e3563c0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/39968001-289a-43b7-a3da-69db6e3563c0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Moses Y. Kollie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Lofa # 5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b2f8644c-9cde-417d-a9dd-7dcdb788ca19">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/b2f8644c-9cde-417d-a9dd-7dcdb788ca19/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/b2f8644c-9cde-417d-a9dd-7dcdb788ca19/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Munah E. Pelham</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Montserrado #9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-32972c3e-f978-4f1b-845a-8226d5c78866">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/32972c3e-f978-4f1b-845a-8226d5c78866/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/32972c3e-f978-4f1b-845a-8226d5c78866/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Namene T.H. Bartekwa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Grand Kru #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e9006ef3-35f2-4ecb-ae06-1d6d8fd7f1ad">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e9006ef3-35f2-4ecb-ae06-1d6d8fd7f1ad/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e9006ef3-35f2-4ecb-ae06-1d6d8fd7f1ad/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Prince K. Moye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Bong #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e95130fc-846b-4304-aee1-1f11897c2f7a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e95130fc-846b-4304-aee1-1f11897c2f7a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e95130fc-846b-4304-aee1-1f11897c2f7a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Prince Q. S. Tokpah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Union for Democratic Progress — Nimba #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-afd50409-c2a0-4c92-ae30-6953ca93133e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/afd50409-c2a0-4c92-ae30-6953ca93133e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/afd50409-c2a0-4c92-ae30-6953ca93133e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">R. Matenokay Tingban</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Nimba #9
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7aa652a6-dac9-444b-bf01-ece0e2803de6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/7aa652a6-dac9-444b-bf01-ece0e2803de6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/7aa652a6-dac9-444b-bf01-ece0e2803de6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Richmond S. Anderson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberty Party — Montserrado #12
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1e723ef7-47cf-4766-8dd8-b8a6837fc20f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1e723ef7-47cf-4766-8dd8-b8a6837fc20f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/1e723ef7-47cf-4766-8dd8-b8a6837fc20f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ricks Y. Toweh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Union for Democratic Progress — Nimba #6
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6bfb36a4-78ff-4105-9005-f6a9448c0eab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/6bfb36a4-78ff-4105-9005-f6a9448c0eab/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/6bfb36a4-78ff-4105-9005-f6a9448c0eab/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Robertson N. Siaway</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance for Peace and Democracy — Grand Bassa # 5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ab36e7ac-dcad-411e-bf34-63699deb6d14">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/ab36e7ac-dcad-411e-bf34-63699deb6d14/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/ab36e7ac-dcad-411e-bf34-63699deb6d14/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Roland O. Cooper</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberty Party — Margibi #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae8ed016-f751-49d3-8b94-75bc650bda1e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/ae8ed016-f751-49d3-8b94-75bc650bda1e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/ae8ed016-f751-49d3-8b94-75bc650bda1e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saah H. Joseph</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Montserrado #13
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29e2570a-1a55-4a78-bb6f-c9a9bbe23c1a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/29e2570a-1a55-4a78-bb6f-c9a9bbe23c1a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/29e2570a-1a55-4a78-bb6f-c9a9bbe23c1a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Samuel G. Kogar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Union for Democratic Progress — Nimba #5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5bf85e04-0871-4cd2-a077-931031614f41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5bf85e04-0871-4cd2-a077-931031614f41/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/5bf85e04-0871-4cd2-a077-931031614f41/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Samuel G. Z. Woleh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Union for Democratic Progress — Nimba #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-23391c14-5f36-4f99-8975-4782de430ad7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/23391c14-5f36-4f99-8975-4782de430ad7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/23391c14-5f36-4f99-8975-4782de430ad7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Samuel Gayah Karmo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Bomi #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e77f8500-08cd-4b32-a44d-d488befa9b66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e77f8500-08cd-4b32-a44d-d488befa9b66/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/e77f8500-08cd-4b32-a44d-d488befa9b66/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sekou S. Kanneh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Unity Party — Montserrado #2
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f8c9907f-d60d-48f3-9214-c7f3fe04ef55">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f8c9907f-d60d-48f3-9214-c7f3fe04ef55/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/f8c9907f-d60d-48f3-9214-c7f3fe04ef55/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Solomon C. George</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Montserrado #7
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-830904e0-f953-4a59-b6b8-2f369ac77094">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/830904e0-f953-4a59-b6b8-2f369ac77094/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/830904e0-f953-4a59-b6b8-2f369ac77094/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Stephen Kafi Jr</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Margibi #3
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-354b57b5-dafb-4981-b82c-54e5447a0bb2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/354b57b5-dafb-4981-b82c-54e5447a0bb2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/354b57b5-dafb-4981-b82c-54e5447a0bb2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Thomas P. Fallah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Montserrado #5
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-162252bb-3ae6-4746-8b96-e29c20c19d69">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/162252bb-3ae6-4746-8b96-e29c20c19d69/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/162252bb-3ae6-4746-8b96-e29c20c19d69/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tokpah J. Mulbah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Congress for Democratic Change — Bong #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c0e301af-b179-490e-b91c-21f43877d0c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/c0e301af-b179-490e-b91c-21f43877d0c0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/c0e301af-b179-490e-b91c-21f43877d0c0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">William V. Dakel, Sr</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              National Democratic Coalition — Montserrado # 17
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-16d00839-50e3-4d31-84e5-c8d28cc20d78">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Liberia/House/16d00839-50e3-4d31-84e5-c8d28cc20d78/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Liberia/House/16d00839-50e3-4d31-84e5-c8d28cc20d78/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zoe E. Pennue</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Grand Gedeh #1
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

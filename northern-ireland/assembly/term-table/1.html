@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="1st Assembly" />
     <meta property="og:type" content="article" />
@@ -138,7 +141,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-uup"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -216,1966 +219,3340 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/82cf5bb/data/Northern_Ireland/Assembly/term-1.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/82cf5bb/data/Northern_Ireland/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/82cf5bb/data/Northern_Ireland/Assembly/term-1.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/82cf5bb/data/Northern_Ireland/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        <th>Dates</th>
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-58eee0ac-dcd0-4ad4-abcd-75e2632ac09b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alan McFarland">Alan McFarland</td>
-                      
-                        <td>UUP</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-03dd24a4-f9e9-4dea-adf8-7bfc3fe891a2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alasdair McDonnell">Alasdair McDonnell</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Belfast South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6f4c4d6-3bc6-43c2-8d56-8d91010a8fe8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alban Maginness">Alban Maginness</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Belfast North</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ee0b5d29-df58-43bc-91d0-0a13a18a3b24">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alex Attwood">Alex Attwood</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Belfast West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-416ad2eb-10fb-4e0c-9c12-7013af005218">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alex Maskey">Alex Maskey</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Belfast West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0167e3dd-db05-4a52-8f22-65de5333d877">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Annie Courtney">Annie Courtney</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td>2000-12-05-2003-04-01</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-0167e3dd-db05-4a52-8f22-65de5333d877">
-                      
-                        <td>Independent</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td>2003-04-01-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fd69c375-5592-4a09-ae56-9557a736a05f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Arthur Doherty">Arthur Doherty</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td>-2002-09-01</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0f870089-70b2-47fb-8e14-cfc6b21a8976">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bairbre de Brún">Bairbre de Brún</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Belfast West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3bb0dea9-4128-40bf-948e-072419c8133c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Barry McElduff">Barry McElduff</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>West Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6088b6fe-d6ec-490f-9a71-208ee2beebd9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Billy Armstrong">Billy Armstrong</td>
-                      
-                        <td>UUP</td>
-                        <td>Mid Ulster</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b05d55e8-66b1-4d79-9b16-db0ca8bb6ee2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Billy Bell">Billy Bell</td>
-                      
-                        <td>UUP</td>
-                        <td>Lagan Valley</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aa015072-86cf-4e99-9084-4427a148d980">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Billy Hutchinson">Billy Hutchinson</td>
-                      
-                        <td>PUP</td>
-                        <td>Belfast North</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5c89aa2e-a069-4558-81cd-cb98184ccb4e">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Boyd Douglas">Boyd Douglas</td>
-                      
-                        <td>Independent</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td>-1998-09-21</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-5c89aa2e-a069-4558-81cd-cb98184ccb4e">
-                      
-                        <td>UUAP</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td>1998-09-21-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-66cab885-7f56-4af7-b220-fcb1e39ccdda">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Brid Rodgers">Brid Rodgers</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Upper Bann</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d172f066-7fb5-4160-a802-a941e34c5425">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Carmel Hanna">Carmel Hanna</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Belfast South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7ddb5300-adb7-42ec-b77d-7408359aa4a3">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Cedric Wilson">Cedric Wilson</td>
-                      
-                        <td>UKUP</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td>-1999-01-15</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-7ddb5300-adb7-42ec-b77d-7408359aa4a3">
-                      
-                        <td>NIUP</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td>1999-01-15-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc6f33f8-c7b9-4c3b-b7c5-e88a76dc2cb4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Conor Murphy">Conor Murphy</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Newry and Armagh</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ed72674e-94f7-4d8f-a73f-727dd5d9c2d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Danny Kennedy">Danny Kennedy</td>
-                      
-                        <td>UUP</td>
-                        <td>Newry and Armagh</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-12e55093-0d29-47ff-a826-107ab1df95dd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Danny O'Connor">Danny O'Connor</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>East Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a1aa1b78-03b3-414b-94cc-1a6877228871">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dara O'Hagan">Dara O'Hagan</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Upper Bann</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4b6c4df7-ccbb-4e20-937a-892e61e87c61">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David Ervine">David Ervine</td>
-                      
-                        <td>PUP</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a061dfbd-2b38-4d23-9d75-7f36fc26fb33">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David Ford">David Ford</td>
-                      
-                        <td>Alliance</td>
-                        <td>South Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-87939eda-30b8-46c3-a717-df671b92abab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David Hilditch">David Hilditch</td>
-                      
-                        <td>DUP</td>
-                        <td>East Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0f5c09f5-d76c-4398-a0e4-de74ac977533">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David McClarty">David McClarty</td>
-                      
-                        <td>UUP</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-730ef92a-dc1e-47aa-a13d-29689c2c8cbe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David Trimble">David Trimble</td>
-                      
-                        <td>UUP</td>
-                        <td>Upper Bann</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b0de278-63fa-4866-ae35-4ed8ff1ed887">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Denis Haughey">Denis Haughey</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Mid Ulster</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d939680f-63ea-415d-9dcd-5282732dba20">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Denis Watson">Denis Watson</td>
-                      
-                        <td>Independent</td>
-                        <td>Upper Bann</td>
-                      
-                        
-                        
-                        <td>-1998-09-21</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-d939680f-63ea-415d-9dcd-5282732dba20">
-                      
-                        <td>UUAP</td>
-                        <td>Upper Bann</td>
-                      
-                        
-                        
-                        <td>1998-09-21-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2f582a00-55bb-416a-94a6-cefea12a752e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Derek Hussey">Derek Hussey</td>
-                      
-                        <td>UUP</td>
-                        <td>West Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9d7969ff-df6a-4546-bfc0-032586226175">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dermot Nesbitt">Dermot Nesbitt</td>
-                      
-                        <td>UUP</td>
-                        <td>South Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-582c1731-4ab7-48fd-ab18-507aba35c648">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Donovan McClelland">Donovan McClelland</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>South Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fd7652eb-761c-4a7c-827a-2e9904bf33d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Duncan Dalton">Duncan Dalton</td>
-                      
-                        <td>UUP</td>
-                        <td>South Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6d82b061-8f39-4b67-b483-a21a6e8143ea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Eamonn ONeill">Eamonn ONeill</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>South Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2e2600ae-f727-4bff-b819-dff17cc4451d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Eddie McGrady">Eddie McGrady</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>South Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-332ec5e4-a28d-4bdb-9a0a-aafc107235fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edwin Poots">Edwin Poots</td>
-                      
-                        <td>DUP</td>
-                        <td>Lagan Valley</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5b7e7096-92ea-4e73-9404-af99d421c4ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Eileen Bell">Eileen Bell</td>
-                      
-                        <td>Alliance</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c2365511-9489-48d1-abb5-98a0c19ade98">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Esmond Birnie">Esmond Birnie</td>
-                      
-                        <td>UUP</td>
-                        <td>Belfast South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-162eb4cf-7f4f-4446-8817-ba1d27a9d214">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Eugene McMenamin">Eugene McMenamin</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>West Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b2d32b2d-7461-44be-a8d5-127374cfdd14">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Francie Molloy">Francie Molloy</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Mid Ulster</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f900993d-f983-458f-aa47-e55289405f45">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Fraser Agnew">Fraser Agnew</td>
-                      
-                        <td>Independent</td>
-                        <td>Belfast North</td>
-                      
-                        
-                        
-                        <td>-1998-09-21</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-f900993d-f983-458f-aa47-e55289405f45">
-                      
-                        <td>UUAP</td>
-                        <td>Belfast North</td>
-                      
-                        
-                        
-                        <td>1998-09-21-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c08ec5cc-f647-428b-9e40-12213969bfa0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fred Cobain">Fred Cobain</td>
-                      
-                        <td>UUP</td>
-                        <td>Belfast North</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc72ab06-bbcc-4af8-b4ba-5b8b02fbf0de">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Gardiner Kane">Gardiner Kane</td>
-                      
-                        <td>DUP</td>
-                        <td>North Antrim</td>
-                      
-                        
-                        
-                        <td>-2002-11-11</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-bc72ab06-bbcc-4af8-b4ba-5b8b02fbf0de">
-                      
-                        <td>Independent</td>
-                        <td>North Antrim</td>
-                      
-                        
-                        
-                        <td>2002-11-11-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-79295153-7cd9-4460-844f-7de991459f90">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="George Savage">George Savage</td>
-                      
-                        <td>UUP</td>
-                        <td>Upper Bann</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f3c3081b-9ccc-4875-92ee-c9a603c70b08">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gerry Adams">Gerry Adams</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Belfast West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-de99e576-546a-432b-b9c4-57ec40be15b2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gerry Kelly">Gerry Kelly</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Belfast North</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a038456a-0ca4-4b87-b1f6-64ecfae96bee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gerry McHugh">Gerry McHugh</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Fermanagh and South Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bcb619c2-5d73-4f33-8485-afa6dde4cdc9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gregory Campbell">Gregory Campbell</td>
-                      
-                        <td>DUP</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6732c6df-fec3-4416-a9ab-b28db8f842b8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ian Adamson">Ian Adamson</td>
-                      
-                        <td>UUP</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0f9fc03b-1408-47ed-9089-c60606d5aa1c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ian Paisley">Ian Paisley</td>
-                      
-                        <td>DUP</td>
-                        <td>North Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8fd9ad33-564c-4f27-b89b-64e436c64ae8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ian Paisley Jnr">Ian Paisley Jnr</td>
-                      
-                        <td>DUP</td>
-                        <td>North Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6318edc4-36e6-42aa-95b1-4cefaa2e7baa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Iris Robinson">Iris Robinson</td>
-                      
-                        <td>DUP</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6a55ad65-962e-42e1-943c-40a42cdb0fd4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ivan Davis">Ivan Davis</td>
-                      
-                        <td>UUP</td>
-                        <td>Lagan Valley</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-51ab9f21-7743-49ff-b391-d6f41a167635">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="James Leslie">James Leslie</td>
-                      
-                        <td>UUP</td>
-                        <td>North Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2267657d-66b8-4694-93e3-4fe70fbfc79c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jane Morrice">Jane Morrice</td>
-                      
-                        <td>NIWC</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ef802218-ad8c-4f84-a8b2-9bc3f1b3a277">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jim Shannon">Jim Shannon</td>
-                      
-                        <td>DUP</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a657493a-caef-4aba-95d7-a125287c036c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jim Wells">Jim Wells</td>
-                      
-                        <td>DUP</td>
-                        <td>South Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-90c1927b-8119-469b-861c-df16a561973b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jim Wilson">Jim Wilson</td>
-                      
-                        <td>UUP</td>
-                        <td>South Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-722eaed1-d44e-4855-be4f-f2e8903d23a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joan Carson">Joan Carson</td>
-                      
-                        <td>UUP</td>
-                        <td>Fermanagh and South Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bdd0518b-487c-4e2c-ac56-79f9ecc75ffe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joe Byrne">Joe Byrne</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>West Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29afa184-19c9-42dd-b1f8-81fea2d18b6d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joe Hendron">Joe Hendron</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Belfast West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a9b3c7c8-2d74-4e0d-af49-25b33fcaac42">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="John Dallat">John Dallat</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f8a1c2c-1298-4a9a-b889-dd70fa1b8bf4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="John Fee">John Fee</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Newry and Armagh</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-83b00ad7-85ec-4ae8-a958-89474a71e969">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="John Gorman">John Gorman</td>
-                      
-                        <td>UUP</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7fdd5506-9918-4d82-ab91-b4ebbedb3f6f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="John Hume">John Hume</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td>-2000-12-01</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e63f514a-c5ec-4898-b8b1-2bb79626c69e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="John Kelly">John Kelly</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Mid Ulster</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b83a1f37-91bc-42fd-9f0f-7b9caa9915d5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="John Taylor">John Taylor</td>
-                      
-                        <td>UUP</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e794ad19-43a2-485a-ac99-6f998377e65f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="John Tierney">John Tierney</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-39cc1384-5bd1-4128-8b28-d2bb27481e25">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ken Robinson">Ken Robinson</td>
-                      
-                        <td>UUP</td>
-                        <td>East Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-300dd777-e25f-4133-8caf-f9ff9931601a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kieran McCarthy">Kieran McCarthy</td>
-                      
-                        <td>Alliance</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c5b2241b-bf11-4b65-a2ac-276cb3cec99c">
-                      
-                        <td rowspan="3" data-sortable-sortvalue="Lord Alderdice">Lord Alderdice</td>
-                      
-                        <td>Alliance</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td>-1998-06-30</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-c5b2241b-bf11-4b65-a2ac-276cb3cec99c">
-                      
-                        <td>Initial Presiding Officer</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td>1998-07-01-1999-11-30</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-c5b2241b-bf11-4b65-a2ac-276cb3cec99c">
-                      
-                        <td>Speaker</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td>1999-12-01-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-54414391-b30a-4ec5-996d-b9f3896cec6a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mark Durkan">Mark Durkan</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-86148195-8dae-414a-af49-26175105b8ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mark Robinson">Mark Robinson</td>
-                      
-                        <td>DUP</td>
-                        <td>Belfast South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b81ff022-4ef1-4c86-8289-77e7a102cfd4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Martin McGuinness">Martin McGuinness</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Mid Ulster</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d0a9c0e6-62fd-4ae4-aa71-2e298bec63c1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mary Nelis">Mary Nelis</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cf152a4f-d623-48b4-8d82-82b2188835ca">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maurice Morrow">Maurice Morrow</td>
-                      
-                        <td>DUP</td>
-                        <td>Fermanagh and South Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eb9c38b4-b531-4d0f-b2d3-776fc2b99117">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mervyn Carrick">Mervyn Carrick</td>
-                      
-                        <td>DUP</td>
-                        <td>Upper Bann</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e3bbfb9-b256-4115-987f-b7cb36f47a39">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Michael Coyle">Michael Coyle</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td>2002-09-01-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b25f7720-c856-4459-8aec-de016068a4d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Michael McGimpsey">Michael McGimpsey</td>
-                      
-                        <td>UUP</td>
-                        <td>Belfast South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-70f90b8a-61cc-4ccb-8f74-af51a81a8739">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Michelle Gildernew">Michelle Gildernew</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Fermanagh and South Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-88da9fa2-52fc-4c27-a687-f8b433a90200">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mick Murphy">Mick Murphy</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>South Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01e5abe2-b2e2-4d80-bded-a2106dc0336c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mitchel McLaughlin">Mitchel McLaughlin</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0bfd3241-2114-47a1-a38d-8b4138aeac76">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Monica McWilliams">Monica McWilliams</td>
-                      
-                        <td>NIWC</td>
-                        <td>Belfast South</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4919f61c-4016-4477-bbfe-c3c46c1e2867">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nigel Dodds">Nigel Dodds</td>
-                      
-                        <td>DUP</td>
-                        <td>Belfast North</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3600c1c7-11ee-4357-aa7d-2c6d17437ece">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Norman Boyd">Norman Boyd</td>
-                      
-                        <td>UKUP</td>
-                        <td>South Antrim</td>
-                      
-                        
-                        
-                        <td>-1999-01-15</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-3600c1c7-11ee-4357-aa7d-2c6d17437ece">
-                      
-                        <td>NIUP</td>
-                        <td>South Antrim</td>
-                      
-                        
-                        
-                        <td>1999-01-15-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a8a3919-12e8-4d75-acc9-82f032f74632">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Oliver Gibson">Oliver Gibson</td>
-                      
-                        <td>DUP</td>
-                        <td>West Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7491e6fc-d00e-4f86-92f4-dce1d69e6b70">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="P J Bradley">P J Bradley</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>South Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0a2c25ed-bba7-4abe-8a61-309e6f358480">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pat Doherty">Pat Doherty</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>West Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1991b589-001f-4ce5-a5fb-72bc63c52864">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pat McNamee">Pat McNamee</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Newry and Armagh</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-630d8ccf-8899-426e-bad1-8b3c3ae44e8f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Patricia Lewsley">Patricia Lewsley</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Lagan Valley</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2ed52a60-e540-4f90-a7e4-0a6d99a7d1a7">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Patrick Roche">Patrick Roche</td>
-                      
-                        <td>UKUP</td>
-                        <td>Lagan Valley</td>
-                      
-                        
-                        
-                        <td>-1999-01-15</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-2ed52a60-e540-4f90-a7e4-0a6d99a7d1a7">
-                      
-                        <td>NIUP</td>
-                        <td>Lagan Valley</td>
-                      
-                        
-                        
-                        <td>1999-01-15-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-26a79bdd-90ae-4fa4-910f-99dc28e9894b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Paul Berry">Paul Berry</td>
-                      
-                        <td>DUP</td>
-                        <td>Newry and Armagh</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d3a3e80-19f3-43d1-8e1c-8476731e235d">
-                      
-                        <td rowspan="2" data-sortable-sortvalue="Pauline Armitage">Pauline Armitage</td>
-                      
-                        <td>UUP</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td>-2001-11-09</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-7d3a3e80-19f3-43d1-8e1c-8476731e235d">
-                      
-                        <td>Independent</td>
-                        <td>East Londonderry</td>
-                      
-                        
-                        
-                        <td>2001-11-09-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d819aab4-d610-4619-a6d6-48061df9fb76">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Peter Robinson">Peter Robinson</td>
-                      
-                        <td>DUP</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-24545e0e-5f36-438b-acf2-d1fc8e0bceb2">
-                      
-                        <td rowspan="3" data-sortable-sortvalue="Peter Weir">Peter Weir</td>
-                      
-                        <td>UUP</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td>-2001-11-09</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-24545e0e-5f36-438b-acf2-d1fc8e0bceb2">
-                      
-                        <td>Independent</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td>2001-11-09-2002-04-30</td>
-                      
-                    </tr>
-                  
-                    <tr id="mem-24545e0e-5f36-438b-acf2-d1fc8e0bceb2">
-                      
-                        <td>DUP</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td>2002-04-30-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-95c228ae-4850-4392-a73b-048ca6953d33">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Reg Empey">Reg Empey</td>
-                      
-                        <td>UUP</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-602f439b-a73a-4e5d-8874-18e77efeee34">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Robert Coulter">Robert Coulter</td>
-                      
-                        <td>UUP</td>
-                        <td>North Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-63bbf4a4-0580-44de-be87-3e794b450d7a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Robert McCartney">Robert McCartney</td>
-                      
-                        <td>UKUP</td>
-                        <td>North Down</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7f99a516-25bc-48ca-8ee7-30317d5a8653">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Roger Hutchinson">Roger Hutchinson</td>
-                      
-                        <td>DUP</td>
-                        <td>East Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9091a64b-281c-425a-b044-8691dcf18053">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Roy Beggs">Roy Beggs</td>
-                      
-                        <td>UUP</td>
-                        <td>East Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6b6ae3b-0a85-405d-9c39-2943d803cbc5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sam Foster">Sam Foster</td>
-                      
-                        <td>UUP</td>
-                        <td>Fermanagh and South Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4b75917c-54a4-4c7b-a5d9-3f568accb9a7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sammy Wilson">Sammy Wilson</td>
-                      
-                        <td>DUP</td>
-                        <td>Belfast East</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1339715-afeb-439c-bc35-5db78cde7e3b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Seamus Close">Seamus Close</td>
-                      
-                        <td>Alliance</td>
-                        <td>Lagan Valley</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-54f1e598-c4c7-494c-8403-7020612f6ef9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Seamus Mallon">Seamus Mallon</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Newry and Armagh</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-69d1f1b3-f198-4678-b1da-e2e6c018f6d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sean Farren">Sean Farren</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>North Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8dbefafb-93c5-4506-beff-859ce7ebc535">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sue Ramsey">Sue Ramsey</td>
-                      
-                        <td>Sinn Féin</td>
-                        <td>Belfast West</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fcf7c616-7594-418f-9cb0-6e3588f0189e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Séan Neeson">Séan Neeson</td>
-                      
-                        <td>Alliance</td>
-                        <td>East Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-03965599-21c6-4b7d-918d-d703a604038b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tom Benson">Tom Benson</td>
-                      
-                        <td>UUP</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td>-2000-12-24</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-18b41c2a-dc9f-412e-a84e-37dd4cb5677b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tom Hamilton">Tom Hamilton</td>
-                      
-                        <td>UUP</td>
-                        <td>Strangford</td>
-                      
-                        
-                        
-                        <td>2001-01-17-</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-deb58d67-a529-49ca-b18f-06168c36bf0d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tommy Gallagher">Tommy Gallagher</td>
-                      
-                        <td>Social Democratic and Labour Party</td>
-                        <td>Fermanagh and South Tyrone</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-42114514-16d9-475f-918c-d9031837e758">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="William Hay">William Hay</td>
-                      
-                        <td>DUP</td>
-                        <td>Foyle</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c513dd8f-99c8-4957-a607-cb1af29f680a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="William McCrea">William McCrea</td>
-                      
-                        <td>DUP</td>
-                        <td>Mid Ulster</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae2ea3ec-a410-4b74-a1e9-96a69c585ff3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Wilson Clyde">Wilson Clyde</td>
-                      
-                        <td>DUP</td>
-                        <td>South Antrim</td>
-                      
-                        
-                        
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58eee0ac-dcd0-4ad4-abcd-75e2632ac09b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alan McFarland</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — North Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-03dd24a4-f9e9-4dea-adf8-7bfc3fe891a2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/03dd24a4-f9e9-4dea-adf8-7bfc3fe891a2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/03dd24a4-f9e9-4dea-adf8-7bfc3fe891a2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alasdair McDonnell</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Belfast South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6f4c4d6-3bc6-43c2-8d56-8d91010a8fe8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/f6f4c4d6-3bc6-43c2-8d56-8d91010a8fe8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/f6f4c4d6-3bc6-43c2-8d56-8d91010a8fe8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alban Maginness</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Belfast North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee0b5d29-df58-43bc-91d0-0a13a18a3b24">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/ee0b5d29-df58-43bc-91d0-0a13a18a3b24/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/ee0b5d29-df58-43bc-91d0-0a13a18a3b24/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alex Attwood</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Belfast West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-416ad2eb-10fb-4e0c-9c12-7013af005218">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/416ad2eb-10fb-4e0c-9c12-7013af005218/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/416ad2eb-10fb-4e0c-9c12-7013af005218/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alex Maskey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Belfast West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0167e3dd-db05-4a52-8f22-65de5333d877">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Annie Courtney</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Foyle
+
+                              
+                                <span class="person-card__politics__date">(2000-12-05 to 2003-04-01)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Foyle
+
+                              
+                                <span class="person-card__politics__date">(from 2003-04-01)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd69c375-5592-4a09-ae56-9557a736a05f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Arthur Doherty</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — East Londonderry
+
+                              
+                                <span class="person-card__politics__date">(until 2002-09-01)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0f870089-70b2-47fb-8e14-cfc6b21a8976">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/0f870089-70b2-47fb-8e14-cfc6b21a8976/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/0f870089-70b2-47fb-8e14-cfc6b21a8976/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bairbre de Brún</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Belfast West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3bb0dea9-4128-40bf-948e-072419c8133c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/3bb0dea9-4128-40bf-948e-072419c8133c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/3bb0dea9-4128-40bf-948e-072419c8133c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Barry McElduff</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — West Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6088b6fe-d6ec-490f-9a71-208ee2beebd9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Billy Armstrong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Mid Ulster
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b05d55e8-66b1-4d79-9b16-db0ca8bb6ee2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b05d55e8-66b1-4d79-9b16-db0ca8bb6ee2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b05d55e8-66b1-4d79-9b16-db0ca8bb6ee2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Billy Bell</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Lagan Valley
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa015072-86cf-4e99-9084-4427a148d980">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Billy Hutchinson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PUP — Belfast North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5c89aa2e-a069-4558-81cd-cb98184ccb4e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Boyd Douglas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — East Londonderry
+
+                              
+                                <span class="person-card__politics__date">(until 1998-09-21)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              UUAP — East Londonderry
+
+                              
+                                <span class="person-card__politics__date">(from 1998-09-21)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66cab885-7f56-4af7-b220-fcb1e39ccdda">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Brid Rodgers</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Upper Bann
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d172f066-7fb5-4160-a802-a941e34c5425">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Carmel Hanna</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Belfast South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7ddb5300-adb7-42ec-b77d-7408359aa4a3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cedric Wilson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UKUP — Strangford
+
+                              
+                                <span class="person-card__politics__date">(until 1999-01-15)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              NIUP — Strangford
+
+                              
+                                <span class="person-card__politics__date">(from 1999-01-15)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc6f33f8-c7b9-4c3b-b7c5-e88a76dc2cb4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/dc6f33f8-c7b9-4c3b-b7c5-e88a76dc2cb4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/dc6f33f8-c7b9-4c3b-b7c5-e88a76dc2cb4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Conor Murphy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Newry and Armagh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ed72674e-94f7-4d8f-a73f-727dd5d9c2d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/ed72674e-94f7-4d8f-a73f-727dd5d9c2d3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/ed72674e-94f7-4d8f-a73f-727dd5d9c2d3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Danny Kennedy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Newry and Armagh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-12e55093-0d29-47ff-a826-107ab1df95dd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Danny O'Connor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — East Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a1aa1b78-03b3-414b-94cc-1a6877228871">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dara O'Hagan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Upper Bann
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4b6c4df7-ccbb-4e20-937a-892e61e87c61">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/4b6c4df7-ccbb-4e20-937a-892e61e87c61/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/4b6c4df7-ccbb-4e20-937a-892e61e87c61/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">David Ervine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PUP — Belfast East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a061dfbd-2b38-4d23-9d75-7f36fc26fb33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/a061dfbd-2b38-4d23-9d75-7f36fc26fb33/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/a061dfbd-2b38-4d23-9d75-7f36fc26fb33/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">David Ford</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance — South Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-87939eda-30b8-46c3-a717-df671b92abab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">David Hilditch</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — East Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0f5c09f5-d76c-4398-a0e4-de74ac977533">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">David McClarty</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — East Londonderry
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-730ef92a-dc1e-47aa-a13d-29689c2c8cbe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/730ef92a-dc1e-47aa-a13d-29689c2c8cbe/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/730ef92a-dc1e-47aa-a13d-29689c2c8cbe/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">David Trimble</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Upper Bann
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b0de278-63fa-4866-ae35-4ed8ff1ed887">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Denis Haughey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Mid Ulster
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d939680f-63ea-415d-9dcd-5282732dba20">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Denis Watson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Upper Bann
+
+                              
+                                <span class="person-card__politics__date">(until 1998-09-21)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              UUAP — Upper Bann
+
+                              
+                                <span class="person-card__politics__date">(from 1998-09-21)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2f582a00-55bb-416a-94a6-cefea12a752e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Derek Hussey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — West Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d7969ff-df6a-4546-bfc0-032586226175">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dermot Nesbitt</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — South Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-582c1731-4ab7-48fd-ab18-507aba35c648">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Donovan McClelland</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — South Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd7652eb-761c-4a7c-827a-2e9904bf33d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Duncan Dalton</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — South Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6d82b061-8f39-4b67-b483-a21a6e8143ea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eamonn ONeill</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — South Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2e2600ae-f727-4bff-b819-dff17cc4451d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eddie McGrady</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — South Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-332ec5e4-a28d-4bdb-9a0a-aafc107235fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Edwin Poots</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Lagan Valley
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5b7e7096-92ea-4e73-9404-af99d421c4ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eileen Bell</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance — North Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c2365511-9489-48d1-abb5-98a0c19ade98">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Esmond Birnie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Belfast South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-162eb4cf-7f4f-4446-8817-ba1d27a9d214">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eugene McMenamin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — West Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b2d32b2d-7461-44be-a8d5-127374cfdd14">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b2d32b2d-7461-44be-a8d5-127374cfdd14/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b2d32b2d-7461-44be-a8d5-127374cfdd14/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Francie Molloy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Mid Ulster
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f900993d-f983-458f-aa47-e55289405f45">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fraser Agnew</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Belfast North
+
+                              
+                                <span class="person-card__politics__date">(until 1998-09-21)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              UUAP — Belfast North
+
+                              
+                                <span class="person-card__politics__date">(from 1998-09-21)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c08ec5cc-f647-428b-9e40-12213969bfa0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fred Cobain</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Belfast North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc72ab06-bbcc-4af8-b4ba-5b8b02fbf0de">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gardiner Kane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — North Antrim
+
+                              
+                                <span class="person-card__politics__date">(until 2002-11-11)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              Independent — North Antrim
+
+                              
+                                <span class="person-card__politics__date">(from 2002-11-11)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-79295153-7cd9-4460-844f-7de991459f90">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">George Savage</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Upper Bann
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f3c3081b-9ccc-4875-92ee-c9a603c70b08">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/f3c3081b-9ccc-4875-92ee-c9a603c70b08/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/f3c3081b-9ccc-4875-92ee-c9a603c70b08/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gerry Adams</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Belfast West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-de99e576-546a-432b-b9c4-57ec40be15b2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gerry Kelly</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Belfast North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/GerryKellyMLA">@GerryKellyMLA</a>
+                            </p>
+                          
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a038456a-0ca4-4b87-b1f6-64ecfae96bee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gerry McHugh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Fermanagh and South Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bcb619c2-5d73-4f33-8485-afa6dde4cdc9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/bcb619c2-5d73-4f33-8485-afa6dde4cdc9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/bcb619c2-5d73-4f33-8485-afa6dde4cdc9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gregory Campbell</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — East Londonderry
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6732c6df-fec3-4416-a9ab-b28db8f842b8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ian Adamson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Belfast East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0f9fc03b-1408-47ed-9089-c60606d5aa1c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/0f9fc03b-1408-47ed-9089-c60606d5aa1c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/0f9fc03b-1408-47ed-9089-c60606d5aa1c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ian Paisley</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — North Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8fd9ad33-564c-4f27-b89b-64e436c64ae8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/8fd9ad33-564c-4f27-b89b-64e436c64ae8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/8fd9ad33-564c-4f27-b89b-64e436c64ae8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ian Paisley Jnr</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — North Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6318edc4-36e6-42aa-95b1-4cefaa2e7baa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Iris Robinson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Strangford
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6a55ad65-962e-42e1-943c-40a42cdb0fd4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ivan Davis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Lagan Valley
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-51ab9f21-7743-49ff-b391-d6f41a167635">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">James Leslie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — North Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2267657d-66b8-4694-93e3-4fe70fbfc79c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jane Morrice</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NIWC — North Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ef802218-ad8c-4f84-a8b2-9bc3f1b3a277">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/ef802218-ad8c-4f84-a8b2-9bc3f1b3a277/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/ef802218-ad8c-4f84-a8b2-9bc3f1b3a277/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jim Shannon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Strangford
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a657493a-caef-4aba-95d7-a125287c036c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jim Wells</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — South Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-90c1927b-8119-469b-861c-df16a561973b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jim Wilson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — South Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-722eaed1-d44e-4855-be4f-f2e8903d23a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joan Carson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Fermanagh and South Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bdd0518b-487c-4e2c-ac56-79f9ecc75ffe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/bdd0518b-487c-4e2c-ac56-79f9ecc75ffe/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/bdd0518b-487c-4e2c-ac56-79f9ecc75ffe/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joe Byrne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — West Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29afa184-19c9-42dd-b1f8-81fea2d18b6d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joe Hendron</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Belfast West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a9b3c7c8-2d74-4e0d-af49-25b33fcaac42">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Dallat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — East Londonderry
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f8a1c2c-1298-4a9a-b889-dd70fa1b8bf4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Fee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Newry and Armagh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-83b00ad7-85ec-4ae8-a958-89474a71e969">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Gorman</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — North Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7fdd5506-9918-4d82-ab91-b4ebbedb3f6f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/7fdd5506-9918-4d82-ab91-b4ebbedb3f6f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/7fdd5506-9918-4d82-ab91-b4ebbedb3f6f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">John Hume</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Foyle
+
+                              
+                                <span class="person-card__politics__date">(until 2000-12-01)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e63f514a-c5ec-4898-b8b1-2bb79626c69e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Kelly</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Mid Ulster
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b83a1f37-91bc-42fd-9f0f-7b9caa9915d5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Taylor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Strangford
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e794ad19-43a2-485a-ac99-6f998377e65f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Tierney</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Foyle
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-39cc1384-5bd1-4128-8b28-d2bb27481e25">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ken Robinson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — East Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-300dd777-e25f-4133-8caf-f9ff9931601a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/300dd777-e25f-4133-8caf-f9ff9931601a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/300dd777-e25f-4133-8caf-f9ff9931601a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kieran McCarthy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance — Strangford
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c5b2241b-bf11-4b65-a2ac-276cb3cec99c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/c5b2241b-bf11-4b65-a2ac-276cb3cec99c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/c5b2241b-bf11-4b65-a2ac-276cb3cec99c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lord Alderdice</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance — Belfast East
+
+                              
+                                <span class="person-card__politics__date">(until 1998-06-30)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              Initial Presiding Officer — Belfast East
+
+                              
+                                <span class="person-card__politics__date">(1998-07-01 to 1999-11-30)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              Speaker — Belfast East
+
+                              
+                                <span class="person-card__politics__date">(from 1999-12-01)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-54414391-b30a-4ec5-996d-b9f3896cec6a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/54414391-b30a-4ec5-996d-b9f3896cec6a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/54414391-b30a-4ec5-996d-b9f3896cec6a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mark Durkan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Foyle
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-86148195-8dae-414a-af49-26175105b8ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mark Robinson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Belfast South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b81ff022-4ef1-4c86-8289-77e7a102cfd4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b81ff022-4ef1-4c86-8289-77e7a102cfd4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b81ff022-4ef1-4c86-8289-77e7a102cfd4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Martin McGuinness</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Mid Ulster
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0a9c0e6-62fd-4ae4-aa71-2e298bec63c1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/d0a9c0e6-62fd-4ae4-aa71-2e298bec63c1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/d0a9c0e6-62fd-4ae4-aa71-2e298bec63c1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mary Nelis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Foyle
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cf152a4f-d623-48b4-8d82-82b2188835ca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maurice Morrow</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Fermanagh and South Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb9c38b4-b531-4d0f-b2d3-776fc2b99117">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mervyn Carrick</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Upper Bann
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e3bbfb9-b256-4115-987f-b7cb36f47a39">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Michael Coyle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — East Londonderry
+
+                              
+                                <span class="person-card__politics__date">(from 2002-09-01)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b25f7720-c856-4459-8aec-de016068a4d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b25f7720-c856-4459-8aec-de016068a4d3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/b25f7720-c856-4459-8aec-de016068a4d3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Michael McGimpsey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Belfast South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70f90b8a-61cc-4ccb-8f74-af51a81a8739">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/70f90b8a-61cc-4ccb-8f74-af51a81a8739/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/70f90b8a-61cc-4ccb-8f74-af51a81a8739/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Michelle Gildernew</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Fermanagh and South Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-88da9fa2-52fc-4c27-a687-f8b433a90200">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mick Murphy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — South Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01e5abe2-b2e2-4d80-bded-a2106dc0336c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mitchel McLaughlin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Foyle
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0bfd3241-2114-47a1-a38d-8b4138aeac76">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Monica McWilliams</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NIWC — Belfast South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4919f61c-4016-4477-bbfe-c3c46c1e2867">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/4919f61c-4016-4477-bbfe-c3c46c1e2867/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/4919f61c-4016-4477-bbfe-c3c46c1e2867/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nigel Dodds</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Belfast North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3600c1c7-11ee-4357-aa7d-2c6d17437ece">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Norman Boyd</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UKUP — South Antrim
+
+                              
+                                <span class="person-card__politics__date">(until 1999-01-15)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              NIUP — South Antrim
+
+                              
+                                <span class="person-card__politics__date">(from 1999-01-15)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a8a3919-12e8-4d75-acc9-82f032f74632">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Oliver Gibson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — West Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7491e6fc-d00e-4f86-92f4-dce1d69e6b70">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">P J Bradley</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — South Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0a2c25ed-bba7-4abe-8a61-309e6f358480">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/0a2c25ed-bba7-4abe-8a61-309e6f358480/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/0a2c25ed-bba7-4abe-8a61-309e6f358480/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Pat Doherty</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — West Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1991b589-001f-4ce5-a5fb-72bc63c52864">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pat McNamee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Newry and Armagh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-630d8ccf-8899-426e-bad1-8b3c3ae44e8f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Patricia Lewsley</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Lagan Valley
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2ed52a60-e540-4f90-a7e4-0a6d99a7d1a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Patrick Roche</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UKUP — Lagan Valley
+
+                              
+                                <span class="person-card__politics__date">(until 1999-01-15)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              NIUP — Lagan Valley
+
+                              
+                                <span class="person-card__politics__date">(from 1999-01-15)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-26a79bdd-90ae-4fa4-910f-99dc28e9894b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Paul Berry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Newry and Armagh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d3a3e80-19f3-43d1-8e1c-8476731e235d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pauline Armitage</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — East Londonderry
+
+                              
+                                <span class="person-card__politics__date">(until 2001-11-09)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              Independent — East Londonderry
+
+                              
+                                <span class="person-card__politics__date">(from 2001-11-09)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d819aab4-d610-4619-a6d6-48061df9fb76">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/d819aab4-d610-4619-a6d6-48061df9fb76/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/d819aab4-d610-4619-a6d6-48061df9fb76/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Peter Robinson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Belfast East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-24545e0e-5f36-438b-acf2-d1fc8e0bceb2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/24545e0e-5f36-438b-acf2-d1fc8e0bceb2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/24545e0e-5f36-438b-acf2-d1fc8e0bceb2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Peter Weir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — North Down
+
+                              
+                                <span class="person-card__politics__date">(until 2001-11-09)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              Independent — North Down
+
+                              
+                                <span class="person-card__politics__date">(2001-11-09 to 2002-04-30)</span>
+                              
+                            </p>
+                          
+                            <p class="person-card__politics">
+
+                              DUP — North Down
+
+                              
+                                <span class="person-card__politics__date">(from 2002-04-30)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-95c228ae-4850-4392-a73b-048ca6953d33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/95c228ae-4850-4392-a73b-048ca6953d33/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/95c228ae-4850-4392-a73b-048ca6953d33/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Reg Empey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Belfast East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-602f439b-a73a-4e5d-8874-18e77efeee34">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Robert Coulter</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — North Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63bbf4a4-0580-44de-be87-3e794b450d7a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Robert McCartney</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UKUP — North Down
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7f99a516-25bc-48ca-8ee7-30317d5a8653">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Roger Hutchinson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — East Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9091a64b-281c-425a-b044-8691dcf18053">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Roy Beggs</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — East Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6b6ae3b-0a85-405d-9c39-2943d803cbc5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sam Foster</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Fermanagh and South Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4b75917c-54a4-4c7b-a5d9-3f568accb9a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/4b75917c-54a4-4c7b-a5d9-3f568accb9a7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/4b75917c-54a4-4c7b-a5d9-3f568accb9a7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sammy Wilson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Belfast East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1339715-afeb-439c-bc35-5db78cde7e3b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Seamus Close</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance — Lagan Valley
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-54f1e598-c4c7-494c-8403-7020612f6ef9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Seamus Mallon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Newry and Armagh
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-69d1f1b3-f198-4678-b1da-e2e6c018f6d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sean Farren</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — North Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8dbefafb-93c5-4506-beff-859ce7ebc535">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/8dbefafb-93c5-4506-beff-859ce7ebc535/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/8dbefafb-93c5-4506-beff-859ce7ebc535/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sue Ramsey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sinn Féin — Belfast West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fcf7c616-7594-418f-9cb0-6e3588f0189e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Séan Neeson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Alliance — East Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-03965599-21c6-4b7d-918d-d703a604038b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tom Benson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Strangford
+
+                              
+                                <span class="person-card__politics__date">(until 2000-12-24)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-18b41c2a-dc9f-412e-a84e-37dd4cb5677b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tom Hamilton</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UUP — Strangford
+
+                              
+                                <span class="person-card__politics__date">(from 2001-01-17)</span>
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-deb58d67-a529-49ca-b18f-06168c36bf0d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tommy Gallagher</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Social Democratic and Labour Party — Fermanagh and South Tyrone
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-42114514-16d9-475f-918c-d9031837e758">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/42114514-16d9-475f-918c-d9031837e758/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Northern-Ireland/Assembly/42114514-16d9-475f-918c-d9031837e758/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">William Hay</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Foyle
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c513dd8f-99c8-4957-a607-cb1af29f680a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">William McCrea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — Mid Ulster
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae2ea3ec-a410-4b74-a1e9-96a69c585ff3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wilson Clyde</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DUP — South Antrim
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

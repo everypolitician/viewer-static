@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="12th Parliament" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-partit_laburista"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -113,887 +116,2972 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/ea467df/data/Malta/Assembly/term-12.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/ea467df/data/Malta/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/ea467df/data/Malta/Assembly/term-12.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/ea467df/data/Malta/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-cae1b496-0001-4b94-adec-884cec06394b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Albert Fenech">Albert Fenech</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-09ff6fb9-0562-4bfa-980e-4365c01c4a3b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Anthony Abela">Anthony Abela</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9163472f-ec8a-40d0-807e-171381715d2e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Anthony Agius Decelis">Anthony Agius Decelis</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10743479-a5dd-466b-9dd5-95d5bff630a7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Anthony Bezzina">Anthony Bezzina</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f479086e-eaff-4b49-b79b-16fff17595e4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Antoine Borg">Antoine Borg</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-99402a5a-602b-46a6-a8bb-45edc333e64b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Anton Refalo">Anton Refalo</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3aff4f5f-f366-425d-ba5b-b8a1dfb681a6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Beppe Fenech Adami">Beppe Fenech Adami</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4bda36c-5f11-4974-8d58-99fa68776b35">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Carmelo Abela">Carmelo Abela</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7a61181f-a051-4cce-ba90-0286987e1de9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Carmelo Mifsud Bonnici">Carmelo Mifsud Bonnici</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d807138f-81ad-4c88-a7ef-2a58dfeb579c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Censu Galea">Censu Galea</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c35d2f39-ff12-4f21-b471-7c5ab01a2e1a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Charles Buhagiar">Charles Buhagiar</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-252760c5-af48-4b8f-88be-dbd220de891b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Charles Mangion">Charles Mangion</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4982a317-d51b-4d1e-bd97-56edac0aece3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Charlo Bonnici">Charlo Bonnici</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d0aa96c0-2c0f-4e89-9fd3-91d3761df98f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chris Agius">Chris Agius</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dbd7ac0d-8a0b-4c84-ac77-43b546767dc8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chris Cardona">Chris Cardona</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-438b84c9-1dd3-4b9b-adeb-f240ec4122fe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chris Said">Chris Said</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0638fdcd-d02a-4204-bfb0-c91b5d7b2374">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Christopher Fearne">Christopher Fearne</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-472a91e9-a3f2-4c3e-8318-077f51c5fb48">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Claudette Buttigieg">Claudette Buttigieg</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b1bba401-154a-4766-8ff3-cb1a7484639c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Claudio Grech">Claudio Grech</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-66bfcb58-b3cd-4b98-970a-a0bce078510d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Clyde Puli">Clyde Puli</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-61bba5ce-3d96-4e5c-9550-9b95de766d91">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David Agius">David Agius</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10b44dd3-3358-4969-ad9f-fc4723067954">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Deborah Schembri">Deborah Schembri</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-98e92ec6-3729-4a53-a666-593b4dd1d8b3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Deo Debattista">Deo Debattista</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-400d9864-ede3-4849-ae6e-7b4821ab70db">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edward Scicluna">Edward Scicluna</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f4d1c7e4-e0c7-41e7-83ee-5bb8c9fb2549">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edward Zammit-Lewis">Edward Zammit-Lewis</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4fbea3cf-ce49-425f-9f99-44cfc18f4f49">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emmanuel Mallia">Emmanuel Mallia</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7e059b42-5679-4344-9c09-ab7ded4d190b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Etienne Grech">Etienne Grech</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-945b3c06-1076-454d-a862-8e5d0fa038f6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Evarist Bartolo">Evarist Bartolo</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-63ad454c-3093-4606-8380-00bc3ff70b79">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Francis Zammit Dimech">Francis Zammit Dimech</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c3d0fcd-3aa8-4610-9650-d8f9a05abd71">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Franco Mercieca">Franco Mercieca</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-17c4c677-e371-497b-a65d-7f116f7c18cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Frederick Azzopardi">Frederick Azzopardi</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4e0ace0-d840-4fec-854e-d4af96eff7bd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="George Pullicino">George Pullicino</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f810055a-379c-4865-b974-b00be874ef6b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="George Vella">George Vella</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fc7366dd-109b-475e-bf93-cedf8386f1bc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Giovanna Debono">Giovanna Debono</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae4559f6-9433-4f92-a538-ad33498fd796">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Godfrey Farrugia">Godfrey Farrugia</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-60d51ea8-48f8-4a9e-b729-d3d6f860dd19">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Helena Dalli">Helena Dalli</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f8e37ce-6c5c-44ca-9d56-eb32cfa93de5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ian Borg">Ian Borg</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-34c28585-fde5-4fcf-9ad1-69c0b62a793a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jason Azzopardi">Jason Azzopardi</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9530ab81-5cfb-4278-ba84-66fdf42ae788">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joe Cassar">Joe Cassar</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ab8b7203-9fbd-446d-b545-1cd88ee74e94">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joe Debono Grech">Joe Debono Grech</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dac7de4f-d164-44e0-8411-b1739f5cc681">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joe Mizzi">Joe Mizzi</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1eaa462f-da27-41dc-9055-919b96ff45a2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Farrugia">Joseph Farrugia</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1af3701-d891-4cf4-aab0-2404f265057c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Muscat">Joseph Muscat</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6cdf943-43a2-45cf-941d-1f5d91759100">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Sammut">Joseph Sammut</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f36e5916-a11e-4dfb-9b96-6da54b1c94b4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="José Herrera">José Herrera</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7297f3f3-5d76-44c7-b980-6232bf4d9a78">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Justyne Caruana">Justyne Caruana</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8556b667-af3b-4ba4-80dd-d3f8f0af0508">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Konrad Mizzi">Konrad Mizzi</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7035d10b-73e1-4dbe-b806-1215db89cfd7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kristy Debono">Kristy Debono</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d7eda5ac-6fb7-4431-af49-cf0f019b1edf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Leo Brincat">Leo Brincat</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fb060def-5778-4c95-b2c3-f091b09945e4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Louis Grech">Louis Grech</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-70dded4b-99c1-4569-a91f-666cdd3ea391">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luciano Busuttil">Luciano Busuttil</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eeedb4bc-283c-43a1-9476-fe6ac6f65dd9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mario De Marco">Mario De Marco</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a576f45-6824-40cb-895d-040c08d61400">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mario Galea">Mario Galea</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-803511e2-3629-40c0-9ad9-bd950298f155">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marlene Farrugia">Marlene Farrugia</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ac99c13c-30da-4c1b-8ae3-c92051d4cf83">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marthese Portelli">Marthese Portelli</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a7ea6925-5228-4370-b210-e35f269328e5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Michael Falzon">Michael Falzon</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ce0fc3f-1461-4a5a-9af5-ee634fe51c2d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Michael Farrugia">Michael Farrugia</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41cda172-c6b3-47db-ac07-3cb3c4b8994f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Michael Gonzi">Michael Gonzi</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4dadfb6f-d761-44ed-ba03-54c18a49c558">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Owen Bonnici">Owen Bonnici</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-53bc92b9-e039-4bc4-bce1-aea81684fb7f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Paula Mifsud Bonnici">Paula Mifsud Bonnici</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0ab37aaf-e308-4f98-a408-c0c60a737116">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Robert Arrigo">Robert Arrigo</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a1b7b8ea-a7a6-4a2e-821e-aa1e940024f4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Robert Cutajar">Robert Cutajar</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-62732ab1-14e5-4da6-b2a0-cac8d488b55f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Roderick Galdes">Roderick Galdes</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-013d4477-7a18-495a-9249-e5ac5ef0add5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ryan Callus">Ryan Callus</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c4ededa8-e3dd-45a3-8e80-93a3eddc1f80">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Silvio Parnis">Silvio Parnis</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bca29eec-ffdf-40e2-b413-188d77b0a0d2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Silvio Schembri">Silvio Schembri</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eba2730f-f701-4e13-8778-397dfc2f539f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Simon Busuttil">Simon Busuttil</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4b03c38-5656-4361-8060-28bcbd3aa3a9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Stefan Buontempo">Stefan Buontempo</td>
-                      
-                        <td>Partit Laburista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae2e2b4b-a907-476b-9799-0620e751423d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Stephen Spiteri">Stephen Spiteri</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d5ae793a-1653-4e57-868f-ecd392d05809">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tonio Fenech">Tonio Fenech</td>
-                      
-                        <td>Partit Nazzjonlista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cae1b496-0001-4b94-adec-884cec06394b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/cae1b496-0001-4b94-adec-884cec06394b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/cae1b496-0001-4b94-adec-884cec06394b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Albert Fenech</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:albert.fenech@gov.mt">albert.fenech@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-09ff6fb9-0562-4bfa-980e-4365c01c4a3b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/09ff6fb9-0562-4bfa-980e-4365c01c4a3b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/09ff6fb9-0562-4bfa-980e-4365c01c4a3b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Anthony Abela</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:anthony.c.abela@parlament.mt">anthony.c.abela@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9163472f-ec8a-40d0-807e-171381715d2e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/9163472f-ec8a-40d0-807e-171381715d2e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/9163472f-ec8a-40d0-807e-171381715d2e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Anthony Agius Decelis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:anthony.agius-decelis@gov.mt">anthony.agius-decelis@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10743479-a5dd-466b-9dd5-95d5bff630a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/10743479-a5dd-466b-9dd5-95d5bff630a7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/10743479-a5dd-466b-9dd5-95d5bff630a7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Anthony Bezzina</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:perit.toni.bezzina@gmail.com">perit.toni.bezzina@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f479086e-eaff-4b49-b79b-16fff17595e4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f479086e-eaff-4b49-b79b-16fff17595e4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f479086e-eaff-4b49-b79b-16fff17595e4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Antoine Borg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:antoine@antoineborg.com">antoine@antoineborg.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-99402a5a-602b-46a6-a8bb-45edc333e64b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/99402a5a-602b-46a6-a8bb-45edc333e64b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/99402a5a-602b-46a6-a8bb-45edc333e64b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Anton Refalo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:anton.refalo@gov.mt">anton.refalo@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3aff4f5f-f366-425d-ba5b-b8a1dfb681a6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/3aff4f5f-f366-425d-ba5b-b8a1dfb681a6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/3aff4f5f-f366-425d-ba5b-b8a1dfb681a6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Beppe Fenech Adami</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joseph.fenech-adami@parlament.mt">joseph.fenech-adami@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4bda36c-5f11-4974-8d58-99fa68776b35">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a4bda36c-5f11-4974-8d58-99fa68776b35/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a4bda36c-5f11-4974-8d58-99fa68776b35/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Carmelo Abela</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:carmelo.abela@parlament.mt">carmelo.abela@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7a61181f-a051-4cce-ba90-0286987e1de9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7a61181f-a051-4cce-ba90-0286987e1de9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7a61181f-a051-4cce-ba90-0286987e1de9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Carmelo Mifsud Bonnici</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:carmelomifsudbonnici@parlament.mt">carmelomifsudbonnici@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d807138f-81ad-4c88-a7ef-2a58dfeb579c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d807138f-81ad-4c88-a7ef-2a58dfeb579c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d807138f-81ad-4c88-a7ef-2a58dfeb579c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Censu Galea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:vincent.galea@parlament.mt">vincent.galea@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c35d2f39-ff12-4f21-b471-7c5ab01a2e1a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/c35d2f39-ff12-4f21-b471-7c5ab01a2e1a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/c35d2f39-ff12-4f21-b471-7c5ab01a2e1a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Charles Buhagiar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:peritcb@gmail.com">peritcb@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-252760c5-af48-4b8f-88be-dbd220de891b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/252760c5-af48-4b8f-88be-dbd220de891b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/252760c5-af48-4b8f-88be-dbd220de891b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Charles Mangion</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:charles.mangion@parlament.mt">charles.mangion@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4982a317-d51b-4d1e-bd97-56edac0aece3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/4982a317-d51b-4d1e-bd97-56edac0aece3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/4982a317-d51b-4d1e-bd97-56edac0aece3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Charlo Bonnici</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0aa96c0-2c0f-4e89-9fd3-91d3761df98f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d0aa96c0-2c0f-4e89-9fd3-91d3761df98f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d0aa96c0-2c0f-4e89-9fd3-91d3761df98f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chris Agius</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chris.agius@parlament.mt">chris.agius@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dbd7ac0d-8a0b-4c84-ac77-43b546767dc8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/dbd7ac0d-8a0b-4c84-ac77-43b546767dc8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/dbd7ac0d-8a0b-4c84-ac77-43b546767dc8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chris Cardona</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:christian.cardona@gov.mt">christian.cardona@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-438b84c9-1dd3-4b9b-adeb-f240ec4122fe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/438b84c9-1dd3-4b9b-adeb-f240ec4122fe/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/438b84c9-1dd3-4b9b-adeb-f240ec4122fe/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chris Said</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chris.said@parlament.mt">chris.said@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0638fdcd-d02a-4204-bfb0-c91b5d7b2374">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/0638fdcd-d02a-4204-bfb0-c91b5d7b2374/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/0638fdcd-d02a-4204-bfb0-c91b5d7b2374/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Christopher Fearne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chris@chrisfearne.com">chris@chrisfearne.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-472a91e9-a3f2-4c3e-8318-077f51c5fb48">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/472a91e9-a3f2-4c3e-8318-077f51c5fb48/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/472a91e9-a3f2-4c3e-8318-077f51c5fb48/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Claudette Buttigieg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:claudette.buttigieg@parlament.mt">claudette.buttigieg@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b1bba401-154a-4766-8ff3-cb1a7484639c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/b1bba401-154a-4766-8ff3-cb1a7484639c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/b1bba401-154a-4766-8ff3-cb1a7484639c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Claudio Grech</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:claudio.grech@parlament.mt">claudio.grech@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66bfcb58-b3cd-4b98-970a-a0bce078510d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/66bfcb58-b3cd-4b98-970a-a0bce078510d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/66bfcb58-b3cd-4b98-970a-a0bce078510d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Clyde Puli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:clyde.puli@parlament.mt">clyde.puli@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-61bba5ce-3d96-4e5c-9550-9b95de766d91">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/61bba5ce-3d96-4e5c-9550-9b95de766d91/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/61bba5ce-3d96-4e5c-9550-9b95de766d91/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">David Agius</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:david.agius@parlament.mt">david.agius@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10b44dd3-3358-4969-ad9f-fc4723067954">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/10b44dd3-3358-4969-ad9f-fc4723067954/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/10b44dd3-3358-4969-ad9f-fc4723067954/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Deborah Schembri</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:deborah.schembri@parlament.mt">deborah.schembri@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-98e92ec6-3729-4a53-a666-593b4dd1d8b3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/98e92ec6-3729-4a53-a666-593b4dd1d8b3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/98e92ec6-3729-4a53-a666-593b4dd1d8b3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Deo Debattista</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:deodebattista@onvol.net">deodebattista@onvol.net</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-400d9864-ede3-4849-ae6e-7b4821ab70db">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/400d9864-ede3-4849-ae6e-7b4821ab70db/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/400d9864-ede3-4849-ae6e-7b4821ab70db/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Edward Scicluna</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:edward.scicluna@gov.mt">edward.scicluna@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f4d1c7e4-e0c7-41e7-83ee-5bb8c9fb2549">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f4d1c7e4-e0c7-41e7-83ee-5bb8c9fb2549/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f4d1c7e4-e0c7-41e7-83ee-5bb8c9fb2549/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Edward Zammit-Lewis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:edward.zammit-lewis@gov.mt">edward.zammit-lewis@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4fbea3cf-ce49-425f-9f99-44cfc18f4f49">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/4fbea3cf-ce49-425f-9f99-44cfc18f4f49/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/4fbea3cf-ce49-425f-9f99-44cfc18f4f49/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emmanuel Mallia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:manuel.mallia@gov.mt">manuel.mallia@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7e059b42-5679-4344-9c09-ab7ded4d190b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7e059b42-5679-4344-9c09-ab7ded4d190b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7e059b42-5679-4344-9c09-ab7ded4d190b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Etienne Grech</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:etienne.b.grech@parlament.mt">etienne.b.grech@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-945b3c06-1076-454d-a862-8e5d0fa038f6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/945b3c06-1076-454d-a862-8e5d0fa038f6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/945b3c06-1076-454d-a862-8e5d0fa038f6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Evarist Bartolo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:evarist.bartolo@gov.mt">evarist.bartolo@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63ad454c-3093-4606-8380-00bc3ff70b79">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/63ad454c-3093-4606-8380-00bc3ff70b79/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/63ad454c-3093-4606-8380-00bc3ff70b79/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Francis Zammit Dimech</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:zammf@go.net.mt">zammf@go.net.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c3d0fcd-3aa8-4610-9650-d8f9a05abd71">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/8c3d0fcd-3aa8-4610-9650-d8f9a05abd71/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/8c3d0fcd-3aa8-4610-9650-d8f9a05abd71/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Franco Mercieca</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:franco.mercieca@gov.mt">franco.mercieca@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-17c4c677-e371-497b-a65d-7f116f7c18cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/17c4c677-e371-497b-a65d-7f116f7c18cf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/17c4c677-e371-497b-a65d-7f116f7c18cf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Frederick Azzopardi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:azzopardi.frederick@parlament.mt">azzopardi.frederick@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4e0ace0-d840-4fec-854e-d4af96eff7bd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a4e0ace0-d840-4fec-854e-d4af96eff7bd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a4e0ace0-d840-4fec-854e-d4af96eff7bd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">George Pullicino</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:george.pullicino@parlament.mt">george.pullicino@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f810055a-379c-4865-b974-b00be874ef6b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f810055a-379c-4865-b974-b00be874ef6b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f810055a-379c-4865-b974-b00be874ef6b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">George Vella</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:george.vella@gov.mt">george.vella@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc7366dd-109b-475e-bf93-cedf8386f1bc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/fc7366dd-109b-475e-bf93-cedf8386f1bc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/fc7366dd-109b-475e-bf93-cedf8386f1bc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Giovanna Debono</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:giovanna.debono@parlament.mt">giovanna.debono@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae4559f6-9433-4f92-a538-ad33498fd796">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ae4559f6-9433-4f92-a538-ad33498fd796/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ae4559f6-9433-4f92-a538-ad33498fd796/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Godfrey Farrugia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:godfrey.a.farrugia@gov.mt">godfrey.a.farrugia@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-60d51ea8-48f8-4a9e-b729-d3d6f860dd19">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/60d51ea8-48f8-4a9e-b729-d3d6f860dd19/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/60d51ea8-48f8-4a9e-b729-d3d6f860dd19/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Helena Dalli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:helena.dalli@gov.mt">helena.dalli@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f8e37ce-6c5c-44ca-9d56-eb32cfa93de5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/6f8e37ce-6c5c-44ca-9d56-eb32cfa93de5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/6f8e37ce-6c5c-44ca-9d56-eb32cfa93de5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ian Borg</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ian.borg@gov.mt">ian.borg@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34c28585-fde5-4fcf-9ad1-69c0b62a793a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/34c28585-fde5-4fcf-9ad1-69c0b62a793a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/34c28585-fde5-4fcf-9ad1-69c0b62a793a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jason Azzopardi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jason.azzopardi@parlament.mt">jason.azzopardi@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9530ab81-5cfb-4278-ba84-66fdf42ae788">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/9530ab81-5cfb-4278-ba84-66fdf42ae788/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/9530ab81-5cfb-4278-ba84-66fdf42ae788/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joe Cassar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joseph.r.cassar@parlament.mt">joseph.r.cassar@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ab8b7203-9fbd-446d-b545-1cd88ee74e94">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ab8b7203-9fbd-446d-b545-1cd88ee74e94/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ab8b7203-9fbd-446d-b545-1cd88ee74e94/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joe Debono Grech</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joseph.debono-grech@parlament.mt">joseph.debono-grech@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dac7de4f-d164-44e0-8411-b1739f5cc681">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/dac7de4f-d164-44e0-8411-b1739f5cc681/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/dac7de4f-d164-44e0-8411-b1739f5cc681/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joe Mizzi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joe.mizzi@gov.mt">joe.mizzi@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1eaa462f-da27-41dc-9055-919b96ff45a2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/1eaa462f-da27-41dc-9055-919b96ff45a2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/1eaa462f-da27-41dc-9055-919b96ff45a2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joseph Farrugia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joefarrugiafarell@gmail.com">joefarrugiafarell@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1af3701-d891-4cf4-aab0-2404f265057c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/e1af3701-d891-4cf4-aab0-2404f265057c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/e1af3701-d891-4cf4-aab0-2404f265057c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joseph Muscat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joseph.muscat@gov.mt">joseph.muscat@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6cdf943-43a2-45cf-941d-1f5d91759100">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f6cdf943-43a2-45cf-941d-1f5d91759100/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f6cdf943-43a2-45cf-941d-1f5d91759100/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joseph Sammut</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joseph.m.sammut@parlament.mt">joseph.m.sammut@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f36e5916-a11e-4dfb-9b96-6da54b1c94b4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f36e5916-a11e-4dfb-9b96-6da54b1c94b4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/f36e5916-a11e-4dfb-9b96-6da54b1c94b4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">José Herrera</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jose.herrera@gov.mt">jose.herrera@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7297f3f3-5d76-44c7-b980-6232bf4d9a78">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7297f3f3-5d76-44c7-b980-6232bf4d9a78/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7297f3f3-5d76-44c7-b980-6232bf4d9a78/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Justyne Caruana</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:justyne.caruana@gmail.com">justyne.caruana@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8556b667-af3b-4ba4-80dd-d3f8f0af0508">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/8556b667-af3b-4ba4-80dd-d3f8f0af0508/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/8556b667-af3b-4ba4-80dd-d3f8f0af0508/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Konrad Mizzi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:konrad.mizzi@gov.mt">konrad.mizzi@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7035d10b-73e1-4dbe-b806-1215db89cfd7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7035d10b-73e1-4dbe-b806-1215db89cfd7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/7035d10b-73e1-4dbe-b806-1215db89cfd7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kristy Debono</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:kristy.debono@parlament.mt">kristy.debono@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d7eda5ac-6fb7-4431-af49-cf0f019b1edf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d7eda5ac-6fb7-4431-af49-cf0f019b1edf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d7eda5ac-6fb7-4431-af49-cf0f019b1edf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Leo Brincat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:leo.brincat@parlament.mt">leo.brincat@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fb060def-5778-4c95-b2c3-f091b09945e4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/fb060def-5778-4c95-b2c3-f091b09945e4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/fb060def-5778-4c95-b2c3-f091b09945e4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Louis Grech</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:louis.grech@gov.mt">louis.grech@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70dded4b-99c1-4569-a91f-666cdd3ea391">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/70dded4b-99c1-4569-a91f-666cdd3ea391/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/70dded4b-99c1-4569-a91f-666cdd3ea391/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Luciano Busuttil</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:lucio74@onvol.net">lucio74@onvol.net</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eeedb4bc-283c-43a1-9476-fe6ac6f65dd9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/eeedb4bc-283c-43a1-9476-fe6ac6f65dd9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/eeedb4bc-283c-43a1-9476-fe6ac6f65dd9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mario De Marco</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mario.demarco@parlament.mt">mario.demarco@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a576f45-6824-40cb-895d-040c08d61400">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/5a576f45-6824-40cb-895d-040c08d61400/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/5a576f45-6824-40cb-895d-040c08d61400/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mario Galea</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mario.galea@parlament.mt">mario.galea@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-803511e2-3629-40c0-9ad9-bd950298f155">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/803511e2-3629-40c0-9ad9-bd950298f155/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/803511e2-3629-40c0-9ad9-bd950298f155/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marlene Farrugia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:marlenedent@gmail.com">marlenedent@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ac99c13c-30da-4c1b-8ae3-c92051d4cf83">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ac99c13c-30da-4c1b-8ae3-c92051d4cf83/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ac99c13c-30da-4c1b-8ae3-c92051d4cf83/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marthese Portelli</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:martheseportellipn@gmail.com">martheseportellipn@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a7ea6925-5228-4370-b210-e35f269328e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a7ea6925-5228-4370-b210-e35f269328e5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a7ea6925-5228-4370-b210-e35f269328e5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Michael Falzon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:falzon.michael@gmail.com">falzon.michael@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ce0fc3f-1461-4a5a-9af5-ee634fe51c2d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/8ce0fc3f-1461-4a5a-9af5-ee634fe51c2d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/8ce0fc3f-1461-4a5a-9af5-ee634fe51c2d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Michael Farrugia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:michael.farrugia@gov.mt">michael.farrugia@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41cda172-c6b3-47db-ac07-3cb3c4b8994f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/41cda172-c6b3-47db-ac07-3cb3c4b8994f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/41cda172-c6b3-47db-ac07-3cb3c4b8994f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Michael Gonzi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:michael.gonzi@parlament.mt">michael.gonzi@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4dadfb6f-d761-44ed-ba03-54c18a49c558">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/4dadfb6f-d761-44ed-ba03-54c18a49c558/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/4dadfb6f-d761-44ed-ba03-54c18a49c558/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Owen Bonnici</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:owen.bonnici@gov.mt">owen.bonnici@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-53bc92b9-e039-4bc4-bce1-aea81684fb7f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/53bc92b9-e039-4bc4-bce1-aea81684fb7f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/53bc92b9-e039-4bc4-bce1-aea81684fb7f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Paula Mifsud Bonnici</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:paula.mifsud-bonnici@parlament.mt">paula.mifsud-bonnici@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0ab37aaf-e308-4f98-a408-c0c60a737116">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/0ab37aaf-e308-4f98-a408-c0c60a737116/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/0ab37aaf-e308-4f98-a408-c0c60a737116/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Robert Arrigo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:robert.arrigo@parlament.mt">robert.arrigo@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a1b7b8ea-a7a6-4a2e-821e-aa1e940024f4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a1b7b8ea-a7a6-4a2e-821e-aa1e940024f4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a1b7b8ea-a7a6-4a2e-821e-aa1e940024f4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Robert Cutajar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:robert.cutajar@parlament.mt">robert.cutajar@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-62732ab1-14e5-4da6-b2a0-cac8d488b55f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/62732ab1-14e5-4da6-b2a0-cac8d488b55f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/62732ab1-14e5-4da6-b2a0-cac8d488b55f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Roderick Galdes</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:roderick.galdes@gov.mt">roderick.galdes@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-013d4477-7a18-495a-9249-e5ac5ef0add5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/013d4477-7a18-495a-9249-e5ac5ef0add5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/013d4477-7a18-495a-9249-e5ac5ef0add5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ryan Callus</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ryan.callus@parlament.mt">ryan.callus@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c4ededa8-e3dd-45a3-8e80-93a3eddc1f80">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/c4ededa8-e3dd-45a3-8e80-93a3eddc1f80/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/c4ededa8-e3dd-45a3-8e80-93a3eddc1f80/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Silvio Parnis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:silvio.parnis@partitlaburidta.org">silvio.parnis@partitlaburidta.org</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bca29eec-ffdf-40e2-b413-188d77b0a0d2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/bca29eec-ffdf-40e2-b413-188d77b0a0d2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/bca29eec-ffdf-40e2-b413-188d77b0a0d2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Silvio Schembri</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:silvio.schembri@parlament.mt">silvio.schembri@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eba2730f-f701-4e13-8778-397dfc2f539f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/eba2730f-f701-4e13-8778-397dfc2f539f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/eba2730f-f701-4e13-8778-397dfc2f539f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Simon Busuttil</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:simon.busuttil@parlament.mt">simon.busuttil@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4b03c38-5656-4361-8060-28bcbd3aa3a9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a4b03c38-5656-4361-8060-28bcbd3aa3a9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/a4b03c38-5656-4361-8060-28bcbd3aa3a9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Stefan Buontempo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Laburista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:stefan.buontempo@gov.mt">stefan.buontempo@gov.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae2e2b4b-a907-476b-9799-0620e751423d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ae2e2b4b-a907-476b-9799-0620e751423d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/ae2e2b4b-a907-476b-9799-0620e751423d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Stephen Spiteri</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:stephen.a.spiteri@parlament.mt">stephen.a.spiteri@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d5ae793a-1653-4e57-868f-ecd392d05809">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d5ae793a-1653-4e57-868f-ecd392d05809/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Malta/Assembly/d5ae793a-1653-4e57-868f-ecd392d05809/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tonio Fenech</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Partit Nazzjonlista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tonio.fenech@parlament.mt">tonio.fenech@parlament.mt</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

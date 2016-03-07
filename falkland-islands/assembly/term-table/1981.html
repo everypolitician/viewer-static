@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="1981 election" />
     <meta property="og:type" content="article" />
@@ -185,7 +188,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-independent"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -197,119 +200,205 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/term-1981.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/term-1981.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/6d22bba/data/Falkland_Islands/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-9d230faf-e035-428d-838f-7848708abd17">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d230faf-e035-428d-838f-7848708abd17">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Anthony Thomas Blake</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Camp
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Anthony Thomas Blake">Anthony Thomas Blake</td>
-                      
-                        <td>Independent</td>
-                        <td>Camp</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c636cd6f-fb28-4606-8891-a2ebd02b08dc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c636cd6f-fb28-4606-8891-a2ebd02b08dc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Edward Cheek</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — West Stanley
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="John Edward Cheek">John Edward Cheek</td>
-                      
-                        <td>Independent</td>
-                        <td>West Stanley</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-63fae433-6182-4ff2-a9cb-3846b8b8a57f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63fae433-6182-4ff2-a9cb-3846b8b8a57f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lionel Geoffrey Blake</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — West Falkland
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Lionel Geoffrey Blake">Lionel Geoffrey Blake</td>
-                      
-                        <td>Independent</td>
-                        <td>West Falkland</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8a4ff9bf-3c0b-4c13-a4fc-0e0b8626cfcd">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a4ff9bf-3c0b-4c13-a4fc-0e0b8626cfcd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ronald Eric Binnie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — East Falkland
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ronald Eric Binnie">Ronald Eric Binnie</td>
-                      
-                        <td>Independent</td>
-                        <td>East Falkland</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5d427660-db2d-4b3f-86f0-314a99cb64ad">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d427660-db2d-4b3f-86f0-314a99cb64ad">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Terence John Peck</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Stanley
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Terence John Peck">Terence John Peck</td>
-                      
-                        <td>Independent</td>
-                        <td>Stanley</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-72a1c546-2e4d-4919-9669-6bcb59fcd5e2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-72a1c546-2e4d-4919-9669-6bcb59fcd5e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">William Henry Goss</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — East Stanley
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="William Henry Goss">William Henry Goss</td>
-                      
-                        <td>Independent</td>
-                        <td>East Stanley</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

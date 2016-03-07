@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2011" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-inite"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -203,1235 +206,2716 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/5cdfe84/data/Haiti/Deputies/term-2011.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/5cdfe84/data/Haiti/Deputies/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/5cdfe84/data/Haiti/Deputies/term-2011.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/5cdfe84/data/Haiti/Deputies/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-69664fa8-696a-4bc8-9307-9f1b304a2488">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="A. Rodon BIEN-AIMÉ">A. Rodon BIEN-AIMÉ</td>
-                      
-                        <td>INITE</td>
-                        <td>Cerca Carvajal et le quartier de Los Palis</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fbf7667f-859f-4763-874c-0ee69445d980">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Abel DESCOLINES">Abel DESCOLINES</td>
-                      
-                        <td>LAVNI</td>
-                        <td>Mirebalais et Boucan Carré</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a064441e-4440-4200-9149-24fa346de627">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Acilus GROS-NÈGRE">Acilus GROS-NÈGRE</td>
-                      
-                        <td>INITE</td>
-                        <td>La Tortue</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-523501fc-c52d-4add-bd98-3b27bb7ea50a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Almétis Junior SAINT FLEUR">Almétis Junior SAINT FLEUR</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Cité Soleil</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-641be0c5-620a-4bd8-be8f-42b22bc1201c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Altes TOUSSAINT">Altes TOUSSAINT</td>
-                      
-                        <td>AAA</td>
-                        <td>St. Marc</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1da8f2fe-a2eb-438e-b28e-9f7b1a8a38e5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amos DURBOIRANT">Amos DURBOIRANT</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Belladère</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-07b860b0-256a-4e5f-85f8-fa2d91078706">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="André Gustave LOUIS">André Gustave LOUIS</td>
-                      
-                        <td>RASANBLE</td>
-                        <td>Kenscoff</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7a20ef96-5920-494e-b3b4-94cf36e54835">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Arinks JEAN-PIERRE">Arinks JEAN-PIERRE</td>
-                      
-                        <td>AAA</td>
-                        <td>Terrier Rouge</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eb5d3cb3-e861-49bc-b06d-01de76c56cac">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Arnel BÉLIZAIRE">Arnel BÉLIZAIRE</td>
-                      
-                        <td>VEYE-YO</td>
-                        <td>Delmas et Tabarre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0fd59660-4e64-430e-9a21-9479d2223804">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Astrel DOLNÉ">Astrel DOLNÉ</td>
-                      
-                        <td>LIBÉRATION</td>
-                        <td>Coteaux</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01253e8a-5f05-44bb-b87f-3042c69b921e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Beguens THÉUS">Beguens THÉUS</td>
-                      
-                        <td>MOCHRENA</td>
-                        <td>Anse-à-Galets et Pointe-à-Raquette</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c56317ca-3d5b-4a47-86a4-fc2c893bb02e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Benjamin OCINJAK">Benjamin OCINJAK</td>
-                      
-                        <td>INITE</td>
-                        <td>Grande-Rivière du Nord et Bahon</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-64b22ffb-59c8-47b8-97d3-743b58aaa202">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bertrand SINAL">Bertrand SINAL</td>
-                      
-                        <td>INITE</td>
-                        <td>Port-Salut</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1591caf5-1a62-4430-89ac-73c3f9f4535f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bilgot COLAS">Bilgot COLAS</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Fort-Liberté, Ferrier et Perches</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d3ac08d9-f904-4e33-b9af-da103ae6d3cc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chancy CHOLZER">Chancy CHOLZER</td>
-                      
-                        <td>AAA</td>
-                        <td>Ennery</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-61c43012-ad71-4742-a7e2-ede2cdd44f57">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Denius FRANCENET">Denius FRANCENET</td>
-                      
-                        <td>INITE</td>
-                        <td>Asile</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-58785409-09d4-422d-8a05-3cac31b44e62">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dieujuste JOHNSON">Dieujuste JOHNSON</td>
-                      
-                        <td>PONT</td>
-                        <td>Jean Rabel</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c2b3d7b5-b346-469c-ae1d-6c4a5c6788b4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dionald Polyte">Dionald Polyte</td>
-                      
-                        <td>...</td>
-                        <td>Pestel et Beaumont</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-180bff5e-25df-4313-b999-97fd2796c0eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dupner CLÉMENT">Dupner CLÉMENT</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Baradères et Grand Boucan</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-211acf16-3a39-42a1-9124-3139531a269a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="E. F. Gérard BOURJOLLY">E. F. Gérard BOURJOLLY</td>
-                      
-                        <td>INITE</td>
-                        <td>Aquin</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9b47543d-4132-4c93-a7a0-06105952f7ff">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Elie BLAISE">Elie BLAISE</td>
-                      
-                        <td>MAS</td>
-                        <td>Carrefour</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29b325f7-ffde-49f7-9e94-ff134c6d5a0f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fanel SALOMON">Fanel SALOMON</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>La Chapelle</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ccaca3ff-a0ee-4e96-8fc0-16b9069fa6e8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="François MALHERBE">François MALHERBE</td>
-                      
-                        <td>INITE</td>
-                        <td>Bainet</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3f9e0612-3caa-44f6-b886-090f3d20b700">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="François SANOZIER">François SANOZIER</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Fonds Verrettes et Ganthier</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3e96c2fe-f9ca-4928-a15b-8af2511fd835">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fritz CHERY">Fritz CHERY</td>
-                      
-                        <td>AAA</td>
-                        <td>Gros Morne</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c8367c5-063f-4ec5-b5a2-06520c5903f8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Frédély GEORGES">Frédély GEORGES</td>
-                      
-                        <td>REPONS PEYIZAN</td>
-                        <td>Pétion-Ville</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10b34a12-dce7-4287-afb8-be61a714886a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="G. Vernex CYRIUS">G. Vernex CYRIUS</td>
-                      
-                        <td>RASANBLE</td>
-                        <td>Pte Rivière de l'Artibonite</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e5940b97-1a33-4565-80bb-4d5f27de3f0f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gandhy DORFEUILLE">Gandhy DORFEUILLE</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>Cavaillon et St Louis du Sud</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-070ced6a-fc9e-4de0-a8f9-19cf840006fd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Garcia DELVA">Garcia DELVA</td>
-                      
-                        <td>LAVNI</td>
-                        <td>Dessalines</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-60a6c898-56bc-43e2-9949-68a3362acf92">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gilbert AUGUSTIN">Gilbert AUGUSTIN</td>
-                      
-                        <td>INITE</td>
-                        <td>Hinche</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2003adfc-b1cd-4c2b-9014-280219d409ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guerda B. BENJAMIN">Guerda B. BENJAMIN</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>Savanette et le quartier de Baptiste</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d573a73-e960-4a72-8b18-1526f337685a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guy Gérard GEORGES">Guy Gérard GEORGES</td>
-                      
-                        <td>INITE</td>
-                        <td>Torbeck et de Chantal</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8d646a2-e9ab-42a3-a85d-9cc40acdb6ab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Harold CHÉRY">Harold CHÉRY</td>
-                      
-                        <td>RASANBLE</td>
-                        <td>Saint Raphael et Dondon</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fbdabb17-c517-400b-8468-6e54bf084bf6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jacinthe SOREL">Jacinthe SOREL</td>
-                      
-                        <td>INITE</td>
-                        <td>Moron et Chamberllan</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ce82c72e-1101-44f5-80c7-7bea7415a2db">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Acklush LOUIS JEUNE">Jean Acklush LOUIS JEUNE</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Dame Marie</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-85374fe1-0d1d-4957-bf70-0679e09a037d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Bertold BASTIEN">Jean Bertold BASTIEN</td>
-                      
-                        <td>INITE</td>
-                        <td>Vallières, Carice et Mombrun Crochu</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ec38cc52-0dcc-470f-928f-1b6086065042">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Camilles DESMARATATTES">Jean Camilles DESMARATATTES</td>
-                      
-                        <td>INITE</td>
-                        <td>Thiotte et Grand Gosier</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-03ca2db0-eac0-4b4a-962a-24436434443c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Danton LEGER">Jean Danton LEGER</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>Léogâne</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e5d4c33f-1af8-4de1-b5a5-66b317518d33">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Fenel THANIS">Jean Fenel THANIS</td>
-                      
-                        <td>REPONS PEYIZAN</td>
-                        <td>Cayes et l'Ile à Vaches</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a5b92846-ca49-4de7-b085-e7d187339b58">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean René LOCHARD">Jean René LOCHARD</td>
-                      
-                        <td>KONBIT</td>
-                        <td>Zone Est (2)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7ee32f4-6b54-4837-86aa-a89ed04d830d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Rigaud BÉLIZAIRE">Jean Rigaud BÉLIZAIRE</td>
-                      
-                        <td>INITE</td>
-                        <td>Abricot et Bonbon</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2d7c9a3f-953d-42ad-be0d-c0b2a11e9f57">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Romélus LISMA">Jean Romélus LISMA</td>
-                      
-                        <td>LIBÉRATION</td>
-                        <td>Chardonnières et les Anglais</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d32070f-7c07-4266-941c-bfbc5a899826">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Ronald OSCAR">Jean Ronald OSCAR</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Gressier</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-97cd402b-b68c-4087-9b73-040598199054">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Rupert LAFOREST">Jean Rupert LAFOREST</td>
-                      
-                        <td>INITE</td>
-                        <td>Jérémie</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-90522354-f4c9-4ea4-8d09-b13ca9e17c91">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean Tholbert ALEXIS">Jean Tholbert ALEXIS</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>Croix des Bouquets et Thomazeau</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6369808-2c62-418c-983d-b875767a129f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean-Dany DUVERT">Jean-Dany DUVERT</td>
-                      
-                        <td>INITE</td>
-                        <td>Arcahaie</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ec40f5c1-4817-4452-87f2-222ffd0238fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jean-Pierre ROSSINI">Jean-Pierre ROSSINI</td>
-                      
-                        <td>INITE</td>
-                        <td>Belle Anse</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10fa77d7-5d01-45e5-8696-fb603741a985">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jobes Jolicaire MICHEL">Jobes Jolicaire MICHEL</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Acul du Nord</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f68e363c-86f4-4e38-acec-436795173971">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jodson Leroy ROSEMOND">Jodson Leroy ROSEMOND</td>
-                      
-                        <td>INDÉP.</td>
-                        <td>Anse Rouge et Terre Neuve</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-297e828c-c39b-4101-8ad9-bc40ba341f98">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Benoit LAGUERRE">Joseph Benoit LAGUERRE</td>
-                      
-                        <td>AAA</td>
-                        <td>St Jean du Sud et d'Arniquet</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7797f86e-c737-493b-9128-a416cac92b5e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Franck LAPORTE">Joseph Franck LAPORTE</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>Grand-Goâve</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d7acced-1e2b-4bfa-af73-da7c5a4dcbd3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Martial DÉPAS">Joseph Martial DÉPAS</td>
-                      
-                        <td>AAA</td>
-                        <td>Cabaret</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c1ee32d5-972b-41e8-8384-3b2d97e34131">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph PATRICK">Joseph PATRICK</td>
-                      
-                        <td>INITE</td>
-                        <td>Marmelade et St Michel</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-46106e60-ccac-457e-b640-ed48c75cfd43">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph Wilbert DESHOMMES">Joseph Wilbert DESHOMMES</td>
-                      
-                        <td>INITE</td>
-                        <td>Grande Saline</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d35ec895-a795-4b0d-a7c8-4443cf8b83e2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jude Charles FAUSTIN">Jude Charles FAUSTIN</td>
-                      
-                        <td>KONBIT</td>
-                        <td>Borgne et Port-Margot</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9aaf3181-36f7-44c1-bf6e-80661f719877">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jules LyoneL ANELUS">Jules LyoneL ANELUS</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>L'Estère</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6d964b0c-1966-4ae3-ba81-b9b6c8f37f9b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Julner LAINÉ">Julner LAINÉ</td>
-                      
-                        <td>INITE</td>
-                        <td>Port à Piment</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-74eed9f4-41c0-472c-94c0-98652898751e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jusclair DORGIL">Jusclair DORGIL</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Bombardopolis et Baie de Henne</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-615e66e5-e7dd-4534-b723-9d4fbf89d14f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kenston JEAN-BAPTISTE">Kenston JEAN-BAPTISTE</td>
-                      
-                        <td>PLAPH</td>
-                        <td>Cap-Haitien</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-352411ef-c255-45d4-af10-cd55b4c8204d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kénol CHARLES">Kénol CHARLES</td>
-                      
-                        <td>INDÉP.</td>
-                        <td>Marigot et Cayes-Jacmel</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-75ce2d18-13ac-4579-a5ee-f7fcb5ad3863">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lamarre BAPTISTE">Lamarre BAPTISTE</td>
-                      
-                        <td>INITE</td>
-                        <td>Cornillon</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f9f3777c-28ca-4588-95c8-b1930eddcb79">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Leslie GUIRAND">Leslie GUIRAND</td>
-                      
-                        <td>INITE</td>
-                        <td>Côtes de Fer</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bf6ac2e4-49e5-491e-bea4-c6388f54f5df">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Levaillant LOUIS JEUNE">Levaillant LOUIS JEUNE</td>
-                      
-                        <td>INITE</td>
-                        <td>Desdunes</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-082a9ba4-6a83-4be8-8a37-b79ff7d0fd6c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Louinor SAINTIMA">Louinor SAINTIMA</td>
-                      
-                        <td>INITE</td>
-                        <td>Tiburon et le quartier de la Cahôanne</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-05b74475-5fb8-4ce3-898a-fe7270c4793e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Louis FRANDY">Louis FRANDY</td>
-                      
-                        <td>LAVNI</td>
-                        <td>Limbé et Bas-Limbé</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d2ddb80d-1b8d-4f94-aac8-8b9ecb056ac3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Louis Marie BONHOMME">Louis Marie BONHOMME</td>
-                      
-                        <td>PONT</td>
-                        <td>Saint Louis du Nord et Anse à Foleur</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4397e30f-7ff7-4b50-bc99-81a6125ad78c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Louystz Amyot FRANÇOIS">Louystz Amyot FRANÇOIS</td>
-                      
-                        <td>INITE</td>
-                        <td>Port-de-Paix</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9578e5b6-f6bc-416c-aa19-eaf0b338c21a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luberne PIERRE">Luberne PIERRE</td>
-                      
-                        <td>LAVNI</td>
-                        <td>Petit-Trou de Nippes et Plaisance du Sud</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5759ad87-7f81-470d-8d5a-7bd434ef0b9e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luckner NOËL">Luckner NOËL</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Ouanaminthe</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-98d69180-646f-4c78-9577-39441847c98c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="M'Zou Naya JEAN-BAPTISTE">M'Zou Naya JEAN-BAPTISTE</td>
-                      
-                        <td>REPONS PEYIZAN</td>
-                        <td>Zone Sud (3)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc6b9d75-bb05-4987-bebf-b8cfcbd704fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marie Denise BERNADEAU">Marie Denise BERNADEAU</td>
-                      
-                        <td>LAVNI</td>
-                        <td>Thomonde</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c22f249d-e5f1-4491-9997-4345f3940123">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marie Jossie ETIENNE">Marie Jossie ETIENNE</td>
-                      
-                        <td>RASANBLE</td>
-                        <td>Plaine du Nord et Milot</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ba12be9e-dde1-47fc-b9a1-80b9202fb8c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Markentz SIGUE">Markentz SIGUE</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Lascahobas</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e37ede15-1bb3-4370-a239-10d350c0bff6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nelson HIDSON">Nelson HIDSON</td>
-                      
-                        <td>INITE</td>
-                        <td>Pignon, Ranquitte et La Victoire</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7b724d18-5c5d-4a6b-85f7-872db46938fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ogline PIERRE">Ogline PIERRE</td>
-                      
-                        <td>MOCHRENA</td>
-                        <td>Camp Perrin et de Maniche</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aef0b172-49b2-463f-ab37-c75df78a276b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Orélien JOACHIM">Orélien JOACHIM</td>
-                      
-                        <td>INITE</td>
-                        <td>Anse d'Hainault et les Irois</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ee5c1fc4-26f1-4d80-aae6-95a64a72eee7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Patrick DUMOND">Patrick DUMOND</td>
-                      
-                        <td>INITE</td>
-                        <td>Jacmel et le Quartier de Marbial</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7906343d-f31c-408d-a12d-f86a710efbf5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Patrick ROBASSON">Patrick ROBASSON</td>
-                      
-                        <td>INITE</td>
-                        <td>Anse à Pitre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-abd910c0-d40a-4d57-a75c-eb873f27f5f6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Paul Olivar MICHEL">Paul Olivar MICHEL</td>
-                      
-                        <td>INITE</td>
-                        <td>Roche à Bateaux</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-917cde1e-2cd6-479e-b71f-35acd17e7ff5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Perilus WORMS">Perilus WORMS</td>
-                      
-                        <td>INITE</td>
-                        <td>Pilate</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-930a83c5-c660-4f7c-9731-f25bfa7dd1cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pierre TATOUTE">Pierre TATOUTE</td>
-                      
-                        <td>INITE</td>
-                        <td>Bassin Bleu et Chansolme</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-577bde55-acc8-465d-9c3e-d84da12da402">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pierrogene DAVILMAR">Pierrogene DAVILMAR</td>
-                      
-                        <td>INITE</td>
-                        <td>Ste Suzanne</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-54178011-20af-4406-8eed-e6ece19c29ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Poly FAUSTIN">Poly FAUSTIN</td>
-                      
-                        <td>INITE</td>
-                        <td>Miragoâne et Fonds des Nègres</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-16e786c5-e9d1-4dbe-9062-22602eacb6f9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Renaud JEAN-BAPTISTE">Renaud JEAN-BAPTISTE</td>
-                      
-                        <td>KONBIT</td>
-                        <td>Plaisance</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-617b21d9-3a16-476c-9223-0189e0dbdeba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rodriguez SÉJOUR">Rodriguez SÉJOUR</td>
-                      
-                        <td>LIBÉRATION</td>
-                        <td>Zone Nord (1)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3fa75861-25f4-4493-8987-3dfa1204d622">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Romain MUSSET">Romain MUSSET</td>
-                      
-                        <td>MAS</td>
-                        <td>Maïssade</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-de4a69bf-14b2-4b8e-86ae-87266015bbef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Romuald SMITH">Romuald SMITH</td>
-                      
-                        <td>INITE</td>
-                        <td>Saut d'Eau</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-227023ed-be30-41b7-806a-15596fb3a3ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ronald LARECHE">Ronald LARECHE</td>
-                      
-                        <td>INITE</td>
-                        <td>Mont-Organisé et Capotille</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-912a3c23-8ce7-45e4-9db0-2017f49b3e98">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rony CÉLESTIN">Rony CÉLESTIN</td>
-                      
-                        <td>LAVNI</td>
-                        <td>Cerca la Source et Thomassique</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c6723b6b-eb7a-4975-ac45-f310fa60902b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ruffine LABBE">Ruffine LABBE</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>La Vallée de Jacmel</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b4513456-bf26-494b-9b26-814b00e43e24">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sadrac DIEUDONNÉ">Sadrac DIEUDONNÉ</td>
-                      
-                        <td>MOCHRENA</td>
-                        <td>Gonaives</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-858f08c1-d9c2-4847-9c15-75e6c03c8220">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Stevenson Jacques THIMOLÉON">Stevenson Jacques THIMOLÉON</td>
-                      
-                        <td>LAVNI</td>
-                        <td>Petit-Goâve</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-49280f38-e50f-4afe-ace6-84c792599034">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Teophile GLUCK">Teophile GLUCK</td>
-                      
-                        <td>AAA</td>
-                        <td>Limonade et Quartier Morin</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-43e82d1f-8d3d-4478-ba05-e4d1f74234bf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ulrick FILOCSAINT">Ulrick FILOCSAINT</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>Petite Rivière de Nippes et Paillant</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-150cb273-4dc2-4ac2-9580-abd02c95bb9d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Victor RONALD">Victor RONALD</td>
-                      
-                        <td>RESPÈ</td>
-                        <td>Corail et Roseaux</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4776a60-1a42-45e2-9a13-b82c1e8ca313">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vikens DERILUS">Vikens DERILUS</td>
-                      
-                        <td>MODELH</td>
-                        <td>Verrettes</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fce631d4-05e4-4010-adf0-770850ef37ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Wanique PIERRE">Wanique PIERRE</td>
-                      
-                        <td>AAA</td>
-                        <td>Trou du Nord et Caracol</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fd5ecba4-8b6a-445f-b95c-e60aa1c6862c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Wilner GUERVIL">Wilner GUERVIL</td>
-                      
-                        <td>ANSANM NOU FÒ</td>
-                        <td>Anse à Veau et dArnaud</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9ef82a96-cd87-49d6-8768-586ce10e26fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Éloune DORÉUS">Éloune DORÉUS</td>
-                      
-                        <td>ALTERNATIVE</td>
-                        <td>Môle Saint Nicolas,</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-69664fa8-696a-4bc8-9307-9f1b304a2488">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">A. Rodon BIEN-AIMÉ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Cerca Carvajal et le quartier de Los Palis
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fbf7667f-859f-4763-874c-0ee69445d980">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Abel DESCOLINES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LAVNI — Mirebalais et Boucan Carré
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a064441e-4440-4200-9149-24fa346de627">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Acilus GROS-NÈGRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — La Tortue
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-523501fc-c52d-4add-bd98-3b27bb7ea50a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Almétis Junior SAINT FLEUR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Cité Soleil
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-641be0c5-620a-4bd8-be8f-42b22bc1201c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Altes TOUSSAINT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — St. Marc
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1da8f2fe-a2eb-438e-b28e-9f7b1a8a38e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Amos DURBOIRANT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Belladère
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-07b860b0-256a-4e5f-85f8-fa2d91078706">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">André Gustave LOUIS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RASANBLE — Kenscoff
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7a20ef96-5920-494e-b3b4-94cf36e54835">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Arinks JEAN-PIERRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — Terrier Rouge
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb5d3cb3-e861-49bc-b06d-01de76c56cac">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Arnel BÉLIZAIRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              VEYE-YO — Delmas et Tabarre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0fd59660-4e64-430e-9a21-9479d2223804">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Astrel DOLNÉ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LIBÉRATION — Coteaux
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01253e8a-5f05-44bb-b87f-3042c69b921e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Beguens THÉUS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MOCHRENA — Anse-à-Galets et Pointe-à-Raquette
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c56317ca-3d5b-4a47-86a4-fc2c893bb02e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Benjamin OCINJAK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Grande-Rivière du Nord et Bahon
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-64b22ffb-59c8-47b8-97d3-743b58aaa202">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bertrand SINAL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Port-Salut
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1591caf5-1a62-4430-89ac-73c3f9f4535f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bilgot COLAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Fort-Liberté, Ferrier et Perches
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d3ac08d9-f904-4e33-b9af-da103ae6d3cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Chancy CHOLZER</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — Ennery
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-61c43012-ad71-4742-a7e2-ede2cdd44f57">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Denius FRANCENET</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Asile
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58785409-09d4-422d-8a05-3cac31b44e62">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dieujuste JOHNSON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PONT — Jean Rabel
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c2b3d7b5-b346-469c-ae1d-6c4a5c6788b4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dionald Polyte</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ... — Pestel et Beaumont
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-180bff5e-25df-4313-b999-97fd2796c0eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dupner CLÉMENT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Baradères et Grand Boucan
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-211acf16-3a39-42a1-9124-3139531a269a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">E. F. Gérard BOURJOLLY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Aquin
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9b47543d-4132-4c93-a7a0-06105952f7ff">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Elie BLAISE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAS — Carrefour
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29b325f7-ffde-49f7-9e94-ff134c6d5a0f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fanel SALOMON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — La Chapelle
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ccaca3ff-a0ee-4e96-8fc0-16b9069fa6e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">François MALHERBE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Bainet
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3f9e0612-3caa-44f6-b886-090f3d20b700">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">François SANOZIER</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Fonds Verrettes et Ganthier
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3e96c2fe-f9ca-4928-a15b-8af2511fd835">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fritz CHERY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — Gros Morne
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c8367c5-063f-4ec5-b5a2-06520c5903f8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Frédély GEORGES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              REPONS PEYIZAN — Pétion-Ville
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10b34a12-dce7-4287-afb8-be61a714886a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">G. Vernex CYRIUS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RASANBLE — Pte Rivière de l'Artibonite
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e5940b97-1a33-4565-80bb-4d5f27de3f0f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gandhy DORFEUILLE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — Cavaillon et St Louis du Sud
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-070ced6a-fc9e-4de0-a8f9-19cf840006fd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Garcia DELVA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LAVNI — Dessalines
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-60a6c898-56bc-43e2-9949-68a3362acf92">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gilbert AUGUSTIN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Hinche
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2003adfc-b1cd-4c2b-9014-280219d409ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Guerda B. BENJAMIN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — Savanette et le quartier de Baptiste
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d573a73-e960-4a72-8b18-1526f337685a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Guy Gérard GEORGES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Torbeck et de Chantal
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8d646a2-e9ab-42a3-a85d-9cc40acdb6ab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Harold CHÉRY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RASANBLE — Saint Raphael et Dondon
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fbdabb17-c517-400b-8468-6e54bf084bf6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jacinthe SOREL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Moron et Chamberllan
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ce82c72e-1101-44f5-80c7-7bea7415a2db">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Acklush LOUIS JEUNE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Dame Marie
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85374fe1-0d1d-4957-bf70-0679e09a037d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Bertold BASTIEN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Vallières, Carice et Mombrun Crochu
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ec38cc52-0dcc-470f-928f-1b6086065042">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Camilles DESMARATATTES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Thiotte et Grand Gosier
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-03ca2db0-eac0-4b4a-962a-24436434443c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Danton LEGER</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — Léogâne
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e5d4c33f-1af8-4de1-b5a5-66b317518d33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Fenel THANIS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              REPONS PEYIZAN — Cayes et l'Ile à Vaches
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a5b92846-ca49-4de7-b085-e7d187339b58">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean René LOCHARD</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              KONBIT — Zone Est (2)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7ee32f4-6b54-4837-86aa-a89ed04d830d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Rigaud BÉLIZAIRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Abricot et Bonbon
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2d7c9a3f-953d-42ad-be0d-c0b2a11e9f57">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Romélus LISMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LIBÉRATION — Chardonnières et les Anglais
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d32070f-7c07-4266-941c-bfbc5a899826">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Ronald OSCAR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Gressier
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-97cd402b-b68c-4087-9b73-040598199054">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Rupert LAFOREST</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Jérémie
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-90522354-f4c9-4ea4-8d09-b13ca9e17c91">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Tholbert ALEXIS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — Croix des Bouquets et Thomazeau
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6369808-2c62-418c-983d-b875767a129f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean-Dany DUVERT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Arcahaie
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ec40f5c1-4817-4452-87f2-222ffd0238fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean-Pierre ROSSINI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Belle Anse
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10fa77d7-5d01-45e5-8696-fb603741a985">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jobes Jolicaire MICHEL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Acul du Nord
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f68e363c-86f4-4e38-acec-436795173971">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jodson Leroy ROSEMOND</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INDÉP. — Anse Rouge et Terre Neuve
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-297e828c-c39b-4101-8ad9-bc40ba341f98">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joseph Benoit LAGUERRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — St Jean du Sud et d'Arniquet
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7797f86e-c737-493b-9128-a416cac92b5e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joseph Franck LAPORTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — Grand-Goâve
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d7acced-1e2b-4bfa-af73-da7c5a4dcbd3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joseph Martial DÉPAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — Cabaret
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c1ee32d5-972b-41e8-8384-3b2d97e34131">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joseph PATRICK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Marmelade et St Michel
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-46106e60-ccac-457e-b640-ed48c75cfd43">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joseph Wilbert DESHOMMES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Grande Saline
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d35ec895-a795-4b0d-a7c8-4443cf8b83e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jude Charles FAUSTIN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              KONBIT — Borgne et Port-Margot
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9aaf3181-36f7-44c1-bf6e-80661f719877">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jules LyoneL ANELUS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — L'Estère
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6d964b0c-1966-4ae3-ba81-b9b6c8f37f9b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Julner LAINÉ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Port à Piment
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-74eed9f4-41c0-472c-94c0-98652898751e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jusclair DORGIL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Bombardopolis et Baie de Henne
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-615e66e5-e7dd-4534-b723-9d4fbf89d14f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kenston JEAN-BAPTISTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLAPH — Cap-Haitien
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-352411ef-c255-45d4-af10-cd55b4c8204d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kénol CHARLES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INDÉP. — Marigot et Cayes-Jacmel
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-75ce2d18-13ac-4579-a5ee-f7fcb5ad3863">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lamarre BAPTISTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Cornillon
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f9f3777c-28ca-4588-95c8-b1930eddcb79">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Leslie GUIRAND</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Côtes de Fer
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bf6ac2e4-49e5-491e-bea4-c6388f54f5df">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Levaillant LOUIS JEUNE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Desdunes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-082a9ba4-6a83-4be8-8a37-b79ff7d0fd6c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Louinor SAINTIMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Tiburon et le quartier de la Cahôanne
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-05b74475-5fb8-4ce3-898a-fe7270c4793e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Louis FRANDY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LAVNI — Limbé et Bas-Limbé
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d2ddb80d-1b8d-4f94-aac8-8b9ecb056ac3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Louis Marie BONHOMME</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PONT — Saint Louis du Nord et Anse à Foleur
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4397e30f-7ff7-4b50-bc99-81a6125ad78c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Louystz Amyot FRANÇOIS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Port-de-Paix
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9578e5b6-f6bc-416c-aa19-eaf0b338c21a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Luberne PIERRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LAVNI — Petit-Trou de Nippes et Plaisance du Sud
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5759ad87-7f81-470d-8d5a-7bd434ef0b9e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Luckner NOËL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Ouanaminthe
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-98d69180-646f-4c78-9577-39441847c98c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">M'Zou Naya JEAN-BAPTISTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              REPONS PEYIZAN — Zone Sud (3)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc6b9d75-bb05-4987-bebf-b8cfcbd704fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie Denise BERNADEAU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LAVNI — Thomonde
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c22f249d-e5f1-4491-9997-4345f3940123">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie Jossie ETIENNE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RASANBLE — Plaine du Nord et Milot
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ba12be9e-dde1-47fc-b9a1-80b9202fb8c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Markentz SIGUE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Lascahobas
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e37ede15-1bb3-4370-a239-10d350c0bff6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nelson HIDSON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Pignon, Ranquitte et La Victoire
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7b724d18-5c5d-4a6b-85f7-872db46938fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ogline PIERRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MOCHRENA — Camp Perrin et de Maniche
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aef0b172-49b2-463f-ab37-c75df78a276b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Orélien JOACHIM</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Anse d'Hainault et les Irois
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee5c1fc4-26f1-4d80-aae6-95a64a72eee7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Patrick DUMOND</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Jacmel et le Quartier de Marbial
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7906343d-f31c-408d-a12d-f86a710efbf5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Patrick ROBASSON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Anse à Pitre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-abd910c0-d40a-4d57-a75c-eb873f27f5f6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Paul Olivar MICHEL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Roche à Bateaux
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-917cde1e-2cd6-479e-b71f-35acd17e7ff5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Perilus WORMS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Pilate
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-930a83c5-c660-4f7c-9731-f25bfa7dd1cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pierre TATOUTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Bassin Bleu et Chansolme
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-577bde55-acc8-465d-9c3e-d84da12da402">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pierrogene DAVILMAR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Ste Suzanne
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-54178011-20af-4406-8eed-e6ece19c29ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Poly FAUSTIN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Miragoâne et Fonds des Nègres
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-16e786c5-e9d1-4dbe-9062-22602eacb6f9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Renaud JEAN-BAPTISTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              KONBIT — Plaisance
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-617b21d9-3a16-476c-9223-0189e0dbdeba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rodriguez SÉJOUR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LIBÉRATION — Zone Nord (1)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3fa75861-25f4-4493-8987-3dfa1204d622">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Romain MUSSET</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAS — Maïssade
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-de4a69bf-14b2-4b8e-86ae-87266015bbef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Romuald SMITH</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Saut d'Eau
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-227023ed-be30-41b7-806a-15596fb3a3ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ronald LARECHE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              INITE — Mont-Organisé et Capotille
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-912a3c23-8ce7-45e4-9db0-2017f49b3e98">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rony CÉLESTIN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LAVNI — Cerca la Source et Thomassique
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c6723b6b-eb7a-4975-ac45-f310fa60902b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ruffine LABBE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — La Vallée de Jacmel
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b4513456-bf26-494b-9b26-814b00e43e24">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sadrac DIEUDONNÉ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MOCHRENA — Gonaives
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-858f08c1-d9c2-4847-9c15-75e6c03c8220">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Stevenson Jacques THIMOLÉON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LAVNI — Petit-Goâve
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-49280f38-e50f-4afe-ace6-84c792599034">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Teophile GLUCK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — Limonade et Quartier Morin
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-43e82d1f-8d3d-4478-ba05-e4d1f74234bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ulrick FILOCSAINT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — Petite Rivière de Nippes et Paillant
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-150cb273-4dc2-4ac2-9580-abd02c95bb9d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Victor RONALD</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RESPÈ — Corail et Roseaux
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4776a60-1a42-45e2-9a13-b82c1e8ca313">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Vikens DERILUS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MODELH — Verrettes
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fce631d4-05e4-4010-adf0-770850ef37ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wanique PIERRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AAA — Trou du Nord et Caracol
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd5ecba4-8b6a-445f-b95c-e60aa1c6862c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wilner GUERVIL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANSANM NOU FÒ — Anse à Veau et dArnaud
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9ef82a96-cd87-49d6-8768-586ce10e26fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Éloune DORÉUS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALTERNATIVE — Môle Saint Nicolas,
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

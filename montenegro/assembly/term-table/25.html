@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="Skupština Crne Gore 2012 - 2015" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-demokratska-partija-socijalista"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -155,1031 +158,2585 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b28f5a7/data/Montenegro/Assembly/term-25.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b28f5a7/data/Montenegro/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b28f5a7/data/Montenegro/Assembly/term-25.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b28f5a7/data/Montenegro/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-9ee1acbc-2733-4ae1-91c1-38465920742a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Almer Kalač">Almer Kalač</td>
-                      
-                        <td>Bošnjačka stranka</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f76ec47f-b8d0-479c-8699-9a8aaf27ea25">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Andrija Mandić">Andrija Mandić</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6efdba28-a404-4775-b951-5eb292ed3e4b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Andrija Popović">Andrija Popović</td>
-                      
-                        <td>Liberalna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-df76ef9f-daf5-4a71-90c5-8e79100fd077">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Azra Jasavić">Azra Jasavić</td>
-                      
-                        <td>Pozitivna Crna Gora</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f668786a-530c-459b-a103-86ed4912d7c4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Borislav Banović">Borislav Banović</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-20caa436-db59-4228-a646-9d7f2548db52">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Branko Čavor">Branko Čavor</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3afa6f56-ccfc-468b-904b-aef7771b2082">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Damir Šehović">Damir Šehović</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-065576f9-95d7-46b7-8a28-f6897ba830c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Danijela - Danka Marković">Danijela - Danka Marković</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f75bac0c-80dd-4bc9-a35f-8fb70301e85a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Darko Pajović">Darko Pajović</td>
-                      
-                        <td>Pozitivna Crna Gora</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-76349bbe-891e-40f5-8746-49d19b19da09">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr Jasmin Sutović">Dr Jasmin Sutović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-672c6d25-bce0-4809-8725-d6fb20e1690c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Draginja Vuksanović">Draginja Vuksanović</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ba91335f-bbd3-45a2-8b89-5eb26dc42eeb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Džavid Šabović">Džavid Šabović</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-64551440-bc21-45cc-a0b8-7b2c7b00e844">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emilo Labudović">Emilo Labudović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d158a7e-b14c-40c6-9d10-28a3f66902d9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Genci Nimanbegu">Genci Nimanbegu</td>
-                      
-                        <td>Forca</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a6f8c8b4-86b9-4453-82de-5c524cb1fe02">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Goran Danilović">Goran Danilović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-65a05023-4e8e-403d-96a5-eb9c25ab8024">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Goran Tuponja">Goran Tuponja</td>
-                      
-                        <td>Pozitivna Crna Gora</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-147470f5-8eca-4948-8716-a71b32de11df">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Husnija Šabović">Husnija Šabović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4ed79e4b-0160-48cc-9477-e3d69f2ff394">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Janko Vučinić">Janko Vučinić</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-131c1380-f78f-40a3-88a4-f68b1b0c9a9b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Koča Pavlović">Koča Pavlović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-895b6040-600d-4e77-9090-d50827320569">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ljerka Dragičević">Ljerka Dragičević</td>
-                      
-                        <td>Hrvatska građanska inicijativa</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b116bf9-290b-4280-bf43-f1525777f134">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luiđ Ljubo Škrelja">Luiđ Ljubo Škrelja</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-55c6a197-9412-4474-820d-5aa8ad269cc1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maida Bešlić">Maida Bešlić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3c85efa6-e214-4507-bbb6-48fc1970da5f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marija Maja Ćatović">Marija Maja Ćatović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50caf967-b942-4a7c-9d51-317697f4cc68">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Marta Šćepanović">Marta Šćepanović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5b730dfe-8845-4263-b93c-ddb8df5fc015">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mevludin Nuhodžić">Mevludin Nuhodžić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9440bcac-9474-4f9f-840a-73987ff7b038">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Milan Knežević">Milan Knežević</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1dce56b5-56f5-4661-9703-d1c28fb39b65">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Milorad Vuletić">Milorad Vuletić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3e2e62b7-2428-4ba1-8215-33422d12807e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Milutin Đukanović">Milutin Đukanović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-327f5d19-90ea-42a8-ab20-d3c920a7542e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Miodrag Lekić">Miodrag Lekić</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ec5ed24b-4864-42ca-826e-953011c41cf7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mićo Orlandić">Mićo Orlandić</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d1fe641-1345-428e-a8f7-4e0ba6320017">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mladen Bojanić">Mladen Bojanić</td>
-                      
-                        <td>Pozitivna Crna Gora</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4728515c-c2c9-453a-b347-08102ca4e6fc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nada Drobnjak">Nada Drobnjak</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-82a22df0-db25-4317-bd37-11af960bee00">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nebojša Medojević">Nebojša Medojević</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-27a62f13-66b4-49ae-84cc-75a1a9f9052c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Neven Gošović">Neven Gošović</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-242833b1-f02f-4d69-b7dc-e4d2540c6ac9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nik Gjeloshaj">Nik Gjeloshaj</td>
-                      
-                        <td>Demokratska partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-82c33f3a-ecad-4e2c-80fe-5bbb9b95e911">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nikola Gegaj">Nikola Gegaj</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5cfd4a91-6778-4e10-a6b8-934464bfc58b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Obrad Gojković">Obrad Gojković</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-516a97ac-b3e6-4874-a852-9ab35e8263d2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Obrad Mišo Stanišić">Obrad Mišo Stanišić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-85db918c-efd4-4fdd-8333-00404fc98613">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Predrag Bulatović">Predrag Bulatović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-362441f3-cb63-4d31-803e-75e6c709cdfe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Prim.dr Izet Bralić">Prim.dr Izet Bralić</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8102d0ae-95da-4010-b779-2f1bd4d3fb04">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Prof. dr Branko Radulović">Prof. dr Branko Radulović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9ee8db7c-6ed0-44ad-a7b2-47a487f3ed4c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Prof. dr Jelisava Kalezić">Prof. dr Jelisava Kalezić</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-643ebcb1-a88c-43b9-b295-b8ce68277d44">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Prof. dr Miodrag Vuković">Prof. dr Miodrag Vuković</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e94942b7-aaa4-41ea-90f0-da00a55bef0e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Radivoje Lala Nikčević">Radivoje Lala Nikčević</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fbe6f435-6652-41c0-bf32-2e9091086edc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Radovan Obradović">Radovan Obradović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dd4700f5-4d58-4ffe-b26b-4e759951e864">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ranko Krivokapić">Ranko Krivokapić</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d1e2a886-2aaf-4ca5-abb3-be00ff18b784">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rešad Sijarić">Rešad Sijarić</td>
-                      
-                        <td>Bošnjačka stranka</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-45ea72dc-1cc2-4d6c-a55d-ca421af5c2c3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rešid Adrović">Rešid Adrović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-08351b00-a6c6-4406-950f-cde372e17a73">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rifat Rastoder">Rifat Rastoder</td>
-                      
-                        <td>Socijaldemokratska partija Crne Gore</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-85a77b4e-8e8b-4a59-86a1-fb66d532b4dc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saša Pešić">Saša Pešić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-51e900c0-21dc-4c74-9fe2-73cbd6f29d44">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Slaven Radunović">Slaven Radunović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-503b172d-f333-4a00-8d2b-1bf676f30961">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Slobodan Krušo Radović">Slobodan Krušo Radović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f68c75b4-2c65-489f-b114-a51af52d8593">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Snežana Jonica">Snežana Jonica</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d11b5511-0a9d-4059-b5f1-727607a2351d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Srđan Milić">Srđan Milić</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10cbddd7-7de9-4fe3-9917-f2188df70d04">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Srđan Perić">Srđan Perić</td>
-                      
-                        <td>Pozitivna Crna Gora</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-254ae1d0-63a1-4b91-a81f-a3f2356672c5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Suljo Mustafić">Suljo Mustafić</td>
-                      
-                        <td>Bošnjačka stranka</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f62bab05-b234-4b66-b0f0-69f89fa68dfa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tarzan Milošević">Tarzan Milošević</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c4c0f564-f3cb-4523-accf-64a00aa4607d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Velizar Kaluđerović">Velizar Kaluđerović</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e6b26f2f-92ee-426a-a47c-af5d096e7aa7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Veljko Vasiljević">Veljko Vasiljević</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0263e85f-6ff4-4e37-93a2-418d41066a02">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Veljko Zarubica">Veljko Zarubica</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2910207e-4a43-4c7b-9fee-a11d59170353">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vladislav Bojović">Vladislav Bojović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-19e03b41-9de9-4a01-8820-926d0c692e17">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zoran Jelić">Zoran Jelić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-db8dfec5-257e-45e8-afc5-f34f465ce108">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zoran Miljanić">Zoran Miljanić</td>
-                      
-                        <td>Pozitivna Crna Gora</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e589ec4-46da-44ed-be03-c3d3ed545503">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zorica Kovačević">Zorica Kovačević</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-df5ce57d-90bf-4c4c-a945-8f13ca525b57">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="doc. dr Branka Bošnjak">doc. dr Branka Bošnjak</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ea41c8d-6f80-445e-8457-7e888a451982">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="doc. dr Srđa Popović">doc. dr Srđa Popović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a08c06c2-b4fb-4041-95f6-2fe370dfd7e8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Filip Vuković">dr Filip Vuković</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e8eb945f-4688-45b1-90fd-55b3323b8277">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Halil Duković">dr Halil Duković</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-518219a0-66eb-4a1b-a9ac-d74a53060065">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Ljiljana Đurašković">dr Ljiljana Đurašković</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1aaa186-579b-4e70-b4e3-438cfd386c70">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Novica Stanić">dr Novica Stanić</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-619a8b58-fc8a-429f-9d37-65dc483037fa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Predrag Sekulić">dr Predrag Sekulić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8edd3d0f-01a1-4843-b4cb-75c3d2ad45ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Radosav Nišavić">dr Radosav Nišavić</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0dc9cbb2-321f-45f5-8a60-98fd3ad4499c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Radovan Asanović">dr Radovan Asanović</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8d7b26e-88a7-4c20-b0c1-d4f697800516">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="dr Strahinja Bulajić">dr Strahinja Bulajić</td>
-                      
-                        <td>Demokratski front</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2d4ce6fa-443b-444a-943d-a288a7f3af67">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="mr Aleksandar Damjanović">mr Aleksandar Damjanović</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-afe8671c-6603-42f1-8316-763c3f812c41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="mr Branka Tanasijević">mr Branka Tanasijević</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7370f3dd-a5ba-48af-82d0-8825db49a4ea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="mr Danko Šarančić">mr Danko Šarančić</td>
-                      
-                        <td>Socijalistička narodna partija</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9c3514f6-b134-4216-a0c3-1e45e8cf7d16">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="mr Dritan Abazović">mr Dritan Abazović</td>
-                      
-                        <td>Pozitivna Crna Gora</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7a70ef4c-44cd-45aa-8994-02fd29838544">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="mr Milutin Simović">mr Milutin Simović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-082adf64-7b29-4075-9e83-80c511dc87eb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Šefkija Murić">Šefkija Murić</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f314b688-a731-40c4-9b92-7626267c1351">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Žana Filipović">Žana Filipović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41e17715-68af-4adf-9a91-b7a9b558281e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Željko Aprcović">Željko Aprcović</td>
-                      
-                        <td>Demokratska partija socijalista</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9ee1acbc-2733-4ae1-91c1-38465920742a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9ee1acbc-2733-4ae1-91c1-38465920742a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9ee1acbc-2733-4ae1-91c1-38465920742a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Almer Kalač</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Bošnjačka stranka
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f76ec47f-b8d0-479c-8699-9a8aaf27ea25">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f76ec47f-b8d0-479c-8699-9a8aaf27ea25/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f76ec47f-b8d0-479c-8699-9a8aaf27ea25/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Andrija Mandić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6efdba28-a404-4775-b951-5eb292ed3e4b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/6efdba28-a404-4775-b951-5eb292ed3e4b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/6efdba28-a404-4775-b951-5eb292ed3e4b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Andrija Popović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberalna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-df76ef9f-daf5-4a71-90c5-8e79100fd077">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/df76ef9f-daf5-4a71-90c5-8e79100fd077/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/df76ef9f-daf5-4a71-90c5-8e79100fd077/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Azra Jasavić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pozitivna Crna Gora
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f668786a-530c-459b-a103-86ed4912d7c4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f668786a-530c-459b-a103-86ed4912d7c4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f668786a-530c-459b-a103-86ed4912d7c4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Borislav Banović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-20caa436-db59-4228-a646-9d7f2548db52">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/20caa436-db59-4228-a646-9d7f2548db52/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/20caa436-db59-4228-a646-9d7f2548db52/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Branko Čavor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3afa6f56-ccfc-468b-904b-aef7771b2082">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3afa6f56-ccfc-468b-904b-aef7771b2082/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3afa6f56-ccfc-468b-904b-aef7771b2082/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Damir Šehović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-065576f9-95d7-46b7-8a28-f6897ba830c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/065576f9-95d7-46b7-8a28-f6897ba830c0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/065576f9-95d7-46b7-8a28-f6897ba830c0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Danijela - Danka Marković</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f75bac0c-80dd-4bc9-a35f-8fb70301e85a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f75bac0c-80dd-4bc9-a35f-8fb70301e85a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f75bac0c-80dd-4bc9-a35f-8fb70301e85a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Darko Pajović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pozitivna Crna Gora
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-76349bbe-891e-40f5-8746-49d19b19da09">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/76349bbe-891e-40f5-8746-49d19b19da09/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/76349bbe-891e-40f5-8746-49d19b19da09/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr Jasmin Sutović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-672c6d25-bce0-4809-8725-d6fb20e1690c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/672c6d25-bce0-4809-8725-d6fb20e1690c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/672c6d25-bce0-4809-8725-d6fb20e1690c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Draginja Vuksanović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ba91335f-bbd3-45a2-8b89-5eb26dc42eeb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/ba91335f-bbd3-45a2-8b89-5eb26dc42eeb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/ba91335f-bbd3-45a2-8b89-5eb26dc42eeb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Džavid Šabović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-64551440-bc21-45cc-a0b8-7b2c7b00e844">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/64551440-bc21-45cc-a0b8-7b2c7b00e844/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/64551440-bc21-45cc-a0b8-7b2c7b00e844/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emilo Labudović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d158a7e-b14c-40c6-9d10-28a3f66902d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/7d158a7e-b14c-40c6-9d10-28a3f66902d9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/7d158a7e-b14c-40c6-9d10-28a3f66902d9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Genci Nimanbegu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Forca
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6f8c8b4-86b9-4453-82de-5c524cb1fe02">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/a6f8c8b4-86b9-4453-82de-5c524cb1fe02/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/a6f8c8b4-86b9-4453-82de-5c524cb1fe02/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Goran Danilović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-65a05023-4e8e-403d-96a5-eb9c25ab8024">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/65a05023-4e8e-403d-96a5-eb9c25ab8024/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/65a05023-4e8e-403d-96a5-eb9c25ab8024/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Goran Tuponja</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pozitivna Crna Gora
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-147470f5-8eca-4948-8716-a71b32de11df">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/147470f5-8eca-4948-8716-a71b32de11df/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/147470f5-8eca-4948-8716-a71b32de11df/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Husnija Šabović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4ed79e4b-0160-48cc-9477-e3d69f2ff394">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/4ed79e4b-0160-48cc-9477-e3d69f2ff394/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/4ed79e4b-0160-48cc-9477-e3d69f2ff394/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Janko Vučinić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-131c1380-f78f-40a3-88a4-f68b1b0c9a9b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/131c1380-f78f-40a3-88a4-f68b1b0c9a9b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/131c1380-f78f-40a3-88a4-f68b1b0c9a9b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Koča Pavlović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-895b6040-600d-4e77-9090-d50827320569">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/895b6040-600d-4e77-9090-d50827320569/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/895b6040-600d-4e77-9090-d50827320569/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ljerka Dragičević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Hrvatska građanska inicijativa
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b116bf9-290b-4280-bf43-f1525777f134">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/8b116bf9-290b-4280-bf43-f1525777f134/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/8b116bf9-290b-4280-bf43-f1525777f134/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Luiđ Ljubo Škrelja</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-55c6a197-9412-4474-820d-5aa8ad269cc1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/55c6a197-9412-4474-820d-5aa8ad269cc1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/55c6a197-9412-4474-820d-5aa8ad269cc1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Maida Bešlić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3c85efa6-e214-4507-bbb6-48fc1970da5f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3c85efa6-e214-4507-bbb6-48fc1970da5f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3c85efa6-e214-4507-bbb6-48fc1970da5f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marija Maja Ćatović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50caf967-b942-4a7c-9d51-317697f4cc68">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/50caf967-b942-4a7c-9d51-317697f4cc68/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/50caf967-b942-4a7c-9d51-317697f4cc68/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Marta Šćepanović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5b730dfe-8845-4263-b93c-ddb8df5fc015">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/5b730dfe-8845-4263-b93c-ddb8df5fc015/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/5b730dfe-8845-4263-b93c-ddb8df5fc015/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mevludin Nuhodžić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9440bcac-9474-4f9f-840a-73987ff7b038">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9440bcac-9474-4f9f-840a-73987ff7b038/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9440bcac-9474-4f9f-840a-73987ff7b038/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Milan Knežević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1dce56b5-56f5-4661-9703-d1c28fb39b65">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/1dce56b5-56f5-4661-9703-d1c28fb39b65/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/1dce56b5-56f5-4661-9703-d1c28fb39b65/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Milorad Vuletić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3e2e62b7-2428-4ba1-8215-33422d12807e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3e2e62b7-2428-4ba1-8215-33422d12807e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3e2e62b7-2428-4ba1-8215-33422d12807e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Milutin Đukanović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-327f5d19-90ea-42a8-ab20-d3c920a7542e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/327f5d19-90ea-42a8-ab20-d3c920a7542e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/327f5d19-90ea-42a8-ab20-d3c920a7542e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Miodrag Lekić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ec5ed24b-4864-42ca-826e-953011c41cf7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/ec5ed24b-4864-42ca-826e-953011c41cf7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/ec5ed24b-4864-42ca-826e-953011c41cf7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mićo Orlandić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d1fe641-1345-428e-a8f7-4e0ba6320017">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3d1fe641-1345-428e-a8f7-4e0ba6320017/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/3d1fe641-1345-428e-a8f7-4e0ba6320017/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mladen Bojanić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pozitivna Crna Gora
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4728515c-c2c9-453a-b347-08102ca4e6fc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/4728515c-c2c9-453a-b347-08102ca4e6fc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/4728515c-c2c9-453a-b347-08102ca4e6fc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nada Drobnjak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-82a22df0-db25-4317-bd37-11af960bee00">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/82a22df0-db25-4317-bd37-11af960bee00/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/82a22df0-db25-4317-bd37-11af960bee00/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nebojša Medojević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-27a62f13-66b4-49ae-84cc-75a1a9f9052c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/27a62f13-66b4-49ae-84cc-75a1a9f9052c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/27a62f13-66b4-49ae-84cc-75a1a9f9052c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Neven Gošović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-242833b1-f02f-4d69-b7dc-e4d2540c6ac9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/242833b1-f02f-4d69-b7dc-e4d2540c6ac9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/242833b1-f02f-4d69-b7dc-e4d2540c6ac9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nik Gjeloshaj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-82c33f3a-ecad-4e2c-80fe-5bbb9b95e911">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/82c33f3a-ecad-4e2c-80fe-5bbb9b95e911/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/82c33f3a-ecad-4e2c-80fe-5bbb9b95e911/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nikola Gegaj</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5cfd4a91-6778-4e10-a6b8-934464bfc58b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/5cfd4a91-6778-4e10-a6b8-934464bfc58b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/5cfd4a91-6778-4e10-a6b8-934464bfc58b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Obrad Gojković</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-516a97ac-b3e6-4874-a852-9ab35e8263d2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/516a97ac-b3e6-4874-a852-9ab35e8263d2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/516a97ac-b3e6-4874-a852-9ab35e8263d2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Obrad Mišo Stanišić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85db918c-efd4-4fdd-8333-00404fc98613">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/85db918c-efd4-4fdd-8333-00404fc98613/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/85db918c-efd4-4fdd-8333-00404fc98613/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Predrag Bulatović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-362441f3-cb63-4d31-803e-75e6c709cdfe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/362441f3-cb63-4d31-803e-75e6c709cdfe/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/362441f3-cb63-4d31-803e-75e6c709cdfe/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Prim.dr Izet Bralić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8102d0ae-95da-4010-b779-2f1bd4d3fb04">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/8102d0ae-95da-4010-b779-2f1bd4d3fb04/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/8102d0ae-95da-4010-b779-2f1bd4d3fb04/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Prof. dr Branko Radulović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9ee8db7c-6ed0-44ad-a7b2-47a487f3ed4c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9ee8db7c-6ed0-44ad-a7b2-47a487f3ed4c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9ee8db7c-6ed0-44ad-a7b2-47a487f3ed4c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Prof. dr Jelisava Kalezić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-643ebcb1-a88c-43b9-b295-b8ce68277d44">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/643ebcb1-a88c-43b9-b295-b8ce68277d44/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/643ebcb1-a88c-43b9-b295-b8ce68277d44/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Prof. dr Miodrag Vuković</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e94942b7-aaa4-41ea-90f0-da00a55bef0e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e94942b7-aaa4-41ea-90f0-da00a55bef0e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e94942b7-aaa4-41ea-90f0-da00a55bef0e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Radivoje Lala Nikčević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fbe6f435-6652-41c0-bf32-2e9091086edc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/fbe6f435-6652-41c0-bf32-2e9091086edc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/fbe6f435-6652-41c0-bf32-2e9091086edc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Radovan Obradović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd4700f5-4d58-4ffe-b26b-4e759951e864">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/dd4700f5-4d58-4ffe-b26b-4e759951e864/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/dd4700f5-4d58-4ffe-b26b-4e759951e864/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ranko Krivokapić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d1e2a886-2aaf-4ca5-abb3-be00ff18b784">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/d1e2a886-2aaf-4ca5-abb3-be00ff18b784/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/d1e2a886-2aaf-4ca5-abb3-be00ff18b784/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rešad Sijarić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Bošnjačka stranka
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-45ea72dc-1cc2-4d6c-a55d-ca421af5c2c3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/45ea72dc-1cc2-4d6c-a55d-ca421af5c2c3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/45ea72dc-1cc2-4d6c-a55d-ca421af5c2c3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rešid Adrović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-08351b00-a6c6-4406-950f-cde372e17a73">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/08351b00-a6c6-4406-950f-cde372e17a73/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/08351b00-a6c6-4406-950f-cde372e17a73/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rifat Rastoder</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijaldemokratska partija Crne Gore
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85a77b4e-8e8b-4a59-86a1-fb66d532b4dc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/85a77b4e-8e8b-4a59-86a1-fb66d532b4dc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/85a77b4e-8e8b-4a59-86a1-fb66d532b4dc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saša Pešić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-51e900c0-21dc-4c74-9fe2-73cbd6f29d44">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/51e900c0-21dc-4c74-9fe2-73cbd6f29d44/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/51e900c0-21dc-4c74-9fe2-73cbd6f29d44/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Slaven Radunović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-503b172d-f333-4a00-8d2b-1bf676f30961">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/503b172d-f333-4a00-8d2b-1bf676f30961/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/503b172d-f333-4a00-8d2b-1bf676f30961/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Slobodan Krušo Radović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f68c75b4-2c65-489f-b114-a51af52d8593">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f68c75b4-2c65-489f-b114-a51af52d8593/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f68c75b4-2c65-489f-b114-a51af52d8593/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Snežana Jonica</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d11b5511-0a9d-4059-b5f1-727607a2351d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/d11b5511-0a9d-4059-b5f1-727607a2351d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/d11b5511-0a9d-4059-b5f1-727607a2351d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Srđan Milić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10cbddd7-7de9-4fe3-9917-f2188df70d04">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/10cbddd7-7de9-4fe3-9917-f2188df70d04/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/10cbddd7-7de9-4fe3-9917-f2188df70d04/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Srđan Perić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pozitivna Crna Gora
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-254ae1d0-63a1-4b91-a81f-a3f2356672c5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/254ae1d0-63a1-4b91-a81f-a3f2356672c5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/254ae1d0-63a1-4b91-a81f-a3f2356672c5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Suljo Mustafić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Bošnjačka stranka
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f62bab05-b234-4b66-b0f0-69f89fa68dfa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f62bab05-b234-4b66-b0f0-69f89fa68dfa/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f62bab05-b234-4b66-b0f0-69f89fa68dfa/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tarzan Milošević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c4c0f564-f3cb-4523-accf-64a00aa4607d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/c4c0f564-f3cb-4523-accf-64a00aa4607d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/c4c0f564-f3cb-4523-accf-64a00aa4607d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Velizar Kaluđerović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e6b26f2f-92ee-426a-a47c-af5d096e7aa7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e6b26f2f-92ee-426a-a47c-af5d096e7aa7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e6b26f2f-92ee-426a-a47c-af5d096e7aa7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Veljko Vasiljević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0263e85f-6ff4-4e37-93a2-418d41066a02">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/0263e85f-6ff4-4e37-93a2-418d41066a02/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/0263e85f-6ff4-4e37-93a2-418d41066a02/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Veljko Zarubica</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2910207e-4a43-4c7b-9fee-a11d59170353">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/2910207e-4a43-4c7b-9fee-a11d59170353/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/2910207e-4a43-4c7b-9fee-a11d59170353/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vladislav Bojović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-19e03b41-9de9-4a01-8820-926d0c692e17">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/19e03b41-9de9-4a01-8820-926d0c692e17/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/19e03b41-9de9-4a01-8820-926d0c692e17/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zoran Jelić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-db8dfec5-257e-45e8-afc5-f34f465ce108">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/db8dfec5-257e-45e8-afc5-f34f465ce108/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/db8dfec5-257e-45e8-afc5-f34f465ce108/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zoran Miljanić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pozitivna Crna Gora
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e589ec4-46da-44ed-be03-c3d3ed545503">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/5e589ec4-46da-44ed-be03-c3d3ed545503/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/5e589ec4-46da-44ed-be03-c3d3ed545503/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zorica Kovačević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-df5ce57d-90bf-4c4c-a945-8f13ca525b57">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/df5ce57d-90bf-4c4c-a945-8f13ca525b57/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/df5ce57d-90bf-4c4c-a945-8f13ca525b57/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">doc. dr Branka Bošnjak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ea41c8d-6f80-445e-8457-7e888a451982">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/6ea41c8d-6f80-445e-8457-7e888a451982/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/6ea41c8d-6f80-445e-8457-7e888a451982/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">doc. dr Srđa Popović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a08c06c2-b4fb-4041-95f6-2fe370dfd7e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/a08c06c2-b4fb-4041-95f6-2fe370dfd7e8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/a08c06c2-b4fb-4041-95f6-2fe370dfd7e8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Filip Vuković</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e8eb945f-4688-45b1-90fd-55b3323b8277">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e8eb945f-4688-45b1-90fd-55b3323b8277/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e8eb945f-4688-45b1-90fd-55b3323b8277/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Halil Duković</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-518219a0-66eb-4a1b-a9ac-d74a53060065">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/518219a0-66eb-4a1b-a9ac-d74a53060065/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/518219a0-66eb-4a1b-a9ac-d74a53060065/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Ljiljana Đurašković</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1aaa186-579b-4e70-b4e3-438cfd386c70">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e1aaa186-579b-4e70-b4e3-438cfd386c70/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/e1aaa186-579b-4e70-b4e3-438cfd386c70/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Novica Stanić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-619a8b58-fc8a-429f-9d37-65dc483037fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/619a8b58-fc8a-429f-9d37-65dc483037fa/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/619a8b58-fc8a-429f-9d37-65dc483037fa/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Predrag Sekulić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8edd3d0f-01a1-4843-b4cb-75c3d2ad45ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/8edd3d0f-01a1-4843-b4cb-75c3d2ad45ee/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/8edd3d0f-01a1-4843-b4cb-75c3d2ad45ee/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Radosav Nišavić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0dc9cbb2-321f-45f5-8a60-98fd3ad4499c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/0dc9cbb2-321f-45f5-8a60-98fd3ad4499c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/0dc9cbb2-321f-45f5-8a60-98fd3ad4499c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Radovan Asanović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8d7b26e-88a7-4c20-b0c1-d4f697800516">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/a8d7b26e-88a7-4c20-b0c1-d4f697800516/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/a8d7b26e-88a7-4c20-b0c1-d4f697800516/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">dr Strahinja Bulajić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratski front
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2d4ce6fa-443b-444a-943d-a288a7f3af67">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/2d4ce6fa-443b-444a-943d-a288a7f3af67/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/2d4ce6fa-443b-444a-943d-a288a7f3af67/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">mr Aleksandar Damjanović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-afe8671c-6603-42f1-8316-763c3f812c41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/afe8671c-6603-42f1-8316-763c3f812c41/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/afe8671c-6603-42f1-8316-763c3f812c41/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">mr Branka Tanasijević</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7370f3dd-a5ba-48af-82d0-8825db49a4ea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/7370f3dd-a5ba-48af-82d0-8825db49a4ea/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/7370f3dd-a5ba-48af-82d0-8825db49a4ea/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">mr Danko Šarančić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Socijalistička narodna partija
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9c3514f6-b134-4216-a0c3-1e45e8cf7d16">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9c3514f6-b134-4216-a0c3-1e45e8cf7d16/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/9c3514f6-b134-4216-a0c3-1e45e8cf7d16/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">mr Dritan Abazović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Pozitivna Crna Gora
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7a70ef4c-44cd-45aa-8994-02fd29838544">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/7a70ef4c-44cd-45aa-8994-02fd29838544/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/7a70ef4c-44cd-45aa-8994-02fd29838544/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">mr Milutin Simović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-082adf64-7b29-4075-9e83-80c511dc87eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/082adf64-7b29-4075-9e83-80c511dc87eb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/082adf64-7b29-4075-9e83-80c511dc87eb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Šefkija Murić</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f314b688-a731-40c4-9b92-7626267c1351">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f314b688-a731-40c4-9b92-7626267c1351/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/f314b688-a731-40c4-9b92-7626267c1351/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Žana Filipović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41e17715-68af-4adf-9a91-b7a9b558281e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/41e17715-68af-4adf-9a91-b7a9b558281e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Montenegro/Assembly/41e17715-68af-4adf-9a91-b7a9b558281e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Željko Aprcović</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Demokratska partija socijalista
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

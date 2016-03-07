@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="1999–2000" />
     <meta property="og:type" content="article" />
@@ -164,7 +167,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-anguilla_national_alliance"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -188,131 +191,236 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9dcf1ea/data/Anguilla/Assembly/term-1999.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9dcf1ea/data/Anguilla/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9dcf1ea/data/Anguilla/Assembly/term-1999.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/9dcf1ea/data/Anguilla/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-5eb84eb2-713e-4888-bb82-4c28ac3256d4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5eb84eb2-713e-4888-bb82-4c28ac3256d4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Edison BAIRD</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Anguilla Democratic Party — Road North
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="BAIRD, Edison">Edison BAIRD</td>
-                      
-                        <td>Anguilla Democratic Party</td>
-                        <td>Road North</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fb9c56df-edf1-47b2-9541-38d50d46ca20">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fb9c56df-edf1-47b2-9541-38d50d46ca20">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Anguilla/Assembly/fb9c56df-edf1-47b2-9541-38d50d46ca20/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Anguilla/Assembly/fb9c56df-edf1-47b2-9541-38d50d46ca20/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Victor BANKS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Anguilla Democratic Party — Valley South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="BANKS, Victor">Victor BANKS</td>
-                      
-                        <td>Anguilla Democratic Party</td>
-                        <td>Valley South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-18eabcc8-50ca-49b1-a1ea-fffd0f18f1eb">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-18eabcc8-50ca-49b1-a1ea-fffd0f18f1eb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Osbourne B. FLEMING</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Anguilla National Alliance — Sandy Hill
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="FLEMING, Osbourne B.">Osbourne B. FLEMING</td>
-                      
-                        <td>Anguilla National Alliance</td>
-                        <td>Sandy Hill</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-717b26ea-ea25-4b72-b678-793f225ad701">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-717b26ea-ea25-4b72-b678-793f225ad701">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kenneth HARRIGAN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Anguilla National Alliance — Island Harbour
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="HARRIGAN, Kenneth">Kenneth HARRIGAN</td>
-                      
-                        <td>Anguilla National Alliance</td>
-                        <td>Island Harbour</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2b6f9192-019d-4482-bfd7-b2ade5ae0160">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2b6f9192-019d-4482-bfd7-b2ade5ae0160">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Albert E. HUGHES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Anguilla United Party — West End
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="HUGHES, Albert E.">Albert E. HUGHES</td>
-                      
-                        <td>Anguilla United Party</td>
-                        <td>West End</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ee991a2c-db20-4d82-a319-e17957240a35">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee991a2c-db20-4d82-a319-e17957240a35">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hubert Benjamin HUGHES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Anguilla United Party — Road South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="HUGHES, Hubert Benjamin">Hubert Benjamin HUGHES</td>
-                      
-                        <td>Anguilla United Party</td>
-                        <td>Road South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4b40d32d-d4b3-44d9-bc95-07cbe75f7588">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4b40d32d-d4b3-44d9-bc95-07cbe75f7588">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eric REID</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Anguilla National Alliance — Valley North
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="REID, Eric">Eric REID</td>
-                      
-                        <td>Anguilla National Alliance</td>
-                        <td>Valley North</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

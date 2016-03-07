@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="Fifth Legislative Council" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-democratic_alliance_for_the_betterment_and_progress_of_hong_kong"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -197,887 +200,2971 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/31fb844/data/Hong_Kong/Legislative_Council/term-5.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/31fb844/data/Hong_Kong/Legislative_Council/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/31fb844/data/Hong_Kong/Legislative_Council/term-5.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/31fb844/data/Hong_Kong/Legislative_Council/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-1bf2c007-156d-4153-9c35-2275cc7f2533">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Abraham SHEK Lai-him">Abraham SHEK Lai-him</td>
-                      
-                        <td>Business and Professionals Alliance for Hong Kong</td>
-                        <td>Real Estate and Construction</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cb46ac5a-d337-4af0-8960-c6acba79f845">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alan LEONG Kah-kit">Alan LEONG Kah-kit</td>
-                      
-                        <td>Civic Party</td>
-                        <td>Kowloon East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5812b8e6-07c3-4ab5-a99d-b0b054fbfecb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Albert CHAN Wai-yip">Albert CHAN Wai-yip</td>
-                      
-                        <td>People Power</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-79c5ba57-a6ff-4e68-ab21-54f4b8a32fc9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Albert HO Chun-yan">Albert HO Chun-yan</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>District Council (Second)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c632538b-d9d4-4b83-b637-e8915d4d650d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alice MAK Mei-kuen">Alice MAK Mei-kuen</td>
-                      
-                        <td>The Hong Kong Federation of Trade Unions</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-45650d3e-3779-4dea-96dc-600ac9b4d593">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Andrew LEUNG Kwan-yuen">Andrew LEUNG Kwan-yuen</td>
-                      
-                        <td>Business and Professionals Alliance for Hong Kong</td>
-                        <td>Industrial (First)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-324ed543-0897-42fb-b98e-1eadee04c939">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHAN Chi-chuen">CHAN Chi-chuen</td>
-                      
-                        <td>People Power</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-70e60cf6-048f-4323-b61d-2cc282bf4332">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHAN Hak-kan">CHAN Hak-kan</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-85ea2ef0-e28d-47b1-874b-0f03f6cce549">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHAN Han-pan">CHAN Han-pan</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bfbc677d-c8f3-40ba-b188-769b7cab1573">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHAN Kam-lam">CHAN Kam-lam</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>Kowloon East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2835e428-9627-48ab-95b9-00d16ee6dc36">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHAN Kin-por">CHAN Kin-por</td>
-                      
-                        <td>unknown</td>
-                        <td>Insurance</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c5ab4e3d-37ce-4578-a237-23919efca147">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHAN Yuen-han">CHAN Yuen-han</td>
-                      
-                        <td>The Hong Kong Federation of Trade Unions</td>
-                        <td>District Council (Second)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-79b960ac-1d22-41e4-916a-91c3aba1d53b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHEUNG Kwok-che">CHEUNG Kwok-che</td>
-                      
-                        <td>Labour Party</td>
-                        <td>Social Welfare</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7f1db771-f4ba-42c4-8cee-433b6086b099">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHIANG Lai-wan">CHIANG Lai-wan</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>Kowloon West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a56b24f4-d072-48b2-acef-ce4e8f440bdd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CHUNG Kwok-pan">CHUNG Kwok-pan</td>
-                      
-                        <td>Liberal Party</td>
-                        <td>Textiles and Garment</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-35a15ed7-a292-4b38-a4d1-2ae3f6617946">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Charles Peter MOK">Charles Peter MOK</td>
-                      
-                        <td>The Professional Commons</td>
-                        <td>Information Technology</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-64a7dbb8-b83c-4a08-be3e-f01b62f37336">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Christopher CHEUNG Wah-fung">Christopher CHEUNG Wah-fung</td>
-                      
-                        <td>Business and Professionals Alliance for Hong Kong</td>
-                        <td>Financial Services</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f8477558-c8a9-4b07-8e88-4abddb3424cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Christopher CHUNG Shu-kun">Christopher CHUNG Shu-kun</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>Hong Kong Island</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a1a0360-2b46-44c4-bc04-1c6ed7c86d44">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Claudia MO">Claudia MO</td>
-                      
-                        <td>Civic Party</td>
-                        <td>Kowloon West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fd321cda-b777-4b22-9b7c-52d18d054033">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cyd HO Sau-lan">Cyd HO Sau-lan</td>
-                      
-                        <td>Labour Party</td>
-                        <td>Hong Kong Island</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fd9782e2-6f1b-4400-8d05-4c36104628de">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dennis KWOK">Dennis KWOK</td>
-                      
-                        <td>Civic Party</td>
-                        <td>Legal</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7bb5a0da-e2cb-4ac7-95d8-ddca72bbea97">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Elizabeth QUAT">Elizabeth QUAT</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f6ca3a7-0c31-4ac4-ac0d-14ce7e362861">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emily LAU Wai-hing">Emily LAU Wai-hing</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e92e866-4ec3-4d87-85c0-48b9fdb9a401">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fernando CHEUNG Chiu-hung">Fernando CHEUNG Chiu-hung</td>
-                      
-                        <td>Labour Party</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6807279f-2292-41a3-ab88-b689b2a7a070">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Frankie YICK Chi-ming">Frankie YICK Chi-ming</td>
-                      
-                        <td>Liberal Party</td>
-                        <td>Transport</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ff224d23-59e8-411d-9e8c-449eafe38276">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Frederick FUNG Kin-kee">Frederick FUNG Kin-kee</td>
-                      
-                        <td>Hong Kong Association for Democracy and People's Livelihood</td>
-                        <td>District Council (Second)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9c3c0407-e7c8-4a7e-a48f-69a488f87520">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gary FAN Kwok-wai">Gary FAN Kwok-wai</td>
-                      
-                        <td>Neo Democrats</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cd006e66-b2ef-46f6-a9fe-fe5f516b0e81">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Helena WONG Pik-wan">Helena WONG Pik-wan</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Kowloon West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-52760ff9-fc45-4c1b-87f4-a5e9dd449528">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IP Kin-yuen">IP Kin-yuen</td>
-                      
-                        <td>unknown</td>
-                        <td>Education</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc9c55e4-1138-4db1-aa88-d06120a6e157">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IP Kwok-him">IP Kwok-him</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>District Council (First)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01bf6800-ee28-4e2c-b709-d90a01742ecb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="James TIEN Pei-chun">James TIEN Pei-chun</td>
-                      
-                        <td>Liberal Party</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a68aa8f8-2889-45bb-8417-60af44e0da2b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="James TO Kun-sun">James TO Kun-sun</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>District Council (Second)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fc71113a-b395-48af-84df-5133caa47e5b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jasper TSANG Yok-sing">Jasper TSANG Yok-sing</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>Hong Kong Island</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-16de029c-f30d-4452-87a4-b46380bb89b8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jeffrey LAM Kin-fung">Jeffrey LAM Kin-fung</td>
-                      
-                        <td>Business and Professionals Alliance for Hong Kong</td>
-                        <td>Commercial (First)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d531700a-6a05-4164-bfd3-67913ae7873b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joseph LEE Kok-long">Joseph LEE Kok-long</td>
-                      
-                        <td>unknown</td>
-                        <td>Health Services</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-071e9327-fc9e-42bc-875e-1dacefbc5745">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KWOK Ka-ki">KWOK Ka-ki</td>
-                      
-                        <td>Civic Party</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1d116fc9-3a55-4bba-9457-47e8cd0e6fa0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KWOK Wai-keung">KWOK Wai-keung</td>
-                      
-                        <td>The Hong Kong Federation of Trade Unions</td>
-                        <td>Labour</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e38c7d67-1fae-46ca-b5dd-93066529471e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kenneth CHAN Ka-lok">Kenneth CHAN Ka-lok</td>
-                      
-                        <td>Civic Party</td>
-                        <td>Hong Kong Island</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c07a6fff-fe9f-4cbb-9c59-b2315468c173">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kenneth LEUNG">Kenneth LEUNG</td>
-                      
-                        <td>The Professional Commons</td>
-                        <td>Accountancy</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3ad57f05-a48b-42d5-a47f-4ace793438bf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LAM Tai-fai">LAM Tai-fai</td>
-                      
-                        <td>unknown</td>
-                        <td>Industrial (Second)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e2106b0b-1076-4383-8e1e-b8af56cb81bc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LAU Wong-fat">LAU Wong-fat</td>
-                      
-                        <td>Business and Professionals Alliance for Hong Kong</td>
-                        <td>Heung Yee Kuk</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-948cff87-e2f0-446f-a83e-7476bf9eb523">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LEE Cheuk-yan">LEE Cheuk-yan</td>
-                      
-                        <td>Labour Party</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5670c646-c04a-44bd-a87b-29cdfd330697">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LEUNG Che-cheung">LEUNG Che-cheung</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9654e3fe-7e81-4d05-ae3d-e425dbd42853">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LEUNG Ka-lau">LEUNG Ka-lau</td>
-                      
-                        <td>unknown</td>
-                        <td>Medical</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c9777c7c-985d-4952-911b-9c13c378e163">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LEUNG Kwok-hung">LEUNG Kwok-hung</td>
-                      
-                        <td>League of Social Democrats</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-744afa85-ce51-4ffa-a7f9-c91cf76f44ad">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LEUNG Yiu-chung">LEUNG Yiu-chung</td>
-                      
-                        <td>Neighbourhood and Worker’s Service Centre</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9d9c7b54-3cfa-48c2-8ea5-e6b795b0b60a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LO Wai-kwok">LO Wai-kwok</td>
-                      
-                        <td>Business and Professionals Alliance for Hong Kong</td>
-                        <td>Engineering</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-61408816-de48-473f-8c38-2f2197994073">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MA Fung-kwok">MA Fung-kwok</td>
-                      
-                        <td>New Forum</td>
-                        <td>Sports, Performing Arts, Culture and Publication</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-63692331-c889-4b6a-bed4-b4f33503b9b2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Martin LIAO Cheung-kong">Martin LIAO Cheung-kong</td>
-                      
-                        <td>unknown</td>
-                        <td>Commercial (Second)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4e4fb93e-dde1-4582-85cb-eeed49b943c5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Michael TIEN Puk-sun">Michael TIEN Puk-sun</td>
-                      
-                        <td>New People's Party</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-57434d3f-684b-4a8a-95e2-bd8c0ea10a21">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NG Leung-sing">NG Leung-sing</td>
-                      
-                        <td>unknown</td>
-                        <td>Finance</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7ec9a6d0-ea37-415b-944c-6ea5b4686e8b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="POON Siu-ping">POON Siu-ping</td>
-                      
-                        <td>The Federation of Hong Kong and Kowloon Labour Unions</td>
-                        <td>Labour</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3e99923f-d3e3-4757-b55b-6555516d3343">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Paul TSE Wai-chun">Paul TSE Wai-chun</td>
-                      
-                        <td>unknown</td>
-                        <td>Kowloon East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2d264be7-b84c-453b-a018-ebe6f011f853">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Priscilla LEUNG Mei-fun">Priscilla LEUNG Mei-fun</td>
-                      
-                        <td>Business and Professionals Alliance for Hong Kong</td>
-                        <td>Kowloon West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8557603c-5210-4309-b135-ecbb44b32a88">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Regina IP LAU Suk-yee">Regina IP LAU Suk-yee</td>
-                      
-                        <td>New People's Party</td>
-                        <td>Hong Kong Island</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e82d248f-77c6-4c01-bc73-c0ec89263580">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ronny TONG Ka-wah">Ronny TONG Ka-wah</td>
-                      
-                        <td>unknown</td>
-                        <td>New Territories East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ef1c3d1b-5d2b-4569-b0f9-5ffb2c276b4a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SIN Chung-kai">SIN Chung-kai</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Hong Kong Island</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7dca055-3529-4ed3-945a-13db65a1d9a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Starry LEE Wai-king">Starry LEE Wai-king</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>District Council (Second)</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-394202db-1d13-4070-8657-a814e785ad18">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Steven HO Chun-yin">Steven HO Chun-yin</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>Agriculture and Fisheries</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8d9a7ba-2d76-4ce2-b4a7-e8b0a21dd84e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TAM Yiu-chung">TAM Yiu-chung</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>New Territories West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-067c75c2-6a85-4c69-8dca-5603bc620ddc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TANG Ka-piu">TANG Ka-piu</td>
-                      
-                        <td>The Hong Kong Federation of Trade Unions</td>
-                        <td>Labour</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6e9063b1-91e7-4437-9b30-f97c809f9b26">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tommy CHEUNG Yu-yan">Tommy CHEUNG Yu-yan</td>
-                      
-                        <td>Liberal Party</td>
-                        <td>Catering</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6731752e-4e55-46d8-9e6f-10c5b1a83ff8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tony TSE Wai-chuen">Tony TSE Wai-chuen</td>
-                      
-                        <td>unknown</td>
-                        <td>Architectural, Surveying and Planning</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-64f79cd9-6a02-4955-9ab2-1892f3a7d29e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vincent FANG Kang">Vincent FANG Kang</td>
-                      
-                        <td>Liberal Party</td>
-                        <td>Wholesale &amp; Retail</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-09b00340-35ea-4167-a013-9457f2db1163">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WONG Kwok-hing">WONG Kwok-hing</td>
-                      
-                        <td>The Hong Kong Federation of Trade Unions</td>
-                        <td>Hong Kong Island</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d9097b10-63bc-426d-8f4e-6ffdbe05ef82">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WONG Kwok-kin">WONG Kwok-kin</td>
-                      
-                        <td>The Hong Kong Federation of Trade Unions</td>
-                        <td>Kowloon East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-979d2d4a-aba5-4ebb-8e09-47826278dee3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WONG Ting-kwong">WONG Ting-kwong</td>
-                      
-                        <td>Democratic Alliance for the Betterment and Progress of Hong Kong</td>
-                        <td>Import and Export</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8457e43f-6651-4a90-af23-98d7e53f268f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WONG Yuk-man">WONG Yuk-man</td>
-                      
-                        <td>unknown</td>
-                        <td>Kowloon West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a6217d63-7e97-4de7-83ba-3312556b5836">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WU Chi-wai">WU Chi-wai</td>
-                      
-                        <td>Democratic Party</td>
-                        <td>Kowloon East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-58df4f82-d982-4831-8f19-2c4b72552281">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="YIU Si-wing">YIU Si-wing</td>
-                      
-                        <td>unknown</td>
-                        <td>Tourism</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1bf2c007-156d-4153-9c35-2275cc7f2533">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/1bf2c007-156d-4153-9c35-2275cc7f2533/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/1bf2c007-156d-4153-9c35-2275cc7f2533/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Abraham SHEK Lai-him</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Business and Professionals Alliance for Hong Kong — Real Estate and Construction
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:arazack@netvigator.com">arazack@netvigator.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cb46ac5a-d337-4af0-8960-c6acba79f845">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/cb46ac5a-d337-4af0-8960-c6acba79f845/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/cb46ac5a-d337-4af0-8960-c6acba79f845/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alan LEONG Kah-kit</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Civic Party — Kowloon East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:contact@alanleong.net">contact@alanleong.net</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5812b8e6-07c3-4ab5-a99d-b0b054fbfecb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5812b8e6-07c3-4ab5-a99d-b0b054fbfecb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5812b8e6-07c3-4ab5-a99d-b0b054fbfecb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Albert CHAN Wai-yip</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People Power — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:albert.wychan@yahoo.com.hk">albert.wychan@yahoo.com.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-79c5ba57-a6ff-4e68-ab21-54f4b8a32fc9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/79c5ba57-a6ff-4e68-ab21-54f4b8a32fc9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/79c5ba57-a6ff-4e68-ab21-54f4b8a32fc9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Albert HO Chun-yan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — District Council (Second)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:hotsewai@netvigator.com">hotsewai@netvigator.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c632538b-d9d4-4b83-b637-e8915d4d650d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c632538b-d9d4-4b83-b637-e8915d4d650d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c632538b-d9d4-4b83-b637-e8915d4d650d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alice MAK Mei-kuen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Hong Kong Federation of Trade Unions — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:amlegco@gmail.com">amlegco@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-45650d3e-3779-4dea-96dc-600ac9b4d593">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/45650d3e-3779-4dea-96dc-600ac9b4d593/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/45650d3e-3779-4dea-96dc-600ac9b4d593/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Andrew LEUNG Kwan-yuen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Business and Professionals Alliance for Hong Kong — Industrial (First)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:andrewleunglegco@outlook.com">andrewleunglegco@outlook.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-324ed543-0897-42fb-b98e-1eadee04c939">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/324ed543-0897-42fb-b98e-1eadee04c939/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/324ed543-0897-42fb-b98e-1eadee04c939/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHAN Chi-chuen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People Power — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:slowbeat@gmail.com">slowbeat@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70e60cf6-048f-4323-b61d-2cc282bf4332">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/70e60cf6-048f-4323-b61d-2cc282bf4332/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/70e60cf6-048f-4323-b61d-2cc282bf4332/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHAN Hak-kan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:garychk@dab.org.hk">garychk@dab.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85ea2ef0-e28d-47b1-874b-0f03f6cce549">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/85ea2ef0-e28d-47b1-874b-0f03f6cce549/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/85ea2ef0-e28d-47b1-874b-0f03f6cce549/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHAN Han-pan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:benchanlegco@gmail.com">benchanlegco@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bfbc677d-c8f3-40ba-b188-769b7cab1573">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/bfbc677d-c8f3-40ba-b188-769b7cab1573/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/bfbc677d-c8f3-40ba-b188-769b7cab1573/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHAN Kam-lam</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — Kowloon East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:klclegco@gmail.com">klclegco@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2835e428-9627-48ab-95b9-00d16ee6dc36">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/2835e428-9627-48ab-95b9-00d16ee6dc36/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/2835e428-9627-48ab-95b9-00d16ee6dc36/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHAN Kin-por</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Insurance
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:kp@kpchan.com">kp@kpchan.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c5ab4e3d-37ce-4578-a237-23919efca147">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c5ab4e3d-37ce-4578-a237-23919efca147/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c5ab4e3d-37ce-4578-a237-23919efca147/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHAN Yuen-han</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Hong Kong Federation of Trade Unions — District Council (Second)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:yhchan@ftulegco.org.hk">yhchan@ftulegco.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-79b960ac-1d22-41e4-916a-91c3aba1d53b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/79b960ac-1d22-41e4-916a-91c3aba1d53b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/79b960ac-1d22-41e4-916a-91c3aba1d53b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHEUNG Kwok-che</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Labour Party — Social Welfare
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@cheungkwokche.hk">info@cheungkwokche.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7f1db771-f4ba-42c4-8cee-433b6086b099">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/7f1db771-f4ba-42c4-8cee-433b6086b099/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/7f1db771-f4ba-42c4-8cee-433b6086b099/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHIANG Lai-wan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — Kowloon West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chianglaiwan@gmail.com">chianglaiwan@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a56b24f4-d072-48b2-acef-ce4e8f440bdd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a56b24f4-d072-48b2-acef-ce4e8f440bdd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a56b24f4-d072-48b2-acef-ce4e8f440bdd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">CHUNG Kwok-pan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal Party — Textiles and Garment
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@felixchunghk.com">info@felixchunghk.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-35a15ed7-a292-4b38-a4d1-2ae3f6617946">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/35a15ed7-a292-4b38-a4d1-2ae3f6617946/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/35a15ed7-a292-4b38-a4d1-2ae3f6617946/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Charles Peter MOK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Professional Commons — Information Technology
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:charlesmok@charlesmok.hk">charlesmok@charlesmok.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-64a7dbb8-b83c-4a08-be3e-f01b62f37336">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/64a7dbb8-b83c-4a08-be3e-f01b62f37336/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/64a7dbb8-b83c-4a08-be3e-f01b62f37336/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Christopher CHEUNG Wah-fung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Business and Professionals Alliance for Hong Kong — Financial Services
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chrischeungwf@gmail.com">chrischeungwf@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f8477558-c8a9-4b07-8e88-4abddb3424cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/f8477558-c8a9-4b07-8e88-4abddb3424cb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/f8477558-c8a9-4b07-8e88-4abddb3424cb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Christopher CHUNG Shu-kun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — Hong Kong Island
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chris@chungsk.com">chris@chungsk.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a1a0360-2b46-44c4-bc04-1c6ed7c86d44">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5a1a0360-2b46-44c4-bc04-1c6ed7c86d44/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5a1a0360-2b46-44c4-bc04-1c6ed7c86d44/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Claudia MO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Civic Party — Kowloon West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:contact@msmo.hk">contact@msmo.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd321cda-b777-4b22-9b7c-52d18d054033">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/fd321cda-b777-4b22-9b7c-52d18d054033/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/fd321cda-b777-4b22-9b7c-52d18d054033/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Cyd HO Sau-lan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Labour Party — Hong Kong Island
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@cydho.org.hk">info@cydho.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd9782e2-6f1b-4400-8d05-4c36104628de">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/fd9782e2-6f1b-4400-8d05-4c36104628de/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/fd9782e2-6f1b-4400-8d05-4c36104628de/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dennis KWOK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Civic Party — Legal
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:dennis@denniskwok.hk">dennis@denniskwok.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7bb5a0da-e2cb-4ac7-95d8-ddca72bbea97">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/7bb5a0da-e2cb-4ac7-95d8-ddca72bbea97/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/7bb5a0da-e2cb-4ac7-95d8-ddca72bbea97/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Elizabeth QUAT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:eq@eqweb.hk">eq@eqweb.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f6ca3a7-0c31-4ac4-ac0d-14ce7e362861">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6f6ca3a7-0c31-4ac4-ac0d-14ce7e362861/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6f6ca3a7-0c31-4ac4-ac0d-14ce7e362861/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emily LAU Wai-hing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:elau@dphk.org">elau@dphk.org</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e92e866-4ec3-4d87-85c0-48b9fdb9a401">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5e92e866-4ec3-4d87-85c0-48b9fdb9a401/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5e92e866-4ec3-4d87-85c0-48b9fdb9a401/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Fernando CHEUNG Chiu-hung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Labour Party — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@cheungchiuhung.org.hk">info@cheungchiuhung.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6807279f-2292-41a3-ab88-b689b2a7a070">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6807279f-2292-41a3-ab88-b689b2a7a070/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6807279f-2292-41a3-ab88-b689b2a7a070/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Frankie YICK Chi-ming</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal Party — Transport
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:frankieyick@liberal.org.hk">frankieyick@liberal.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ff224d23-59e8-411d-9e8c-449eafe38276">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/ff224d23-59e8-411d-9e8c-449eafe38276/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/ff224d23-59e8-411d-9e8c-449eafe38276/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Frederick FUNG Kin-kee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Hong Kong Association for Democracy and People's Livelihood — District Council (Second)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@adpl.org.hk">info@adpl.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9c3c0407-e7c8-4a7e-a48f-69a488f87520">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/9c3c0407-e7c8-4a7e-a48f-69a488f87520/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/9c3c0407-e7c8-4a7e-a48f-69a488f87520/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gary FAN Kwok-wai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Neo Democrats — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:fankwokwaioffice@gmail.com">fankwokwaioffice@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cd006e66-b2ef-46f6-a9fe-fe5f516b0e81">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/cd006e66-b2ef-46f6-a9fe-fe5f516b0e81/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/cd006e66-b2ef-46f6-a9fe-fe5f516b0e81/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Helena WONG Pik-wan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Kowloon West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:helenawonghk@gmail.com">helenawonghk@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-52760ff9-fc45-4c1b-87f4-a5e9dd449528">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/52760ff9-fc45-4c1b-87f4-a5e9dd449528/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/52760ff9-fc45-4c1b-87f4-a5e9dd449528/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">IP Kin-yuen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Education
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ikyoffice@hkptu.org">ikyoffice@hkptu.org</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc9c55e4-1138-4db1-aa88-d06120a6e157">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/bc9c55e4-1138-4db1-aa88-d06120a6e157/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/bc9c55e4-1138-4db1-aa88-d06120a6e157/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">IP Kwok-him</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — District Council (First)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ipkh@dab.org.hk">ipkh@dab.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01bf6800-ee28-4e2c-b709-d90a01742ecb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/01bf6800-ee28-4e2c-b709-d90a01742ecb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/01bf6800-ee28-4e2c-b709-d90a01742ecb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">James TIEN Pei-chun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal Party — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tpc@jamestien.com">tpc@jamestien.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a68aa8f8-2889-45bb-8417-60af44e0da2b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a68aa8f8-2889-45bb-8417-60af44e0da2b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a68aa8f8-2889-45bb-8417-60af44e0da2b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">James TO Kun-sun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — District Council (Second)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jkstolegco@gmail.com">jkstolegco@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc71113a-b395-48af-84df-5133caa47e5b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/fc71113a-b395-48af-84df-5133caa47e5b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/fc71113a-b395-48af-84df-5133caa47e5b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jasper TSANG Yok-sing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — Hong Kong Island
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:plc@legco.gov.hk">plc@legco.gov.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-16de029c-f30d-4452-87a4-b46380bb89b8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/16de029c-f30d-4452-87a4-b46380bb89b8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/16de029c-f30d-4452-87a4-b46380bb89b8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jeffrey LAM Kin-fung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Business and Professionals Alliance for Hong Kong — Commercial (First)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jefflam@fowind.com.hk">jefflam@fowind.com.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d531700a-6a05-4164-bfd3-67913ae7873b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/d531700a-6a05-4164-bfd3-67913ae7873b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/d531700a-6a05-4164-bfd3-67913ae7873b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joseph LEE Kok-long</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Health Services
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@leekoklong.org.hk">info@leekoklong.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-071e9327-fc9e-42bc-875e-1dacefbc5745">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/071e9327-fc9e-42bc-875e-1dacefbc5745/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/071e9327-fc9e-42bc-875e-1dacefbc5745/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">KWOK Ka-ki</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Civic Party — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:kkk@kkkwok.hk">kkk@kkkwok.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1d116fc9-3a55-4bba-9457-47e8cd0e6fa0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/1d116fc9-3a55-4bba-9457-47e8cd0e6fa0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/1d116fc9-3a55-4bba-9457-47e8cd0e6fa0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">KWOK Wai-keung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Hong Kong Federation of Trade Unions — Labour
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:kwk@ftulegco.org.hk">kwk@ftulegco.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e38c7d67-1fae-46ca-b5dd-93066529471e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/e38c7d67-1fae-46ca-b5dd-93066529471e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/e38c7d67-1fae-46ca-b5dd-93066529471e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kenneth CHAN Ka-lok</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Civic Party — Hong Kong Island
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@chankalok.hk">info@chankalok.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c07a6fff-fe9f-4cbb-9c59-b2315468c173">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c07a6fff-fe9f-4cbb-9c59-b2315468c173/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c07a6fff-fe9f-4cbb-9c59-b2315468c173/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kenneth LEUNG</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Professional Commons — Accountancy
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@kennethleung.hk">info@kennethleung.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3ad57f05-a48b-42d5-a47f-4ace793438bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/3ad57f05-a48b-42d5-a47f-4ace793438bf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/3ad57f05-a48b-42d5-a47f-4ace793438bf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LAM Tai-fai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Industrial (Second)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tflam@tflam.com.hk">tflam@tflam.com.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e2106b0b-1076-4383-8e1e-b8af56cb81bc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/e2106b0b-1076-4383-8e1e-b8af56cb81bc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/e2106b0b-1076-4383-8e1e-b8af56cb81bc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LAU Wong-fat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Business and Professionals Alliance for Hong Kong — Heung Yee Kuk
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-948cff87-e2f0-446f-a83e-7476bf9eb523">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/948cff87-e2f0-446f-a83e-7476bf9eb523/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/948cff87-e2f0-446f-a83e-7476bf9eb523/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LEE Cheuk-yan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Labour Party — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:yanlee@hkctu.org.hk">yanlee@hkctu.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5670c646-c04a-44bd-a87b-29cdfd330697">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5670c646-c04a-44bd-a87b-29cdfd330697/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/5670c646-c04a-44bd-a87b-29cdfd330697/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LEUNG Che-cheung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:lcc.ntw@dab.org.hk">lcc.ntw@dab.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9654e3fe-7e81-4d05-ae3d-e425dbd42853">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/9654e3fe-7e81-4d05-ae3d-e425dbd42853/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/9654e3fe-7e81-4d05-ae3d-e425dbd42853/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LEUNG Ka-lau</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Medical
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:leungkl@leungkl.org">leungkl@leungkl.org</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c9777c7c-985d-4952-911b-9c13c378e163">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c9777c7c-985d-4952-911b-9c13c378e163/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/c9777c7c-985d-4952-911b-9c13c378e163/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LEUNG Kwok-hung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              League of Social Democrats — New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:longhairlongmarch@yahoo.com.hk">longhairlongmarch@yahoo.com.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-744afa85-ce51-4ffa-a7f9-c91cf76f44ad">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/744afa85-ce51-4ffa-a7f9-c91cf76f44ad/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/744afa85-ce51-4ffa-a7f9-c91cf76f44ad/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LEUNG Yiu-chung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Neighbourhood and Worker’s Service Centre — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ycleunglegco@gmail.com">ycleunglegco@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d9c7b54-3cfa-48c2-8ea5-e6b795b0b60a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/9d9c7b54-3cfa-48c2-8ea5-e6b795b0b60a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/9d9c7b54-3cfa-48c2-8ea5-e6b795b0b60a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">LO Wai-kwok</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Business and Professionals Alliance for Hong Kong — Engineering
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:wklo@engineer.com">wklo@engineer.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-61408816-de48-473f-8c38-2f2197994073">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/61408816-de48-473f-8c38-2f2197994073/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/61408816-de48-473f-8c38-2f2197994073/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">MA Fung-kwok</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New Forum — Sports, Performing Arts, Culture and Publication
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:fkmaoffice@gmail.com">fkmaoffice@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63692331-c889-4b6a-bed4-b4f33503b9b2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/63692331-c889-4b6a-bed4-b4f33503b9b2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/63692331-c889-4b6a-bed4-b4f33503b9b2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Martin LIAO Cheung-kong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Commercial (Second)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:legco.office.liao@gmail.com">legco.office.liao@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4e4fb93e-dde1-4582-85cb-eeed49b943c5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/4e4fb93e-dde1-4582-85cb-eeed49b943c5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/4e4fb93e-dde1-4582-85cb-eeed49b943c5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Michael TIEN Puk-sun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New People's Party — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:legco@michaeltien.hk">legco@michaeltien.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-57434d3f-684b-4a8a-95e2-bd8c0ea10a21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/57434d3f-684b-4a8a-95e2-bd8c0ea10a21/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/57434d3f-684b-4a8a-95e2-bd8c0ea10a21/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">NG Leung-sing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Finance
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:lsngoffice2012@gmail.com">lsngoffice2012@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7ec9a6d0-ea37-415b-944c-6ea5b4686e8b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/7ec9a6d0-ea37-415b-944c-6ea5b4686e8b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/7ec9a6d0-ea37-415b-944c-6ea5b4686e8b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">POON Siu-ping</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Federation of Hong Kong and Kowloon Labour Unions — Labour
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:poonsiuping@hkflu.org.hk">poonsiuping@hkflu.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3e99923f-d3e3-4757-b55b-6555516d3343">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/3e99923f-d3e3-4757-b55b-6555516d3343/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/3e99923f-d3e3-4757-b55b-6555516d3343/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Paul TSE Wai-chun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kowloon East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:paultse@paultse.org">paultse@paultse.org</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2d264be7-b84c-453b-a018-ebe6f011f853">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/2d264be7-b84c-453b-a018-ebe6f011f853/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/2d264be7-b84c-453b-a018-ebe6f011f853/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Priscilla LEUNG Mei-fun</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Business and Professionals Alliance for Hong Kong — Kowloon West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:priscilla@lmf.hk">priscilla@lmf.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8557603c-5210-4309-b135-ecbb44b32a88">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/8557603c-5210-4309-b135-ecbb44b32a88/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/8557603c-5210-4309-b135-ecbb44b32a88/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Regina IP LAU Suk-yee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New People's Party — Hong Kong Island
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:iplau@reginaip.hk">iplau@reginaip.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e82d248f-77c6-4c01-bc73-c0ec89263580">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/e82d248f-77c6-4c01-bc73-c0ec89263580/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/e82d248f-77c6-4c01-bc73-c0ec89263580/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ronny TONG Ka-wah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              New Territories East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ef1c3d1b-5d2b-4569-b0f9-5ffb2c276b4a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/ef1c3d1b-5d2b-4569-b0f9-5ffb2c276b4a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/ef1c3d1b-5d2b-4569-b0f9-5ffb2c276b4a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">SIN Chung-kai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Hong Kong Island
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:scklegco@sinchungkai.org.hk">scklegco@sinchungkai.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7dca055-3529-4ed3-945a-13db65a1d9a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/b7dca055-3529-4ed3-945a-13db65a1d9a4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/b7dca055-3529-4ed3-945a-13db65a1d9a4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Starry LEE Wai-king</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — District Council (Second)
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@starrylee.com">info@starrylee.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-394202db-1d13-4070-8657-a814e785ad18">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/394202db-1d13-4070-8657-a814e785ad18/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/394202db-1d13-4070-8657-a814e785ad18/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Steven HO Chun-yin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — Agriculture and Fisheries
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:honstevenho@gmail.com">honstevenho@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8d9a7ba-2d76-4ce2-b4a7-e8b0a21dd84e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a8d9a7ba-2d76-4ce2-b4a7-e8b0a21dd84e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a8d9a7ba-2d76-4ce2-b4a7-e8b0a21dd84e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">TAM Yiu-chung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — New Territories West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:yctam@dab.org.hk">yctam@dab.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-067c75c2-6a85-4c69-8dca-5603bc620ddc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/067c75c2-6a85-4c69-8dca-5603bc620ddc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/067c75c2-6a85-4c69-8dca-5603bc620ddc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">TANG Ka-piu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Hong Kong Federation of Trade Unions — Labour
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:kptang@ftulegco.org.hk">kptang@ftulegco.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6e9063b1-91e7-4437-9b30-f97c809f9b26">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6e9063b1-91e7-4437-9b30-f97c809f9b26/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6e9063b1-91e7-4437-9b30-f97c809f9b26/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tommy CHEUNG Yu-yan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal Party — Catering
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tyyc@netvigator.com">tyyc@netvigator.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6731752e-4e55-46d8-9e6f-10c5b1a83ff8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6731752e-4e55-46d8-9e6f-10c5b1a83ff8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/6731752e-4e55-46d8-9e6f-10c5b1a83ff8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tony TSE Wai-chuen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Architectural, Surveying and Planning
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/TonyTseWaiChuen">TonyTseWaiChuen</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:info@tonytsewaichuen.com">info@tonytsewaichuen.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-64f79cd9-6a02-4955-9ab2-1892f3a7d29e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/64f79cd9-6a02-4955-9ab2-1892f3a7d29e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/64f79cd9-6a02-4955-9ab2-1892f3a7d29e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vincent FANG Kang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Liberal Party — Wholesale &amp; Retail
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:vfang@vincentfang.idv.hk">vfang@vincentfang.idv.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-09b00340-35ea-4167-a013-9457f2db1163">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/09b00340-35ea-4167-a013-9457f2db1163/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/09b00340-35ea-4167-a013-9457f2db1163/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">WONG Kwok-hing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Hong Kong Federation of Trade Unions — Hong Kong Island
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:khwong@ftulegco.org.hk">khwong@ftulegco.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d9097b10-63bc-426d-8f4e-6ffdbe05ef82">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/d9097b10-63bc-426d-8f4e-6ffdbe05ef82/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/d9097b10-63bc-426d-8f4e-6ffdbe05ef82/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">WONG Kwok-kin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              The Hong Kong Federation of Trade Unions — Kowloon East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:kkwong@ftulegco.org.hk">kkwong@ftulegco.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-979d2d4a-aba5-4ebb-8e09-47826278dee3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/979d2d4a-aba5-4ebb-8e09-47826278dee3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/979d2d4a-aba5-4ebb-8e09-47826278dee3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">WONG Ting-kwong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Alliance for the Betterment and Progress of Hong Kong — Import and Export
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tkwong@dab.org.hk">tkwong@dab.org.hk</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8457e43f-6651-4a90-af23-98d7e53f268f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/8457e43f-6651-4a90-af23-98d7e53f268f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/8457e43f-6651-4a90-af23-98d7e53f268f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">WONG Yuk-man</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kowloon West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ymwongopinion@gmail.com">ymwongopinion@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6217d63-7e97-4de7-83ba-3312556b5836">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a6217d63-7e97-4de7-83ba-3312556b5836/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/a6217d63-7e97-4de7-83ba-3312556b5836/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">WU Chi-wai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Democratic Party — Kowloon East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chiwaioffice@gmail.com">chiwaioffice@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58df4f82-d982-4831-8f19-2c4b72552281">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/58df4f82-d982-4831-8f19-2c4b72552281/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Hong-Kong/Legislative-Council/58df4f82-d982-4831-8f19-2c4b72552281/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">YIU Si-wing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Tourism
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/yiusiwing">yiusiwing</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ysw@yiusiwing.com">ysw@yiusiwing.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="7th National Assembly" />
     <meta property="og:type" content="article" />
@@ -171,7 +174,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-lp"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -201,179 +204,352 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59f967f/data/Saint_Kitts_and_Nevis/Assembly/term-2010.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59f967f/data/Saint_Kitts_and_Nevis/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59f967f/data/Saint_Kitts_and_Nevis/Assembly/term-2010.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/59f967f/data/Saint_Kitts_and_Nevis/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-6241ddf8-a0d7-4680-8022-ffd4cbe35acc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6241ddf8-a0d7-4680-8022-ffd4cbe35acc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Amory, Vance</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CCM — St. George's
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Amory, Vance">Amory, Vance</td>
-                      
-                        <td>CCM</td>
-                        <td>St. George's</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-886e92df-972a-49eb-8d0c-90dcfcd6f3bc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-886e92df-972a-49eb-8d0c-90dcfcd6f3bc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Brantly, Mark AG</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CCM — St. John's and St. Paul's
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Brantly, Mark AG">Brantly, Mark AG</td>
-                      
-                        <td>CCM</td>
-                        <td>St. John's and St. Paul's</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-43e8c0fb-0bc0-4c92-8c1e-9e75dd96defe">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-43e8c0fb-0bc0-4c92-8c1e-9e75dd96defe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Saint-Kitts-and-Nevis/Assembly/43e8c0fb-0bc0-4c92-8c1e-9e75dd96defe/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Saint-Kitts-and-Nevis/Assembly/43e8c0fb-0bc0-4c92-8c1e-9e75dd96defe/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Douglas, Dr. Denzil</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LP — Newton Ground-Harris
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Douglas, Dr. Denzil">Douglas, Dr. Denzil</td>
-                      
-                        <td>LP</td>
-                        <td>Newton Ground-Harris</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5eb5698e-d595-4a32-ae5a-c91d645d5eb6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5eb5698e-d595-4a32-ae5a-c91d645d5eb6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dr. Asim Martin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LP — Basseterre East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Dr. Asim Martin">Dr. Asim Martin</td>
-                      
-                        <td>LP</td>
-                        <td>Basseterre East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-821d0c7d-1fa0-45de-b1b4-13b3f492a182">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-821d0c7d-1fa0-45de-b1b4-13b3f492a182">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Glen Fitzroy Phillip</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LP — Half Way Tree
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Glen Fitzroy Phillip">Glen Fitzroy Phillip</td>
-                      
-                        <td>LP</td>
-                        <td>Half Way Tree</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8fae7645-96ce-46b0-a1d1-6b757ab6a0e7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8fae7645-96ce-46b0-a1d1-6b757ab6a0e7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hamilton, Eugene</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PAM — Ottley's-St. Peter's
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Hamilton, Eugene">Hamilton, Eugene</td>
-                      
-                        <td>PAM</td>
-                        <td>Ottley's-St. Peter's</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-aa563b45-3b13-4f78-97e4-0815f7834a78">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa563b45-3b13-4f78-97e4-0815f7834a78">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Saint-Kitts-and-Nevis/Assembly/aa563b45-3b13-4f78-97e4-0815f7834a78/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Saint-Kitts-and-Nevis/Assembly/aa563b45-3b13-4f78-97e4-0815f7834a78/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Harris, Dr. Timothy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LP — Belle Vue-Ottley's
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Harris, Dr. Timothy">Harris, Dr. Timothy</td>
-                      
-                        <td>LP</td>
-                        <td>Belle Vue-Ottley's</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a6386cf6-a19d-4a05-9a40-e87dd6eea17b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6386cf6-a19d-4a05-9a40-e87dd6eea17b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Liburd, Marcella</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LP — Basseterre Central
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Liburd, Marcella">Liburd, Marcella</td>
-                      
-                        <td>LP</td>
-                        <td>Basseterre Central</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-0bafe581-3be5-4a6e-ba8d-af27af59d52c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0bafe581-3be5-4a6e-ba8d-af27af59d52c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nisbett, Patrice</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NRP — St. Thomas's and St. James's
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nisbett, Patrice">Nisbett, Patrice</td>
-                      
-                        <td>NRP</td>
-                        <td>St. Thomas's and St. James's</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-089e7090-25fb-4b1d-8717-566b05d4cd83">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-089e7090-25fb-4b1d-8717-566b05d4cd83">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Saint-Kitts-and-Nevis/Assembly/089e7090-25fb-4b1d-8717-566b05d4cd83/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Saint-Kitts-and-Nevis/Assembly/089e7090-25fb-4b1d-8717-566b05d4cd83/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Richards, Shawn</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PAM — St. Anne Parish
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Richards, Shawn">Richards, Shawn</td>
-                      
-                        <td>PAM</td>
-                        <td>St. Anne Parish</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-bdbe50f5-d487-48b2-8a85-920602fbed98">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bdbe50f5-d487-48b2-8a85-920602fbed98">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sam Terrence Condor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LP — Basseterre West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sam Terrence Condor">Sam Terrence Condor</td>
-                      
-                        <td>LP</td>
-                        <td>Basseterre West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="3rd Legislature" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-rpf"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -155,971 +158,2969 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/84b6c9d/data/Rwanda/Deputies/term-3.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/84b6c9d/data/Rwanda/Deputies/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/84b6c9d/data/Rwanda/Deputies/term-3.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/84b6c9d/data/Rwanda/Deputies/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-002ad280-39e7-4eae-8d9e-ddbdf5eb371c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAMPORIKI, Edouard">Edouard BAMPORIKI</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali City</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-66b4f362-27c0-435f-89f1-b397f887d78e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BARIKANA, Eugène">Eugène BARIKANA</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-99c423fd-c602-4bdc-9ca1-7c802fc5052b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAZATOHA, Adolphe">Adolphe BAZATOHA</td>
-                      
-                        <td>PSD</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ac774f29-7592-4edb-93fc-aaad6f8e9a0b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BEGUMISA SAFARI, Theoneste">Theoneste BEGUMISA SAFARI</td>
-                      
-                        <td>RPF</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e03a94a6-8022-48c3-abb4-46afbd1fb101">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BUSHISHI, GIOVANNI">GIOVANNI BUSHISHI</td>
-                      
-                        <td>PSD</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-620c6cf8-7eed-4ff4-b18a-660932f7a584">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BWIZA, SEKAMANA Connie">SEKAMANA Connie BWIZA</td>
-                      
-                        <td>RPF</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a7a6b953-e417-4f29-85e0-6fffd49a0b3d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BYABARUMWANZI, François">François BYABARUMWANZI</td>
-                      
-                        <td>PL</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e5723a0f-8c64-477e-86a2-c0bac7c74ec1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GAHONDOGO, Athanasie">Athanasie GAHONDOGO</td>
-                      
-                        <td>RPF</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f37b6781-ad7c-4f5a-a002-906727a9528e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GATABAZI, Jean Marie Vianey">Jean Marie Vianey GATABAZI</td>
-                      
-                        <td>RPF</td>
-                        <td>Northern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ba81feb3-8c60-479e-844d-f5c8a48bdc8b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IZABIRIZA, Marie Mediatrice">Marie Mediatrice IZABIRIZA</td>
-                      
-                        <td>Women</td>
-                        <td>southern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d712e08f-2429-4de7-ab1b-9f4218963106">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KABASINGA, Chantal">Chantal KABASINGA</td>
-                      
-                        <td>Women</td>
-                        <td>Northern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1958d84e-8908-4b4b-8d99-f674180c8b41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KALISA, Evariste">Evariste KALISA</td>
-                      
-                        <td>PL</td>
-                        <td>Northern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7ea2648-4b18-4ed9-a869-48dcdc9b39a8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KANKERA, Marie Josée">Marie Josée KANKERA</td>
-                      
-                        <td>RPF</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-14531977-c3e4-4c85-a941-91e17e86d237">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KANTENGWA, Juliana">Juliana KANTENGWA</td>
-                      
-                        <td>RPF</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9c564ad9-ca2d-4a75-8abb-d0835f5a328e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KAREMERA, Jean Thierry">Jean Thierry KAREMERA</td>
-                      
-                        <td>PPC</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3c8dcd38-1902-4555-b033-602429f0d560">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KARENZI, Théoneste">Théoneste KARENZI</td>
-                      
-                        <td>RPF</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-15f44ad7-bf45-4610-ac89-0f324ea5da4f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KAYIRANGA RWASA, Alfred">Alfred KAYIRANGA RWASA</td>
-                      
-                        <td>RPF</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-98ed5a7a-0a1c-4b72-9b8d-377c5159afdb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KAYITARE, Innocent">Innocent KAYITARE</td>
-                      
-                        <td>RPF</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e2d12e16-199c-417b-80f6-b86c85e278d2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KAYITESI, Libérata">Libérata KAYITESI</td>
-                      
-                        <td>RPF</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cee66fb3-39e8-4df9-8a9f-e14a03229ee9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MANIRARORA, Annoncée">Annoncée MANIRARORA</td>
-                      
-                        <td>Women</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3b86b14f-7a84-49e4-96c1-f5d12a26a25c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MPORANYI, Théobald">Théobald MPORANYI</td>
-                      
-                        <td>RPF</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-826dbe7d-6cb3-4739-a345-a53bacfdf448">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUDIDI, Emmanuel">Emmanuel MUDIDI</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f34be801-067b-4dbc-93a2-dc177147a27b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUHONGAYIRE, Christine">Christine MUHONGAYIRE</td>
-                      
-                        <td>Women</td>
-                        <td>southern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-86df91e3-cf3e-484d-ada3-4a2fdfa0cb5f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUJAWAMARIYA, Berthe">Berthe MUJAWAMARIYA</td>
-                      
-                        <td>Women</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c9df06c4-aec4-461a-b614-48cc425b79e6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKABAGWIZA, Edda">Edda MUKABAGWIZA</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d713d600-4456-4ec3-8251-c8be5a7f90ac">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKABALISA, Donatille">Donatille MUKABALISA</td>
-                      
-                        <td>PL</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-955cbbb4-bd0b-44d6-bee8-6fc510df0f0b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKABIKINO, Jeanne Henriette">Jeanne Henriette MUKABIKINO</td>
-                      
-                        <td>Women</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9cb8acf7-7fdf-430b-8153-3d143bb12077">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAKANYAMUGENGE, Jacqueline">Jacqueline MUKAKANYAMUGENGE</td>
-                      
-                        <td>PSD</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-55d1fd90-6dac-4ab9-9645-bd511cf145de">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAKARANGWA, Clotilde">Clotilde MUKAKARANGWA</td>
-                      
-                        <td>PDC</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-66f13e81-848c-47e0-bf43-05f7314b4ad8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAMA, Abbas">Abbas MUKAMA</td>
-                      
-                        <td>PDI</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b279993-216f-4684-bbac-835d5f84ed4c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAMURANGWA SEBERA, Henriette">Henriette MUKAMURANGWA SEBERA</td>
-                      
-                        <td>PL</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8088dc6f-28fa-4251-bb41-c76c17c63a85">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKANDEKEZI, Pétronille">Pétronille MUKANDEKEZI</td>
-                      
-                        <td>Women</td>
-                        <td>Western</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-852bd1bd-45cc-49f8-b091-1f696efee9ed">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKANDERA, Iphigénie">Iphigénie MUKANDERA</td>
-                      
-                        <td>Women</td>
-                        <td>Eastern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-78e1d422-f4b4-45b6-8e72-7100c1971fdc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKANDUTIYE, Spéciose">Spéciose MUKANDUTIYE</td>
-                      
-                        <td>RPF</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7bda4bde-3c3a-41be-8bc9-b843559ef7f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKANTABANA, Rose">Rose MUKANTABANA</td>
-                      
-                        <td>Women</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-156bd0c9-1af8-4846-84bc-884ce71fd20e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKANYABYENDA, Emmanuella">Emmanuella MUKANYABYENDA</td>
-                      
-                        <td>Women</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b8ca72c8-1db9-45ca-a12b-860c43ea3a1c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKARUGEMA, Alphonsine">Alphonsine MUKARUGEMA</td>
-                      
-                        <td>RPF</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-25327eaf-c660-4d9f-823e-946803c66e71">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKARUGWIZA, Annonciata">Annonciata MUKARUGWIZA</td>
-                      
-                        <td>Women</td>
-                        <td>Eastern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-871e3d84-49e5-4ef2-a50d-ffd74a792a38">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAYIJORE, Suzanne">Suzanne MUKAYIJORE</td>
-                      
-                        <td>Women</td>
-                        <td>Northern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9aaf4204-2aca-40c6-b067-0b6832b724ab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAYISENGA, Françoise">Françoise MUKAYISENGA</td>
-                      
-                        <td>RPF</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-032abc4d-c49b-4e40-8592-88a70fce7f47">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAYUHI RWAKA, Constance">Constance MUKAYUHI RWAKA</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-83f6ce2b-8186-4ee8-9cd4-7c85edf4af46">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKAZIBERA, Agnès">Agnès MUKAZIBERA</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3dff3689-98d0-458d-b1bd-0c241f3d787a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUKOBWA, Justine">Justine MUKOBWA</td>
-                      
-                        <td>Youth</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ad28918e-4eec-46d9-9163-83cca787983c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUNYANGEYO, Theogene">Theogene MUNYANGEYO</td>
-                      
-                        <td>PL</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c91040f3-752c-4c5f-8723-98d1fc2afeae">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUREKATETE, Marie Thérèse">Marie Thérèse MUREKATETE</td>
-                      
-                        <td>Women</td>
-                        <td>Northern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a9d85a55-9c54-4f37-baa4-79a3249b7a7a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MURESHYANKWANO, Marie Rose">Marie Rose MURESHYANKWANO</td>
-                      
-                        <td>RPF</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6b0c5e9d-1152-4613-ac9a-cd60eb974aea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MURUMUNAWABO, Cécile">Cécile MURUMUNAWABO</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6c919c3-12e6-4ca4-bff0-389a060a7e7d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUSABYIMANA, Samuel">Samuel MUSABYIMANA</td>
-                      
-                        <td>RPF</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d60eca1-180d-4f2f-8ff4-467fe3697b08">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUTESI, Anitha">Anitha MUTESI</td>
-                      
-                        <td>Women</td>
-                        <td>Eastern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-962e9932-e622-4505-b1cb-af04cd56b76f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MUTIMURA, ZENO">ZENO MUTIMURA</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-107a1b83-11b3-4959-9097-73fd047174f0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MWIZA, Espérance">Espérance MWIZA</td>
-                      
-                        <td>RPF</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8e24291a-b9eb-42b7-be36-915dffe28e33">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGABO, Amiel">Amiel NGABO</td>
-                      
-                        <td>RPF</td>
-                        <td>Northern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a461f13-0dda-4de5-bce3-fd1b74ec0923">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIKUZE, Nura">Nura NIKUZE</td>
-                      
-                        <td>Women</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fb7196b5-e689-4877-bab3-01e1d5378038">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIYONSENGA, Théodomir">Théodomir NIYONSENGA</td>
-                      
-                        <td>PSD</td>
-                        <td>Northern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fa265324-39d7-44be-9b84-7bbf59762f0d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NKUSI, Juvénal">Juvénal NKUSI</td>
-                      
-                        <td>PSD</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1195e0fe-b201-4290-aca5-80b29c5b56e2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYANDWI, Joseph Désiré">Joseph Désiré NYANDWI</td>
-                      
-                        <td>RPF</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4e939ffa-c303-4614-8760-43e2a539edcc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYINAWASE, Jeanne d'Arc">Jeanne d'Arc NYINAWASE</td>
-                      
-                        <td>Women</td>
-                        <td>Western Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e4474ef6-5208-4540-9009-02d9692b62ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYIRABAGENZI, AGNES">AGNES NYIRABAGENZI</td>
-                      
-                        <td>RPF</td>
-                        <td>southern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-970dde75-c3a1-428f-951a-9ce4d5936d19">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYIRABEGA, Euthalie">Euthalie NYIRABEGA</td>
-                      
-                        <td>Women</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-053d5493-5932-4b38-9aa7-eb1432884b7f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYIRAGWANEZA, Athanasie">Athanasie NYIRAGWANEZA</td>
-                      
-                        <td>Women</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1ca0ee44-cd95-4227-b48d-ae0a20c432c8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYIRAHIRWA, Veneranda">Veneranda NYIRAHIRWA</td>
-                      
-                        <td>PSD</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dfaa46ce-96a5-4cd8-9878-b3006397e1a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYIRAMADIRIDA, Fortunee">Fortunee NYIRAMADIRIDA</td>
-                      
-                        <td>Women</td>
-                        <td>Northern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7f2970ba-a21b-4001-a435-50b197fd0ae5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYIRARUKUNDO, Ignatienne">Ignatienne NYIRARUKUNDO</td>
-                      
-                        <td>Women</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-47473bbc-8ad3-49e4-b444-31a9a6f0b4cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYIRASAFARI, Espérance">Espérance NYIRASAFARI</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-02be4478-2d92-48ab-8a86-cb2bc7fac557">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RUCIBIGANGO, J.Baptiste">J.Baptiste RUCIBIGANGO</td>
-                      
-                        <td>PSR</td>
-                        <td>Southern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5741109d-d75e-4102-aa70-fbdf50d0d773">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RUKU-RWABYOMA, John">John RUKU-RWABYOMA</td>
-                      
-                        <td>RPF</td>
-                        <td>Eastern</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a3ebb86c-a1d2-479b-ba00-98a72069d6db">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RUSIHA, Gastone">Gastone RUSIHA</td>
-                      
-                        <td>Persons with Disabilities</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-858ee1ef-6c67-424a-b25e-b32526bd89a6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RUTAYISIRE, Georgette">Georgette RUTAYISIRE</td>
-                      
-                        <td>PSD</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-53a9275b-3ac3-46d9-b898-cd72c1a3f2ff">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RWIGAMBA, Fidèle">Fidèle RWIGAMBA</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-883c6245-2ca8-43e6-a3a2-c67c332d7cef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SEMASAKA, Gabriel">Gabriel SEMASAKA</td>
-                      
-                        <td>RPF</td>
-                        <td>Northern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c1374e0-ec82-4700-9bb0-fbedce4fa863">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TENGERA, TWIKIRIZE Francesca">TWIKIRIZE Francesca TENGERA</td>
-                      
-                        <td>RPF</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a403bec6-ff40-43e1-ac4f-f1b4f5a968b3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="UWAMAMA, Marie Claire">Marie Claire UWAMAMA</td>
-                      
-                        <td>Women</td>
-                        <td>Western</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9ce37b74-ee63-4ccd-8331-c15a4e070489">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="UWAMARIYA, Dévote">Dévote UWAMARIYA</td>
-                      
-                        <td>Women</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1f63ce7c-ad8b-48a4-8705-6908b4edd5c2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="UWANYIRIGIRA, Gloriose">Gloriose UWANYIRIGIRA</td>
-                      
-                        <td>Women</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7c493b6a-16ad-457c-995b-84eba5a18e56">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="UWAYISENGA, Yvonne">Yvonne UWAYISENGA</td>
-                      
-                        <td>Women</td>
-                        <td>Kigali</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-be7347be-48a1-45f6-88b0-8bf838d2f562">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="UWIMANIMPAYE, Jeanne d’Arc">Jeanne d’Arc UWIMANIMPAYE</td>
-                      
-                        <td>Women</td>
-                        <td>Eastern Province</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3248b4a3-cf21-4f04-9517-d46e75f55ea8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="UWIRINGIYIMANA, Philbert">Philbert UWIRINGIYIMANA</td>
-                      
-                        <td>Youth</td>
-                        <td>Western</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-002ad280-39e7-4eae-8d9e-ddbdf5eb371c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Edouard BAMPORIKI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali City
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:edouard.bamporiki@parliament.gov.rw">edouard.bamporiki@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66b4f362-27c0-435f-89f1-b397f887d78e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Eugène BARIKANA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:eugene.barikana@parliament.gov.rw">eugene.barikana@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-99c423fd-c602-4bdc-9ca1-7c802fc5052b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Adolphe BAZATOHA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:adolphe.bazatoha@parliament.gov.rw">adolphe.bazatoha@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ac774f29-7592-4edb-93fc-aaad6f8e9a0b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Theoneste BEGUMISA SAFARI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:theoneste.safari@parliament.gov.rw">theoneste.safari@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e03a94a6-8022-48c3-abb4-46afbd1fb101">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GIOVANNI BUSHISHI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:giovani.bushishi@parliament@gov.rw">giovani.bushishi@parliament@gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-620c6cf8-7eed-4ff4-b18a-660932f7a584">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SEKAMANA Connie BWIZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:connie.bwiza@parliament.gov.rw">connie.bwiza@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a7a6b953-e417-4f29-85e0-6fffd49a0b3d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">François BYABARUMWANZI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PL — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:francois.byabarumwanzi@parliament.gov.rw">francois.byabarumwanzi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e5723a0f-8c64-477e-86a2-c0bac7c74ec1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Athanasie GAHONDOGO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:athanasie.gahondogo@parliament.gov.rw">athanasie.gahondogo@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f37b6781-ad7c-4f5a-a002-906727a9528e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Marie Vianey GATABAZI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Northern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jmvianney.gatabazi@parliament.gov.rw">jmvianney.gatabazi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ba81feb3-8c60-479e-844d-f5c8a48bdc8b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie Mediatrice IZABIRIZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — southern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mmediatrice.izabiriza@parliament.gov.rw">mmediatrice.izabiriza@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d712e08f-2429-4de7-ab1b-9f4218963106">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Chantal KABASINGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Northern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:chantal.kabasinga@parliament.gov.rw">chantal.kabasinga@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1958d84e-8908-4b4b-8d99-f674180c8b41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Evariste KALISA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PL — Northern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:evariste.kalisa@parliament.gov.rw">evariste.kalisa@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7ea2648-4b18-4ed9-a869-48dcdc9b39a8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie Josée KANKERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mjosee.kankera@parliament.gov.rw">mjosee.kankera@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14531977-c3e4-4c85-a941-91e17e86d237">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Juliana KANTENGWA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:juliana.kantengwa@parliament.gov.rw">juliana.kantengwa@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9c564ad9-ca2d-4a75-8abb-d0835f5a328e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean Thierry KAREMERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PPC — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jeanthierry.karemera@parliament.gov.rw">jeanthierry.karemera@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3c8dcd38-1902-4555-b033-602429f0d560">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Théoneste KARENZI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:theoneste.karenzi@parliament.gov.rw">theoneste.karenzi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15f44ad7-bf45-4610-ac89-0f324ea5da4f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alfred KAYIRANGA RWASA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:alfred.kayiranga@parliament.gov.rw">alfred.kayiranga@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-98ed5a7a-0a1c-4b72-9b8d-377c5159afdb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Innocent KAYITARE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:innocent.kayitare@parliament.gov.rw">innocent.kayitare@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e2d12e16-199c-417b-80f6-b86c85e278d2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Libérata KAYITESI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:liberata.kayitesi@parliament.gov.rw">liberata.kayitesi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cee66fb3-39e8-4df9-8a9f-e14a03229ee9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Annoncée MANIRARORA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:annoncee.manirarora@parliament.gov.rw">annoncee.manirarora@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b86b14f-7a84-49e4-96c1-f5d12a26a25c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Théobald MPORANYI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:theobald.mporanyi@parliament.gov.rw">theobald.mporanyi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-826dbe7d-6cb3-4739-a345-a53bacfdf448">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Emmanuel MUDIDI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:emmanuel.mudidi@parliament.gov.rw">emmanuel.mudidi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f34be801-067b-4dbc-93a2-dc177147a27b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Christine MUHONGAYIRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — southern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:christine.muhongayire@parliament.gov.rw">christine.muhongayire@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-86df91e3-cf3e-484d-ada3-4a2fdfa0cb5f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Berthe MUJAWAMARIYA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:berthe.mujawamariya@parliament.gov.rw">berthe.mujawamariya@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c9df06c4-aec4-461a-b614-48cc425b79e6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Edda MUKABAGWIZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:edda.mukabagwiza@parliament.gov.rw">edda.mukabagwiza@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d713d600-4456-4ec3-8251-c8be5a7f90ac">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Donatille MUKABALISA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PL — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:donatille.mukabalisa@parliament.gov.rw">donatille.mukabalisa@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-955cbbb4-bd0b-44d6-bee8-6fc510df0f0b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jeanne Henriette MUKABIKINO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jhenriette.mukabikino@parliament.gov.rw">jhenriette.mukabikino@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9cb8acf7-7fdf-430b-8153-3d143bb12077">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jacqueline MUKAKANYAMUGENGE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jacqueline.mukakanyamugenge@parliament.gov.rw">jacqueline.mukakanyamugenge@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-55d1fd90-6dac-4ab9-9645-bd511cf145de">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Clotilde MUKAKARANGWA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDC — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:Clotilde.mukakarangwa@parliament.gov.rw">Clotilde.mukakarangwa@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66f13e81-848c-47e0-bf43-05f7314b4ad8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Abbas MUKAMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDI — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:abbas.mukama@parliament.gov.rw">abbas.mukama@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b279993-216f-4684-bbac-835d5f84ed4c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Henriette MUKAMURANGWA SEBERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PL — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:henriette.mukamurangwa@parliament.gov.rw">henriette.mukamurangwa@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8088dc6f-28fa-4251-bb41-c76c17c63a85">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pétronille MUKANDEKEZI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Western
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:petronille.mukandekezi@parliament.gov.rw">petronille.mukandekezi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-852bd1bd-45cc-49f8-b091-1f696efee9ed">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Iphigénie MUKANDERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Eastern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:iphigenie.mukandera@parliament.gov.rw">iphigenie.mukandera@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-78e1d422-f4b4-45b6-8e72-7100c1971fdc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Spéciose MUKANDUTIYE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:speciose.mukandutiye@parliament.gov.rw">speciose.mukandutiye@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7bda4bde-3c3a-41be-8bc9-b843559ef7f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rose MUKANTABANA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:rose.mukantabana@parliament.gov.rw">rose.mukantabana@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-156bd0c9-1af8-4846-84bc-884ce71fd20e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Emmanuella MUKANYABYENDA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:emmanuella.mukanyabyenda@parliament.gov.rw">emmanuella.mukanyabyenda@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b8ca72c8-1db9-45ca-a12b-860c43ea3a1c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alphonsine MUKARUGEMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:alphonsine.mukarugema@parliament.gov.rw">alphonsine.mukarugema@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-25327eaf-c660-4d9f-823e-946803c66e71">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Annonciata MUKARUGWIZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Eastern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:annonciata.mukarugwiza@parliament.gov.rw">annonciata.mukarugwiza@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-871e3d84-49e5-4ef2-a50d-ffd74a792a38">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Suzanne MUKAYIJORE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Northern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:suzane.mukayijore@parliament.gov.rw">suzane.mukayijore@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9aaf4204-2aca-40c6-b067-0b6832b724ab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Françoise MUKAYISENGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:francoise.mukayisenga@parliament.gov.rw">francoise.mukayisenga@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-032abc4d-c49b-4e40-8592-88a70fce7f47">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Constance MUKAYUHI RWAKA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:constance.mukayuhi@parliament.gov.rw">constance.mukayuhi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-83f6ce2b-8186-4ee8-9cd4-7c85edf4af46">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Agnès MUKAZIBERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:agnes.mukazibera@parliament.gov.rw">agnes.mukazibera@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3dff3689-98d0-458d-b1bd-0c241f3d787a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Justine MUKOBWA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Youth — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:justine.mukobwa@parliament.gov.rw">justine.mukobwa@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ad28918e-4eec-46d9-9163-83cca787983c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Theogene MUNYANGEYO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PL — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:theogene.munyangeyo@parliament.gov.rw">theogene.munyangeyo@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c91040f3-752c-4c5f-8723-98d1fc2afeae">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie Thérèse MUREKATETE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Northern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:marietherese.murekatete@parliament.gov.rw">marietherese.murekatete@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a9d85a55-9c54-4f37-baa4-79a3249b7a7a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie Rose MURESHYANKWANO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:marierose.mureshyankwano@parliament.gov.rw">marierose.mureshyankwano@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6b0c5e9d-1152-4613-ac9a-cd60eb974aea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cécile MURUMUNAWABO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:cecile.murumunawabo@parliament.gov.rw">cecile.murumunawabo@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6c919c3-12e6-4ca4-bff0-389a060a7e7d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Samuel MUSABYIMANA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:samuel.musabyimana@parliament.gov.rw">samuel.musabyimana@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d60eca1-180d-4f2f-8ff4-467fe3697b08">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Anitha MUTESI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Eastern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:anitha.mutesi@parliament.gov.rw">anitha.mutesi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-962e9932-e622-4505-b1cb-af04cd56b76f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ZENO MUTIMURA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:zeno.mutimura@parliament.gov.rw">zeno.mutimura@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-107a1b83-11b3-4959-9097-73fd047174f0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Espérance MWIZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:esperance.mwiza@parliament.gov.rw">esperance.mwiza@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e24291a-b9eb-42b7-be36-915dffe28e33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Amiel NGABO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Northern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:amiel.ngabo@parliament.gov.rw">amiel.ngabo@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a461f13-0dda-4de5-bce3-fd1b74ec0923">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nura NIKUZE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:nura.nikuze@parliament.gov.rw">nura.nikuze@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fb7196b5-e689-4877-bab3-01e1d5378038">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Théodomir NIYONSENGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD — Northern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:theodomir.niyonsenga@parliament.gov.rw">theodomir.niyonsenga@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fa265324-39d7-44be-9b84-7bbf59762f0d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Juvénal NKUSI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:juvenal.nkusi@parliament.gov.rw">juvenal.nkusi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1195e0fe-b201-4290-aca5-80b29c5b56e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Joseph Désiré NYANDWI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:desire.nyandwi@parliament.gov.rw">desire.nyandwi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4e939ffa-c303-4614-8760-43e2a539edcc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jeanne d'Arc NYINAWASE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Western Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jdarc.nyinawase@parliament.gov.rw">jdarc.nyinawase@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e4474ef6-5208-4540-9009-02d9692b62ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AGNES NYIRABAGENZI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — southern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:agnes.nyirabagenzi@parliament.gov.rw">agnes.nyirabagenzi@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-970dde75-c3a1-428f-951a-9ce4d5936d19">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Euthalie NYIRABEGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:euthalie.nyirabega@parliament.gov.rw">euthalie.nyirabega@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-053d5493-5932-4b38-9aa7-eb1432884b7f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Athanasie NYIRAGWANEZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:athanasie.nyiragwaneza@parliament.gov.rw">athanasie.nyiragwaneza@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1ca0ee44-cd95-4227-b48d-ae0a20c432c8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Veneranda NYIRAHIRWA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:veneranda.nyirahirwa@parliament.gov.rw">veneranda.nyirahirwa@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dfaa46ce-96a5-4cd8-9878-b3006397e1a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fortunee NYIRAMADIRIDA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Northern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:fortunee.nyiramadirida@parliament.gov.rw">fortunee.nyiramadirida@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7f2970ba-a21b-4001-a435-50b197fd0ae5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ignatienne NYIRARUKUNDO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ignacienne.nyirarukundo@parliament.gov.rw">ignacienne.nyirarukundo@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-47473bbc-8ad3-49e4-b444-31a9a6f0b4cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Espérance NYIRASAFARI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:esperance.nyirasafari@parliament.gov.rw">esperance.nyirasafari@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-02be4478-2d92-48ab-8a86-cb2bc7fac557">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">J.Baptiste RUCIBIGANGO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSR — Southern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jeanbaptiste.rucibigango@parliament.gov.rw">jeanbaptiste.rucibigango@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5741109d-d75e-4102-aa70-fbdf50d0d773">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John RUKU-RWABYOMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Eastern
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:john.rukurwabyoma@parliament.gov.rw">john.rukurwabyoma@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a3ebb86c-a1d2-479b-ba00-98a72069d6db">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gastone RUSIHA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Persons with Disabilities — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gastone.rusiha@parliament.gov.rw">gastone.rusiha@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-858ee1ef-6c67-424a-b25e-b32526bd89a6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Georgette RUTAYISIRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:georgette.rutayisire@parliament.gov.rw">georgette.rutayisire@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-53a9275b-3ac3-46d9-b898-cd72c1a3f2ff">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fidèle RWIGAMBA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:fidele.rwigamba@parliament.gov.rw">fidele.rwigamba@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-883c6245-2ca8-43e6-a3a2-c67c332d7cef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gabriel SEMASAKA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Northern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gabriel.semasaka@parliament.gov.rw">gabriel.semasaka@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c1374e0-ec82-4700-9bb0-fbedce4fa863">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TWIKIRIZE Francesca TENGERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPF — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:francesca.tengera@parliament.gov.rw">francesca.tengera@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a403bec6-ff40-43e1-ac4f-f1b4f5a968b3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie Claire UWAMAMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Western
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mclaire.uwamana@parliament.gov.rw">mclaire.uwamana@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9ce37b74-ee63-4ccd-8331-c15a4e070489">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dévote UWAMARIYA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:devota.uwamariya@parliament.gov.rw">devota.uwamariya@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1f63ce7c-ad8b-48a4-8705-6908b4edd5c2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gloriose UWANYIRIGIRA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gloriose.uwanyirigira@parliament.gov.rw">gloriose.uwanyirigira@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7c493b6a-16ad-457c-995b-84eba5a18e56">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Yvonne UWAYISENGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Kigali
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:yvonne.uwayisenga@parliament.gov.rw">yvonne.uwayisenga@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-be7347be-48a1-45f6-88b0-8bf838d2f562">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jeanne d’Arc UWIMANIMPAYE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Women — Eastern Province
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jeannedarc.uwimanimpaye@parliament.gov.rw">jeannedarc.uwimanimpaye@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3248b4a3-cf21-4f04-9517-d46e75f55ea8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Philbert UWIRINGIYIMANA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Youth — Western
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:philbert.uwiringiyimana@parliament.gov.rw">philbert.uwiringiyimana@parliament.gov.rw</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="12 Législature" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-pdg"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -131,1415 +134,3121 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/8ce15ff/data/Gabon/Assembly/term-12.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/8ce15ff/data/Gabon/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/8ce15ff/data/Gabon/Assembly/term-12.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/8ce15ff/data/Gabon/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-c023fd15-630f-4579-944c-f2f05c5cbb85">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AKOGHET Gisèle">AKOGHET Gisèle</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-33e747c5-8672-4ba2-b237-57714c6e04ec">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ANGANGOU Estelle Flore">ANGANGOU Estelle Flore</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1aea1922-8240-42fe-89c8-1e3217ad3111">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ANGARA Alphonse">ANGARA Alphonse</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-27b78609-776a-4909-86c4-a676b6951f6b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ANGO NDOUTOUME François">ANGO NDOUTOUME François</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-13d3e6ed-f04f-46b6-8635-e279de8ea4dd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ANGOUE Samuel">ANGOUE Samuel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3b1b96fb-0401-4819-bfd5-1aacc113b6f1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ANGWE ABOUGHE André">ANGWE ABOUGHE André</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-895642a8-bb7d-4e78-8703-95295bbed9cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AZIZET Berthe">AZIZET Berthe</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f93d5ed1-1c20-474f-81fc-d5291ad5a7d9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAL’ABONDHOUME Irène Farelle épse KOUNDE">BAL’ABONDHOUME Irène Farelle épse KOUNDE</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6e0ef3e0-5e0e-4406-bee7-54a86558266e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BARRO CHAMBRIER Hugues Alexandre">BARRO CHAMBRIER Hugues Alexandre</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-104b3525-a87d-4439-88b4-4628911a9e27">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAYOGHA NEMBE Célestin">BAYOGHA NEMBE Célestin</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a401fdc4-2627-4dae-81d8-a891ab8ec16e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BERRE André Dieudonné">BERRE André Dieudonné</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-98c65e98-9ee3-420e-b5a0-60a14b5780c2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BIE EYENE Paul">BIE EYENE Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6c9bdd99-9708-4b15-bd17-7cb912e8782f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BINET Modeste">BINET Modeste</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e2b8617-6774-41ff-b453-bffb3fd42408">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BIYOGHE BI MBA Paul">BIYOGHE BI MBA Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f462e1e7-774c-47e9-bfeb-5850f350ecd1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BIYOGHE BI-NZUE Nicaise">BIYOGHE BI-NZUE Nicaise</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e2bbd1ba-d2ee-4c8f-bb24-98a2ec12b927">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOUKILA Jean Pierre">BOUKILA Jean Pierre</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4aa8e08e-8aab-46cd-bd2d-33404594d16a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOUKOUBI Faustin">BOUKOUBI Faustin</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ff26ce7-2c0f-4690-80b1-4578cf502bbd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOUNGOUERES Alain Simplice">BOUNGOUERES Alain Simplice</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8293bcf-1052-46ff-84b9-e6b56f028acb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOUTAMBA MBINA Alexis">BOUTAMBA MBINA Alexis</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4da8b468-9eb5-4948-98cf-c87b1bae91c5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DOUPAMBY MATOKA Marcel">DOUPAMBY MATOKA Marcel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e4558b4a-7b16-4b3e-87ce-83ea97dc92af">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EDZEBA-BICKE Steve Thierry">EDZEBA-BICKE Steve Thierry</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-08024936-ca17-4686-9322-4adad747d57d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ELLA MENIE Vincent de Paul">ELLA MENIE Vincent de Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-446ff346-1f1b-47c7-935c-a37b7c1caf6a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ESSIE EMANE Paul">ESSIE EMANE Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2083a459-cf2e-495e-90a5-e7854bab0b1b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EYAMBA TSIMAT Maurice Nestor">EYAMBA TSIMAT Maurice Nestor</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a9c8787-7cce-4f33-9556-9b09f8d47905">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GONDJOUT Vincent de Paul">GONDJOUT Vincent de Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc5055c1-8e44-4788-9bfb-9cb8e0b63171">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IDOUNDOU Emmanuel">IDOUNDOU Emmanuel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c4bbbb07-eddd-402e-8184-45246ba78e11">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IGNOUMBA Jonathan">IGNOUMBA Jonathan</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e7f67e30-89b5-492b-94cb-be6b632bee41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="INDOUMOU MAMBOUNGOU Barnabé">INDOUMOU MAMBOUNGOU Barnabé</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-08f61d6d-5e5a-4316-ba68-2d6c79005c65">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IVALA Clotaire Christian">IVALA Clotaire Christian</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b1051c41-925d-4c0c-816d-7bb7bc73a035">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KAH Gervais Landry">KAH Gervais Landry</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e6323c9b-dec5-4819-9331-fd2276ba8a64">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KOUMBA TENGO Bruce">KOUMBA TENGO Bruce</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7e436772-8d6d-4119-978a-ef0bb22ae908">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LATE Emmanuel">LATE Emmanuel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-810860b0-b823-4e36-bd06-2e933b27a2bd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LENGOMAS MATOMBI Gilbert">LENGOMAS MATOMBI Gilbert</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-25c51966-f881-4bac-94a6-51fb1becaf18">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MABALA Martin">MABALA Martin</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-12657052-c67b-463b-b7c1-68eafa1063ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAGANGA MANFOUMBI Justin">MAGANGA MANFOUMBI Justin</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8741562f-500b-43bb-91a3-539b669eacd2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAGANGA MOUSSAVOU Albertine">MAGANGA MOUSSAVOU Albertine</td>
-                      
-                        <td>PSD</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0a2633a9-dd82-42ed-af27-a69860acd71e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAKUNGU Alain Patrick">MAKUNGU Alain Patrick</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ddd824bc-0bbd-43db-8f4e-fbf5bc7a7166">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MALONGA-MOUELET Gabriel">MALONGA-MOUELET Gabriel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ee76c9d0-c355-4e49-9a6e-a8e2f275d17b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARAT ABYLA Luc">MARAT ABYLA Luc</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d37e5c70-92da-47b4-84df-541baadc4540">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MASSALA TSAMBA Narcisse">MASSALA TSAMBA Narcisse</td>
-                      
-                        <td>UPNR</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ca359108-a4e9-405b-9e52-81b75b4f6bad">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MASSIMA Jean">MASSIMA Jean</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d5927e3-9867-4909-b708-dc04e95746dd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAVOUNGOU BOUYOU Vincent">MAVOUNGOU BOUYOU Vincent</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f84c66fb-a9ea-4833-9386-379a92b20133">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAWOBO LENDOYE Fernando">MAWOBO LENDOYE Fernando</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e10be6b0-1956-46f6-a9db-20c2d60ecc11">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBA ABESSOLE Paul">MBA ABESSOLE Paul</td>
-                      
-                        <td>RPG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dd78113f-3e69-45d9-8189-071da979198e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBADINGA MOMBO Ferdinand">MBADINGA MOMBO Ferdinand</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2f9b2fbf-0ebb-45c1-b41e-1a44c679580c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBONDZI Solange">MBONDZI Solange</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d87ffab7-df93-4109-a053-99bb675b6904">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBOUMBA Joseph">MBOUMBA Joseph</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ba8d88ae-7a0a-4a9e-a71a-819c6b5040f0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBOUMBOU MIYAKOU Edgard Anicet">MBOUMBOU MIYAKOU Edgard Anicet</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-43f4eafb-d723-4fa3-8396-5436db650752">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBOUMI Michel">MBOUMI Michel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-37c3aef8-b17b-4b76-9015-9a5afc9ce54c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBOUMI NZINZI Jean Claude">MBOUMI NZINZI Jean Claude</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-78cfd296-0442-48cf-bfc5-c0627b86ff09">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MENGA M’ESSONE Michel">MENGA M’ESSONE Michel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b3bd888c-11ad-46c2-a665-180f50342970">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MIKANGA SEMBA Philippe Romain">MIKANGA SEMBA Philippe Romain</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4d424f04-a6a5-43b2-85be-6db86a4693be">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOMOADJAMBO Sylvain">MOMOADJAMBO Sylvain</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e9f18d76-b66d-4a5e-aeec-33608bef5f2f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOUBAMBA MOUKETOU Aloïse">MOUBAMBA MOUKETOU Aloïse</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-32e93406-5fa5-4a6e-a7a3-6ac2edbee452">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOUDOUMA Apollinaire Adonis">MOUDOUMA Apollinaire Adonis</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3a25bfb5-bdce-4d42-b1c5-f7d891357c92">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOULENGUI MABENDE Martin">MOULENGUI MABENDE Martin</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-da49ee2c-060a-417f-bc04-0f54d45e473e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOUNGUENGUI KOUMBA Guy François">MOUNGUENGUI KOUMBA Guy François</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-faf67fe4-bc32-43b5-bb4c-f5dc2391d395">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOUSSAVOU Louis Marie">MOUSSAVOU Louis Marie</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d947e5b-61b4-4ba6-b3dd-9875b3b85af1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOUTSINGA Juliette">MOUTSINGA Juliette</td>
-                      
-                        <td>PDG/PGCI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6aafd34c-c937-490c-a05c-e9232759d12b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MPONO Jean Claude">MPONO Jean Claude</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d0c9a9f-00af-4e9a-965e-f933157c65b4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MVE-EBANG Marcellin">MVE-EBANG Marcellin</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d09be917-56a9-4f25-9e42-195ae03cec68">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NANG NDONG Paul">NANG NDONG Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c7855d4e-a322-4f79-abe2-fc1e28f934e4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDAKI Bernabé">NDAKI Bernabé</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e23c05bd-27ba-4609-8eb1-e81bda31f81e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDEKAYINO Marguerite">NDEKAYINO Marguerite</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4d4e1ea2-9182-4e4b-9ae9-9d354b606992">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDEMEZO’O OBIANG René">NDEMEZO’O OBIANG René</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7c097c54-76da-476e-bc49-7785ee6b338b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDJAMONO François">NDJAMONO François</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5900e660-8e72-4b6a-b3d9-a84927faf478">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDJAVE NDJOY Albert">NDJAVE NDJOY Albert</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-02b380c0-ee91-4943-b6c4-a54b6afeebba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDONG NGUEMA Paul">NDONG NGUEMA Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-916a8e76-0fc3-4c00-90df-027db29fc61a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDONG OBIANG Albert">NDONG OBIANG Albert</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae2e719a-5f64-4238-92a7-bf3d05c52f1c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDOUTOUME ESSONE Jean Marie">NDOUTOUME ESSONE Jean Marie</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f8849c8-86f2-4989-91e3-6c8a1034114c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDZIAMI Jacques">NDZIAMI Jacques</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3f6c3366-b3ba-4176-9b14-e509419e2729">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDZOUMBA Bernard">NDZOUMBA Bernard</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-48f0aa42-6edb-4250-9de9-3e208658564f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGARI Idriss">NGARI Idriss</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-930487f5-6684-4500-bb3f-bdc336f42ea2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGOMA Angélique">NGOMA Angélique</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ebd0e74c-c8c8-42a4-a9ac-ae11f62b2e8e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGOMBELA Raymond">NGOMBELA Raymond</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ac23710-82c9-47b4-b946-d41173ec70a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGONDJIGA Ludovic">NGONDJIGA Ludovic</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b120e8a2-48cc-4077-9b32-68196ac11b3c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGOU-MVE Nicolas">NGOU-MVE Nicolas</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2372b0b9-e388-4612-82bc-24f95146d046">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGOZO ISSONDOU Maxime-Laurent">NGOZO ISSONDOU Maxime-Laurent</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a76c417c-4a98-4792-ac0f-ba7ace7c31a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGUEMA ESSONO Jacques">NGUEMA ESSONO Jacques</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea1d97bb-9f9d-4113-8262-e7703112f751">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGUEMA MBA Alexandre">NGUEMA MBA Alexandre</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d656ea87-a6fc-4c1a-a225-e0bbd759c410">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGUEMA NDONG Jean Marie">NGUEMA NDONG Jean Marie</td>
-                      
-                        <td>RPG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dc8b8e33-6b0c-4f5f-ac1d-5f9a9ad044ed">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGUIMBI André Christ">NGUIMBI André Christ</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3f0410cf-0f7a-44c8-80ec-3e040d932a31">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NKERO MOUGNOKO Charlotte">NKERO MOUGNOKO Charlotte</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-da11bdac-3c07-4e99-87c6-9ddc31762b6d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NKOGHE ESSINGONE Adrien">NKOGHE ESSINGONE Adrien</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-54158916-bdaf-4bbd-8510-acf417ca5a07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NONGOU MOUNDOUNGA Pauline Olive épse LOUEMBET">NONGOU MOUNDOUNGA Pauline Olive épse LOUEMBET</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6e8dcda6-7b86-402f-a309-02e3f26330a1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTIMEDJIARA Rachel">NTIMEDJIARA Rachel</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1ed9797c-a0f5-4468-82cd-27c970d94957">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTOLO EYA’A Francis">NTOLO EYA’A Francis</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-55fd87af-a85e-4cae-ad56-804e8ef2e891">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTOUTOUME MEBIAME Aurélien">NTOUTOUME MEBIAME Aurélien</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-81495d19-0c82-41bc-a0eb-190888de8e93">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NTOUTOUME Robert">NTOUTOUME Robert</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-93bbf9da-bbab-4626-a5ea-518053ea41f6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NYINGONE ANDA Marie-Madeleine">NYINGONE ANDA Marie-Madeleine</td>
-                      
-                        <td>RPG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5c4e3be8-5a0a-452c-a1fe-73db095b15e8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZE-MOUENIDIAMBOU Joséphine">NZE-MOUENIDIAMBOU Joséphine</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d0a9b245-a72c-42c6-83b4-9dac3630fbcc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZENGUE MAYILA Philippe">NZENGUE MAYILA Philippe</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e95fd8bd-8446-4417-a476-b75243c5d975">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZIENGUI MIHINDOU">NZIENGUI MIHINDOU</td>
-                      
-                        <td>CLR</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f278deb0-5082-4965-81bc-a4c325329b9c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NZOUBA-NDAMA Guy">NZOUBA-NDAMA Guy</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-83237029-e2b0-41ee-baac-9697373d3909">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OBAME ONDO Jean Marie">OBAME ONDO Jean Marie</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a3d3f192-b017-4df3-b631-00d37297f35f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OGOUEBANDJA OGOUEMPONO Jules Marius">OGOUEBANDJA OGOUEMPONO Jules Marius</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-06c04f97-8ded-4e5d-a853-0f152609307c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OGOULA Philomène">OGOULA Philomène</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d7385657-024b-477d-b1d8-4cf1259bc2fe">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ONDIMBA Maxime">ONDIMBA Maxime</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-97493742-d770-410c-a1ca-91fe8f171ca2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ONOUVIET Richard-Auguste">ONOUVIET Richard-Auguste</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d9d075c4-0132-458e-aadd-9928a96160fd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ONTSOUGOU Faustin">ONTSOUGOU Faustin</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4c58e37e-34ec-48b4-b7e9-c5fa0c150449">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OSSAGOU Guy Christian">OSSAGOU Guy Christian</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7cfaad39-86db-44df-bde1-c973cc5369be">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OTANDO Charles">OTANDO Charles</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c13ddfc8-c91e-4221-bdcc-e051cab41ef8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OWONO NDONG Edgard">OWONO NDONG Edgard</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-97dcb7d1-952d-4c28-a63e-a0d0ebc85b4a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="PAÏENI Paulette épse KOHO">PAÏENI Paulette épse KOHO</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-93c263e6-60fe-4149-805f-815ee09b2b12">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RETENO André Jules">RETENO André Jules</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f800b27f-8d9f-48d4-a818-1f010020a862">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ROYEMBO Albert Richard">ROYEMBO Albert Richard</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d33a5eb2-ffda-4c52-8c1f-416d9d0a8f21">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SIMEPOUNGOU Jean Claude">SIMEPOUNGOU Jean Claude</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4aa2bef7-5e85-41c8-931d-f0518a934f0f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SYLONG Jean Richard">SYLONG Jean Richard</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f11ef1a1-179c-4d2e-838b-4f37795662a2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TALI Nicolas">TALI Nicolas</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bb9ba6a0-d116-448b-861d-5ef823a9f784">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TOUNGUI Paul">TOUNGUI Paul</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4f5d2ffc-f36c-4237-adab-d0b38ac45b25">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="YAMI Laurent">YAMI Laurent</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a96fc248-d7b4-4804-8dae-e8234135c560">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="YOUBANGOYE MBILA Alexandre">YOUBANGOYE MBILA Alexandre</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-07e5ef14-0cdb-44ee-8c12-ccd314b35372">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ZIBI ABEGHE Bertrand">ZIBI ABEGHE Bertrand</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b6f5d70-ae33-436f-8ef1-6e0000037cc1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ZOUGA AKI Esther">ZOUGA AKI Esther</td>
-                      
-                        <td>PDG</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c023fd15-630f-4579-944c-f2f05c5cbb85">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AKOGHET Gisèle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-33e747c5-8672-4ba2-b237-57714c6e04ec">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ANGANGOU Estelle Flore</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1aea1922-8240-42fe-89c8-1e3217ad3111">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ANGARA Alphonse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-27b78609-776a-4909-86c4-a676b6951f6b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ANGO NDOUTOUME François</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13d3e6ed-f04f-46b6-8635-e279de8ea4dd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ANGOUE Samuel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b1b96fb-0401-4819-bfd5-1aacc113b6f1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ANGWE ABOUGHE André</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-895642a8-bb7d-4e78-8703-95295bbed9cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AZIZET Berthe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f93d5ed1-1c20-474f-81fc-d5291ad5a7d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BAL’ABONDHOUME Irène Farelle épse KOUNDE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6e0ef3e0-5e0e-4406-bee7-54a86558266e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BARRO CHAMBRIER Hugues Alexandre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-104b3525-a87d-4439-88b4-4628911a9e27">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BAYOGHA NEMBE Célestin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a401fdc4-2627-4dae-81d8-a891ab8ec16e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BERRE André Dieudonné</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-98c65e98-9ee3-420e-b5a0-60a14b5780c2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BIE EYENE Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6c9bdd99-9708-4b15-bd17-7cb912e8782f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BINET Modeste</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e2b8617-6774-41ff-b453-bffb3fd42408">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BIYOGHE BI MBA Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f462e1e7-774c-47e9-bfeb-5850f350ecd1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BIYOGHE BI-NZUE Nicaise</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e2bbd1ba-d2ee-4c8f-bb24-98a2ec12b927">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOUKILA Jean Pierre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4aa8e08e-8aab-46cd-bd2d-33404594d16a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOUKOUBI Faustin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ff26ce7-2c0f-4690-80b1-4578cf502bbd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOUNGOUERES Alain Simplice</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8293bcf-1052-46ff-84b9-e6b56f028acb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOUTAMBA MBINA Alexis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4da8b468-9eb5-4948-98cf-c87b1bae91c5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DOUPAMBY MATOKA Marcel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e4558b4a-7b16-4b3e-87ce-83ea97dc92af">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EDZEBA-BICKE Steve Thierry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-08024936-ca17-4686-9322-4adad747d57d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ELLA MENIE Vincent de Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-446ff346-1f1b-47c7-935c-a37b7c1caf6a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ESSIE EMANE Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2083a459-cf2e-495e-90a5-e7854bab0b1b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EYAMBA TSIMAT Maurice Nestor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a9c8787-7cce-4f33-9556-9b09f8d47905">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GONDJOUT Vincent de Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc5055c1-8e44-4788-9bfb-9cb8e0b63171">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IDOUNDOU Emmanuel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c4bbbb07-eddd-402e-8184-45246ba78e11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IGNOUMBA Jonathan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e7f67e30-89b5-492b-94cb-be6b632bee41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">INDOUMOU MAMBOUNGOU Barnabé</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-08f61d6d-5e5a-4316-ba68-2d6c79005c65">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IVALA Clotaire Christian</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b1051c41-925d-4c0c-816d-7bb7bc73a035">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KAH Gervais Landry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e6323c9b-dec5-4819-9331-fd2276ba8a64">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KOUMBA TENGO Bruce</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7e436772-8d6d-4119-978a-ef0bb22ae908">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">LATE Emmanuel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-810860b0-b823-4e36-bd06-2e933b27a2bd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">LENGOMAS MATOMBI Gilbert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-25c51966-f881-4bac-94a6-51fb1becaf18">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MABALA Martin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-12657052-c67b-463b-b7c1-68eafa1063ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAGANGA MANFOUMBI Justin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8741562f-500b-43bb-91a3-539b669eacd2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAGANGA MOUSSAVOU Albertine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PSD
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0a2633a9-dd82-42ed-af27-a69860acd71e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAKUNGU Alain Patrick</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ddd824bc-0bbd-43db-8f4e-fbf5bc7a7166">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MALONGA-MOUELET Gabriel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee76c9d0-c355-4e49-9a6e-a8e2f275d17b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARAT ABYLA Luc</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d37e5c70-92da-47b4-84df-541baadc4540">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MASSALA TSAMBA Narcisse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UPNR
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ca359108-a4e9-405b-9e52-81b75b4f6bad">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MASSIMA Jean</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d5927e3-9867-4909-b708-dc04e95746dd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAVOUNGOU BOUYOU Vincent</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f84c66fb-a9ea-4833-9386-379a92b20133">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAWOBO LENDOYE Fernando</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e10be6b0-1956-46f6-a9db-20c2d60ecc11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBA ABESSOLE Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd78113f-3e69-45d9-8189-071da979198e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBADINGA MOMBO Ferdinand</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2f9b2fbf-0ebb-45c1-b41e-1a44c679580c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBONDZI Solange</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d87ffab7-df93-4109-a053-99bb675b6904">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBOUMBA Joseph</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ba8d88ae-7a0a-4a9e-a71a-819c6b5040f0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBOUMBOU MIYAKOU Edgard Anicet</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-43f4eafb-d723-4fa3-8396-5436db650752">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBOUMI Michel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-37c3aef8-b17b-4b76-9015-9a5afc9ce54c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBOUMI NZINZI Jean Claude</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-78cfd296-0442-48cf-bfc5-c0627b86ff09">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MENGA M’ESSONE Michel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b3bd888c-11ad-46c2-a665-180f50342970">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MIKANGA SEMBA Philippe Romain</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4d424f04-a6a5-43b2-85be-6db86a4693be">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOMOADJAMBO Sylvain</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e9f18d76-b66d-4a5e-aeec-33608bef5f2f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOUBAMBA MOUKETOU Aloïse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-32e93406-5fa5-4a6e-a7a3-6ac2edbee452">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOUDOUMA Apollinaire Adonis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3a25bfb5-bdce-4d42-b1c5-f7d891357c92">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOULENGUI MABENDE Martin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-da49ee2c-060a-417f-bc04-0f54d45e473e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOUNGUENGUI KOUMBA Guy François</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-faf67fe4-bc32-43b5-bb4c-f5dc2391d395">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOUSSAVOU Louis Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d947e5b-61b4-4ba6-b3dd-9875b3b85af1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOUTSINGA Juliette</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG/PGCI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6aafd34c-c937-490c-a05c-e9232759d12b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MPONO Jean Claude</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d0c9a9f-00af-4e9a-965e-f933157c65b4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MVE-EBANG Marcellin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d09be917-56a9-4f25-9e42-195ae03cec68">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NANG NDONG Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c7855d4e-a322-4f79-abe2-fc1e28f934e4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDAKI Bernabé</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e23c05bd-27ba-4609-8eb1-e81bda31f81e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDEKAYINO Marguerite</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4d4e1ea2-9182-4e4b-9ae9-9d354b606992">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDEMEZO’O OBIANG René</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7c097c54-76da-476e-bc49-7785ee6b338b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDJAMONO François</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5900e660-8e72-4b6a-b3d9-a84927faf478">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDJAVE NDJOY Albert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-02b380c0-ee91-4943-b6c4-a54b6afeebba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDONG NGUEMA Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-916a8e76-0fc3-4c00-90df-027db29fc61a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDONG OBIANG Albert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae2e719a-5f64-4238-92a7-bf3d05c52f1c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDOUTOUME ESSONE Jean Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f8849c8-86f2-4989-91e3-6c8a1034114c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDZIAMI Jacques</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3f6c3366-b3ba-4176-9b14-e509419e2729">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDZOUMBA Bernard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-48f0aa42-6edb-4250-9de9-3e208658564f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGARI Idriss</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-930487f5-6684-4500-bb3f-bdc336f42ea2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGOMA Angélique</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ebd0e74c-c8c8-42a4-a9ac-ae11f62b2e8e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGOMBELA Raymond</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ac23710-82c9-47b4-b946-d41173ec70a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGONDJIGA Ludovic</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b120e8a2-48cc-4077-9b32-68196ac11b3c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGOU-MVE Nicolas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2372b0b9-e388-4612-82bc-24f95146d046">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGOZO ISSONDOU Maxime-Laurent</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a76c417c-4a98-4792-ac0f-ba7ace7c31a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGUEMA ESSONO Jacques</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea1d97bb-9f9d-4113-8262-e7703112f751">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGUEMA MBA Alexandre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d656ea87-a6fc-4c1a-a225-e0bbd759c410">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGUEMA NDONG Jean Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc8b8e33-6b0c-4f5f-ac1d-5f9a9ad044ed">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGUIMBI André Christ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3f0410cf-0f7a-44c8-80ec-3e040d932a31">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NKERO MOUGNOKO Charlotte</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-da11bdac-3c07-4e99-87c6-9ddc31762b6d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NKOGHE ESSINGONE Adrien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-54158916-bdaf-4bbd-8510-acf417ca5a07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NONGOU MOUNDOUNGA Pauline Olive épse LOUEMBET</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6e8dcda6-7b86-402f-a309-02e3f26330a1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTIMEDJIARA Rachel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1ed9797c-a0f5-4468-82cd-27c970d94957">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTOLO EYA’A Francis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-55fd87af-a85e-4cae-ad56-804e8ef2e891">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTOUTOUME MEBIAME Aurélien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-81495d19-0c82-41bc-a0eb-190888de8e93">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NTOUTOUME Robert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-93bbf9da-bbab-4626-a5ea-518053ea41f6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NYINGONE ANDA Marie-Madeleine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RPG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5c4e3be8-5a0a-452c-a1fe-73db095b15e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZE-MOUENIDIAMBOU Joséphine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0a9b245-a72c-42c6-83b4-9dac3630fbcc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZENGUE MAYILA Philippe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e95fd8bd-8446-4417-a476-b75243c5d975">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZIENGUI MIHINDOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CLR
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f278deb0-5082-4965-81bc-a4c325329b9c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NZOUBA-NDAMA Guy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-83237029-e2b0-41ee-baac-9697373d3909">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OBAME ONDO Jean Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a3d3f192-b017-4df3-b631-00d37297f35f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OGOUEBANDJA OGOUEMPONO Jules Marius</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-06c04f97-8ded-4e5d-a853-0f152609307c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OGOULA Philomène</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d7385657-024b-477d-b1d8-4cf1259bc2fe">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ONDIMBA Maxime</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-97493742-d770-410c-a1ca-91fe8f171ca2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ONOUVIET Richard-Auguste</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d9d075c4-0132-458e-aadd-9928a96160fd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ONTSOUGOU Faustin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4c58e37e-34ec-48b4-b7e9-c5fa0c150449">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OSSAGOU Guy Christian</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7cfaad39-86db-44df-bde1-c973cc5369be">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OTANDO Charles</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c13ddfc8-c91e-4221-bdcc-e051cab41ef8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OWONO NDONG Edgard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-97dcb7d1-952d-4c28-a63e-a0d0ebc85b4a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">PAÏENI Paulette épse KOHO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-93c263e6-60fe-4149-805f-815ee09b2b12">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">RETENO André Jules</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f800b27f-8d9f-48d4-a818-1f010020a862">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ROYEMBO Albert Richard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d33a5eb2-ffda-4c52-8c1f-416d9d0a8f21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SIMEPOUNGOU Jean Claude</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4aa2bef7-5e85-41c8-931d-f0518a934f0f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SYLONG Jean Richard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f11ef1a1-179c-4d2e-838b-4f37795662a2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TALI Nicolas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bb9ba6a0-d116-448b-861d-5ef823a9f784">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TOUNGUI Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4f5d2ffc-f36c-4237-adab-d0b38ac45b25">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">YAMI Laurent</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a96fc248-d7b4-4804-8dae-e8234135c560">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">YOUBANGOYE MBILA Alexandre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-07e5ef14-0cdb-44ee-8c12-ccd314b35372">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ZIBI ABEGHE Bertrand</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b6f5d70-ae33-436f-8ef1-6e0000037cc1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ZOUGA AKI Esther</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PDG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

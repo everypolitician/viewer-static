@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2012–" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-unknown"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -113,683 +116,1586 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/dc53903/data/Gambia/National_Assembly/term-2012.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/dc53903/data/Gambia/National_Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/dc53903/data/Gambia/National_Assembly/term-2012.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/dc53903/data/Gambia/National_Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-e84f5b46-13da-45ca-a0c2-4f1b54dbe114">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e84f5b46-13da-45ca-a0c2-4f1b54dbe114">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Abdou Colley</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kombo South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Abdou Colley">Abdou Colley</td>
-                      
-                        <td>unknown</td>
-                        <td>Kombo South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-532945fc-1f8f-432d-ba31-b37924739b82">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-532945fc-1f8f-432d-ba31-b37924739b82">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/532945fc-1f8f-432d-ba31-b37924739b82/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/532945fc-1f8f-432d-ba31-b37924739b82/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Abdoulie Bojang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Abdoulie Bojang">Abdoulie Bojang</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-bf800b02-3dc7-41a8-86ee-54095afd1aa0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bf800b02-3dc7-41a8-86ee-54095afd1aa0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/bf800b02-3dc7-41a8-86ee-54095afd1aa0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/bf800b02-3dc7-41a8-86ee-54095afd1aa0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Abdoulie Kanaji Jawla</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sandu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Abdoulie Kanaji Jawla">Abdoulie Kanaji Jawla</td>
-                      
-                        <td>unknown</td>
-                        <td>Sandu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fef1870e-c873-4866-9168-1a219d13483d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fef1870e-c873-4866-9168-1a219d13483d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/fef1870e-c873-4866-9168-1a219d13483d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/fef1870e-c873-4866-9168-1a219d13483d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Abdoulie Saine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Banjul Central
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Abdoulie Saine">Abdoulie Saine</td>
-                      
-                        <td>unknown</td>
-                        <td>Banjul Central</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-265baf12-f252-4e5c-9929-918045dabdd4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-265baf12-f252-4e5c-9929-918045dabdd4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/265baf12-f252-4e5c-9929-918045dabdd4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/265baf12-f252-4e5c-9929-918045dabdd4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ablie Suku Sighateh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lower Baddibu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ablie Suku Sighateh">Ablie Suku Sighateh</td>
-                      
-                        <td>unknown</td>
-                        <td>Lower Baddibu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2a74087e-a4d8-4e85-bba7-61eff8e742ef">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2a74087e-a4d8-4e85-bba7-61eff8e742ef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ahmad Malick Njie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Upper Fulladu West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ahmad Malick Njie">Ahmad Malick Njie</td>
-                      
-                        <td>unknown</td>
-                        <td>Upper Fulladu West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-adc1c229-1155-4404-b1c1-8fdd5862c29a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-adc1c229-1155-4404-b1c1-8fdd5862c29a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alh. Kasum Jallow</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Wuli West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alh. Kasum Jallow">Alh. Kasum Jallow</td>
-                      
-                        <td>unknown</td>
-                        <td>Wuli West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-21c4edec-59bc-4108-ae2d-4158e8e556e0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-21c4edec-59bc-4108-ae2d-4158e8e556e0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/21c4edec-59bc-4108-ae2d-4158e8e556e0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/21c4edec-59bc-4108-ae2d-4158e8e556e0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alh. Seedy S.K. Njie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alh. Seedy S.K. Njie">Alh. Seedy S.K. Njie</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-15a2b25e-b68d-450a-b653-db7b43373965">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15a2b25e-b68d-450a-b653-db7b43373965">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/15a2b25e-b68d-450a-b653-db7b43373965/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/15a2b25e-b68d-450a-b653-db7b43373965/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alhagi Matarr Kujabi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Foni Bondali
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alhagi Matarr Kujabi">Alhagi Matarr Kujabi</td>
-                      
-                        <td>APRC</td>
-                        <td>Foni Bondali</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b109e02c-776a-4552-8e7d-6040bb99269f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b109e02c-776a-4552-8e7d-6040bb99269f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/b109e02c-776a-4552-8e7d-6040bb99269f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/b109e02c-776a-4552-8e7d-6040bb99269f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alhagi Sillah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Banjul North
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alhagi Sillah">Alhagi Sillah</td>
-                      
-                        <td>APRC</td>
-                        <td>Banjul North</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-518f1bbc-a30a-4370-8e04-7db46553d46e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-518f1bbc-a30a-4370-8e04-7db46553d46e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alhasana Bojang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kombo East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alhasana Bojang">Alhasana Bojang</td>
-                      
-                        <td>unknown</td>
-                        <td>Kombo East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-819892fa-d42f-40ff-9451-f41955499cfd">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-819892fa-d42f-40ff-9451-f41955499cfd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Amadou Khan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Jokadu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Amadou Khan">Amadou Khan</td>
-                      
-                        <td>unknown</td>
-                        <td>Jokadu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-0a135696-8f9e-429e-80a8-54967b58c9e3">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0a135696-8f9e-429e-80a8-54967b58c9e3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Babou Gaye Sonko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Babou Gaye Sonko">Babou Gaye Sonko</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-75fae0ff-5cfa-41ca-8f08-fff1cf454fa1">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-75fae0ff-5cfa-41ca-8f08-fff1cf454fa1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/75fae0ff-5cfa-41ca-8f08-fff1cf454fa1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/75fae0ff-5cfa-41ca-8f08-fff1cf454fa1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Babucarr S Nyang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Banjul South
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Babucarr S Nyang">Babucarr S Nyang</td>
-                      
-                        <td>APRC</td>
-                        <td>Banjul South</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-402ba3aa-6dbd-4c71-aeb4-6e9181c40301">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-402ba3aa-6dbd-4c71-aeb4-6e9181c40301">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bafaye Saidykhan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Jarra East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bafaye Saidykhan">Bafaye Saidykhan</td>
-                      
-                        <td>APRC</td>
-                        <td>Jarra East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-36ec2c41-7cb6-472e-bf7b-ca83dac3e34b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-36ec2c41-7cb6-472e-bf7b-ca83dac3e34b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/36ec2c41-7cb6-472e-bf7b-ca83dac3e34b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/36ec2c41-7cb6-472e-bf7b-ca83dac3e34b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bintanding Jarju</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bintanding Jarju">Bintanding Jarju</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4736c9e6-7222-4471-9f86-623351b7fb8c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4736c9e6-7222-4471-9f86-623351b7fb8c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/4736c9e6-7222-4471-9f86-623351b7fb8c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/4736c9e6-7222-4471-9f86-623351b7fb8c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bora B Mass</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Kiang East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bora B Mass">Bora B Mass</td>
-                      
-                        <td>APRC</td>
-                        <td>Kiang East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d18a4fc3-36d8-4302-9ef0-f9aa8f111168">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d18a4fc3-36d8-4302-9ef0-f9aa8f111168">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/d18a4fc3-36d8-4302-9ef0-f9aa8f111168/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/d18a4fc3-36d8-4302-9ef0-f9aa8f111168/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Borrie L.S.B.Kolley</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Foni Jarrol
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Borrie L.S.B.Kolley">Borrie L.S.B.Kolley</td>
-                      
-                        <td>unknown</td>
-                        <td>Foni Jarrol</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f72a02a2-faae-4a0e-8128-d7921887975f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f72a02a2-faae-4a0e-8128-d7921887975f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Buba A. Bojang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Foni Kansala
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Buba A. Bojang">Buba A. Bojang</td>
-                      
-                        <td>unknown</td>
-                        <td>Foni Kansala</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-95f038c4-5c2b-40b3-8689-b0ec39719358">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-95f038c4-5c2b-40b3-8689-b0ec39719358">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Buba Ayi Sanneh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kombo Central
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Buba Ayi Sanneh">Buba Ayi Sanneh</td>
-                      
-                        <td>unknown</td>
-                        <td>Kombo Central</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d205d65f-9e08-4173-84dd-14998be90319">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d205d65f-9e08-4173-84dd-14998be90319">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bubacarr S. Fadera</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kiang Centeral
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bubacarr S. Fadera">Bubacarr S. Fadera</td>
-                      
-                        <td>unknown</td>
-                        <td>Kiang Centeral</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-42e51e7a-8fa7-466a-bd00-d60025cde655">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-42e51e7a-8fa7-466a-bd00-d60025cde655">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Demba B.T. Sambou</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Niani
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Demba B.T. Sambou">Demba B.T. Sambou</td>
-                      
-                        <td>unknown</td>
-                        <td>Niani</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-9bf16278-bac9-4560-b3ec-3c468bed3c06">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9bf16278-bac9-4560-b3ec-3c468bed3c06">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/9bf16278-bac9-4560-b3ec-3c468bed3c06/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/9bf16278-bac9-4560-b3ec-3c468bed3c06/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ebrima Jammeh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent Candidate — Foni Bintang
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ebrima Jammeh">Ebrima Jammeh</td>
-                      
-                        <td>Independent Candidate</td>
-                        <td>Foni Bintang</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b98229a1-af3d-40e3-8486-afa311e1235b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b98229a1-af3d-40e3-8486-afa311e1235b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/b98229a1-af3d-40e3-8486-afa311e1235b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/b98229a1-af3d-40e3-8486-afa311e1235b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Fabakary Tombong Jatta</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Serrekunda East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Fabakary Tombong Jatta">Fabakary Tombong Jatta</td>
-                      
-                        <td>APRC</td>
-                        <td>Serrekunda East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f3475d1a-1f8f-497a-85a4-d4336a92aca0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f3475d1a-1f8f-497a-85a4-d4336a92aca0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/f3475d1a-1f8f-497a-85a4-d4336a92aca0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/f3475d1a-1f8f-497a-85a4-d4336a92aca0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Fatou Mbye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Fatou Mbye">Fatou Mbye</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1676b728-9a65-48c0-9cff-a539dc2c906c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1676b728-9a65-48c0-9cff-a539dc2c906c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/1676b728-9a65-48c0-9cff-a539dc2c906c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/1676b728-9a65-48c0-9cff-a539dc2c906c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Foday A. Jallow</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Niamina East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Foday A. Jallow">Foday A. Jallow</td>
-                      
-                        <td>APRC</td>
-                        <td>Niamina East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ab248cf4-8f38-4b22-8dbb-9724d0981e54">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ab248cf4-8f38-4b22-8dbb-9724d0981e54">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/ab248cf4-8f38-4b22-8dbb-9724d0981e54/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/ab248cf4-8f38-4b22-8dbb-9724d0981e54/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Foday Jibani Manka</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Janjanbureh
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Foday Jibani Manka">Foday Jibani Manka</td>
-                      
-                        <td>APRC</td>
-                        <td>Janjanbureh</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-91edbaf6-7b70-47fb-a781-9e9f4b475a2d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-91edbaf6-7b70-47fb-a781-9e9f4b475a2d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Habiboulie K. Jawo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Jimara
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Habiboulie K. Jawo">Habiboulie K. Jawo</td>
-                      
-                        <td>unknown</td>
-                        <td>Jimara</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3227e644-a42a-40c4-8a19-caf7d9b965cc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3227e644-a42a-40c4-8a19-caf7d9b965cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Habsana Jallow</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nianija
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Habsana Jallow">Habsana Jallow</td>
-                      
-                        <td>unknown</td>
-                        <td>Nianija</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e38bc802-e76a-494b-9a20-d39f0316663b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e38bc802-e76a-494b-9a20-d39f0316663b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/e38bc802-e76a-494b-9a20-d39f0316663b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/e38bc802-e76a-494b-9a20-d39f0316663b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Haddy Nyang Jagne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Jeswang
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Haddy Nyang Jagne">Haddy Nyang Jagne</td>
-                      
-                        <td>APRC</td>
-                        <td>Jeswang</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d34ac286-68b5-4a0f-b25f-708b0625813e">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d34ac286-68b5-4a0f-b25f-708b0625813e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/d34ac286-68b5-4a0f-b25f-708b0625813e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/d34ac286-68b5-4a0f-b25f-708b0625813e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kalifa B Jammeh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Bakau
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Kalifa B Jammeh">Kalifa B Jammeh</td>
-                      
-                        <td>unknown</td>
-                        <td>Bakau</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-436a9e40-b3cc-4af1-9525-f2c0677c8926">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-436a9e40-b3cc-4af1-9525-f2c0677c8926">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Lamin Hydara</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Jarra central
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Lamin Hydara">Lamin Hydara</td>
-                      
-                        <td>unknown</td>
-                        <td>Jarra central</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f5f50531-d34c-42ae-9db6-f245d14f90b9">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5f50531-d34c-42ae-9db6-f245d14f90b9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/f5f50531-d34c-42ae-9db6-f245d14f90b9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/f5f50531-d34c-42ae-9db6-f245d14f90b9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lamin Jadama</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Niamina West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Lamin Jadama">Lamin Jadama</td>
-                      
-                        <td>APRC</td>
-                        <td>Niamina West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-03d1c41f-38ff-4247-9af2-1db8fa19c488">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-03d1c41f-38ff-4247-9af2-1db8fa19c488">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/03d1c41f-38ff-4247-9af2-1db8fa19c488/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/03d1c41f-38ff-4247-9af2-1db8fa19c488/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lamin Kebba Jammeh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Illiassa
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Lamin Kebba Jammeh">Lamin Kebba Jammeh</td>
-                      
-                        <td>unknown</td>
-                        <td>Illiassa</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3a5fab5c-532c-48f6-beec-a18bea0a823a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3a5fab5c-532c-48f6-beec-a18bea0a823a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Muhammed Magassy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Basse
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Muhammed Magassy">Muhammed Magassy</td>
-                      
-                        <td>unknown</td>
-                        <td>Basse</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8f5e52ce-fa3d-43ba-bbac-2792c54af6cc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f5e52ce-fa3d-43ba-bbac-2792c54af6cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/8f5e52ce-fa3d-43ba-bbac-2792c54af6cc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/8f5e52ce-fa3d-43ba-bbac-2792c54af6cc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Netty Baldeh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Tumana
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Netty Baldeh">Netty Baldeh</td>
-                      
-                        <td>unknown</td>
-                        <td>Tumana</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5fd836cb-97b2-4244-8f1e-c980bfaa323d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5fd836cb-97b2-4244-8f1e-c980bfaa323d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/5fd836cb-97b2-4244-8f1e-c980bfaa323d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/5fd836cb-97b2-4244-8f1e-c980bfaa323d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Njai Daboe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Jarra West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Njai Daboe">Njai Daboe</td>
-                      
-                        <td>unknown</td>
-                        <td>Jarra West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-8123817a-869c-4875-b821-328ef561bbb3">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8123817a-869c-4875-b821-328ef561bbb3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/8123817a-869c-4875-b821-328ef561bbb3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/8123817a-869c-4875-b821-328ef561bbb3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Omar Cherno Jallow</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Upper Niumi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Omar Cherno Jallow">Omar Cherno Jallow</td>
-                      
-                        <td>unknown</td>
-                        <td>Upper Niumi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-24a93c01-8dd9-423a-bea2-019c90987b20">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-24a93c01-8dd9-423a-bea2-019c90987b20">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Omar Tobb</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lower Fulladu West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Omar Tobb">Omar Tobb</td>
-                      
-                        <td>unknown</td>
-                        <td>Lower Fulladu West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f82d148b-54ca-420c-8e18-fdd2a164a134">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f82d148b-54ca-420c-8e18-fdd2a164a134">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/f82d148b-54ca-420c-8e18-fdd2a164a134/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/f82d148b-54ca-420c-8e18-fdd2a164a134/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ousainou Sainey Jaiteh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Serrekunda Central
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ousainou Sainey Jaiteh">Ousainou Sainey Jaiteh</td>
-                      
-                        <td>APRC</td>
-                        <td>Serrekunda Central</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7a4d4640-d6bb-4637-a00a-43ea78b516d4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7a4d4640-d6bb-4637-a00a-43ea78b516d4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/7a4d4640-d6bb-4637-a00a-43ea78b516d4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/7a4d4640-d6bb-4637-a00a-43ea78b516d4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ousman Bah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              APRC — Sabach Sanjal
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ousman Bah">Ousman Bah</td>
-                      
-                        <td>APRC</td>
-                        <td>Sabach Sanjal</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7b2b18ae-72eb-46c9-a8c7-f7239d44b0e5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7b2b18ae-72eb-46c9-a8c7-f7239d44b0e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ousman Njie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Sami
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ousman Njie">Ousman Njie</td>
-                      
-                        <td>unknown</td>
-                        <td>Sami</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d0c315ed-3e0e-4b8f-aaaf-2897edc47758">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0c315ed-3e0e-4b8f-aaaf-2897edc47758">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pa Lamin Jatta</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kombo North
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Pa Lamin Jatta">Pa Lamin Jatta</td>
-                      
-                        <td>unknown</td>
-                        <td>Kombo North</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5106b180-64a7-4967-af14-c340038a0a17">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5106b180-64a7-4967-af14-c340038a0a17">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Pa Malick Ceesay</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Lower Saloum
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Pa Malick Ceesay">Pa Malick Ceesay</td>
-                      
-                        <td>unknown</td>
-                        <td>Lower Saloum</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d23d6c79-0b11-4ca0-bab4-0deeb9a2d4f5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d23d6c79-0b11-4ca0-bab4-0deeb9a2d4f5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rtd. Cpt. Lamin Saine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Rtd. Cpt. Lamin Saine">Rtd. Cpt. Lamin Saine</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a70b39db-5479-4afa-b914-eb4a6a4399d4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a70b39db-5479-4afa-b914-eb4a6a4399d4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/a70b39db-5479-4afa-b914-eb4a6a4399d4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/a70b39db-5479-4afa-b914-eb4a6a4399d4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saidou V. Sabally</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Wulli East
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Saidou V. Sabally">Saidou V. Sabally</td>
-                      
-                        <td>unknown</td>
-                        <td>Wulli East</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-510908d6-7fd1-4418-b3f8-2d576183b037">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-510908d6-7fd1-4418-b3f8-2d576183b037">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Saikou Susso</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kantora
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Saikou Susso">Saikou Susso</td>
-                      
-                        <td>unknown</td>
-                        <td>Kantora</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d030b18c-48de-495d-968a-8917f007eee2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d030b18c-48de-495d-968a-8917f007eee2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/d030b18c-48de-495d-968a-8917f007eee2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/d030b18c-48de-495d-968a-8917f007eee2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sainey Mbye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Upper Saloum
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sainey Mbye">Sainey Mbye</td>
-                      
-                        <td>unknown</td>
-                        <td>Upper Saloum</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e4bbf6ea-eceb-4cbe-aa3e-0232f8bfaeca">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e4bbf6ea-eceb-4cbe-aa3e-0232f8bfaeca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Samba Jallow</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Niamina Dankunku
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Samba Jallow">Samba Jallow</td>
-                      
-                        <td>unknown</td>
-                        <td>Niamina Dankunku</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b6251eb0-6b70-40be-bed6-e3ae9ecb5544">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b6251eb0-6b70-40be-bed6-e3ae9ecb5544">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Samba cham</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Central Baddibu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Samba cham">Samba cham</td>
-                      
-                        <td>unknown</td>
-                        <td>Central Baddibu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2586abcf-b6f7-4022-9c70-9acdf224cb11">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2586abcf-b6f7-4022-9c70-9acdf224cb11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sheriff M. Hydara</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              lower Nuimi
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sheriff M. Hydara">Sheriff M. Hydara</td>
-                      
-                        <td>unknown</td>
-                        <td>lower Nuimi</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-bc0fbbed-b687-4283-9257-8ef241bbc082">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc0fbbed-b687-4283-9257-8ef241bbc082">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/bc0fbbed-b687-4283-9257-8ef241bbc082/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Gambia/National-Assembly/bc0fbbed-b687-4283-9257-8ef241bbc082/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sulayman Joof</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Serrekunda West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sulayman Joof">Sulayman Joof</td>
-                      
-                        <td>unknown</td>
-                        <td>Serrekunda West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b4265b71-3e23-4ffb-8290-b6f4a4649528">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b4265b71-3e23-4ffb-8290-b6f4a4649528">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Yaya Dibba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kiang West
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Yaya Dibba">Yaya Dibba</td>
-                      
-                        <td>unknown</td>
-                        <td>Kiang West</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

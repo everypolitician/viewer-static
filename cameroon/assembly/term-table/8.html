@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="8e législature" />
     <meta property="og:type" content="article" />
@@ -171,7 +174,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-cpdm"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -201,911 +204,2680 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/455b500/data/Cameroon/Assembly/term-8.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/455b500/data/Cameroon/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/455b500/data/Cameroon/Assembly/term-8.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/455b500/data/Cameroon/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-d019d13d-caad-436d-bf37-d18c8661e392">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABAKAR MAHAMAT">ABAKAR MAHAMAT</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-08826605-f8e1-43e6-955c-747a3dc8ac51">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABBA MALLA BOUKAR">ABBA MALLA BOUKAR</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9af9e96f-ad3c-4db3-90c8-b1d695b16307">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABDOU KIDANTANG">ABDOU KIDANTANG</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4c09f42a-a871-40d9-9ced-a188bcdda79f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABDOU-KADRI BELLO">ABDOU-KADRI BELLO</td>
-                      
-                        <td>CPDM</td>
-                        <td>ADAMAWA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-570a9b7f-e6d7-490a-b6b5-8405ebe80231">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABDOULAYE BOUGUE">ABDOULAYE BOUGUE</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3b1b5598-e677-4fc4-ae05-e73c6b3bc2b6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABUNAW Rose MAKIA AGBOR">ABUNAW Rose MAKIA AGBOR</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-15147675-ae36-42bc-b259-12d8385e7f33">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ADAMA MODI">ADAMA MODI</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9a9aa5c9-fa57-4760-a98c-1f5bbbbb1d2e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ADAMOU SAÏDOU">ADAMOU SAÏDOU</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c2813363-2c53-4362-a670-e0f2ef7ecba9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ADJIBOLO Philémon">ADJIBOLO Philémon</td>
-                      
-                        <td>CPDM</td>
-                        <td>EAST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e0a8a532-039a-403e-8000-34dd1a3e29a1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AHIDJO MOHAMADOU">AHIDJO MOHAMADOU</td>
-                      
-                        <td>NUDP</td>
-                        <td>NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1d6dae77-d2a4-4cc2-b4e4-0a967c1b645f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AKAMBA ASSEMBE Pierre Georges">AKAMBA ASSEMBE Pierre Georges</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-db7e4726-8055-460a-9bc1-7aad39c07e95">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALI ADJIT">ALI ADJIT</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ae16be61-7c29-4730-967d-f624d9523c0c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALI MAMOUDA">ALI MAMOUDA</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d54b738-ecea-4ea8-ab3a-b50d82a10990">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALIYOUM FADIL">ALIYOUM FADIL</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-85c85098-2c0b-4899-914d-4d743b41369a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMADOU MOHAMAN">AMADOU MOHAMAN</td>
-                      
-                        <td>NUDP</td>
-                        <td>NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3a7692ef-8031-4b00-914f-e650cee887fc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMASSOUMOU NDIFOANE">AMASSOUMOU NDIFOANE</td>
-                      
-                        <td>CPDM</td>
-                        <td>ADAMAWA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bedbc875-d1d3-4c92-8aaa-b5a020fc06a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMBASSA ZANG Dieudonné">AMBASSA ZANG Dieudonné</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-65922c24-d9df-4af4-b0fb-1f278490a01b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMOUGOU EKOMAN Marcel D.">AMOUGOU EKOMAN Marcel D.</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bcdaa0bc-3d55-48f8-a115-074f67346a93">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMOUGOU MEZANG Norbert">AMOUGOU MEZANG Norbert</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f1d7ac39-05e3-4af2-b6f9-6b58e86d60ca">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ASU Georges MBANDA">ASU Georges MBANDA</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-15e6f6e5-a0d6-4bd8-bbd7-c2e918a0126b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ATEAWUNG FOJU Bernard">ATEAWUNG FOJU Bernard</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7030582d-3f21-4441-afae-7e793f1758e2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AWUDU MBAYA Cyprian">AWUDU MBAYA Cyprian</td>
-                      
-                        <td>SDF</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1c145989-74bf-4fd4-aa5d-56af5f730ae3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AYAH Paul ABINE">AYAH Paul ABINE</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eb19edf7-0126-4fd4-8278-15187709d847">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amadou ADJI">Amadou ADJI</td>
-                      
-                        <td>NUDP</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7a335f7f-f584-48dd-b20f-cea1adda9112">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BADAMA Paul">BADAMA Paul</td>
-                      
-                        <td>NUDP</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e25c56e-7210-4513-905d-bc50aa4b29cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BANADZEM Joseph LUKONG">BANADZEM Joseph LUKONG</td>
-                      
-                        <td>SDF</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-220cf95d-e8b3-4d79-b625-ca16939fb901">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BANGOUI BATADJOMO Gervais">BANGOUI BATADJOMO Gervais</td>
-                      
-                        <td>CPDM</td>
-                        <td>EAST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f00998dc-3016-4412-8376-8fb482f6ce0a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BANMI Emmanuel DINGHA">BANMI Emmanuel DINGHA</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a13bfefb-7b5d-442a-81a0-f04e0e411317">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAORO Théophile">BAORO Théophile</td>
-                      
-                        <td>CPDM</td>
-                        <td>ADAMAWA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ac7c6c22-ca40-4d76-af53-d5dde14e9145">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BASSA BOTIBA Florence Eugénie">BASSA BOTIBA Florence Eugénie</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fccc1904-848d-4656-b4d4-917f6adc22c8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BATIKBONAK Jean-Marie">BATIKBONAK Jean-Marie</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6a7b09e0-7934-4d99-80ca-3243c98b293a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOKWE Samuel NGOE">BOKWE Samuel NGOE</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c06cf4c7-be53-43cb-ac5f-6f827554d8fc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOTOULI née BIANG Paulette">BOTOULI née BIANG Paulette</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2f5bb0d7-8b0e-4f3a-9e9e-d5c5cbe24506">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOUBA André">BOUBA André</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-182a650f-ade2-447f-87a3-ce07ab85b112">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOULOU NGUIZI Joseph">BOULOU NGUIZI Joseph</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1b7f65a1-e087-4acb-96fd-af2b8de2b6ca">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOUOBDA">BOUOBDA</td>
-                      
-                        <td>CPDM</td>
-                        <td>WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fa911882-9116-40e7-a17b-1a4c1dbc1f32">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BUJUNG BEDE James">BUJUNG BEDE James</td>
-                      
-                        <td>SDF</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a5a7535-36c8-47bb-aa5e-d623ab7db691">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CAVAYE Yéguié Djibril">CAVAYE Yéguié Djibril</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1166a957-652e-4edc-ba2b-88bca84306c5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DANATA Paul">DANATA Paul</td>
-                      
-                        <td>CPDM</td>
-                        <td>EAST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6783ec3a-1ead-45be-b7d2-7e4a91d96f7e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DATOUO Théodore">DATOUO Théodore</td>
-                      
-                        <td>CPDM</td>
-                        <td>WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4e1c0379-076a-452b-af4a-d0492d1084f4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DJAMARA LOURSANTA">DJAMARA LOURSANTA</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b53cf8e0-b202-42e1-af7c-0995a556e94d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DJIBRILLA KAOU BAKARY">DJIBRILLA KAOU BAKARY</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7a1caa4a-dede-4397-9767-649eb6541258">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DJOMGOUE Paul Eric">DJOMGOUE Paul Eric</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f778e9c-5b2e-4d26-84a3-0585a8980388">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DOOH Collins Albert KOUOH">DOOH Collins Albert KOUOH</td>
-                      
-                        <td>CPDM</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-33df5d21-ba67-4966-b1da-7d24f2cec4fa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DOUGOUF DJONKIO Ali">DOUGOUF DJONKIO Ali</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a3c107e4-96db-435f-b3cb-3fa688a19266">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EDIMO NDOUMBE Oscar">EDIMO NDOUMBE Oscar</td>
-                      
-                        <td>CPDM</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-51d8f583-9a37-4876-b81d-63a102048425">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EKEN Christophe">EKEN Christophe</td>
-                      
-                        <td>CPDM</td>
-                        <td>WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6839a59-560d-4139-a570-4dc401b72351">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EKINDI Jean-Jacques">EKINDI Jean-Jacques</td>
-                      
-                        <td>PM</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-681a4973-0786-4feb-ab38-39ade17c7240">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EKOUE Bienvenue">EKOUE Bienvenue</td>
-                      
-                        <td>CPDM</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e074644e-f0b3-41fb-8d7b-edb1448b37ad">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ELIAS GONDJI">ELIAS GONDJI</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0147224e-ce84-41fd-b172-8c5b8d496e20">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EMAH ETOUNDI Vincent de Paul">EMAH ETOUNDI Vincent de Paul</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-967c6c02-88a7-4f6e-a825-481d90c3ec72">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EMANA Marius">EMANA Marius</td>
-                      
-                        <td>CPDM</td>
-                        <td>EAST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2c61f7b3-38ae-4b51-bdde-ed50224d09f0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ENWE Françis ABI">ENWE Françis ABI</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e425d2c3-e53e-4a25-a126-77e204260dac">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EONNE Jean">EONNE Jean</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5dbc9b4e-c022-462c-9b64-487c16947a21">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EPOUBE Lydienne née EYOUM M.">EPOUBE Lydienne née EYOUM M.</td>
-                      
-                        <td>CPDM</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9bdb1e29-9b28-42b6-ae2d-921537320d8a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ESSAME François">ESSAME François</td>
-                      
-                        <td>CPDM</td>
-                        <td>SOUTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-efa77a1c-d1d7-4d4b-a305-c17278d408af">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ESSOLA ETOA Louis Roger">ESSOLA ETOA Louis Roger</td>
-                      
-                        <td>CPDM</td>
-                        <td>EAST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c6e1473d-281d-46d2-88f0-e2faaecf31d4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ETONG NDZOK Hilarion">ETONG NDZOK Hilarion</td>
-                      
-                        <td>CPDM</td>
-                        <td>EAST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-51c4f3c4-3c66-478c-8ff4-2b0373398126">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EYEBE Lucas">EYEBE Lucas</td>
-                      
-                        <td>CPDM</td>
-                        <td>CENTRE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e8e12315-c68d-444d-ab50-09a0a558e4fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FEUTHEU Jean-Claude">FEUTHEU Jean-Claude</td>
-                      
-                        <td>CPDM</td>
-                        <td>WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-74d86d1b-8eed-48f1-bb11-8b7569aba1e8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FOBI NCHINDA Simon">FOBI NCHINDA Simon</td>
-                      
-                        <td>SDF</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-154badc0-52e0-4bee-9086-83c501d9075e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FOINDING Calvin">FOINDING Calvin</td>
-                      
-                        <td>CPDM</td>
-                        <td>WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b8be2de0-0377-44ea-975a-a17f2a403dea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FONGANG Joseph Confiance">FONGANG Joseph Confiance</td>
-                      
-                        <td>CPDM</td>
-                        <td>WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b9982e1f-d50d-41c6-9cef-ebf5029a0554">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FONSO Peter CHOO">FONSO Peter CHOO</td>
-                      
-                        <td>SDF</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cb72b048-c65f-4906-8c70-5623fc8b6295">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FOSSI Jacob">FOSSI Jacob</td>
-                      
-                        <td>CPDM</td>
-                        <td>WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1a78777f-ede3-4fa2-b180-d854a1160324">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FUH CALISTUS Gentry">FUH CALISTUS Gentry</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dd0faa7d-4842-437e-920a-e6dc751f4f8b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GONONDO Jean">GONONDO Jean</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2856d9fa-1cf3-4ac2-86d6-bf1c25ecc483">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Genesis MBUCKSEK">Genesis MBUCKSEK</td>
-                      
-                        <td>CPDM</td>
-                        <td>NORTH-WEST</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1a07d691-ff20-4e17-b093-54c15cd9b0e8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAMADAMA DJIDJIOUA">HAMADAMA DJIDJIOUA</td>
-                      
-                        <td>CPDM</td>
-                        <td>ADAMAWA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-06226567-ccb2-4600-9a22-7cfbf8f17ace">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAMADOU ALI BACHIR">HAMADOU ALI BACHIR</td>
-                      
-                        <td>CPDM</td>
-                        <td>ADAMAWA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a9a65509-56cb-4770-9bba-c3633c25450a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAMADOU SALI">HAMADOU SALI</td>
-                      
-                        <td>CPDM</td>
-                        <td>FAR-NORTH</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-37332665-aadb-4dbf-95ff-475598f93b0a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Halia MOUSSA MOUFTA">Halia MOUSSA MOUFTA</td>
-                      
-                        <td>CPDM</td>
-                        <td>ADAMAWA</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d019d13d-caad-436d-bf37-d18c8661e392">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABAKAR MAHAMAT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mahamat.abakar@assnat.cm">mahamat.abakar@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-08826605-f8e1-43e6-955c-747a3dc8ac51">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABBA MALLA BOUKAR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9af9e96f-ad3c-4db3-90c8-b1d695b16307">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABDOU KIDANTANG</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:abdou.kidantang@assnat.cm">abdou.kidantang@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4c09f42a-a871-40d9-9ced-a188bcdda79f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABDOU-KADRI BELLO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — ADAMAWA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bello.abdoul@assnat.cm">bello.abdoul@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-570a9b7f-e6d7-490a-b6b5-8405ebe80231">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABDOULAYE BOUGUE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b1b5598-e677-4fc4-ae05-e73c6b3bc2b6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABUNAW Rose MAKIA AGBOR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:rose.makia@assnat.cm">rose.makia@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15147675-ae36-42bc-b259-12d8385e7f33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ADAMA MODI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:modi.adama@assnat.cm">modi.adama@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9a9aa5c9-fa57-4760-a98c-1f5bbbbb1d2e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ADAMOU SAÏDOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:saidou.adamou@assnat.cm">saidou.adamou@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c2813363-2c53-4362-a670-e0f2ef7ecba9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ADJIBOLO Philémon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — EAST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:philémon.adjibolo@assnat.cm">philémon.adjibolo@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e0a8a532-039a-403e-8000-34dd1a3e29a1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AHIDJO MOHAMADOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NUDP — NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mohamadou.ahidjo@assnat.cm">mohamadou.ahidjo@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1d6dae77-d2a4-4cc2-b4e4-0a967c1b645f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AKAMBA ASSEMBE Pierre Georges</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:pierre.akamba@assnat.cm">pierre.akamba@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-db7e4726-8055-460a-9bc1-7aad39c07e95">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALI ADJIT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:adjit.ali@assnat">adjit.ali@assnat</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ae16be61-7c29-4730-967d-f624d9523c0c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALI MAMOUDA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mamouda.ali@assnat.cm">mamouda.ali@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d54b738-ecea-4ea8-ab3a-b50d82a10990">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALIYOUM FADIL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:fadil.aliyoum@assnat.cm">fadil.aliyoum@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85c85098-2c0b-4899-914d-4d743b41369a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMADOU MOHAMAN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NUDP — NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mohaman.amadou@assnat">mohaman.amadou@assnat</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3a7692ef-8031-4b00-914f-e650cee887fc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMASSOUMOU NDIFOANE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — ADAMAWA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ndifoane.amassoumou@assnat.cm">ndifoane.amassoumou@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bedbc875-d1d3-4c92-8aaa-b5a020fc06a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMBASSA ZANG Dieudonné</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:dieudonné.zang@assnat.cm">dieudonné.zang@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-65922c24-d9df-4af4-b0fb-1f278490a01b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMOUGOU EKOMAN Marcel D.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:marcel.ekoman@assnat.cm">marcel.ekoman@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bcdaa0bc-3d55-48f8-a115-074f67346a93">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMOUGOU MEZANG Norbert</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:norbert.mezang@assnat">norbert.mezang@assnat</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f1d7ac39-05e3-4af2-b6f9-6b58e86d60ca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ASU Georges MBANDA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:georges.asu@assnat.cm">georges.asu@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15e6f6e5-a0d6-4bd8-bbd7-c2e918a0126b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ATEAWUNG FOJU Bernard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bernard.foju@assnat.cm">bernard.foju@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7030582d-3f21-4441-afae-7e793f1758e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AWUDU MBAYA Cyprian</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1c145989-74bf-4fd4-aa5d-56af5f730ae3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AYAH Paul ABINE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb19edf7-0126-4fd4-8278-15187709d847">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Amadou ADJI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NUDP — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:adji.amadou@assnat.cm">adji.amadou@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7a335f7f-f584-48dd-b20f-cea1adda9112">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BADAMA Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              NUDP — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:paul.badama@assnat.cm">paul.badama@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e25c56e-7210-4513-905d-bc50aa4b29cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BANADZEM Joseph LUKONG</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joseph.banadzem@assnat">joseph.banadzem@assnat</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-220cf95d-e8b3-4d79-b625-ca16939fb901">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BANGOUI BATADJOMO Gervais</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — EAST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gervais.bangoui@assnat.cm">gervais.bangoui@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f00998dc-3016-4412-8376-8fb482f6ce0a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BANMI Emmanuel DINGHA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:emmanuel.banmi@assnat.cm">emmanuel.banmi@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a13bfefb-7b5d-442a-81a0-f04e0e411317">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BAORO Théophile</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — ADAMAWA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:theophile.baoro@assnat.cm">theophile.baoro@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ac7c6c22-ca40-4d76-af53-d5dde14e9145">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BASSA BOTIBA Florence Eugénie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:florence.bassa@assnat.cm">florence.bassa@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fccc1904-848d-4656-b4d4-917f6adc22c8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BATIKBONAK Jean-Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6a7b09e0-7934-4d99-80ca-3243c98b293a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOKWE Samuel NGOE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:samuel.bokwe@assnat.cm">samuel.bokwe@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c06cf4c7-be53-43cb-ac5f-6f827554d8fc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOTOULI née BIANG Paulette</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:paulette.botouli@assnat.cm">paulette.botouli@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2f5bb0d7-8b0e-4f3a-9e9e-d5c5cbe24506">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOUBA André</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:andré.bouba@assnat.cm">andré.bouba@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-182a650f-ade2-447f-87a3-ce07ab85b112">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOULOU NGUIZI Joseph</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1b7f65a1-e087-4acb-96fd-af2b8de2b6ca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOUOBDA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bouoba@assnat.cm">bouoba@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fa911882-9116-40e7-a17b-1a4c1dbc1f32">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BUJUNG BEDE James</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:james.bede@assnat.cm">james.bede@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a5a7535-36c8-47bb-aa5e-d623ab7db691">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CAVAYE Yéguié Djibril</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:djibril.yéguié@assnat.cm">djibril.yéguié@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1166a957-652e-4edc-ba2b-88bca84306c5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DANATA Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — EAST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:paul.danat@assnat.cm">paul.danat@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6783ec3a-1ead-45be-b7d2-7e4a91d96f7e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DATOUO Théodore</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4e1c0379-076a-452b-af4a-d0492d1084f4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DJAMARA LOURSANTA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:loursanta.djamara@assnat.cm">loursanta.djamara@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b53cf8e0-b202-42e1-af7c-0995a556e94d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DJIBRILLA KAOU BAKARY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bakary.djibrilla@assnat">bakary.djibrilla@assnat</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7a1caa4a-dede-4397-9767-649eb6541258">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DJOMGOUE Paul Eric</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:eric.djomgoue@assnat.cm">eric.djomgoue@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f778e9c-5b2e-4d26-84a3-0585a8980388">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DOOH Collins Albert KOUOH</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:albert.dooh@assnat">albert.dooh@assnat</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-33df5d21-ba67-4966-b1da-7d24f2cec4fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DOUGOUF DJONKIO Ali</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ali.dougouf@assnat.cm">ali.dougouf@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a3c107e4-96db-435f-b3cb-3fa688a19266">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EDIMO NDOUMBE Oscar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:oscar.edimo@assnat.cm">oscar.edimo@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-51d8f583-9a37-4876-b81d-63a102048425">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EKEN Christophe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:christophe.eken@assnat.cm">christophe.eken@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6839a59-560d-4139-a570-4dc401b72351">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EKINDI Jean-Jacques</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PM — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jean.ekindi.cm@assnat.cm">jean.ekindi.cm@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-681a4973-0786-4feb-ab38-39ade17c7240">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EKOUE Bienvenue</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bienvenue.ekoue@assnat.cm">bienvenue.ekoue@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e074644e-f0b3-41fb-8d7b-edb1448b37ad">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ELIAS GONDJI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:elias.gondji@assnat.cm">elias.gondji@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0147224e-ce84-41fd-b172-8c5b8d496e20">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EMAH ETOUNDI Vincent de Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:vincent.etoundi@assnat.cm">vincent.etoundi@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-967c6c02-88a7-4f6e-a825-481d90c3ec72">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EMANA Marius</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — EAST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:marius.emana@assnat.cm">marius.emana@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2c61f7b3-38ae-4b51-bdde-ed50224d09f0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ENWE Françis ABI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:françis.enwe@assnat.cm">françis.enwe@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e425d2c3-e53e-4a25-a126-77e204260dac">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EONNE Jean</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jean.eonne@assnat.cm">jean.eonne@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5dbc9b4e-c022-462c-9b64-487c16947a21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EPOUBE Lydienne née EYOUM M.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:lydienne.eyoum@assnat.cm">lydienne.eyoum@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9bdb1e29-9b28-42b6-ae2d-921537320d8a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ESSAME François</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — SOUTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:françois.essame@assnat.cm">françois.essame@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-efa77a1c-d1d7-4d4b-a305-c17278d408af">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ESSOLA ETOA Louis Roger</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — EAST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:roger.etoa@assnat.cm">roger.etoa@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c6e1473d-281d-46d2-88f0-e2faaecf31d4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ETONG NDZOK Hilarion</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — EAST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:hilarion.etong@assnat.cm">hilarion.etong@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-51c4f3c4-3c66-478c-8ff4-2b0373398126">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EYEBE Lucas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — CENTRE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:lucas.eyebe@assnat.cm">lucas.eyebe@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e8e12315-c68d-444d-ab50-09a0a558e4fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FEUTHEU Jean-Claude</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-74d86d1b-8eed-48f1-bb11-8b7569aba1e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FOBI NCHINDA Simon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:simon.nchinda@assnat.cm">simon.nchinda@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-154badc0-52e0-4bee-9086-83c501d9075e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FOINDING Calvin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:calvin.foinding@assnat.cm">calvin.foinding@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b8be2de0-0377-44ea-975a-a17f2a403dea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FONGANG Joseph Confiance</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:confiance.fongang@assnat.cm">confiance.fongang@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b9982e1f-d50d-41c6-9cef-ebf5029a0554">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FONSO Peter CHOO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:peter.fonso@assnat.cm">peter.fonso@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cb72b048-c65f-4906-8c70-5623fc8b6295">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FOSSI Jacob</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jacob.fossi@assnat.cm">jacob.fossi@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1a78777f-ede3-4fa2-b180-d854a1160324">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FUH CALISTUS Gentry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gentry.fuh@assnat.cm">gentry.fuh@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dd0faa7d-4842-437e-920a-e6dc751f4f8b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GONONDO Jean</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jean.gonondo@assnat.cm">jean.gonondo@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2856d9fa-1cf3-4ac2-86d6-bf1c25ecc483">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Genesis MBUCKSEK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — NORTH-WEST
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1a07d691-ff20-4e17-b093-54c15cd9b0e8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAMADAMA DJIDJIOUA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — ADAMAWA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:hamadama.djidjioua@assnat.cm">hamadama.djidjioua@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-06226567-ccb2-4600-9a22-7cfbf8f17ace">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAMADOU ALI BACHIR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — ADAMAWA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ali.bachir@assnat.cm">ali.bachir@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a9a65509-56cb-4770-9bba-c3633c25450a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAMADOU SALI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — FAR-NORTH
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:sali.hamadou@assnat.cm">sali.hamadou@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-37332665-aadb-4dbf-95ff-475598f93b0a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Halia MOUSSA MOUFTA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CPDM — ADAMAWA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:moufta.halia@assnat.cm">moufta.halia@assnat.cm</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

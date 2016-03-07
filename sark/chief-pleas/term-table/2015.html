@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2015-2017" />
     <meta property="og:type" content="article" />
@@ -138,7 +141,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-none"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -150,395 +153,826 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/7a345ad/data/Sark/Chief_Pleas/term-2015.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/7a345ad/data/Sark/Chief_Pleas/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/7a345ad/data/Sark/Chief_Pleas/term-2015.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/7a345ad/data/Sark/Chief_Pleas/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-928e1048-8b4c-4dd2-a989-d5f8979c9dda">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-928e1048-8b4c-4dd2-a989-d5f8979c9dda">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Andrew Prevel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Andrew Prevel">Andrew Prevel</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c2aaa04b-cb7f-4b38-aeaf-4d9878ff6a6f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c2aaa04b-cb7f-4b38-aeaf-4d9878ff6a6f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Anthony Granville Ventress</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Anthony Granville Ventress">Anthony Granville Ventress</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-83e580e1-f03d-4b12-89b3-82f1354f9231">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-83e580e1-f03d-4b12-89b3-82f1354f9231">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Antony Dunks</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Antony Dunks">Antony Dunks</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-04fa5001-a6cb-48f3-a358-11d86cb9946a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-04fa5001-a6cb-48f3-a358-11d86cb9946a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Arthur Rolfe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Arthur Rolfe">Arthur Rolfe</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a8da1aa2-c5ef-4c49-9ad7-132ae749236c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8da1aa2-c5ef-4c49-9ad7-132ae749236c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Charles Noel Donald Maitland</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Charles Noel Donald Maitland">Charles Noel Donald Maitland</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f5e0e76d-6cbe-4248-b9b0-34efba8cd444">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5e0e76d-6cbe-4248-b9b0-34efba8cd444">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Christine Dorothy Audrain</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Christine Dorothy Audrain">Christine Dorothy Audrain</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-db5dfd2a-accd-468f-8e97-ddbec15d4614">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-db5dfd2a-accd-468f-8e97-ddbec15d4614">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Christopher Robert Nightingale</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Christopher Robert Nightingale">Christopher Robert Nightingale</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1a58bd45-b170-4e9d-988e-77a1b3466d7c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1a58bd45-b170-4e9d-988e-77a1b3466d7c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Colin Golds</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Colin Golds">Colin Golds</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-41f9ef80-170d-40bd-bd48-44d5eb8dd0a7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41f9ef80-170d-40bd-bd48-44d5eb8dd0a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Diane Baker</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Diane Baker">Diane Baker</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e4cf9ff0-fc14-429b-95e5-3adb72ea5f76">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e4cf9ff0-fc14-429b-95e5-3adb72ea5f76">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Edric Baker</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Edric Baker">Edric Baker</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-bd331a17-ddd4-4ac1-8502-bb17c8b13fea">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bd331a17-ddd4-4ac1-8502-bb17c8b13fea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Elizabeth Mary Dewe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Elizabeth Mary Dewe">Elizabeth Mary Dewe</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e1dfcc39-d5a5-4937-9307-392af0063544">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1dfcc39-d5a5-4937-9307-392af0063544">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Elizabeth Norwich</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Elizabeth Norwich">Elizabeth Norwich</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-908fd132-baed-4d7c-98dd-49472d3188a1">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-908fd132-baed-4d7c-98dd-49472d3188a1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Elsie Courtney</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Elsie Courtney">Elsie Courtney</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4ffb4cb5-1b4a-4456-8638-9cf523387f31">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4ffb4cb5-1b4a-4456-8638-9cf523387f31">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hazel Fry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Hazel Fry">Hazel Fry</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-81ebd0c4-eb11-4500-9509-4743151becd6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-81ebd0c4-eb11-4500-9509-4743151becd6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Helen Mildred Plummer</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Helen Mildred Plummer">Helen Mildred Plummer</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-935d119f-8b1f-4ef8-94cb-125140c8a29d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-935d119f-8b1f-4ef8-94cb-125140c8a29d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Karen Adams</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Karen Adams">Karen Adams</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4a0eea01-5ade-4e76-afca-071c155e539a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a0eea01-5ade-4e76-afca-071c155e539a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Margaret Mallinson</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Margaret Mallinson">Margaret Mallinson</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b5fa1f02-296a-4d11-83b2-0ee22a841f1a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5fa1f02-296a-4d11-83b2-0ee22a841f1a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Michael Mann</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Michael Mann">Michael Mann</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-77116701-8cb0-41df-92ba-12c4c91c91aa">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-77116701-8cb0-41df-92ba-12c4c91c91aa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nicolas Moloney</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nicolas Moloney">Nicolas Moloney</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c52c1969-eb78-4f46-9a8a-243b9153246b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c52c1969-eb78-4f46-9a8a-243b9153246b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Paul Burgess</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Paul Burgess">Paul Burgess</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6f8b9c8b-2cb9-4a94-bdd8-3c72339414fb">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f8b9c8b-2cb9-4a94-bdd8-3c72339414fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Paul Williams</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Paul Williams">Paul Williams</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e3986bc8-ad74-4566-b5fb-58591a1de5b0">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e3986bc8-ad74-4566-b5fb-58591a1de5b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Peter Byrne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Peter Byrne">Peter Byrne</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e095d471-da9c-40ae-944a-a6ca0f1efe13">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e095d471-da9c-40ae-944a-a6ca0f1efe13">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Richard James Dewe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Richard James Dewe">Richard James Dewe</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4ceaf5a0-25b2-4a99-922f-a2bea0b6998a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4ceaf5a0-25b2-4a99-922f-a2bea0b6998a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Robert Cottle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Robert Cottle">Robert Cottle</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-672a28e4-dc89-41f7-8781-f236162d1be7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-672a28e4-dc89-41f7-8781-f236162d1be7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Roger Norwich</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Roger Norwich">Roger Norwich</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-46cd5796-28c8-4830-9388-6049e90ec72b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-46cd5796-28c8-4830-9388-6049e90ec72b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rosanne Byrne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Rosanne Byrne">Rosanne Byrne</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e3eb8a80-0e8e-4a38-ad07-c12354b5be6a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e3eb8a80-0e8e-4a38-ad07-c12354b5be6a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Sandra Williams</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Sandra Williams">Sandra Williams</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-71137ca1-9c4f-46c0-8d8b-6063cbeadca2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-71137ca1-9c4f-46c0-8d8b-6063cbeadca2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Stephen Taylor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Stephen Taylor">Stephen Taylor</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ba562137-e4ca-4c23-af6a-184ac9a5dc29">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ba562137-e4ca-4c23-af6a-184ac9a5dc29">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">William Raymond</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              None
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="William Raymond">William Raymond</td>
-                      
-                        <td>None</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

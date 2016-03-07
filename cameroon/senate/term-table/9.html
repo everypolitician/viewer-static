@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="9e législature" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-rdpc"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -131,1247 +134,2743 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/cae5581/data/Cameroon/Senate/term-9.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/cae5581/data/Cameroon/Senate/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/cae5581/data/Cameroon/Senate/term-9.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/cae5581/data/Cameroon/Senate/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-c0e74763-0266-4a17-b49b-001ecc26e2ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABBA BOUKAR">ABBA BOUKAR</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-107a90ec-9bc2-4469-8201-5dfa26fdc713">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABDOULAYE WOUYACK MARAVA">ABDOULAYE WOUYACK MARAVA</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ebd7132-38d7-40ab-ae3c-d9182d082bdb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABOUBAKAR SIROMA">ABOUBAKAR SIROMA</td>
-                      
-                        <td>SDF</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-13b09cb4-e024-4908-8184-821e7bad7313">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ABOUBAKARY ABDOULAYE">ABOUBAKARY ABDOULAYE</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-189c01f4-09d9-4834-b82d-b7622f94eef0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ACHIDI ASHU Simon">ACHIDI ASHU Simon</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bc04f311-20e0-4b74-a9b0-80aa6ed3249a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AHMADOU TIDJANI">AHMADOU TIDJANI</td>
-                      
-                        <td>SDF</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-40849140-71e4-43b6-b09b-fdd591261537">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALIOUM ALADJI HAMADOU">ALIOUM ALADJI HAMADOU</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-72714c89-6002-4a3d-b224-84d119337bbb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMAMA AMAMA Benjamin">AMAMA AMAMA Benjamin</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b71a90f1-d841-4ab3-9606-5c8dec7e4009">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMIDOU Maurice">AMIDOU Maurice</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3c0cd0f8-3b51-4808-976d-1f16414bf0d6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AMRAKAYE Martin">AMRAKAYE Martin</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a7aa64e-8c6f-4485-9d46-f71f91434e78">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ANONG ADIBIME Pascal">ANONG ADIBIME Pascal</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0f5abc55-a30c-4295-9788-f54731b50a94">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="AWANGA Zacharie">AWANGA Zacharie</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f0bbbcbc-703d-4999-9913-93c74d867934">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BABA HAMADOU">BABA HAMADOU</td>
-                      
-                        <td>RDPC</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a4a88f94-4279-49cc-b3bb-b01d8df6b3b9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BASKOUDA Jean Baptiste">BASKOUDA Jean Baptiste</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fe4e2aef-0ae2-4fc6-988b-f754584e88f1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BEBNONE PAYOUNNI">BEBNONE PAYOUNNI</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5d8ebc9e-2efd-461f-bb4c-98ad9cb21b1a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BELL Luc René">BELL Luc René</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-61b0a760-5352-4f10-8798-56baf6f09e20">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chief ANJA Simon ONJWO">Chief ANJA Simon ONJWO</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-06cc2b73-75c8-4321-a78f-9037e7d681c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DAKOLE DAÏSSALA">DAKOLE DAÏSSALA</td>
-                      
-                        <td>MDR</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1c5a62ba-491e-4c01-9da3-614ccd7457bc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DINGA Ignatius BAYIN">DINGA Ignatius BAYIN</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eb0bbbf8-8706-412c-92f5-61ead8b4636e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DJOMO KAMGA Victor">DJOMO KAMGA Victor</td>
-                      
-                        <td>RDPC</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c682cab6-e553-4072-bd3f-3c8748393a66">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr AMADOU ALIM">Dr AMADOU ALIM</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fa2afe7b-d05c-4e78-8be7-47e016845ab8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EBONGUE NGOH Jean Jules">EBONGUE NGOH Jean Jules</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e2f7f1d4-df71-495f-a8f3-6e0d5a113d97">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ESSOMBA TSOUNGUI Elie">ESSOMBA TSOUNGUI Elie</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-79226513-d7d4-4d59-b85f-6bc4e91281a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ETAME MASSOMA David Siegfried">ETAME MASSOMA David Siegfried</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2ffb17bc-2d56-4a96-b46f-9f43529ad71a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fon TECHE NJEI II">Fon TECHE NJEI II</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-33238de0-28ce-4062-9aa5-4bd848a4803c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fon. DOH GANYONGA III">Fon. DOH GANYONGA III</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c01868c9-7e1b-4e09-9cf2-fd81f75e7dea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fon. MUKETE ESSIMI Ngo Victor">Fon. MUKETE ESSIMI Ngo Victor</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-451a8b96-c253-4b7c-b965-03ad59d75b05">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAMADOU ABBO">HAMADOU ABBO</td>
-                      
-                        <td>FSNC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a7b41d29-f994-4bf0-8932-ed71cd43930b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HAMAN PAUL">HAMAN PAUL</td>
-                      
-                        <td>SDF</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d8ce4968-8f78-4a40-ae7b-a583c601797d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JIKONG Stephen YERIMA">JIKONG Stephen YERIMA</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f52edb5-0ab9-4aef-a8ce-44c53cdcfc94">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KEMAYOU Claude">KEMAYOU Claude</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6809afa7-e7d6-4a15-b440-e368936e1d08">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="KINGUE Simon">KINGUE Simon</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-09237596-4bb4-4519-a24d-5fa048b6be9b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAANDE Paul">MAANDE Paul</td>
-                      
-                        <td>SDF</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8903993-2105-4c33-a201-e558c3a8a2dd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MADIBA SONGUE">MADIBA SONGUE</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-700d289f-158b-4b45-91b8-1344c8b0382d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAFANY MUSONGE Peter">MAFANY MUSONGE Peter</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-393e9728-355a-46dd-8a55-6106b7aaa9da">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAHAMAT ABDOULKARIM">MAHAMAT ABDOULKARIM</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e75bdb12-3f46-481f-8129-b8bc780c7f39">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAHAMAT BAHAR Manouf">MAHAMAT BAHAR Manouf</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0fcf12aa-831e-4cd7-8dbd-ce6ce645f9c4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAIKANO ABDOULAHI">MAIKANO ABDOULAHI</td>
-                      
-                        <td>SDF</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f07ddfa-1dbf-4946-879b-392a03348015">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MATTA Joseph Roland">MATTA Joseph Roland</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8d0c7e1f-d7c2-47dd-a84e-62d7850b8577">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MATUTE Daniel">MATUTE Daniel</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ee7a902-08e2-4d1c-98f4-b2e7d5e2eca9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBA MBA Grégoire">MBA MBA Grégoire</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-35a744a3-d305-4fd0-9a32-de64edf34b21">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBASSA NDINE Roger Victor">MBASSA NDINE Roger Victor</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c54054ec-416d-411a-82ff-eb9580ae836c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBELLA MOKI Charles">MBELLA MOKI Charles</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ac28976b-2362-4872-9c4c-5d3a5d826e9f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBITA MVAEBEME">MBITA MVAEBEME</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-42b3bc66-ec6f-4312-aca1-3ef872a31cab">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MBOUNDJO Jean">MBOUNDJO Jean</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fd843d8e-ef6c-4fa6-95c6-83b22daea08e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MENYE ONDO François Xavier">MENYE ONDO François Xavier</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f5636c01-9ba4-4fd3-9d08-7606091571f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="METIEDJE NGUIFO TCHETAGNE">METIEDJE NGUIFO TCHETAGNE</td>
-                      
-                        <td>SDF</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ae049bf-0cd5-4de2-b02a-157c8f85235f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOHAMAN GABDO">MOHAMAN GABDO</td>
-                      
-                        <td>RDPC</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4978d1df-2a49-4a3c-b972-b0cb822669d3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MOUSSA SABO">MOUSSA SABO</td>
-                      
-                        <td>RDPC</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-87dcc559-8a2d-46a5-8847-0ee509eed7c1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme ABOUI Marlyse">Mme ABOUI Marlyse</td>
-                      
-                        <td>ANDP</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d7b404d0-4bb3-4590-85a4-6414a4c480f3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme ADAMOU née DOUDOU">Mme ADAMOU née DOUDOU</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a08f6d73-188e-49a6-a9c2-282d00ca0d0a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme ASTA Yvonne">Mme ASTA Yvonne</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-186c0d46-309b-40f0-aace-b3ac1b6c703f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme BISSECK Paulette">Mme BISSECK Paulette</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-69015518-35fc-4b58-b0e1-d497794b43c0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme DIN BELL Marie Armande">Mme DIN BELL Marie Armande</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d5f31fbe-5f52-4678-b6af-e4b95ca6cfe6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme DJAKAOU née FOUTCHOU Julienne">Mme DJAKAOU née FOUTCHOU Julienne</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-35a0a5d4-7ca4-458f-8735-5ad7f309d984">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme ELOUMBA MEDJO Thérèse">Mme ELOUMBA MEDJO Thérèse</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1301c80-c6cc-4a96-b36e-72c6fbeb08fb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme ENO LAFON Emma VERGELE">Mme ENO LAFON Emma VERGELE</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-de83a8ad-95d5-4352-b90e-bf73166957cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme HAOUA Madeleine">Mme HAOUA Madeleine</td>
-                      
-                        <td>SDF</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9983d204-4362-4045-b079-0fc95109e4d9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme HAYATOU Aïcha Pierrette">Mme HAYATOU Aïcha Pierrette</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9374bbbf-9a8b-4d6b-8d73-8e7cdb0cb86a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme MEDJO Delphine">Mme MEDJO Delphine</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b3213994-ce8b-476f-8ef8-662fce2ab0e2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme MOAMPEA Marie Claire">Mme MOAMPEA Marie Claire</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-663a92f1-f7fb-49d7-bd5d-d3a15cef837d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme NDJOLE ASSOUO épse TOKPANOU Isabelle">Mme NDJOLE ASSOUO épse TOKPANOU Isabelle</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-453caac6-39f3-4800-8862-97a2cc1e852d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme NNANGA NDOUME">Mme NNANGA NDOUME</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-73b165e2-b88f-45a1-bd92-c00b3b5e865f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme NTUBE Agnès NDODE épse NDJOCK">Mme NTUBE Agnès NDODE épse NDJOCK</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41d41de9-82b8-4589-8af2-185e667841c3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme OKALA BILAÎ Nicole">Mme OKALA BILAÎ Nicole</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-45dcafcb-061b-418a-ba20-5b92e541d9ef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme OULI NDONGO Monique">Mme OULI NDONGO Monique</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3db2fb4e-5ed7-4488-819c-938699b9f7ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme TJOUES Généviève">Mme TJOUES Généviève</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ec23f750-f597-49cf-8e27-c2f88f96e98b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mme ZAKIATOU épse SALE">Mme ZAKIATOU épse SALE</td>
-                      
-                        <td>RDPC</td>
-                        <td>Far-North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-75dd07e3-0f41-4abb-aaac-68f85a7cf1e5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mrs ANKIE AFFIONG Rebecca AMAH">Mrs ANKIE AFFIONG Rebecca AMAH</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ecf7a60-6255-4388-bffe-a519f19276c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NAAH ONDOUA Sylvestre">NAAH ONDOUA Sylvestre</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d5025bd-e574-4c43-9fa1-15b622984d64">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NAMIO Pierre">NAMIO Pierre</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-892c200b-2c27-4f16-ace0-e7b110424b1c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NDANGA NDINGA Badel">NDANGA NDINGA Badel</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9438e52a-afbc-45be-8b58-809c452b62ec">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGALLI NGOA Pierre Henri">NGALLI NGOA Pierre Henri</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4e39ff63-a7ac-42f3-814e-4fa44e39668e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGAYAP Pierre Flambeau">NGAYAP Pierre Flambeau</td>
-                      
-                        <td>UNDP</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-31edf5a2-c43f-40ee-a951-760ed203ae58">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NGUIEBE Joël">NGUIEBE Joël</td>
-                      
-                        <td>SDF</td>
-                        <td>Adamaoua</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a811c85-ab2a-460b-a62c-a7d0a3fdb9db">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NIAT NJIFENJI Marcel">NIAT NJIFENJI Marcel</td>
-                      
-                        <td>RDPC</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e858ba65-3524-4c51-bc9b-7a64747e7d06">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NJIFUA Lucas FONTEM">NJIFUA Lucas FONTEM</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-297056a1-ba6e-4aec-86d3-7c1ee59eaafc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NKODO Laurent">NKODO Laurent</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-660b6ac1-ee9d-4525-9485-ba73b026575a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NKWAIN Francis">NKWAIN Francis</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-019859c8-9b17-4bf2-bc69-ddb80c289851">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NNEMDE Emmanuel">NNEMDE Emmanuel</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b98f1882-ffb0-4024-849a-01b8fd24694f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NONO">NONO</td>
-                      
-                        <td>SDF</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50423554-d45b-40bf-ba21-699b4a8d8651">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OBAM ASSAM Samuel">OBAM ASSAM Samuel</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-899da5e8-0187-4923-b118-ee7e8c18c45e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ONDOUA Pius">ONDOUA Pius</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c19b5014-b0a6-4451-8c1c-07eb6b9b8837">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="OTTE Andrew MOFFA">OTTE Andrew MOFFA</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-82870eb3-7ad8-449f-b06e-6c2271c8e400">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="PONGMONI Jean Marie">PONGMONI Jean Marie</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-34b8309a-430b-4951-a679-b3c1f39c5dd1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="S. M. Ibrahim MBOMBO NJOYA">S. M. Ibrahim MBOMBO NJOYA</td>
-                      
-                        <td>RDPC</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6867a348-a45c-48e9-afa8-2d52f13ddaf3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="S.M. MAMA Jean Marie">S.M. MAMA Jean Marie</td>
-                      
-                        <td>RDPC</td>
-                        <td>Centre</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea23538c-ad4f-4d57-b7ef-3d5e81f81ff1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SALE Charles">SALE Charles</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-83b23824-7dc1-4961-b3c5-97bfa53915df">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SONKIN ETIENNE">SONKIN ETIENNE</td>
-                      
-                        <td>SDF</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ad7d5e1a-a7ef-4c12-9444-372b4f03e30c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TABE TANDO NDIEP NSO">TABE TANDO NDIEP NSO</td>
-                      
-                        <td>RDPC</td>
-                        <td>South-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c25bd3bf-780d-4da4-be1e-48ee5ff0fc13">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TANTSE TAGNE Bernard">TANTSE TAGNE Bernard</td>
-                      
-                        <td>SDF</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8d2bef18-5136-43d9-9f18-911eb405da66">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TCHATCHOUANG Paul">TCHATCHOUANG Paul</td>
-                      
-                        <td>SDF</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6f32ff37-cabe-41dc-8159-418a9e2cfb88">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TCHOMNOU Raoul">TCHOMNOU Raoul</td>
-                      
-                        <td>SDF</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6b08006f-f38d-4603-be73-d67858705251">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TOBBO EYOUM Thomas">TOBBO EYOUM Thomas</td>
-                      
-                        <td>RDPC</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-88442409-5320-40cb-ac6e-0a7e459aa997">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="TSOMELOU Jean">TSOMELOU Jean</td>
-                      
-                        <td>SDF</td>
-                        <td>West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d5074c34-df80-443f-87af-a4a87c111bdb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WALLANG David AKWO">WALLANG David AKWO</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f147eeb-36f1-4593-9d75-f54cb78e10e0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WANLO CHIAMUA John">WANLO CHIAMUA John</td>
-                      
-                        <td>RDPC</td>
-                        <td>North-West</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-efd42931-25df-4408-ae51-b3144b659953">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="YOUSSOUFA DAOUA">YOUSSOUFA DAOUA</td>
-                      
-                        <td>RDPC</td>
-                        <td>North</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-213da74b-4980-499e-9839-8c4546338c65">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ZANG OYONO Calvin">ZANG OYONO Calvin</td>
-                      
-                        <td>RDPC</td>
-                        <td>South</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f96dc20f-756b-4f62-afc4-d072506819bf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ZE NGUELE René">ZE NGUELE René</td>
-                      
-                        <td>RDPC</td>
-                        <td>East</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c0e74763-0266-4a17-b49b-001ecc26e2ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABBA BOUKAR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-107a90ec-9bc2-4469-8201-5dfa26fdc713">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABDOULAYE WOUYACK MARAVA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ebd7132-38d7-40ab-ae3c-d9182d082bdb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABOUBAKAR SIROMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13b09cb4-e024-4908-8184-821e7bad7313">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ABOUBAKARY ABDOULAYE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-189c01f4-09d9-4834-b82d-b7622f94eef0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ACHIDI ASHU Simon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bc04f311-20e0-4b74-a9b0-80aa6ed3249a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AHMADOU TIDJANI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-40849140-71e4-43b6-b09b-fdd591261537">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALIOUM ALADJI HAMADOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-72714c89-6002-4a3d-b224-84d119337bbb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMAMA AMAMA Benjamin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b71a90f1-d841-4ab3-9606-5c8dec7e4009">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMIDOU Maurice</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3c0cd0f8-3b51-4808-976d-1f16414bf0d6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AMRAKAYE Martin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a7aa64e-8c6f-4485-9d46-f71f91434e78">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ANONG ADIBIME Pascal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0f5abc55-a30c-4295-9788-f54731b50a94">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">AWANGA Zacharie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f0bbbcbc-703d-4999-9913-93c74d867934">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BABA HAMADOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a4a88f94-4279-49cc-b3bb-b01d8df6b3b9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BASKOUDA Jean Baptiste</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fe4e2aef-0ae2-4fc6-988b-f754584e88f1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BEBNONE PAYOUNNI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d8ebc9e-2efd-461f-bb4c-98ad9cb21b1a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BELL Luc René</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-61b0a760-5352-4f10-8798-56baf6f09e20">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Chief ANJA Simon ONJWO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-06cc2b73-75c8-4321-a78f-9037e7d681c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DAKOLE DAÏSSALA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MDR — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1c5a62ba-491e-4c01-9da3-614ccd7457bc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DINGA Ignatius BAYIN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb0bbbf8-8706-412c-92f5-61ead8b4636e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DJOMO KAMGA Victor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c682cab6-e553-4072-bd3f-3c8748393a66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dr AMADOU ALIM</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fa2afe7b-d05c-4e78-8be7-47e016845ab8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EBONGUE NGOH Jean Jules</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e2f7f1d4-df71-495f-a8f3-6e0d5a113d97">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ESSOMBA TSOUNGUI Elie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-79226513-d7d4-4d59-b85f-6bc4e91281a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ETAME MASSOMA David Siegfried</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2ffb17bc-2d56-4a96-b46f-9f43529ad71a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fon TECHE NJEI II</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-33238de0-28ce-4062-9aa5-4bd848a4803c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fon. DOH GANYONGA III</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c01868c9-7e1b-4e09-9cf2-fd81f75e7dea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Fon. MUKETE ESSIMI Ngo Victor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-451a8b96-c253-4b7c-b965-03ad59d75b05">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAMADOU ABBO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSNC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a7b41d29-f994-4bf0-8932-ed71cd43930b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HAMAN PAUL</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d8ce4968-8f78-4a40-ae7b-a583c601797d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JIKONG Stephen YERIMA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f52edb5-0ab9-4aef-a8ce-44c53cdcfc94">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KEMAYOU Claude</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6809afa7-e7d6-4a15-b440-e368936e1d08">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">KINGUE Simon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-09237596-4bb4-4519-a24d-5fa048b6be9b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAANDE Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8903993-2105-4c33-a201-e558c3a8a2dd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MADIBA SONGUE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-700d289f-158b-4b45-91b8-1344c8b0382d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAFANY MUSONGE Peter</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-393e9728-355a-46dd-8a55-6106b7aaa9da">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAHAMAT ABDOULKARIM</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e75bdb12-3f46-481f-8129-b8bc780c7f39">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAHAMAT BAHAR Manouf</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0fcf12aa-831e-4cd7-8dbd-ce6ce645f9c4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAIKANO ABDOULAHI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f07ddfa-1dbf-4946-879b-392a03348015">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MATTA Joseph Roland</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8d0c7e1f-d7c2-47dd-a84e-62d7850b8577">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MATUTE Daniel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ee7a902-08e2-4d1c-98f4-b2e7d5e2eca9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBA MBA Grégoire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-35a744a3-d305-4fd0-9a32-de64edf34b21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBASSA NDINE Roger Victor</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c54054ec-416d-411a-82ff-eb9580ae836c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBELLA MOKI Charles</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ac28976b-2362-4872-9c4c-5d3a5d826e9f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBITA MVAEBEME</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-42b3bc66-ec6f-4312-aca1-3ef872a31cab">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MBOUNDJO Jean</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fd843d8e-ef6c-4fa6-95c6-83b22daea08e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MENYE ONDO François Xavier</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5636c01-9ba4-4fd3-9d08-7606091571f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">METIEDJE NGUIFO TCHETAGNE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ae049bf-0cd5-4de2-b02a-157c8f85235f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOHAMAN GABDO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4978d1df-2a49-4a3c-b972-b0cb822669d3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MOUSSA SABO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-87dcc559-8a2d-46a5-8847-0ee509eed7c1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme ABOUI Marlyse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ANDP — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d7b404d0-4bb3-4590-85a4-6414a4c480f3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme ADAMOU née DOUDOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a08f6d73-188e-49a6-a9c2-282d00ca0d0a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme ASTA Yvonne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-186c0d46-309b-40f0-aace-b3ac1b6c703f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme BISSECK Paulette</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-69015518-35fc-4b58-b0e1-d497794b43c0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme DIN BELL Marie Armande</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d5f31fbe-5f52-4678-b6af-e4b95ca6cfe6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme DJAKAOU née FOUTCHOU Julienne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-35a0a5d4-7ca4-458f-8735-5ad7f309d984">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme ELOUMBA MEDJO Thérèse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1301c80-c6cc-4a96-b36e-72c6fbeb08fb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme ENO LAFON Emma VERGELE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-de83a8ad-95d5-4352-b90e-bf73166957cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme HAOUA Madeleine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9983d204-4362-4045-b079-0fc95109e4d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme HAYATOU Aïcha Pierrette</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9374bbbf-9a8b-4d6b-8d73-8e7cdb0cb86a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme MEDJO Delphine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b3213994-ce8b-476f-8ef8-662fce2ab0e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme MOAMPEA Marie Claire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-663a92f1-f7fb-49d7-bd5d-d3a15cef837d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme NDJOLE ASSOUO épse TOKPANOU Isabelle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-453caac6-39f3-4800-8862-97a2cc1e852d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme NNANGA NDOUME</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-73b165e2-b88f-45a1-bd92-c00b3b5e865f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme NTUBE Agnès NDODE épse NDJOCK</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41d41de9-82b8-4589-8af2-185e667841c3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme OKALA BILAÎ Nicole</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-45dcafcb-061b-418a-ba20-5b92e541d9ef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme OULI NDONGO Monique</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3db2fb4e-5ed7-4488-819c-938699b9f7ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme TJOUES Généviève</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ec23f750-f597-49cf-8e27-c2f88f96e98b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mme ZAKIATOU épse SALE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Far-North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-75dd07e3-0f41-4abb-aaac-68f85a7cf1e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mrs ANKIE AFFIONG Rebecca AMAH</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ecf7a60-6255-4388-bffe-a519f19276c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NAAH ONDOUA Sylvestre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d5025bd-e574-4c43-9fa1-15b622984d64">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NAMIO Pierre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-892c200b-2c27-4f16-ace0-e7b110424b1c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NDANGA NDINGA Badel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9438e52a-afbc-45be-8b58-809c452b62ec">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGALLI NGOA Pierre Henri</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4e39ff63-a7ac-42f3-814e-4fa44e39668e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGAYAP Pierre Flambeau</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UNDP — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-31edf5a2-c43f-40ee-a951-760ed203ae58">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NGUIEBE Joël</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — Adamaoua
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a811c85-ab2a-460b-a62c-a7d0a3fdb9db">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NIAT NJIFENJI Marcel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e858ba65-3524-4c51-bc9b-7a64747e7d06">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NJIFUA Lucas FONTEM</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-297056a1-ba6e-4aec-86d3-7c1ee59eaafc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NKODO Laurent</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-660b6ac1-ee9d-4525-9485-ba73b026575a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NKWAIN Francis</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-019859c8-9b17-4bf2-bc69-ddb80c289851">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NNEMDE Emmanuel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b98f1882-ffb0-4024-849a-01b8fd24694f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NONO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50423554-d45b-40bf-ba21-699b4a8d8651">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OBAM ASSAM Samuel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-899da5e8-0187-4923-b118-ee7e8c18c45e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ONDOUA Pius</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c19b5014-b0a6-4451-8c1c-07eb6b9b8837">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">OTTE Andrew MOFFA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-82870eb3-7ad8-449f-b06e-6c2271c8e400">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">PONGMONI Jean Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34b8309a-430b-4951-a679-b3c1f39c5dd1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">S. M. Ibrahim MBOMBO NJOYA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6867a348-a45c-48e9-afa8-2d52f13ddaf3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">S.M. MAMA Jean Marie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — Centre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea23538c-ad4f-4d57-b7ef-3d5e81f81ff1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SALE Charles</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-83b23824-7dc1-4961-b3c5-97bfa53915df">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SONKIN ETIENNE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ad7d5e1a-a7ef-4c12-9444-372b4f03e30c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TABE TANDO NDIEP NSO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c25bd3bf-780d-4da4-be1e-48ee5ff0fc13">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TANTSE TAGNE Bernard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8d2bef18-5136-43d9-9f18-911eb405da66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TCHATCHOUANG Paul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6f32ff37-cabe-41dc-8159-418a9e2cfb88">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TCHOMNOU Raoul</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6b08006f-f38d-4603-be73-d67858705251">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TOBBO EYOUM Thomas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-88442409-5320-40cb-ac6e-0a7e459aa997">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">TSOMELOU Jean</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SDF — West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d5074c34-df80-443f-87af-a4a87c111bdb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">WALLANG David AKWO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f147eeb-36f1-4593-9d75-f54cb78e10e0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">WANLO CHIAMUA John</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North-West
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-efd42931-25df-4408-ae51-b3144b659953">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">YOUSSOUFA DAOUA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — North
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-213da74b-4980-499e-9839-8c4546338c65">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ZANG OYONO Calvin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — South
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f96dc20f-756b-4f62-afc4-d072506819bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ZE NGUELE René</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              RDPC — East
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

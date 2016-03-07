@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2012" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-AKA"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -125,443 +128,934 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/a61d818/data/Marshall_Islands/Nitijela/term-2012.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/a61d818/data/Marshall_Islands/Nitijela/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/a61d818/data/Marshall_Islands/Nitijela/term-2012.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/a61d818/data/Marshall_Islands/Nitijela/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-75696234-9205-4199-aaea-3b80ab7830fc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-75696234-9205-4199-aaea-3b80ab7830fc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alvin T. Jacklick</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Jaluit Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alvin T. Jacklick">Alvin T. Jacklick</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Jaluit Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fdf0dbf2-eb75-4b4b-8dbc-cc2109113a48">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fdf0dbf2-eb75-4b4b-8dbc-cc2109113a48">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Brenson S. Wase</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Majuro Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Brenson S. Wase">Brenson S. Wase</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Majuro Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ee9c58aa-a886-41ea-b878-510b092a225a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ee9c58aa-a886-41ea-b878-510b092a225a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Caios Lucky</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Ujae Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Caios Lucky">Caios Lucky</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Ujae Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2a2aef2c-3a37-4b1c-bf7d-645bc6b92b40">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2a2aef2c-3a37-4b1c-bf7d-645bc6b92b40">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Christopher J. Loeak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Ailinglaplap Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Christopher J. Loeak">Christopher J. Loeak</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Ailinglaplap Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1d96727d-4030-4428-b754-aadbe31c71e9">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1d96727d-4030-4428-b754-aadbe31c71e9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">David Kabua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Wotho Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="David Kabua">David Kabua</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Wotho Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-546937b9-924f-494f-964a-95d9385cd3be">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-546937b9-924f-494f-964a-95d9385cd3be">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">David Kramer</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Majuro Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="David Kramer">David Kramer</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Majuro Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-72d33230-6853-4a7e-9f3e-f42c2ab5e90f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-72d33230-6853-4a7e-9f3e-f42c2ab5e90f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Dennis Momotaro</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United People's Party — Mejit Island
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Dennis Momotaro">Dennis Momotaro</td>
-                      
-                        <td>United People's Party</td>
-                        <td>Mejit Island</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b13953a7-5449-4851-b82b-3a5bdbfee391">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b13953a7-5449-4851-b82b-3a5bdbfee391">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Donald F. Capelle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Democratic Party — Likiep Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Donald F. Capelle">Donald F. Capelle</td>
-                      
-                        <td>United Democratic Party</td>
-                        <td>Likiep Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-c0e68a83-8e27-4c2d-acff-6d000018945f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c0e68a83-8e27-4c2d-acff-6d000018945f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hilda C. Heine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Aur Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Hilda C. Heine">Hilda C. Heine</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Aur Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-9746d9f2-b4e8-4558-a9c1-0579c38f25b7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9746d9f2-b4e8-4558-a9c1-0579c38f25b7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hiroshi V. Yamamura</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Utirik Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Hiroshi V. Yamamura">Hiroshi V. Yamamura</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Utirik Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2c7a3909-c40e-426f-9347-072fa8ae0322">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2c7a3909-c40e-426f-9347-072fa8ae0322">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jack J. Ading</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Enewetak Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jack J. Ading">Jack J. Ading</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Enewetak Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6a656041-6ae9-45ac-864b-fdab651d7ef2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6a656041-6ae9-45ac-864b-fdab651d7ef2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jeban Riklon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Kwajalein Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jeban Riklon">Jeban Riklon</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Kwajalein Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-611f60c7-96cd-450a-bb77-a3d8c9f9dc78">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-611f60c7-96cd-450a-bb77-a3d8c9f9dc78">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jerakoj J. Bejang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Lib Island
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jerakoj J. Bejang">Jerakoj J. Bejang</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Lib Island</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-82ba2250-a3c5-4ab9-85b6-6be94a40ad74">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-82ba2250-a3c5-4ab9-85b6-6be94a40ad74">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jiba B. Kabua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Arno Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jiba B. Kabua">Jiba B. Kabua</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Arno Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-42f29f31-b8ae-4186-9f0e-5d14d48b5422">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-42f29f31-b8ae-4186-9f0e-5d14d48b5422">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John M. Silk</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Ebon Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="John M. Silk">John M. Silk</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Ebon Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a6b36350-bdeb-445d-ae33-3b3db146fe27">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6b36350-bdeb-445d-ae33-3b3db146fe27">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jurelang Zedkaia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Majuro Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jurelang Zedkaia">Jurelang Zedkaia</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Majuro Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-cd30478a-ed15-4273-91d6-5ef5ccaaf487">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cd30478a-ed15-4273-91d6-5ef5ccaaf487">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kenneth Kedi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Rongelap Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Kenneth Kedi">Kenneth Kedi</td>
-                      
-                        <td>Independent</td>
-                        <td>Rongelap Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e34f209d-c6c0-4b17-8866-91044b395b01">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e34f209d-c6c0-4b17-8866-91044b395b01">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kessai H. Note</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Democratic Party — Jabat Island
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Kessai H. Note">Kessai H. Note</td>
-                      
-                        <td>United Democratic Party</td>
-                        <td>Jabat Island</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-96bea59a-34ed-453a-9621-4eb957ba5773">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-96bea59a-34ed-453a-9621-4eb957ba5773">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Litokwa Tomeing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United People's Party — Wotje Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Litokwa Tomeing">Litokwa Tomeing</td>
-                      
-                        <td>United People's Party</td>
-                        <td>Wotje Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-74adba4c-73d9-4f19-861b-1c55eb3e8693">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-74adba4c-73d9-4f19-861b-1c55eb3e8693">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mattlan Zackhras</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Democratic Party — Namdrik Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mattlan Zackhras">Mattlan Zackhras</td>
-                      
-                        <td>United Democratic Party</td>
-                        <td>Namdrik Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-fa96d5a4-1cf3-456a-bdb0-ddb112709504">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fa96d5a4-1cf3-456a-bdb0-ddb112709504">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maynard Alfred</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Ailuk Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Maynard Alfred">Maynard Alfred</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Ailuk Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ea3b7704-32c8-405c-89b8-a091a417a8a7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea3b7704-32c8-405c-89b8-a091a417a8a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Michael Kabua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Kwajalein Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Michael Kabua">Michael Kabua</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Kwajalein Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-be5f1faf-2cde-47bc-8d1d-35347d6ba363">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-be5f1faf-2cde-47bc-8d1d-35347d6ba363">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Michael Konelios</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Democratic Party — Maloelap Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Michael Konelios">Michael Konelios</td>
-                      
-                        <td>United Democratic Party</td>
-                        <td>Maloelap Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-16cb5f72-3e18-4778-ab80-a87cf399cbc6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-16cb5f72-3e18-4778-ab80-a87cf399cbc6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nidel Lorak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United People's Party — Arno Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nidel Lorak">Nidel Lorak</td>
-                      
-                        <td>United People's Party</td>
-                        <td>Arno Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-caa78339-51d1-463a-bddf-6cf90831074b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-caa78339-51d1-463a-bddf-6cf90831074b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Phillip Muller</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Majuro Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Phillip Muller">Phillip Muller</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Majuro Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-77568073-7c00-4c7d-af27-441ea76d2316">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-77568073-7c00-4c7d-af27-441ea76d2316">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Rien Morris</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Democratic Party — Jaluit Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Rien Morris">Rien Morris</td>
-                      
-                        <td>United Democratic Party</td>
-                        <td>Jaluit Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-0d94e904-d3a1-40c3-b87b-a7e5929fae0b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0d94e904-d3a1-40c3-b87b-a7e5929fae0b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ruben R. Zackhras</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Democratic Party — Ailinglaplap Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ruben R. Zackhras">Ruben R. Zackhras</td>
-                      
-                        <td>United Democratic Party</td>
-                        <td>Ailinglaplap Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-076d0cc2-cf18-447d-9cd6-a37e107fb614">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-076d0cc2-cf18-447d-9cd6-a37e107fb614">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Thomas Heine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Lae Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Thomas Heine">Thomas Heine</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Lae Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-91efff32-eede-4809-8c68-d69e9beddd36">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-91efff32-eede-4809-8c68-d69e9beddd36">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tomaki Juda</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              United Democratic Party — Kili Island
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tomaki Juda">Tomaki Juda</td>
-                      
-                        <td>United Democratic Party</td>
-                        <td>Kili Island</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-87fa0a0e-9a3a-4895-8894-5e9e9ef9b13c">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-87fa0a0e-9a3a-4895-8894-5e9e9ef9b13c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tony Aiseia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Namu Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tony Aiseia">Tony Aiseia</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Namu Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b35a3732-37a1-4b1f-aa5c-55db151ee10f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b35a3732-37a1-4b1f-aa5c-55db151ee10f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tony Muller</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Kien Eo Am — Majuro Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tony Muller">Tony Muller</td>
-                      
-                        <td>Kien Eo Am</td>
-                        <td>Majuro Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-618a1ca8-674b-4a62-814c-c01887ef0270">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-618a1ca8-674b-4a62-814c-c01887ef0270">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tony deBrum</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Kwajalein Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tony deBrum">Tony deBrum</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Kwajalein Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-52d527e2-2b8a-422c-862c-24b326ebd5c6">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-52d527e2-2b8a-422c-862c-24b326ebd5c6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wilbur Heine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Aelon Kein Ad — Mili Atoll
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Wilbur Heine">Wilbur Heine</td>
-                      
-                        <td>Aelon Kein Ad</td>
-                        <td>Mili Atoll</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="1st National Assembly: 1990 - 1995" />
     <meta property="og:type" content="article" />
@@ -164,7 +167,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-SWAPO"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -218,1055 +221,2604 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fdaa41b/data/Namibia/Assembly/term-1.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fdaa41b/data/Namibia/Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fdaa41b/data/Namibia/Assembly/term-1.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fdaa41b/data/Namibia/Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-96809722-ba82-46a9-a501-b85d5f54582f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="//Garoeb Justus">//Garoeb Justus</td>
-                      
-                        <td>UDF</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c58025ad-8217-42bc-bc6e-b4930b41ce6b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="//Garoeb Moses">//Garoeb Moses</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-58929ca6-1c4e-4d96-8f8c-37fe834e1163">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="/Gaseb Johannes">/Gaseb Johannes</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-82fbf029-cd75-4c83-b892-b558333ce0c4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Africa Ben">Africa Ben</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-992c420b-9d77-4571-9447-f7f23517dae1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amadhila Matti">Amadhila Matti</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2d0eac2c-8420-415a-81d1-966e526fdc1c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amathila Appolus Libertine">Amathila Appolus Libertine</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-77e5e4ea-5d45-4233-9ac3-650c770b60cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amathila Ben">Amathila Ben</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-63539230-a65f-4451-97ff-51d18984c611">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Angula Helmut Kangulohi">Angula Helmut Kangulohi</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b88254ef-60d7-42b2-ba6b-ac0dbe70fef6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Angula Nahas">Angula Nahas</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0f3bfd1d-a24f-4a55-a65c-e3b2bf0d32c3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ausiku Helmut">Ausiku Helmut</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c7da6383-5359-416a-ba22-395e72c4d740">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Barnes "Barney" Leonard">Barnes "Barney" Leonard</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e5fba759-35ca-4262-bc36-8d8aaee0d16d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Barnes Margreth">Barnes Margreth</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-06b5edb4-2db4-4735-b1bb-c26c700b6577">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bessinger Niko">Bessinger Niko</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5d0d4218-f681-4add-8ceb-bc09e5333dda">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Biwa Eric">Biwa Eric</td>
-                      
-                        <td>UDF</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0702db25-a932-43c4-a5de-aac238e9effd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Biwa Willem">Biwa Willem</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e600d39d-d5ff-47e1-9afe-84863841da56">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Botha P. Daniel">Botha P. Daniel</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-11170803-8889-462c-925f-47b42f4c1829">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dan Gabriel">Dan Gabriel</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d4995cd8-f844-4aa4-9658-dc88e544e193">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="De Wet Jan">De Wet Jan</td>
-                      
-                        <td>ACN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a6fa6b2-209b-417b-a79f-5194c48e996b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Diergaardt Reggie">Diergaardt Reggie</td>
-                      
-                        <td>UDF</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e30c1719-86fa-46aa-8900-f642b68a6ee2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dierks Klaus">Dierks Klaus</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8811bbed-1980-45b3-9014-c3c06630e693">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ekandjo Jerry">Ekandjo Jerry</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-14151576-14c6-4ef8-9099-afe1d6b7aa62">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Geingob Hage">Geingob Hage</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-36494653-e98c-44f4-9437-11b433c6b02f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gende Allois">Gende Allois</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a2e00d4-57ac-443b-9e7d-de8c21b9be35">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gurirab Theo Ben">Gurirab Theo Ben</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2063887e-9bc3-48c8-80c6-de885ed96624">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hamutenya Hidipo">Hamutenya Hidipo</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e8436fa-3778-48c8-9e38-f8fc6eee288d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hanekom J. Gerhardus">Hanekom J. Gerhardus</td>
-                      
-                        <td>Appointed By President</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9d399e54-60ba-44be-ba61-06a0e3685514">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Haraseb Johannes">Haraseb Johannes</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-77962712-12ac-496c-81bc-3c5c8cff20a1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hausiku Marco">Hausiku Marco</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-39e60754-314f-4228-8273-5622d505fc57">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Herrigel Otto">Herrigel Otto</td>
-                      
-                        <td>Appointed By President</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6285db6-c67c-4c37-9367-40bf808f1d90">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hishongwa Hadino">Hishongwa Hadino</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fb44a53e-891e-4a2f-96a5-90af5c201b38">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hubschle Michaela">Hubschle Michaela</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1955f96c-f07a-4e19-8277-47a0f834044a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Iivula-Ithana Pendukeni">Iivula-Ithana Pendukeni</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aab3d94e-2687-4448-8dac-15e7b8732fc0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Indongo I.">Indongo I.</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-963b1b3f-5284-49d2-8a9d-cf6dd7ec3acf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ithete Nangolo">Ithete Nangolo</td>
-                      
-                        <td>Appointed By President</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7d2cdc89-959b-42fe-9bc8-d393b4f01f12">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Iyambo Nickey">Iyambo Nickey</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-70e0c650-76bc-42d2-b3b8-b5ad9bf2bd67">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jagger Jeremia">Jagger Jeremia</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bcced79a-5432-4865-a8f5-8cffb6f978f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Junius M. Petrus">Junius M. Petrus</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e09fc9c3-99bc-4916-b586-beaf364aac9f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kabajani Richard Kapelwa">Kabajani Richard Kapelwa</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-31d1b130-f0f9-427b-955b-4ccf92b26371">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kamburona A. Rudolf">Kamburona A. Rudolf</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-63c47e06-47c3-4d19-a2bd-54d405af5b77">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kameeta, Zephania">Kameeta, Zephania</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d375d883-c044-4502-acc0-f6f7aa987788">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kashe Geelboy">Kashe Geelboy</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2ff2fb6a-debe-4560-85e0-96fc574b4fff">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Katjiuongua Moses">Katjiuongua Moses</td>
-                      
-                        <td>DCN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-389b2418-03ae-4031-840f-9a84159c3b9f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kaura Katuutire">Kaura Katuutire</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f64d84c-cb19-4617-baf6-86c0b48beadd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kayser Peter">Kayser Peter</td>
-                      
-                        <td>ACN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c035eeab-dae0-4c65-a4b2-44acc280fba5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kerina Mburumba">Kerina Mburumba</td>
-                      
-                        <td>FCN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-49d73741-f155-4bfe-a92a-f9f8a28cb25b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Konjore Willem">Konjore Willem</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0215037d-76e5-46e0-b916-4f91deb7833d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kozonguizi Fanuel">Kozonguizi Fanuel</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-89faea99-9318-48d8-ab61-890eee046fd9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Luipert Daniel">Luipert Daniel</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29fcd3a5-746d-496e-b727-8b88988b9c80">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Majavero A.">Majavero A.</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e23d630f-9784-4cb0-b721-e4cd84d6bb8d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Malima N. Philemon">Malima N. Philemon</td>
-                      
-                        <td>Appointed By President</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4f130be3-f752-4834-a623-48267811fcb7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Matjila Andrew">Matjila Andrew</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-637499f1-aeae-4209-a8e7-b45fb45052d8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxuilili G.I. Nathaniel">Maxuilili G.I. Nathaniel</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8e4e3b18-ecfb-4b2f-aac2-ef936fb2253d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mbuende Munionganda Kaire">Mbuende Munionganda Kaire</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-eb3ffd49-0c9b-455a-8415-80f50d4a6d60">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mbumba, Nangolo">Mbumba, Nangolo</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-846093a8-6fe6-4586-8087-3fb73afb1abd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Meroro David">Meroro David</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b62d11e0-e352-4683-aebe-d5999b59d9e0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mouton J. Andreas">Mouton J. Andreas</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9d53f601-a7e6-425a-ad4f-c243bc096129">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mudge Dirk Frederik">Mudge Dirk Frederik</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ac3ba581-b119-4435-bd79-779d66c8a545">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Muyongo Mishake">Muyongo Mishake</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-64696718-4648-4324-a318-e68909ddb95a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mweshihange Peter">Mweshihange Peter</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e52fdeea-c2c5-49a2-8ffc-b94b3cafb7c6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mwilima K. Geoffrey">Mwilima K. Geoffrey</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-088b7b79-aab6-4b31-954f-031535f9470e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nandi-Ndaitwah Netumbo">Nandi-Ndaitwah Netumbo</td>
-                      
-                        <td>Appointed By President</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-01793be1-80bc-423d-8829-8c8da9b967dc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nuule A.">Nuule A.</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c7b4b95-b0eb-4279-bb21-f8ba33431ab7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nyamu Jesaya">Nyamu Jesaya</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e9886469-79af-47f5-9498-2662c7435494">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pohamba Hifikepunye Lucas">Pohamba Hifikepunye Lucas</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2b593f2f-5df2-46a9-a025-fdc8ba33c247">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pretorius W.F. Jacobus (Kosie)">Pretorius W.F. Jacobus (Kosie)</td>
-                      
-                        <td>ACN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f76f6321-712e-4001-87b0-1a6c45a8af26">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rukoro Vekuii Reinhard">Rukoro Vekuii Reinhard</td>
-                      
-                        <td>CCN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-edad8074-f2fc-4101-853d-6d7a569537cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ruppel F.E. Hartmut">Ruppel F.E. Hartmut</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-36c8ab8e-198d-4c16-a26a-4d53d4f62394">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Shivute Markus">Shivute Markus</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aa1bbd7c-442b-4429-b19f-6ad713500695">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Shoombe Pashukeni">Shoombe Pashukeni</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6c99850e-0fdc-438b-85a3-c2e230549c8b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Siseho Gabriel">Siseho Gabriel</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-570cf9ca-58a7-4b3a-93fd-00775b5740bf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Staby Hans-Erik">Staby Hans-Erik</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e543f84f-7540-4a4f-9bb6-31f5a1af056c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Stuart A. Mohammed">Stuart A. Mohammed</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-71d04311-b0b2-44ed-a620-434cfd4beb2f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tjitendero Mose Penaani">Tjitendero Mose Penaani</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cf21ce16-5b01-42f3-b432-58e5d119e15d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tjongarero Daniel">Tjongarero Daniel</td>
-                      
-                        <td>Appointed By President</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d1975f50-026b-4620-b314-c10f44f74430">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Toivo Ya Toivo Andimba">Toivo Ya Toivo Andimba</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-709d304a-0580-485e-bd3a-6d1d250aaed6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tsheehama A.T. Peter">Tsheehama A.T. Peter</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7e12c79e-f677-4fba-8dc5-69b294bd8685">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ulenga Benjamin">Ulenga Benjamin</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e19da210-f5f9-4b1d-965b-972cddfac82b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Van Wyk C.A.C">Van Wyk C.A.C</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e41ac5fe-f64c-416f-8fdb-446774e2d4bf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Von Wietersheim Gusinde Anton">Von Wietersheim Gusinde Anton</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f716ef70-879e-4278-b350-5629b1ae5361">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Wentworth J.W. Buddy">Wentworth J.W. Buddy</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9a64e4b1-a289-446d-8954-c308e39a850b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Witbooi Hendrik">Witbooi Hendrik</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-511226b2-50fa-47e5-bd9b-86900f4444f9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Wohler P. Siegfried">Wohler P. Siegfried</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7de46b7-3b43-4a79-a96f-fbeea049789c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ya Otto John">Ya Otto John</td>
-                      
-                        <td>SWAPO</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5b3e0485-a11f-4603-a5a8-ded4a0ab9275">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="kgosiemang Constance">kgosiemang Constance</td>
-                      
-                        <td>DTA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-96809722-ba82-46a9-a501-b85d5f54582f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/96809722-ba82-46a9-a501-b85d5f54582f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/96809722-ba82-46a9-a501-b85d5f54582f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">//Garoeb Justus</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UDF
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:j.garoeb@parliament.na">j.garoeb@parliament.na</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c58025ad-8217-42bc-bc6e-b4930b41ce6b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/c58025ad-8217-42bc-bc6e-b4930b41ce6b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/c58025ad-8217-42bc-bc6e-b4930b41ce6b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">//Garoeb Moses</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58929ca6-1c4e-4d96-8f8c-37fe834e1163">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/58929ca6-1c4e-4d96-8f8c-37fe834e1163/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/58929ca6-1c4e-4d96-8f8c-37fe834e1163/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">/Gaseb Johannes</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-82fbf029-cd75-4c83-b892-b558333ce0c4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Africa Ben</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-992c420b-9d77-4571-9447-f7f23517dae1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/992c420b-9d77-4571-9447-f7f23517dae1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/992c420b-9d77-4571-9447-f7f23517dae1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Amadhila Matti</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2d0eac2c-8420-415a-81d1-966e526fdc1c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2d0eac2c-8420-415a-81d1-966e526fdc1c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2d0eac2c-8420-415a-81d1-966e526fdc1c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Amathila Appolus Libertine</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-77e5e4ea-5d45-4233-9ac3-650c770b60cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/77e5e4ea-5d45-4233-9ac3-650c770b60cb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/77e5e4ea-5d45-4233-9ac3-650c770b60cb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Amathila Ben</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63539230-a65f-4451-97ff-51d18984c611">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/63539230-a65f-4451-97ff-51d18984c611/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/63539230-a65f-4451-97ff-51d18984c611/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Angula Helmut Kangulohi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b88254ef-60d7-42b2-ba6b-ac0dbe70fef6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/b88254ef-60d7-42b2-ba6b-ac0dbe70fef6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/b88254ef-60d7-42b2-ba6b-ac0dbe70fef6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Angula Nahas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0f3bfd1d-a24f-4a55-a65c-e3b2bf0d32c3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/0f3bfd1d-a24f-4a55-a65c-e3b2bf0d32c3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/0f3bfd1d-a24f-4a55-a65c-e3b2bf0d32c3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ausiku Helmut</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c7da6383-5359-416a-ba22-395e72c4d740">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Barnes "Barney" Leonard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e5fba759-35ca-4262-bc36-8d8aaee0d16d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e5fba759-35ca-4262-bc36-8d8aaee0d16d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e5fba759-35ca-4262-bc36-8d8aaee0d16d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Barnes Margreth</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-06b5edb4-2db4-4735-b1bb-c26c700b6577">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bessinger Niko</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d0d4218-f681-4add-8ceb-bc09e5333dda">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/5d0d4218-f681-4add-8ceb-bc09e5333dda/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/5d0d4218-f681-4add-8ceb-bc09e5333dda/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Biwa Eric</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UDF
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0702db25-a932-43c4-a5de-aac238e9effd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Biwa Willem</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e600d39d-d5ff-47e1-9afe-84863841da56">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Botha P. Daniel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-11170803-8889-462c-925f-47b42f4c1829">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/11170803-8889-462c-925f-47b42f4c1829/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/11170803-8889-462c-925f-47b42f4c1829/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dan Gabriel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d4995cd8-f844-4aa4-9658-dc88e544e193">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">De Wet Jan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ACN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a6fa6b2-209b-417b-a79f-5194c48e996b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/5a6fa6b2-209b-417b-a79f-5194c48e996b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/5a6fa6b2-209b-417b-a79f-5194c48e996b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Diergaardt Reggie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UDF
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e30c1719-86fa-46aa-8900-f642b68a6ee2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e30c1719-86fa-46aa-8900-f642b68a6ee2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e30c1719-86fa-46aa-8900-f642b68a6ee2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dierks Klaus</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8811bbed-1980-45b3-9014-c3c06630e693">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/8811bbed-1980-45b3-9014-c3c06630e693/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/8811bbed-1980-45b3-9014-c3c06630e693/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ekandjo Jerry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:min.Secretary@mynssc.gov.na">min.Secretary@mynssc.gov.na</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14151576-14c6-4ef8-9099-afe1d6b7aa62">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/14151576-14c6-4ef8-9099-afe1d6b7aa62/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/14151576-14c6-4ef8-9099-afe1d6b7aa62/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Geingob Hage</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/DrHageGeingob">DrHageGeingob</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-36494653-e98c-44f4-9437-11b433c6b02f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Gende Allois</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a2e00d4-57ac-443b-9e7d-de8c21b9be35">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/4a2e00d4-57ac-443b-9e7d-de8c21b9be35/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/4a2e00d4-57ac-443b-9e7d-de8c21b9be35/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gurirab Theo Ben</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2063887e-9bc3-48c8-80c6-de885ed96624">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2063887e-9bc3-48c8-80c6-de885ed96624/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2063887e-9bc3-48c8-80c6-de885ed96624/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Hamutenya Hidipo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e8436fa-3778-48c8-9e38-f8fc6eee288d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hanekom J. Gerhardus</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Appointed By President
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d399e54-60ba-44be-ba61-06a0e3685514">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9d399e54-60ba-44be-ba61-06a0e3685514/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9d399e54-60ba-44be-ba61-06a0e3685514/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Haraseb Johannes</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-77962712-12ac-496c-81bc-3c5c8cff20a1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/77962712-12ac-496c-81bc-3c5c8cff20a1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/77962712-12ac-496c-81bc-3c5c8cff20a1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Hausiku Marco</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-39e60754-314f-4228-8273-5622d505fc57">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Herrigel Otto</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Appointed By President
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6285db6-c67c-4c37-9367-40bf808f1d90">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/f6285db6-c67c-4c37-9367-40bf808f1d90/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/f6285db6-c67c-4c37-9367-40bf808f1d90/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Hishongwa Hadino</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fb44a53e-891e-4a2f-96a5-90af5c201b38">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Hubschle Michaela</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1955f96c-f07a-4e19-8277-47a0f834044a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/1955f96c-f07a-4e19-8277-47a0f834044a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/1955f96c-f07a-4e19-8277-47a0f834044a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Iivula-Ithana Pendukeni</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:nancymuinjo@mha.gov.na">nancymuinjo@mha.gov.na</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aab3d94e-2687-4448-8dac-15e7b8732fc0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Indongo I.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-963b1b3f-5284-49d2-8a9d-cf6dd7ec3acf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ithete Nangolo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Appointed By President
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7d2cdc89-959b-42fe-9bc8-d393b4f01f12">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/7d2cdc89-959b-42fe-9bc8-d393b4f01f12/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/7d2cdc89-959b-42fe-9bc8-d393b4f01f12/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Iyambo Nickey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-70e0c650-76bc-42d2-b3b8-b5ad9bf2bd67">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jagger Jeremia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bcced79a-5432-4865-a8f5-8cffb6f978f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/bcced79a-5432-4865-a8f5-8cffb6f978f7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/bcced79a-5432-4865-a8f5-8cffb6f978f7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Junius M. Petrus</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e09fc9c3-99bc-4916-b586-beaf364aac9f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e09fc9c3-99bc-4916-b586-beaf364aac9f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e09fc9c3-99bc-4916-b586-beaf364aac9f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kabajani Richard Kapelwa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-31d1b130-f0f9-427b-955b-4ccf92b26371">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kamburona A. Rudolf</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63c47e06-47c3-4d19-a2bd-54d405af5b77">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/63c47e06-47c3-4d19-a2bd-54d405af5b77/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/63c47e06-47c3-4d19-a2bd-54d405af5b77/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kameeta, Zephania</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d375d883-c044-4502-acc0-f6f7aa987788">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kashe Geelboy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2ff2fb6a-debe-4560-85e0-96fc574b4fff">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2ff2fb6a-debe-4560-85e0-96fc574b4fff/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2ff2fb6a-debe-4560-85e0-96fc574b4fff/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Katjiuongua Moses</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DCN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-389b2418-03ae-4031-840f-9a84159c3b9f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/389b2418-03ae-4031-840f-9a84159c3b9f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/389b2418-03ae-4031-840f-9a84159c3b9f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kaura Katuutire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f64d84c-cb19-4617-baf6-86c0b48beadd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9f64d84c-cb19-4617-baf6-86c0b48beadd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9f64d84c-cb19-4617-baf6-86c0b48beadd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kayser Peter</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ACN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c035eeab-dae0-4c65-a4b2-44acc280fba5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/c035eeab-dae0-4c65-a4b2-44acc280fba5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/c035eeab-dae0-4c65-a4b2-44acc280fba5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kerina Mburumba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FCN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-49d73741-f155-4bfe-a92a-f9f8a28cb25b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/49d73741-f155-4bfe-a92a-f9f8a28cb25b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/49d73741-f155-4bfe-a92a-f9f8a28cb25b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Konjore Willem</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0215037d-76e5-46e0-b916-4f91deb7833d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kozonguizi Fanuel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-89faea99-9318-48d8-ab61-890eee046fd9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Luipert Daniel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29fcd3a5-746d-496e-b727-8b88988b9c80">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Majavero A.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e23d630f-9784-4cb0-b721-e4cd84d6bb8d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e23d630f-9784-4cb0-b721-e4cd84d6bb8d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e23d630f-9784-4cb0-b721-e4cd84d6bb8d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Malima N. Philemon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Appointed By President
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4f130be3-f752-4834-a623-48267811fcb7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Matjila Andrew</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-637499f1-aeae-4209-a8e7-b45fb45052d8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxuilili G.I. Nathaniel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e4e3b18-ecfb-4b2f-aac2-ef936fb2253d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/8e4e3b18-ecfb-4b2f-aac2-ef936fb2253d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/8e4e3b18-ecfb-4b2f-aac2-ef936fb2253d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mbuende Munionganda Kaire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-eb3ffd49-0c9b-455a-8415-80f50d4a6d60">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/eb3ffd49-0c9b-455a-8415-80f50d4a6d60/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/eb3ffd49-0c9b-455a-8415-80f50d4a6d60/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mbumba, Nangolo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:n.mbumba@parliament.na">n.mbumba@parliament.na</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-846093a8-6fe6-4586-8087-3fb73afb1abd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Meroro David</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b62d11e0-e352-4683-aebe-d5999b59d9e0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mouton J. Andreas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9d53f601-a7e6-425a-ad4f-c243bc096129">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9d53f601-a7e6-425a-ad4f-c243bc096129/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9d53f601-a7e6-425a-ad4f-c243bc096129/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mudge Dirk Frederik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ac3ba581-b119-4435-bd79-779d66c8a545">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/ac3ba581-b119-4435-bd79-779d66c8a545/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/ac3ba581-b119-4435-bd79-779d66c8a545/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Muyongo Mishake</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-64696718-4648-4324-a318-e68909ddb95a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mweshihange Peter</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e52fdeea-c2c5-49a2-8ffc-b94b3cafb7c6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mwilima K. Geoffrey</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-088b7b79-aab6-4b31-954f-031535f9470e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/088b7b79-aab6-4b31-954f-031535f9470e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/088b7b79-aab6-4b31-954f-031535f9470e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nandi-Ndaitwah Netumbo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Appointed By President
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:anangolo@mfa.gov.na">anangolo@mfa.gov.na</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-01793be1-80bc-423d-8829-8c8da9b967dc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/01793be1-80bc-423d-8829-8c8da9b967dc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/01793be1-80bc-423d-8829-8c8da9b967dc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nuule A.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c7b4b95-b0eb-4279-bb21-f8ba33431ab7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/8c7b4b95-b0eb-4279-bb21-f8ba33431ab7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/8c7b4b95-b0eb-4279-bb21-f8ba33431ab7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nyamu Jesaya</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e9886469-79af-47f5-9498-2662c7435494">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e9886469-79af-47f5-9498-2662c7435494/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e9886469-79af-47f5-9498-2662c7435494/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Pohamba Hifikepunye Lucas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2b593f2f-5df2-46a9-a025-fdc8ba33c247">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2b593f2f-5df2-46a9-a025-fdc8ba33c247/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/2b593f2f-5df2-46a9-a025-fdc8ba33c247/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Pretorius W.F. Jacobus (Kosie)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ACN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f76f6321-712e-4001-87b0-1a6c45a8af26">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/f76f6321-712e-4001-87b0-1a6c45a8af26/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/f76f6321-712e-4001-87b0-1a6c45a8af26/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rukoro Vekuii Reinhard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CCN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-edad8074-f2fc-4101-853d-6d7a569537cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ruppel F.E. Hartmut</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-36c8ab8e-198d-4c16-a26a-4d53d4f62394">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Shivute Markus</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa1bbd7c-442b-4429-b19f-6ad713500695">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/aa1bbd7c-442b-4429-b19f-6ad713500695/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/aa1bbd7c-442b-4429-b19f-6ad713500695/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Shoombe Pashukeni</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6c99850e-0fdc-438b-85a3-c2e230549c8b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/6c99850e-0fdc-438b-85a3-c2e230549c8b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/6c99850e-0fdc-438b-85a3-c2e230549c8b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Siseho Gabriel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-570cf9ca-58a7-4b3a-93fd-00775b5740bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Staby Hans-Erik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e543f84f-7540-4a4f-9bb6-31f5a1af056c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e543f84f-7540-4a4f-9bb6-31f5a1af056c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e543f84f-7540-4a4f-9bb6-31f5a1af056c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Stuart A. Mohammed</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-71d04311-b0b2-44ed-a620-434cfd4beb2f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/71d04311-b0b2-44ed-a620-434cfd4beb2f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/71d04311-b0b2-44ed-a620-434cfd4beb2f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tjitendero Mose Penaani</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cf21ce16-5b01-42f3-b432-58e5d119e15d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/cf21ce16-5b01-42f3-b432-58e5d119e15d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/cf21ce16-5b01-42f3-b432-58e5d119e15d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tjongarero Daniel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Appointed By President
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d1975f50-026b-4620-b314-c10f44f74430">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/d1975f50-026b-4620-b314-c10f44f74430/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/d1975f50-026b-4620-b314-c10f44f74430/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Toivo Ya Toivo Andimba</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-709d304a-0580-485e-bd3a-6d1d250aaed6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/709d304a-0580-485e-bd3a-6d1d250aaed6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/709d304a-0580-485e-bd3a-6d1d250aaed6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tsheehama A.T. Peter</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7e12c79e-f677-4fba-8dc5-69b294bd8685">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/7e12c79e-f677-4fba-8dc5-69b294bd8685/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/7e12c79e-f677-4fba-8dc5-69b294bd8685/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ulenga Benjamin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:b.ulenga@parliament.na">b.ulenga@parliament.na</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e19da210-f5f9-4b1d-965b-972cddfac82b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Van Wyk C.A.C</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e41ac5fe-f64c-416f-8fdb-446774e2d4bf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e41ac5fe-f64c-416f-8fdb-446774e2d4bf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/e41ac5fe-f64c-416f-8fdb-446774e2d4bf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Von Wietersheim Gusinde Anton</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f716ef70-879e-4278-b350-5629b1ae5361">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/f716ef70-879e-4278-b350-5629b1ae5361/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/f716ef70-879e-4278-b350-5629b1ae5361/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Wentworth J.W. Buddy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9a64e4b1-a289-446d-8954-c308e39a850b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9a64e4b1-a289-446d-8954-c308e39a850b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/9a64e4b1-a289-446d-8954-c308e39a850b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Witbooi Hendrik</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-511226b2-50fa-47e5-bd9b-86900f4444f9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wohler P. Siegfried</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7de46b7-3b43-4a79-a96f-fbeea049789c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/b7de46b7-3b43-4a79-a96f-fbeea049789c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Namibia/Assembly/b7de46b7-3b43-4a79-a96f-fbeea049789c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ya Otto John</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SWAPO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5b3e0485-a11f-4603-a5a8-ded4a0ab9275">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">kgosiemang Constance</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DTA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

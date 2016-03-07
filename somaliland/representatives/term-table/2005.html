@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="First Parliament" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-unknown"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -101,1031 +104,2257 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b029acf/data/Somaliland/Representatives/term-2005.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b029acf/data/Somaliland/Representatives/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b029acf/data/Somaliland/Representatives/term-2005.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/b029acf/data/Somaliland/Representatives/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-6d190750-ffec-44d1-a7b8-6e53f8391bb5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Aadan Xaaji Diiriye dirir">Aadan Xaaji Diiriye dirir</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-827978e3-858c-4d3a-ac2f-85af80d13cd5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Abdillahi Hussein Egeh">Abdillahi Hussein Egeh</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f1bb2317-c133-459b-822e-28e56d80e529">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Abokor C/raxmaan Good">Abokor C/raxmaan Good</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-25db50f3-218d-414e-96ac-0c4494e375f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Axmed Cabdi Nuur (kijaandhe)">Axmed Cabdi Nuur (kijaandhe)</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b0f630eb-1181-457b-938b-481d0ad64fb1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Axmed Maxamed Diiriye (nac nac)">Axmed Maxamed Diiriye (nac nac)</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a8afc822-fb03-4ae9-ba0c-75c051ac3f3c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Axmed Maxamed Nuur">Axmed Maxamed Nuur</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-076a0c36-19df-4d07-be1b-4b8e2def9a10">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Axmed Xasan Aadan Muuse (Waysa cade)">Axmed Xasan Aadan Muuse (Waysa cade)</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f14ade1c-c564-4187-88a5-85c65a727cfa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Axmed barkhad obsiiye">Axmed barkhad obsiiye</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-83cb31e6-20a7-4129-a2dc-dc18898cd729">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Axmed ducaale bulaale">Axmed ducaale bulaale</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-af56478b-6ad9-40d8-924f-4e1ecb255f66">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Baar Siciid Faarax">Baar Siciid Faarax</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fa63e7fc-e5e5-46a1-ba23-bfeab9e0fc99">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bashe Mohamoud Farah">Bashe Mohamoud Farah</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d52cf248-d858-49c2-8200-5f263b3f2477">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bashiir Sh. Xuseen Tukaale">Bashiir Sh. Xuseen Tukaale</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ef7f1a6-9ab6-4a8f-b24e-f4a9caa55c4a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/casiis Ismaaciil Ducaale">C/casiis Ismaaciil Ducaale</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1a322b6d-cecf-483a-a5ab-e18c9ea58df9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/kariin Aw Cali Shabeel">C/kariin Aw Cali Shabeel</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b79efef6-0d45-4d63-924f-200c346b4de1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/laahi Axmed Yuusuf ( Madar)">C/laahi Axmed Yuusuf ( Madar)</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-62a8e75a-a38d-4eed-80d9-0a6dd8a9705a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/qaadir Askar Xasan">C/qaadir Askar Xasan</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-012c2e9b-50b8-4c04-b1fe-118f67e40239">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/qaadir Jaamac Xaamud">C/qaadir Jaamac Xaamud</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c03946a4-73d0-49b4-8628-701c42de0c36">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/qaadir Jibriil Tukaale">C/qaadir Jibriil Tukaale</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6c8cbe2d-2267-4796-a190-09a398f18415">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/qaadir X. Ismaaciil Jirde">C/qaadir X. Ismaaciil Jirde</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-479ab1d4-b4f3-4d34-bf8b-5f4c1d8da53b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/raxmaan Cismaan Caalin">C/raxmaan Cismaan Caalin</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8e37c545-8302-4dec-ac36-8cfdd7f9c78e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/raxmaan Maxamed Jaamac">C/raxmaan Maxamed Jaamac</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c55d1675-46db-4e6e-86cc-3403de06b9e5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/raxmaan Maxamed Jaamac">C/raxmaan Maxamed Jaamac</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-53a36049-71c2-4073-82b0-06f0829af12f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/raxmaan Muuse Jaamac">C/raxmaan Muuse Jaamac</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a5289fc1-138f-43bb-8b0e-2ef2894fd6c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/raxmaan Yuusuf Cartan">C/raxmaan Yuusuf Cartan</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-62fe1cc0-66af-458d-abe0-cd0f9eddcd9a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="C/raxman Maxamed Tanyanle">C/raxman Maxamed Tanyanle</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-384d9b96-ce38-4e8f-9150-5d0b89d527c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cabdi Hirad Warfaa">Cabdi Hirad Warfaa</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d81b472-d49e-4a6f-b10a-c4a8f0970003">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cabdi Maxamuud Jaamac">Cabdi Maxamuud Jaamac</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e847a105-9ddf-428d-a907-575d6413fbd9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cabdiraxmaan Maxamed Cabdillaahi (Cirro)">Cabdiraxmaan Maxamed Cabdillaahi (Cirro)</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6b270dbc-1254-4109-a4ae-494f08cfdc16">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cali Maxamed Aadan">Cali Maxamed Aadan</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d0d667b9-b738-4a52-af8f-3755b7a726db">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cali Obsiiye Diiriye (cali- gabilay)">Cali Obsiiye Diiriye (cali- gabilay)</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-80592ab2-7c43-4599-892d-ec50dcd30f87">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cali Sh. Ibraahin Aareye">Cali Sh. Ibraahin Aareye</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-154e7365-79fe-4be9-a184-6a51ff63766f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cali X.Maxamed Muuse">Cali X.Maxamed Muuse</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4270bcc4-b446-4254-b870-4c140a4c6d45">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cali Xasan Maxamed Jaamac (cali marexaan)">Cali Xasan Maxamed Jaamac (cali marexaan)</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0a78d452-5849-41f7-917f-eb71f42e9689">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cali Yuusuf Axmed">Cali Yuusuf Axmed</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a6610857-0b7b-43cb-9bd5-8ad90a319be0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cumar Axmed Saleebaan (san wayne)">Cumar Axmed Saleebaan (san wayne)</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0334d99c-1ff0-4d34-a86d-4c0b77e5e0c5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Faarax Maxamuud Cabdile">Faarax Maxamuud Cabdile</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8e5fa183-c51a-4c77-a0c0-f4507e141c23">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Farxaan Maxamed Cali">Farxaan Maxamed Cali</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0ad11049-68d4-4e3d-9749-16cf312b8c1f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ibraahim Axmed Haybe">Ibraahim Axmed Haybe</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f14e5307-df22-4958-b02f-7af8f9c717aa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ibraahim Axmed Reygal">Ibraahim Axmed Reygal</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f03ed567-e458-4c2e-9415-767a718703cb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ibraahim Caraale Cabdi">Ibraahim Caraale Cabdi</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1d99d8ab-ef99-445a-9cf7-2165461fd6e6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ibraahim Jaamac Cali Rayte">Ibraahim Jaamac Cali Rayte</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-df5d5143-52b9-4bcb-aee1-20bc33bd7677">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ibraahim Mahdi Buubaa">Ibraahim Mahdi Buubaa</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c6798e0f-d6a4-4cac-b33e-f97028780052">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ibraahim Maxamed Xuseen (Dhaa Dheere)">Ibraahim Maxamed Xuseen (Dhaa Dheere)</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-421ce59a-789b-4fb5-bb06-1df60efe177a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jaamac Xasan Aadan">Jaamac Xasan Aadan</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9837fe99-5e2b-4190-a839-6d9cd5f05a02">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mahdi C/laahi Maxmuud">Mahdi C/laahi Maxmuud</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c17e402e-806f-49fb-ac08-f0e3e69cc010">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mahdi Xuseen Cadare">Mahdi Xuseen Cadare</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9fb541cd-453b-4466-9c76-912edfaf12d8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Axmed Aadan (Wali Xaawo)">Maxamed Axmed Aadan (Wali Xaawo)</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b6a2b65d-7d4c-4d23-87f1-51974897255b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Axmed Maxamed (dhakool)">Maxamed Axmed Maxamed (dhakool)</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c6b7e894-aad1-4b64-8efd-46d84f75e560">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Baaruud Shide">Maxamed Baaruud Shide</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d0e8baf2-05c6-476f-8262-29e2a9748654">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed BarkhadMiigane">Maxamed BarkhadMiigane</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b41e2ddf-3905-41ad-ada9-d9320980d748">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Cali xirsi">Maxamed Cali xirsi</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ea0ccabd-4aa6-4c13-b8e7-b5bd473cfb67">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Cismaan Maxamed (bulqas)">Maxamed Cismaan Maxamed (bulqas)</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ad2cfcf4-3587-4c80-b5ce-44244146d5d2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Faarax Qabiile">Maxamed Faarax Qabiile</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6739f3c7-a381-40a6-ae48-0e0942625fb0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Saalax Cige">Maxamed Saalax Cige</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8eeec77e-d106-40cb-8b9c-68895c95ae0e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed X. Maxamuud Cumar Xaashi">Maxamed X. Maxamuud Cumar Xaashi</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f5555d57-a35d-4233-a87a-e4027b14474e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed X. yuusuf Axmed (waabeye)">Maxamed X. yuusuf Axmed (waabeye)</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-34c0b201-ca1d-4a5f-b0c5-95c8dcddd2a6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed Xuseen X. Ciise">Maxamed Xuseen X. Ciise</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0308e3e7-66fc-425c-a581-230f99bf2a42">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed cumar Aadan Jiir">Maxamed cumar Aadan Jiir</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4b7925a3-59eb-45b1-9ed1-ac1caedf6d6d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed jaamac Cabdi">Maxamed jaamac Cabdi</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c6e9d11f-0c22-45e9-bcc4-5dbcefe98f15">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed jaamac Cali Guuleed">Maxamed jaamac Cali Guuleed</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fec98b68-d507-43e6-8ff7-054a3858d6f0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamed yaasiin Sh. Cali">Maxamed yaasiin Sh. Cali</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e6b4e384-7a60-4a38-93ff-e014e8f079c1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamuud Axmed Obsiiye">Maxamuud Axmed Obsiiye</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d14bc4e9-d594-4f28-9ebc-d3403c3d1d86">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamuud Jaamac Warfaa Diiriye">Maxamuud Jaamac Warfaa Diiriye</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bfa4ea17-9df2-4045-8f38-80ff243a802c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamuud Jaamac X. Cilmi (dable)">Maxamuud Jaamac X. Cilmi (dable)</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f931349b-a283-473a-8043-5319927972a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Maxamuud dhunkaal Guutaale">Maxamuud dhunkaal Guutaale</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d3eb3d4e-9231-4b8a-a9b4-dda5a9d31b00">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Muuse Maxamed Ismaaciil (hoos-u- jeed)">Muuse Maxamed Ismaaciil (hoos-u- jeed)</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0bd9a98c-9eb3-42d9-b04f-a28e19c61bbc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Naasir X. cali Shire">Naasir X. cali Shire</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a1fd7c41-ade0-4124-b9c1-e77ef7bb68ef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saleebaan Cawad Cali (bukhaari)">Saleebaan Cawad Cali (bukhaari)</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5ce665fc-b38e-4d8d-9496-10126aa247ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saleebaan Yuusuf Cali Koore">Saleebaan Yuusuf Cali Koore</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10a0168f-e448-4c20-be26-195eb9d11127">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Siciid Cartan Cismaan faarax">Siciid Cartan Cismaan faarax</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-071fd9fc-3af1-43fc-b7f9-903a2be90478">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Siciid Cilmi Rooble">Siciid Cilmi Rooble</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d503d330-e8e3-434d-b1ff-b1abcb21f6bd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Siciid Maxamed Cilmi">Siciid Maxamed Cilmi</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2efe8875-6d00-4369-8a27-30b81c0deec9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Siciid Warsame Ismaaciil (Gaani)">Siciid Warsame Ismaaciil (Gaani)</td>
-                      
-                        <td>unknown</td>
-                        <td>SOOL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0979df66-28cc-4ae3-a8e2-02004cc54ba7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xaamud Cismaan Cigaal">Xaamud Cismaan Cigaal</td>
-                      
-                        <td>unknown</td>
-                        <td>SAAXIL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9ee5e85c-5c68-4eef-be3d-9f812781484e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xaashi Xuseen Caabi">Xaashi Xuseen Caabi</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6aa610ca-29e7-4490-b685-a906643fae6a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xamse Maxamed Gaada wayne">Xamse Maxamed Gaada wayne</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0920344b-2d5b-4489-8c58-8b73d68b0b05">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xasan Cawaale Caynaan">Xasan Cawaale Caynaan</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0afac018-7aa8-4354-96b0-538edea198e3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xasan Muuse Hufane (Karaamo)">Xasan Muuse Hufane (Karaamo)</td>
-                      
-                        <td>unknown</td>
-                        <td>AWDAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0085ee4c-4cad-4204-88c1-3e346a7eacdf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xuseen Ismaaciil yuusuf">Xuseen Ismaaciil yuusuf</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2fc1f256-5329-4396-b0ec-2d2a30041fee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Xuseen Maxamed Cige">Xuseen Maxamed Cige</td>
-                      
-                        <td>unknown</td>
-                        <td>TOGDHEER</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4813197d-41b6-4fc0-8869-3a6489f27d07">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yaasiin Cali Warsame">Yaasiin Cali Warsame</td>
-                      
-                        <td>unknown</td>
-                        <td>SANAAG</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-50a93fe6-83e2-4f86-a7de-70ba51822b33">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="aadan muxumed hoori (mataan)">aadan muxumed hoori (mataan)</td>
-                      
-                        <td>unknown</td>
-                        <td>MAROODIJEEX</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6d190750-ffec-44d1-a7b8-6e53f8391bb5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Aadan Xaaji Diiriye dirir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-827978e3-858c-4d3a-ac2f-85af80d13cd5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Abdillahi Hussein Egeh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f1bb2317-c133-459b-822e-28e56d80e529">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Abokor C/raxmaan Good</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-25db50f3-218d-414e-96ac-0c4494e375f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Axmed Cabdi Nuur (kijaandhe)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b0f630eb-1181-457b-938b-481d0ad64fb1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Axmed Maxamed Diiriye (nac nac)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a8afc822-fb03-4ae9-ba0c-75c051ac3f3c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Axmed Maxamed Nuur</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-076a0c36-19df-4d07-be1b-4b8e2def9a10">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Axmed Xasan Aadan Muuse (Waysa cade)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f14ade1c-c564-4187-88a5-85c65a727cfa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Axmed barkhad obsiiye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-83cb31e6-20a7-4129-a2dc-dc18898cd729">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Axmed ducaale bulaale</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-af56478b-6ad9-40d8-924f-4e1ecb255f66">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Baar Siciid Faarax</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fa63e7fc-e5e5-46a1-ba23-bfeab9e0fc99">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bashe Mohamoud Farah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d52cf248-d858-49c2-8200-5f263b3f2477">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bashiir Sh. Xuseen Tukaale</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ef7f1a6-9ab6-4a8f-b24e-f4a9caa55c4a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/casiis Ismaaciil Ducaale</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1a322b6d-cecf-483a-a5ab-e18c9ea58df9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/kariin Aw Cali Shabeel</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b79efef6-0d45-4d63-924f-200c346b4de1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/laahi Axmed Yuusuf ( Madar)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-62a8e75a-a38d-4eed-80d9-0a6dd8a9705a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/qaadir Askar Xasan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-012c2e9b-50b8-4c04-b1fe-118f67e40239">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/qaadir Jaamac Xaamud</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c03946a4-73d0-49b4-8628-701c42de0c36">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/qaadir Jibriil Tukaale</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6c8cbe2d-2267-4796-a190-09a398f18415">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/qaadir X. Ismaaciil Jirde</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-479ab1d4-b4f3-4d34-bf8b-5f4c1d8da53b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/raxmaan Cismaan Caalin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e37c545-8302-4dec-ac36-8cfdd7f9c78e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/raxmaan Maxamed Jaamac</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c55d1675-46db-4e6e-86cc-3403de06b9e5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/raxmaan Maxamed Jaamac</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-53a36049-71c2-4073-82b0-06f0829af12f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/raxmaan Muuse Jaamac</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a5289fc1-138f-43bb-8b0e-2ef2894fd6c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/raxmaan Yuusuf Cartan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-62fe1cc0-66af-458d-abe0-cd0f9eddcd9a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">C/raxman Maxamed Tanyanle</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-384d9b96-ce38-4e8f-9150-5d0b89d527c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cabdi Hirad Warfaa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d81b472-d49e-4a6f-b10a-c4a8f0970003">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cabdi Maxamuud Jaamac</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e847a105-9ddf-428d-a907-575d6413fbd9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cabdiraxmaan Maxamed Cabdillaahi (Cirro)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6b270dbc-1254-4109-a4ae-494f08cfdc16">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cali Maxamed Aadan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0d667b9-b738-4a52-af8f-3755b7a726db">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cali Obsiiye Diiriye (cali- gabilay)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-80592ab2-7c43-4599-892d-ec50dcd30f87">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cali Sh. Ibraahin Aareye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-154e7365-79fe-4be9-a184-6a51ff63766f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cali X.Maxamed Muuse</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4270bcc4-b446-4254-b870-4c140a4c6d45">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cali Xasan Maxamed Jaamac (cali marexaan)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0a78d452-5849-41f7-917f-eb71f42e9689">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cali Yuusuf Axmed</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6610857-0b7b-43cb-9bd5-8ad90a319be0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cumar Axmed Saleebaan (san wayne)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0334d99c-1ff0-4d34-a86d-4c0b77e5e0c5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Faarax Maxamuud Cabdile</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e5fa183-c51a-4c77-a0c0-f4507e141c23">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Farxaan Maxamed Cali</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0ad11049-68d4-4e3d-9749-16cf312b8c1f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ibraahim Axmed Haybe</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f14e5307-df22-4958-b02f-7af8f9c717aa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ibraahim Axmed Reygal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f03ed567-e458-4c2e-9415-767a718703cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ibraahim Caraale Cabdi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1d99d8ab-ef99-445a-9cf7-2165461fd6e6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ibraahim Jaamac Cali Rayte</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-df5d5143-52b9-4bcb-aee1-20bc33bd7677">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ibraahim Mahdi Buubaa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c6798e0f-d6a4-4cac-b33e-f97028780052">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ibraahim Maxamed Xuseen (Dhaa Dheere)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-421ce59a-789b-4fb5-bb06-1df60efe177a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jaamac Xasan Aadan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9837fe99-5e2b-4190-a839-6d9cd5f05a02">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mahdi C/laahi Maxmuud</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c17e402e-806f-49fb-ac08-f0e3e69cc010">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mahdi Xuseen Cadare</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9fb541cd-453b-4466-9c76-912edfaf12d8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Axmed Aadan (Wali Xaawo)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b6a2b65d-7d4c-4d23-87f1-51974897255b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Axmed Maxamed (dhakool)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c6b7e894-aad1-4b64-8efd-46d84f75e560">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Baaruud Shide</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0e8baf2-05c6-476f-8262-29e2a9748654">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed BarkhadMiigane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b41e2ddf-3905-41ad-ada9-d9320980d748">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Cali xirsi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ea0ccabd-4aa6-4c13-b8e7-b5bd473cfb67">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Cismaan Maxamed (bulqas)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ad2cfcf4-3587-4c80-b5ce-44244146d5d2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Faarax Qabiile</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6739f3c7-a381-40a6-ae48-0e0942625fb0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Saalax Cige</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8eeec77e-d106-40cb-8b9c-68895c95ae0e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed X. Maxamuud Cumar Xaashi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5555d57-a35d-4233-a87a-e4027b14474e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed X. yuusuf Axmed (waabeye)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-34c0b201-ca1d-4a5f-b0c5-95c8dcddd2a6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed Xuseen X. Ciise</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0308e3e7-66fc-425c-a581-230f99bf2a42">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed cumar Aadan Jiir</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4b7925a3-59eb-45b1-9ed1-ac1caedf6d6d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed jaamac Cabdi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c6e9d11f-0c22-45e9-bcc4-5dbcefe98f15">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed jaamac Cali Guuleed</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fec98b68-d507-43e6-8ff7-054a3858d6f0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamed yaasiin Sh. Cali</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e6b4e384-7a60-4a38-93ff-e014e8f079c1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamuud Axmed Obsiiye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d14bc4e9-d594-4f28-9ebc-d3403c3d1d86">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamuud Jaamac Warfaa Diiriye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bfa4ea17-9df2-4045-8f38-80ff243a802c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamuud Jaamac X. Cilmi (dable)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f931349b-a283-473a-8043-5319927972a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxamuud dhunkaal Guutaale</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d3eb3d4e-9231-4b8a-a9b4-dda5a9d31b00">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Muuse Maxamed Ismaaciil (hoos-u- jeed)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0bd9a98c-9eb3-42d9-b04f-a28e19c61bbc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Naasir X. cali Shire</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a1fd7c41-ade0-4124-b9c1-e77ef7bb68ef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Saleebaan Cawad Cali (bukhaari)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5ce665fc-b38e-4d8d-9496-10126aa247ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Saleebaan Yuusuf Cali Koore</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10a0168f-e448-4c20-be26-195eb9d11127">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Siciid Cartan Cismaan faarax</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-071fd9fc-3af1-43fc-b7f9-903a2be90478">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Siciid Cilmi Rooble</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d503d330-e8e3-434d-b1ff-b1abcb21f6bd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Siciid Maxamed Cilmi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2efe8875-6d00-4369-8a27-30b81c0deec9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Siciid Warsame Ismaaciil (Gaani)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SOOL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0979df66-28cc-4ae3-a8e2-02004cc54ba7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xaamud Cismaan Cigaal</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SAAXIL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9ee5e85c-5c68-4eef-be3d-9f812781484e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xaashi Xuseen Caabi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6aa610ca-29e7-4490-b685-a906643fae6a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xamse Maxamed Gaada wayne</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0920344b-2d5b-4489-8c58-8b73d68b0b05">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xasan Cawaale Caynaan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0afac018-7aa8-4354-96b0-538edea198e3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xasan Muuse Hufane (Karaamo)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              AWDAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0085ee4c-4cad-4204-88c1-3e346a7eacdf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xuseen Ismaaciil yuusuf</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2fc1f256-5329-4396-b0ec-2d2a30041fee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xuseen Maxamed Cige</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              TOGDHEER
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4813197d-41b6-4fc0-8869-3a6489f27d07">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Yaasiin Cali Warsame</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SANAAG
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-50a93fe6-83e2-4f86-a7de-70ba51822b33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">aadan muxumed hoori (mataan)</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              MAROODIJEEX
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="12th Parliament" />
     <meta property="og:type" content="article" />
@@ -131,7 +134,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-dp"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -155,335 +158,691 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/69bc4dc/data/Cook_Islands/Parliament/term-12.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/69bc4dc/data/Cook_Islands/Parliament/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/69bc4dc/data/Cook_Islands/Parliament/term-12.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/69bc4dc/data/Cook_Islands/Parliament/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-66a1e202-ce02-4e9f-b712-1cb28418f0f7">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66a1e202-ce02-4e9f-b712-1cb28418f0f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Albert (Peto) Nicholas</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CIP — Avatiu-Ruatonga-Palmerston
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Albert (Peto) Nicholas">Albert (Peto) Nicholas</td>
-                      
-                        <td>CIP</td>
-                        <td>Avatiu-Ruatonga-Palmerston</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f101fd6f-a65e-4d7c-9bc7-84733d3c8920">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f101fd6f-a65e-4d7c-9bc7-84733d3c8920">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Apii Piho</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Manihiki
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Apii Piho">Apii Piho</td>
-                      
-                        <td>DP</td>
-                        <td>Manihiki</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-85c0143d-a28b-4d13-8fc0-b4e4ed20d414">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-85c0143d-a28b-4d13-8fc0-b4e4ed20d414">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cassey Eggelton</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Matavera
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Cassey Eggelton">Cassey Eggelton</td>
-                      
-                        <td>DP</td>
-                        <td>Matavera</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-487d743d-fd41-4662-bafa-4d91217225ef">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-487d743d-fd41-4662-bafa-4d91217225ef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jim Marurai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Ivirua
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jim Marurai">Jim Marurai</td>
-                      
-                        <td>DP</td>
-                        <td>Ivirua</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4871ca79-b172-404f-83d2-1de2b47dc161">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4871ca79-b172-404f-83d2-1de2b47dc161">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">John Tangi</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Tupapa-Maraerenga
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="John Tangi">John Tangi</td>
-                      
-                        <td>DP</td>
-                        <td>Tupapa-Maraerenga</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e72ffd64-ea18-486f-9489-73271d73a3cb">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e72ffd64-ea18-486f-9489-73271d73a3cb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Kete Ioane</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Vaipae-Tautu
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Kete Ioane">Kete Ioane</td>
-                      
-                        <td>DP</td>
-                        <td>Vaipae-Tautu</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ab30f3fb-8a6c-43a2-951d-ece79457ffa5">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ab30f3fb-8a6c-43a2-951d-ece79457ffa5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Keu Mataroa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Akaoa
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Keu Mataroa">Keu Mataroa</td>
-                      
-                        <td>DP</td>
-                        <td>Akaoa</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-ed54f0a2-feb7-4a49-914f-07ffc65e0134">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ed54f0a2-feb7-4a49-914f-07ffc65e0134">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mapu Taia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Mauke
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mapu Taia">Mapu Taia</td>
-                      
-                        <td>DP</td>
-                        <td>Mauke</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5782e639-39c6-44be-ba56-12dfeed79624">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5782e639-39c6-44be-ba56-12dfeed79624">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Mii Parima</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CIP — Tamarua
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Mii Parima">Mii Parima</td>
-                      
-                        <td>CIP</td>
-                        <td>Tamarua</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-2f72b03e-28e0-4bef-8341-351436628e60">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2f72b03e-28e0-4bef-8341-351436628e60">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nandi Glassie</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CIP — Tengatangi-Areora-Ngatiarua
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nandi Glassie">Nandi Glassie</td>
-                      
-                        <td>CIP</td>
-                        <td>Tengatangi-Areora-Ngatiarua</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-be9c7d0c-ffda-4fce-8276-b1e2ddf7d5ba">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-be9c7d0c-ffda-4fce-8276-b1e2ddf7d5ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ngai Tupa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Takuvaine-Tutakimoa
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ngai Tupa">Ngai Tupa</td>
-                      
-                        <td>DP</td>
-                        <td>Takuvaine-Tutakimoa</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-12d87f4e-760c-45ae-a72f-ec387fd1c381">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-12d87f4e-760c-45ae-a72f-ec387fd1c381">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Ngamau Munokoa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Nikao-Panama
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Ngamau Munokoa">Ngamau Munokoa</td>
-                      
-                        <td>DP</td>
-                        <td>Nikao-Panama</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-81c97e86-f40a-4801-bf02-f65dd1425634">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-81c97e86-f40a-4801-bf02-f65dd1425634">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Norman George</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CIP — Teenui-Mapumai
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Norman George">Norman George</td>
-                      
-                        <td>CIP</td>
-                        <td>Teenui-Mapumai</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-31e3de08-57a2-4198-b971-6a1bf9271313">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-31e3de08-57a2-4198-b971-6a1bf9271313">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Piho Rua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Independent — Rakahanga
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Piho Rua">Piho Rua</td>
-                      
-                        <td>Independent</td>
-                        <td>Rakahanga</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-13620f66-7f7f-4eee-b1d6-c2deafe1a232">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13620f66-7f7f-4eee-b1d6-c2deafe1a232">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Robert Wigmore</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Titikaveka
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Robert Wigmore">Robert Wigmore</td>
-                      
-                        <td>DP</td>
-                        <td>Titikaveka</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-879c105b-3461-4cc5-aebb-daa8aaf78c9d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-879c105b-3461-4cc5-aebb-daa8aaf78c9d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tangata Vavia</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Mitiaro
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tangata Vavia">Tangata Vavia</td>
-                      
-                        <td>DP</td>
-                        <td>Mitiaro</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-6471d986-ab1a-48ff-9526-9b4536be5bfc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6471d986-ab1a-48ff-9526-9b4536be5bfc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Teina Bishop</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CIP — Arutanga-Reureu-Nikaupara
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Teina Bishop">Teina Bishop</td>
-                      
-                        <td>CIP</td>
-                        <td>Arutanga-Reureu-Nikaupara</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-76aac57f-2dfd-496d-84ab-5d932088f89f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-76aac57f-2dfd-496d-84ab-5d932088f89f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Terepai Maoate</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Ngatangiia
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Terepai Maoate">Terepai Maoate</td>
-                      
-                        <td>DP</td>
-                        <td>Ngatangiia</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1237e70d-b750-4c03-964e-2919ddcd8514">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1237e70d-b750-4c03-964e-2919ddcd8514">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Terepai Maoate Jnr</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Amuri-Ureia
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Terepai Maoate Jnr">Terepai Maoate Jnr</td>
-                      
-                        <td>DP</td>
-                        <td>Amuri-Ureia</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-784f15bd-3c31-4252-b89e-28be7046f3a4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-784f15bd-3c31-4252-b89e-28be7046f3a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Tom Marsters</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CIP — Murienua
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Tom Marsters">Tom Marsters</td>
-                      
-                        <td>CIP</td>
-                        <td>Murienua</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3eea340f-e412-479d-a271-bdd9adf6e882">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3eea340f-e412-479d-a271-bdd9adf6e882">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Vai Peua</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              CIP — Pukapuka-Nassau
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Vai Peua">Vai Peua</td>
-                      
-                        <td>CIP</td>
-                        <td>Pukapuka-Nassau</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-469ec8ce-e91a-4521-ad78-e2132b1b48b4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-469ec8ce-e91a-4521-ad78-e2132b1b48b4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Wilkie Rasmussen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Penrhyn
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Wilkie Rasmussen">Wilkie Rasmussen</td>
-                      
-                        <td>DP</td>
-                        <td>Penrhyn</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-d8bc54a6-c440-432f-862a-086bed35e89f">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d8bc54a6-c440-432f-862a-086bed35e89f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">William (Smiley) Heather</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Rua'au
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="William (Smiley) Heather">William (Smiley) Heather</td>
-                      
-                        <td>DP</td>
-                        <td>Rua'au</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-b96cbc5c-e261-4c18-9340-2dcf9f43c0bc">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b96cbc5c-e261-4c18-9340-2dcf9f43c0bc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Winton Pickering</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DP — Oneroa
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Winton Pickering">Winton Pickering</td>
-                      
-                        <td>DP</td>
-                        <td>Oneroa</td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

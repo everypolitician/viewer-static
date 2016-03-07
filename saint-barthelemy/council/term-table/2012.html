@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2012–2017" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-saint-barth_d'abord"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -113,275 +116,556 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/2773a5a/data/Saint_Barthelemy/Council/term-2012.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/2773a5a/data/Saint_Barthelemy/Council/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/2773a5a/data/Saint_Barthelemy/Council/term-2012.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/2773a5a/data/Saint_Barthelemy/Council/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-b4110759-cb9a-45a1-ac99-f35ddc5b570b">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b4110759-cb9a-45a1-ac99-f35ddc5b570b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Alfred Brin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Alfred Brin">Alfred Brin</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4d53538b-c81d-4b1a-bee0-8c0aab69d256">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4d53538b-c81d-4b1a-bee0-8c0aab69d256">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Andy Laplace</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Andy Laplace">Andy Laplace</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f57d6843-36eb-4e03-a534-109b75d3ad81">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f57d6843-36eb-4e03-a534-109b75d3ad81">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Benoît Chauvin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Tous pour Saint-Barth
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Benoît Chauvin">Benoît Chauvin</td>
-                      
-                        <td>Tous pour Saint-Barth</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-7bb4317d-4ea9-40e3-81d3-6a83bf90e0aa">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7bb4317d-4ea9-40e3-81d3-6a83bf90e0aa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bettina Cointre</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Tous pour Saint-Barth
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bettina Cointre">Bettina Cointre</td>
-                      
-                        <td>Tous pour Saint-Barth</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-1da11163-7064-480e-a26c-84ac309939a2">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1da11163-7064-480e-a26c-84ac309939a2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Bruno Magras</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Bruno Magras">Bruno Magras</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a29d116e-3731-47b7-9873-a2c288d04d61">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a29d116e-3731-47b7-9873-a2c288d04d61">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Corinne Febrissy</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Corinne Febrissy">Corinne Febrissy</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f8ba9863-d2ee-42c5-9bbc-25b90dac18e9">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f8ba9863-d2ee-42c5-9bbc-25b90dac18e9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Cécile Tiberghien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Cécile Tiberghien">Cécile Tiberghien</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-686b321c-9e5c-45c9-9c8f-805cc169f4b1">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-686b321c-9e5c-45c9-9c8f-805cc169f4b1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Donald Gumbs</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Donald Gumbs">Donald Gumbs</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f58a33cc-de0a-4ef0-b1a5-d36e76b0b163">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f58a33cc-de0a-4ef0-b1a5-d36e76b0b163">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Jean-Marie Danet</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Jean-Marie Danet">Jean-Marie Danet</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-5e1654fb-87fc-499a-9dd4-90e1352f7a85">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e1654fb-87fc-499a-9dd4-90e1352f7a85">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Juliette Gréaux</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Juliette Gréaux">Juliette Gréaux</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-74291a09-a335-41b1-a7cf-2c6c20448ca4">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-74291a09-a335-41b1-a7cf-2c6c20448ca4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Karine Miot Richard</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Karine Miot Richard">Karine Miot Richard</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-db6d5282-1651-4d98-8c3c-e63abc57378d">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-db6d5282-1651-4d98-8c3c-e63abc57378d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Marie-Angèle Aubin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Marie-Angèle Aubin">Marie-Angèle Aubin</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-4dd8484a-3dfa-4213-b366-eee069ca9c19">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4dd8484a-3dfa-4213-b366-eee069ca9c19">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Maxime Desouches</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth en mouvement !
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Maxime Desouches">Maxime Desouches</td>
-                      
-                        <td>Saint-Barth en mouvement !</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-14b40efb-bacb-495b-8f03-6f4a9872b1b9">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14b40efb-bacb-495b-8f03-6f4a9872b1b9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Michel Magras</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Michel Magras">Michel Magras</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-e436e711-5966-40c6-b6e5-48c9c96f0e8a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e436e711-5966-40c6-b6e5-48c9c96f0e8a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Micheline Jacques</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Micheline Jacques">Micheline Jacques</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-f41d4030-687d-419e-b862-a8b525adb957">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f41d4030-687d-419e-b862-a8b525adb957">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nicole Gréaux</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nicole Gréaux">Nicole Gréaux</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-3c2e8027-a1af-4c0c-a498-cceab2d8a17a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3c2e8027-a1af-4c0c-a498-cceab2d8a17a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Nils Dufau</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Nils Dufau">Nils Dufau</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-a08b1d05-f2f5-4834-acfb-677c87ec685a">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a08b1d05-f2f5-4834-acfb-677c87ec685a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Xavier Lédée</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Xavier Lédée">Xavier Lédée</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-                  
-                  
-                    <tr id="mem-9439a8d8-77c5-4367-b762-a8d6264ab1f3">
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9439a8d8-77c5-4367-b762-a8d6264ab1f3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">Élodie Laplace</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Saint-Barth d'abord
+
+                              
+                            </p>
+                          
+                        </div>
+
                       
-                        <td rowspan="1" data-sortable-sortvalue="Élodie Laplace">Élodie Laplace</td>
-                      
-                        <td>Saint-Barth d'abord</td>
-                        <td></td>
-                      
-                    </tr>
-                  
+
+                    </div>
+                </div>
               
-            </table>
+
+            </div>
+
         </div>
     </div>
 

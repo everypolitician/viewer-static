@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="2012–2017" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-fsln"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -113,1127 +116,3419 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/03cf3ee/data/Nicaragua/Asamblea/term-2012.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/03cf3ee/data/Nicaragua/Asamblea/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/03cf3ee/data/Nicaragua/Asamblea/term-2012.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/03cf3ee/data/Nicaragua/Asamblea/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-dc5e87c0-2f6f-490d-bf0b-0af3d8895733">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ADOLFO JOSE MARTINEZ COLE">ADOLFO JOSE MARTINEZ COLE</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7b2b0ece-18c3-4593-ac0b-7a104f826211">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALBA AZUCENA PALACIOS BENAVIDEZ">ALBA AZUCENA PALACIOS BENAVIDEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-14dd0d53-ea14-4aa2-8463-8914335cc1b7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALBA ESTELA GONZALEZ TORREZ">ALBA ESTELA GONZALEZ TORREZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d14dbdb6-bc10-4f05-9fc7-5a5ad3dd0635">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALBERTO JOSE LACAYO ARGUELLO">ALBERTO JOSE LACAYO ARGUELLO</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-68831338-de26-4839-9207-f16f029084d7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALEJANDRO OCTAVIO DELGADO MARQUEZ">ALEJANDRO OCTAVIO DELGADO MARQUEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7aead1d9-82b1-4215-8b6a-0ed746e8163d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ALYERIS BELDRAMINA ARIAS SIEZAR">ALYERIS BELDRAMINA ARIAS SIEZAR</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-de88f1c4-e3ed-4d2a-bc26-119346f48119">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ANGELA ESPINOZA TORREZ">ANGELA ESPINOZA TORREZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-56c1329a-d097-473c-8a2a-da4ae51c4e1f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ARGENTINA DEL SOCORRO PARAJON ALEJOS">ARGENTINA DEL SOCORRO PARAJON ALEJOS</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d8e8e53a-9c8e-48da-a7fa-1c86a8862387">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ARLING PATRICIA ALONSO GOMEZ">ARLING PATRICIA ALONSO GOMEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f9ceb863-6fc6-44b8-a39f-48d138e065d8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ARTURO JOSE VALDEZ ROBLETO">ARTURO JOSE VALDEZ ROBLETO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-95638378-7e67-4448-9420-cd3c318aea8f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BAYARDO ANTONIO CHAVEZ MENDOZA">BAYARDO ANTONIO CHAVEZ MENDOZA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-43e88aed-d261-4e36-92c3-f6af566c95dd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BENITA DEL CARMEN ARBIZU MEDINA">BENITA DEL CARMEN ARBIZU MEDINA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ac400d54-3097-40a1-b0d0-11df194c3400">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BOANERGES MATUS LAZO">BOANERGES MATUS LAZO</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2c86a2b2-fece-4a88-a6cf-3c00341cac46">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="BROOKLYN RIVERA BRYAN">BROOKLYN RIVERA BRYAN</td>
-                      
-                        <td>SIN BANCADA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e0dc9dd7-dad6-44ef-9f69-095304e19c41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CARLOS EMILIO LOPEZ HURTADO">CARLOS EMILIO LOPEZ HURTADO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d9fc8912-44bf-4f53-b3d6-f453d849f5a8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CARLOS GUILLERMO ALEMAN ESPINOZA">CARLOS GUILLERMO ALEMAN ESPINOZA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b8bf0a80-d5c2-4818-870c-1e29828b8a37">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CARLOS JAVIER LANGRAND HERNANDEZ">CARLOS JAVIER LANGRAND HERNANDEZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4185f247-b26a-4c5d-8bd3-48f5c09fa110">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CARLOS WILFREDO NAVARRO MOREIRA">CARLOS WILFREDO NAVARRO MOREIRA</td>
-                      
-                        <td>SIN BANCADA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-76225e0c-1bcd-4b31-86b2-4e336e107d80">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CESAR CASTELLANOS MATUTE">CESAR CASTELLANOS MATUTE</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-84788fc9-7d41-4952-b0a9-cc1267adc861">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CORINA DE JESUS LEIBA GONZALES">CORINA DE JESUS LEIBA GONZALES</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-13c1fc65-3669-48cf-a235-82dd62ea6b77">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="CORINA GONZALEZ GARCIA">CORINA GONZALEZ GARCIA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e44d8f32-5ddd-4cdc-9634-920a0ebdd863">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DORA ELENA ROJAS">DORA ELENA ROJAS</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d69340ff-4acb-4e5b-8137-39a55f27efef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="DOUGLAS ALEMAN BENAVIDEZ">DOUGLAS ALEMAN BENAVIDEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4db9353e-7583-4c57-bea3-12586bce7b96">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EDA CECILIA MEDINA">EDA CECILIA MEDINA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a6554eaf-0c78-4e5e-8cd6-e8e32c5905df">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EDGAR JAVIER VALLEJO FERNANDEZ">EDGAR JAVIER VALLEJO FERNANDEZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-23c243e8-b8ae-443f-b8e4-5de54664f2b4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EDUARDO MONTEALEGRE RIVAS">EDUARDO MONTEALEGRE RIVAS</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-045b7acc-3a5d-485b-810e-4e4822da48d0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EDWIN RAMON CASTRO RIVERA">EDWIN RAMON CASTRO RIVERA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6b1e590b-ccb5-4724-b997-479edd5aa2cf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ELIDA MARIA GALEANO CORNEJO">ELIDA MARIA GALEANO CORNEJO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bd225e35-edcf-4889-9cad-bec4c1a863b5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ELMAN RAMON URBINA DIAZ">ELMAN RAMON URBINA DIAZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9c047b95-a14c-4cf5-85c0-4f65fc64b27f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ENRIQUE ALDANA BURGOS">ENRIQUE ALDANA BURGOS</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-41470780-e623-4087-bca2-be503a624f7b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EVELIN PATRICIA ABURTO TORRES">EVELIN PATRICIA ABURTO TORRES</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e37c3574-b1cd-43c9-841a-27e5d6b2f198">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EVELYN TAYLOR IRIAS">EVELYN TAYLOR IRIAS</td>
-                      
-                        <td>SIN BANCADA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-359fe260-00c0-4489-8888-17cae7600485">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="EVERTZ CARCAMO NARVAEZ">EVERTZ CARCAMO NARVAEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e955ec57-6425-4686-b1db-0d6b40dc50ba">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FATIMA DEL SOCORRO ESTRADA TORREZ">FATIMA DEL SOCORRO ESTRADA TORREZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e5b33c83-4af0-4cd3-8866-bfec13f52888">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FILIBERTO JACINTO RODRIGUEZ LOPEZ">FILIBERTO JACINTO RODRIGUEZ LOPEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a3e2c64-d659-449a-b211-33cd4a44fc56">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FRANCISCO JAIME DUARTE">FRANCISCO JAIME DUARTE</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0d0d80f7-b282-418e-b921-fa12064df9b2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="FRANCISCO JOSE VALDIVIA MARTINEZ">FRANCISCO JOSE VALDIVIA MARTINEZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c71fa63-bc20-49c0-a8b9-0ea53ef98b5b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GLADIS DE LOS ANGELES BAEZ">GLADIS DE LOS ANGELES BAEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bca9f4db-d324-4047-9410-eaba9d7334e1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GLORIA DEL ROSARIO MONTENEGRO">GLORIA DEL ROSARIO MONTENEGRO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2f41b2ab-e2ef-4174-b2ae-2c33900545ed">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GUILLERMO EDUARDO ARCE CASTAÑO">GUILLERMO EDUARDO ARCE CASTAÑO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6cdba635-d72c-46e5-a3e7-ae68b7932ce2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="GUSTAVO EDUARDO PORRAS CORTEZ">GUSTAVO EDUARDO PORRAS CORTEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a37b871-3ec3-4c78-8cd5-301a93f67ffb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="HUGO BARQUERO RODRIGUEZ">HUGO BARQUERO RODRIGUEZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-752692db-5b35-4baa-803f-29726a8e6aa3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="INDALECIO ANICETO RODRIGUEZ ALANIZ">INDALECIO ANICETO RODRIGUEZ ALANIZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-93c571bb-6240-4bbf-92a2-b3e8f8a9eced">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IRIS MARINA MONTENEGRO BLANDON">IRIS MARINA MONTENEGRO BLANDON</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f2b02bd6-6b46-4a90-b434-7a6cee5db749">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="IRMA DE JESUS DAVILA LAZO">IRMA DE JESUS DAVILA LAZO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a1f36bdc-20e9-4d35-9379-218ae0398b02">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JACINTO JOSE SUAREZ ESPINOZA">JACINTO JOSE SUAREZ ESPINOZA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-76712cd8-741b-45f8-8164-5f7df7d2310d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JAIME RENE MORALES CARAZO">JAIME RENE MORALES CARAZO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b7258ca5-277f-4506-aa02-80ab2446efc4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JENNY AZUCENA MARTINEZ GOMEZ">JENNY AZUCENA MARTINEZ GOMEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6055c9a5-2424-4e67-9e80-01ef83348e84">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JOHANNA DEL CARMEN LUNA LIRA">JOHANNA DEL CARMEN LUNA LIRA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1055b85f-f276-4488-8aaf-4e64801fded9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JORGE ALBERTO CASTILLO QUANT">JORGE ALBERTO CASTILLO QUANT</td>
-                      
-                        <td>SIN BANCADA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fc58ff5a-9998-492f-bd01-992884de752a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JOSE ARMANDO HERRERA MARADIAGA">JOSE ARMANDO HERRERA MARADIAGA</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-69d7b8df-f52e-4480-bee4-251d0a654e3c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JOSE AUGUSTO RODRIGUEZ TORREZ">JOSE AUGUSTO RODRIGUEZ TORREZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c5687a5a-6bf6-41fe-a07d-9d5b54875dc3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JOSE RAMON SARRIA MORALES">JOSE RAMON SARRIA MORALES</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-36a9e8a8-757a-4e05-8e2a-88a85adec2a4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JOSE SANTOS FIGUEROA AGUILAR">JOSE SANTOS FIGUEROA AGUILAR</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6b62cfdd-33e3-4569-889f-990658b1601d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JOSEFINA ROA ROMERO">JOSEFINA ROA ROMERO</td>
-                      
-                        <td>SIN BANCADA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ebcdc670-561e-4f7f-84d0-a9b7d9458df4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JUAN ENRIQUE SAENZ NAVARRETE">JUAN ENRIQUE SAENZ NAVARRETE</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9af4fb2a-d7f5-4004-990d-d8fde6d26371">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JUAN RAMON JIMENEZ">JUAN RAMON JIMENEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-091371e3-5a84-467d-bf98-faec1aba11d9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JUAN RAMON OBREGON VALDIVIA">JUAN RAMON OBREGON VALDIVIA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d4411603-55f2-432a-adc9-34f4950e7a4e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JUANA DE LOS ANGELES MOLINA">JUANA DE LOS ANGELES MOLINA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7b1bf6c1-7beb-469e-8465-0dd62c020f94">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="JUSTO ARMANDO PEÑA AVILES">JUSTO ARMANDO PEÑA AVILES</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b8fe1e82-1713-4c47-8680-7321b040f88f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LAURA ESTELA BERMUDEZ ROBLETO">LAURA ESTELA BERMUDEZ ROBLETO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-60d4ee8c-2644-4d8d-8a4c-c63cbc2f3a27">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LICET DEL ROSARIO MONTENEGRO ALTAMIRANO">LICET DEL ROSARIO MONTENEGRO ALTAMIRANO</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a6bab316-fa24-490b-9340-66bf9d422bb7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LORIA RAQUEL DIXON BRAUTIGAM">LORIA RAQUEL DIXON BRAUTIGAM</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3f094af5-b584-46c5-beca-706e53e978ed">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LUIS CORONEL CUADRA">LUIS CORONEL CUADRA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e27ce65b-4cf9-4541-89b1-6cb770ce45a9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="LUIS ROBERTO CALLEJAS CALLEJAS">LUIS ROBERTO CALLEJAS CALLEJAS</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aabdb8c4-b7fd-463d-b3c6-51e46c2d2e5f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARIA AGUSTINA MONTENEGRO LOPEZ">MARIA AGUSTINA MONTENEGRO LOPEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ad78a7ee-f58e-44af-bdca-c1aee79c16e9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARIA AUXILIADORA MARTINEZ CORRALES">MARIA AUXILIADORA MARTINEZ CORRALES</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b32ca24a-9477-4736-bff8-28d4dfdf3911">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARIA EUGENIA SEQUEIRA BALLADARES">MARIA EUGENIA SEQUEIRA BALLADARES</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5e395485-334e-418a-8c02-a9256de1cf18">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARIA JILMA ROSALES ESPINOZA">MARIA JILMA ROSALES ESPINOZA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fabc77ec-8e00-4766-8999-354d22fa9276">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARIA MANUELA SACASA SELVA">MARIA MANUELA SACASA SELVA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-133cd66e-8438-4754-8480-cde4fc8b7863">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARIO VALLE DAVILA">MARIO VALLE DAVILA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-60131810-b55e-4b4b-bc2c-6c4bdb3f47ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARITZA DEL SOCORRO ESPINALES">MARITZA DEL SOCORRO ESPINALES</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-45e63918-31b6-4dc3-8dc4-8a913e1678b0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MARTHA MARINA GONZALEZ DAVILA">MARTHA MARINA GONZALEZ DAVILA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-787d6e07-817b-4e53-a323-c0af62a03a0d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MAURICIO MONTEALEGRE ZEPEDA">MAURICIO MONTEALEGRE ZEPEDA</td>
-                      
-                        <td>SIN BANCADA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-adfb7b30-37f9-48ae-87f3-72348a8f3904">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="MELBA DEL SOCORRO SANCHEZ SUAREZ">MELBA DEL SOCORRO SANCHEZ SUAREZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c9292e66-7c68-4975-ba5e-98e329d1bf46">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="NASSER SEBASTIAN SILWANY BAEZ">NASSER SEBASTIAN SILWANY BAEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-73dc94f8-54ba-4848-8d17-80b64cb06810">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ODELL ANGEL INCER BARQUERO">ODELL ANGEL INCER BARQUERO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5d693608-2866-4c9f-8134-95af7d9727f9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="PABLO JOSE ORTEZ BELTRAN">PABLO JOSE ORTEZ BELTRAN</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a476643b-8fe1-4b61-8a9b-c95ee06a0fa4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="PATRICIA MERCEDES SANCHEZ URBINA">PATRICIA MERCEDES SANCHEZ URBINA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-da852ff7-a90e-47a5-bec1-bd433e9c4cca">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="PEDRO JOAQUIN CHAMORRO BARRIOS">PEDRO JOAQUIN CHAMORRO BARRIOS</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9a8d7e0e-70ad-4a1e-b950-89e5278ffbb4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="PEDRO JOAQUIN TREMINIO MENDOZA">PEDRO JOAQUIN TREMINIO MENDOZA</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8791d557-672b-4ee9-b1d0-02c70abd4399">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="PERLA SOLEDAD CASTILLO QUINTERO">PERLA SOLEDAD CASTILLO QUINTERO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-98370ad2-b26c-4e48-bddf-32cf16111410">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="RAUL BENITO HERRERA RIVERA">RAUL BENITO HERRERA RIVERA</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-374c6d2e-0f20-49ad-b50d-10342758895d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="ROSA ADELINA BARAHONA CASTRO">ROSA ADELINA BARAHONA CASTRO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9c8827f8-fc9e-4354-98d4-04888df1ec0e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SANTIAGO ANTONIO ABURTO OVANDO">SANTIAGO ANTONIO ABURTO OVANDO</td>
-                      
-                        <td>SIN BANCADA</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-de6faade-6ad5-4c82-a615-9c0747e97256">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="SANTOS RENE NUÑEZ TELLEZ">SANTOS RENE NUÑEZ TELLEZ</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ccf3235-b95d-41b2-80d4-779c15d0233e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="VENANCIA DEL CARMEN IBARRA SILVA">VENANCIA DEL CARMEN IBARRA SILVA</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bbf3a11e-6ee1-40cc-a1d7-b756daa6fc9f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="VICTOR HUGO TINOCO FONSECA">VICTOR HUGO TINOCO FONSECA</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-88595a76-8048-4451-b7f1-11e12cc84b11">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WALMARO ANTONIO GUTIERREZ MERCADO">WALMARO ANTONIO GUTIERREZ MERCADO</td>
-                      
-                        <td>FSLN</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6eaca1bb-309d-41ad-9d7e-c8a8e132fd00">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="WILBER RAMON LOPEZ NUÑEZ">WILBER RAMON LOPEZ NUÑEZ</td>
-                      
-                        <td>PLI</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dc5e87c0-2f6f-490d-bf0b-0af3d8895733">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ADOLFO JOSE MARTINEZ COLE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:adolfomartinez8@yahoo.es">adolfomartinez8@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7b2b0ece-18c3-4593-ac0b-7a104f826211">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALBA AZUCENA PALACIOS BENAVIDEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:apalacios@asamblea.gob.ni">apalacios@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-14dd0d53-ea14-4aa2-8463-8914335cc1b7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALBA ESTELA GONZALEZ TORREZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:albagonzalez67@hotmail.com">albagonzalez67@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d14dbdb6-bc10-4f05-9fc7-5a5ad3dd0635">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALBERTO JOSE LACAYO ARGUELLO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:albertolacayo25@gmail.com">albertolacayo25@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-68831338-de26-4839-9207-f16f029084d7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALEJANDRO OCTAVIO DELGADO MARQUEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:alexsshoes06@yahoo.com">alexsshoes06@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7aead1d9-82b1-4215-8b6a-0ed746e8163d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ALYERIS BELDRAMINA ARIAS SIEZAR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:alyeris1@hotmail.com">alyeris1@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-de88f1c4-e3ed-4d2a-bc26-119346f48119">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ANGELA ESPINOZA TORREZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:aetorrez52@yahoo.com">aetorrez52@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-56c1329a-d097-473c-8a2a-da4ae51c4e1f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ARGENTINA DEL SOCORRO PARAJON ALEJOS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:argentinap54@hotmail.com">argentinap54@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d8e8e53a-9c8e-48da-a7fa-1c86a8862387">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ARLING PATRICIA ALONSO GOMEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:arling_alonso@yahoo.es">arling_alonso@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f9ceb863-6fc6-44b8-a39f-48d138e065d8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ARTURO JOSE VALDEZ ROBLETO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:arturovaldez1945@yahoo.com">arturovaldez1945@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-95638378-7e67-4448-9420-cd3c318aea8f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BAYARDO ANTONIO CHAVEZ MENDOZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:bayardoch21@yahoo.es">bayardoch21@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-43e88aed-d261-4e36-92c3-f6af566c95dd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BENITA DEL CARMEN ARBIZU MEDINA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:benita_arbizu@yahoo.com">benita_arbizu@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ac400d54-3097-40a1-b0d0-11df194c3400">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BOANERGES MATUS LAZO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ppmatuslazo@hotmail.com">ppmatuslazo@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2c86a2b2-fece-4a88-a6cf-3c00341cac46">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">BROOKLYN RIVERA BRYAN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SIN BANCADA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e0dc9dd7-dad6-44ef-9f69-095304e19c41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CARLOS EMILIO LOPEZ HURTADO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ccasaabierta@yahoo.com">ccasaabierta@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d9fc8912-44bf-4f53-b3d6-f453d849f5a8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CARLOS GUILLERMO ALEMAN ESPINOZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:caleman@asamblea.gob.ni">caleman@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b8bf0a80-d5c2-4818-870c-1e29828b8a37">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CARLOS JAVIER LANGRAND HERNANDEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:clangrand@hotmail.com">clangrand@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4185f247-b26a-4c5d-8bd3-48f5c09fa110">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CARLOS WILFREDO NAVARRO MOREIRA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SIN BANCADA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:wnavarro@asamblea.gob.ni">wnavarro@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-76225e0c-1bcd-4b31-86b2-4e336e107d80">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CESAR CASTELLANOS MATUTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:cesar_dip@yahoo.es">cesar_dip@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-84788fc9-7d41-4952-b0a9-cc1267adc861">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CORINA DE JESUS LEIBA GONZALES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:corinaleiva77@yahoo.com">corinaleiva77@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13c1fc65-3669-48cf-a235-82dd62ea6b77">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">CORINA GONZALEZ GARCIA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:corinitagonzalez@hotmail.com">corinitagonzalez@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e44d8f32-5ddd-4cdc-9634-920a0ebdd863">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DORA ELENA ROJAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:dorarojas2011@hotmail.es">dorarojas2011@hotmail.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d69340ff-4acb-4e5b-8137-39a55f27efef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">DOUGLAS ALEMAN BENAVIDEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:d_aleman_b@yahoo.com">d_aleman_b@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4db9353e-7583-4c57-bea3-12586bce7b96">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EDA CECILIA MEDINA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:emedina@asamblea.gob.ni">emedina@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6554eaf-0c78-4e5e-8cd6-e8e32c5905df">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EDGAR JAVIER VALLEJO FERNANDEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:xavyer44@hotmail.com">xavyer44@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-23c243e8-b8ae-443f-b8e4-5de54664f2b4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EDUARDO MONTEALEGRE RIVAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:emontealegrer@gmail.com">emontealegrer@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-045b7acc-3a5d-485b-810e-4e4822da48d0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EDWIN RAMON CASTRO RIVERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ecastro@asamblea.gob.ni">ecastro@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6b1e590b-ccb5-4724-b997-479edd5aa2cf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ELIDA MARIA GALEANO CORNEJO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:egaleano@asamblea.gob.ni">egaleano@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bd225e35-edcf-4889-9cad-bec4c1a863b5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ELMAN RAMON URBINA DIAZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:elmanurbina@hotmail.com">elmanurbina@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9c047b95-a14c-4cf5-85c0-4f65fc64b27f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ENRIQUE ALDANA BURGOS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:dmayra1@hotmail.com">dmayra1@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-41470780-e623-4087-bca2-be503a624f7b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EVELIN PATRICIA ABURTO TORRES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:evepabto@gmail.com">evepabto@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e37c3574-b1cd-43c9-841a-27e5d6b2f198">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EVELYN TAYLOR IRIAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SIN BANCADA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-359fe260-00c0-4489-8888-17cae7600485">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">EVERTZ CARCAMO NARVAEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:evertz_es@hotmail.com">evertz_es@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e955ec57-6425-4686-b1db-0d6b40dc50ba">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FATIMA DEL SOCORRO ESTRADA TORREZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:fatiestrada64@yahoo.com">fatiestrada64@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e5b33c83-4af0-4cd3-8866-bfec13f52888">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FILIBERTO JACINTO RODRIGUEZ LOPEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:rfilibertojacinto@yahoo.com">rfilibertojacinto@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a3e2c64-d659-449a-b211-33cd4a44fc56">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FRANCISCO JAIME DUARTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:franciscojaime27@hotmail.com">franciscojaime27@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0d0d80f7-b282-418e-b921-fa12064df9b2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">FRANCISCO JOSE VALDIVIA MARTINEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:coincogg@yahoo.com">coincogg@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c71fa63-bc20-49c0-a8b9-0ea53ef98b5b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GLADIS DE LOS ANGELES BAEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gbaez@asamblea.gob.ni">gbaez@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bca9f4db-d324-4047-9410-eaba9d7334e1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GLORIA DEL ROSARIO MONTENEGRO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gloriarm58@yahoo.es">gloriarm58@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2f41b2ab-e2ef-4174-b2ae-2c33900545ed">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GUILLERMO EDUARDO ARCE CASTAÑO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:madrigalwc_8@hotmail.com">madrigalwc_8@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6cdba635-d72c-46e5-a3e7-ae68b7932ce2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">GUSTAVO EDUARDO PORRAS CORTEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:gporras@fnt.org.ni">gporras@fnt.org.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a37b871-3ec3-4c78-8cd5-301a93f67ffb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">HUGO BARQUERO RODRIGUEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:hugobarquero2010@yahoo.com">hugobarquero2010@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-752692db-5b35-4baa-803f-29726a8e6aa3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">INDALECIO ANICETO RODRIGUEZ ALANIZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:indalecio.rodriguez@gmail.com">indalecio.rodriguez@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-93c571bb-6240-4bbf-92a2-b3e8f8a9eced">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IRIS MARINA MONTENEGRO BLANDON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:imontenegro@asamblea.gob.ni">imontenegro@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f2b02bd6-6b46-4a90-b434-7a6cee5db749">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">IRMA DE JESUS DAVILA LAZO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:irmadavila21@yahoo.com">irmadavila21@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a1f36bdc-20e9-4d35-9379-218ae0398b02">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JACINTO JOSE SUAREZ ESPINOZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:suarezp@ibw.com.ni">suarezp@ibw.com.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-76712cd8-741b-45f8-8164-5f7df7d2310d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JAIME RENE MORALES CARAZO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tolentinocifar@yahoo.com">tolentinocifar@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b7258ca5-277f-4506-aa02-80ab2446efc4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JENNY AZUCENA MARTINEZ GOMEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jendip84@yahoo.com">jendip84@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6055c9a5-2424-4e67-9e80-01ef83348e84">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JOHANNA DEL CARMEN LUNA LIRA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:johannalira@yahoo.es">johannalira@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1055b85f-f276-4488-8aaf-4e64801fded9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JORGE ALBERTO CASTILLO QUANT</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SIN BANCADA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:castillo_quant@hotmail.com">castillo_quant@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fc58ff5a-9998-492f-bd01-992884de752a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JOSE ARMANDO HERRERA MARADIAGA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:armandoherreramaradiaga@yahoo.com">armandoherreramaradiaga@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-69d7b8df-f52e-4480-bee4-251d0a654e3c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JOSE AUGUSTO RODRIGUEZ TORREZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:benjem66@yahoo.com">benjem66@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c5687a5a-6bf6-41fe-a07d-9d5b54875dc3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JOSE RAMON SARRIA MORALES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:joseramonsm@yahoo.es">joseramonsm@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-36a9e8a8-757a-4e05-8e2a-88a85adec2a4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JOSE SANTOS FIGUEROA AGUILAR</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jsantosfigueroa@gmail.com">jsantosfigueroa@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6b62cfdd-33e3-4569-889f-990658b1601d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JOSEFINA ROA ROMERO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SIN BANCADA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:No tiene">No tiene</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ebcdc670-561e-4f7f-84d0-a9b7d9458df4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JUAN ENRIQUE SAENZ NAVARRETE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:enrique.saenzn@yahoo.es">enrique.saenzn@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9af4fb2a-d7f5-4004-990d-d8fde6d26371">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JUAN RAMON JIMENEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:kamijr2003@yahoo.com.mx">kamijr2003@yahoo.com.mx</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-091371e3-5a84-467d-bf98-faec1aba11d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JUAN RAMON OBREGON VALDIVIA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:jrobregonv@gmail.com">jrobregonv@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d4411603-55f2-432a-adc9-34f4950e7a4e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JUANA DE LOS ANGELES MOLINA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:juanamolinadn2@yahoo.es">juanamolinadn2@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7b1bf6c1-7beb-469e-8465-0dd62c020f94">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">JUSTO ARMANDO PEÑA AVILES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:justoarmando1953@hotmail.com">justoarmando1953@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b8fe1e82-1713-4c47-8680-7321b040f88f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">LAURA ESTELA BERMUDEZ ROBLETO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:laueste@yahoo.es">laueste@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-60d4ee8c-2644-4d8d-8a4c-c63cbc2f3a27">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">LICET DEL ROSARIO MONTENEGRO ALTAMIRANO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:licet2552758@hotmail.com">licet2552758@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a6bab316-fa24-490b-9340-66bf9d422bb7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">LORIA RAQUEL DIXON BRAUTIGAM</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:loriadixon@yahoo.com">loriadixon@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3f094af5-b584-46c5-beca-706e53e978ed">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">LUIS CORONEL CUADRA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:lcoronelcuadra@yahoo.com">lcoronelcuadra@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e27ce65b-4cf9-4541-89b1-6cb770ce45a9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">LUIS ROBERTO CALLEJAS CALLEJAS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:callejas_luis@yahoo.com">callejas_luis@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aabdb8c4-b7fd-463d-b3c6-51e46c2d2e5f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARIA AGUSTINA MONTENEGRO LOPEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mmontenegrolopez@yahoo.es">mmontenegrolopez@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ad78a7ee-f58e-44af-bdca-c1aee79c16e9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARIA AUXILIADORA MARTINEZ CORRALES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:auxiliadoramartinez57@yahoo.com">auxiliadoramartinez57@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b32ca24a-9477-4736-bff8-28d4dfdf3911">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARIA EUGENIA SEQUEIRA BALLADARES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mesequeira9@yahoo.com">mesequeira9@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5e395485-334e-418a-8c02-a9256de1cf18">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARIA JILMA ROSALES ESPINOZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:rmaragilma@ymail.com">rmaragilma@ymail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fabc77ec-8e00-4766-8999-354d22fa9276">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARIA MANUELA SACASA SELVA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:manuelaprego@yahoo.com">manuelaprego@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-133cd66e-8438-4754-8480-cde4fc8b7863">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARIO VALLE DAVILA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mvalledavila@gmail.com; udm@ibw.com.ni">mvalledavila@gmail.com; udm@ibw.com.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-60131810-b55e-4b4b-bc2c-6c4bdb3f47ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARITZA DEL SOCORRO ESPINALES</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:maritzaespinales@yahoo.com">maritzaespinales@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-45e63918-31b6-4dc3-8dc4-8a913e1678b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MARTHA MARINA GONZALEZ DAVILA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:mmgonzalez100@yahoo.com">mmgonzalez100@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-787d6e07-817b-4e53-a323-c0af62a03a0d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MAURICIO MONTEALEGRE ZEPEDA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SIN BANCADA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-adfb7b30-37f9-48ae-87f3-72348a8f3904">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">MELBA DEL SOCORRO SANCHEZ SUAREZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:melsosansu@gmail.com">melsosansu@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c9292e66-7c68-4975-ba5e-98e329d1bf46">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">NASSER SEBASTIAN SILWANY BAEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:nsilwany1@yahoo.com">nsilwany1@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-73dc94f8-54ba-4848-8d17-80b64cb06810">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ODELL ANGEL INCER BARQUERO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:oincer@asamblea.gob.ni">oincer@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5d693608-2866-4c9f-8134-95af7d9727f9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">PABLO JOSE ORTEZ BELTRAN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:ortezpablo@yahoo.com">ortezpablo@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a476643b-8fe1-4b61-8a9b-c95ee06a0fa4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">PATRICIA MERCEDES SANCHEZ URBINA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:psanchezurbina@yahoo.es">psanchezurbina@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-da852ff7-a90e-47a5-bec1-bd433e9c4cca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">PEDRO JOAQUIN CHAMORRO BARRIOS</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:pjch51@gmail.com">pjch51@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9a8d7e0e-70ad-4a1e-b950-89e5278ffbb4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">PEDRO JOAQUIN TREMINIO MENDOZA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:pjtreminio@hotmail.com">pjtreminio@hotmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8791d557-672b-4ee9-b1d0-02c70abd4399">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">PERLA SOLEDAD CASTILLO QUINTERO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:persolcast@yahoo.com">persolcast@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-98370ad2-b26c-4e48-bddf-32cf16111410">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">RAUL BENITO HERRERA RIVERA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:raulbenito7@yahoo.com">raulbenito7@yahoo.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-374c6d2e-0f20-49ad-b50d-10342758895d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">ROSA ADELINA BARAHONA CASTRO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:adelinabarahona@gmail.com">adelinabarahona@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9c8827f8-fc9e-4354-98d4-04888df1ec0e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SANTIAGO ANTONIO ABURTO OVANDO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              SIN BANCADA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-de6faade-6ad5-4c82-a615-9c0747e97256">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">SANTOS RENE NUÑEZ TELLEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:rnunez@asamblea.gob.ni">rnunez@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ccf3235-b95d-41b2-80d4-779c15d0233e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">VENANCIA DEL CARMEN IBARRA SILVA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:venanciaibarra@yahoo.es">venanciaibarra@yahoo.es</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bbf3a11e-6ee1-40cc-a1d7-b756daa6fc9f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">VICTOR HUGO TINOCO FONSECA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:tinoco.victorhugo@gmail.com">tinoco.victorhugo@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-88595a76-8048-4451-b7f1-11e12cc84b11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">WALMARO ANTONIO GUTIERREZ MERCADO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              FSLN
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:wgutierrez@asamblea.gob.ni">wgutierrez@asamblea.gob.ni</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6eaca1bb-309d-41ad-9d7e-c8a8e132fd00">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png" class="person-card__image">
+                          
+
+                            <h3 class="person-card__name">WILBER RAMON LOPEZ NUÑEZ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PLI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Email</span>
+                                <a href="mailto:wilberlopez76@gmail.com">wilberlopez76@gmail.com</a>
+                            </p>
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

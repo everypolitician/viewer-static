@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="13th Parliament" />
     <meta property="og:type" content="article" />
@@ -201,7 +204,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-people’s_action_party"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -219,1163 +222,2942 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/948fb49/data/Singapore/Parliament/term-13.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/948fb49/data/Singapore/Parliament/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/948fb49/data/Singapore/Parliament/term-13.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/948fb49/data/Singapore/Parliament/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-f5c08647-6257-40ad-b06b-dbf1dec17d0c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Alex Yam Ziming">Alex Yam Ziming</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-77fdfe95-2f28-472e-a649-5233d26c1408">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amrin Amin">Amrin Amin</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e84f9fac-fb7f-4962-aea3-e77c3b3fcd8c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amy Khor Lean Suan">Amy Khor Lean Suan</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-02521068-88e6-431f-a88c-3462e69976f7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ang Hin Kee">Ang Hin Kee</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8a87ed72-2427-484b-a4ca-31b3f871e915">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ang Wei Neng">Ang Wei Neng</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ebc77af-86f6-49fe-92d2-c37b75f636ad">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Baey Yam Keng">Baey Yam Keng</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d969547c-41ed-4b28-9424-e400b1de520d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cedric Foo Chee Keng">Cedric Foo Chee Keng</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5689d0ec-bde3-4ad0-8fa1-fff826e40b5a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chan Chun Sing">Chan Chun Sing</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6c546e1e-61ef-4dc2-93a4-cc2bb855131c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Charles Chong">Charles Chong</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b87469c3-d70b-411c-8b1a-092e86f0c79d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chee Hong Tat">Chee Hong Tat</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9fe6d23a-9658-47ab-a828-51843967eb96">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chen Show Mao">Chen Show Mao</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8aeb2af3-a266-4ba0-bdca-67ced16acb5e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cheng Li Hui">Cheng Li Hui</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f437c075-1efc-4539-b2ce-528e3befdf01">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cheryl Chan Wei Ling">Cheryl Chan Wei Ling</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-20812976-2713-4d32-a45d-e26006e36a05">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chia Shi-Lu">Chia Shi-Lu</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-91f8f58d-362a-44cf-a4e5-88a66eb5aacb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chong Kee Hiong">Chong Kee Hiong</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-66f4e10b-a983-420f-ad3f-68532ecddca3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Christopher De Souza">Christopher De Souza</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-592fd60e-bcef-4dee-be95-cbd40414e771">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Daniel Goh Pei Siong">Daniel Goh Pei Siong</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b2107137-0cc5-45d2-a558-d4dfb3e9ad41">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Darryl David">Darryl David</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a2ff2db-8421-4afb-bbc4-de4c6dd5420d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David Ong Kim Huat">David Ong Kim Huat</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-438bc934-3386-4ce8-9f4f-7a54bfa3e770">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Denise Phua Lay Peng">Denise Phua Lay Peng</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f6f31de2-4d43-4c60-9911-d3dbffca4922">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dennis Tan Lip Fong">Dennis Tan Lip Fong</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3dd4a24b-00e8-4182-8da0-401f39239de4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Desmond Choo">Desmond Choo</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-15139953-a9b0-4358-a59d-813185268131">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Desmond Lee">Desmond Lee</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-57887ba4-027b-4c53-a801-70424d3a009b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Dr Lee Bee Wah">Dr Lee Bee Wah</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d94b81d7-3043-4f5a-a3a9-2ae5804f0d43">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edwin Tong Chun Fai">Edwin Tong Chun Fai</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c7a17b34-9c4a-4484-a441-e58def2c1ad9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Fatimah Lateef">Fatimah Lateef</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e080611d-d641-4b49-9a51-0788dd0e0006">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Foo Mee Har">Foo Mee Har</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e544dbae-f1ab-4215-9f02-d3beeef4cb21">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gan Kim Yong">Gan Kim Yong</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f0b6ebb-932d-48ae-9f87-2c95bf8a33ee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gan Thiam Poh">Gan Thiam Poh</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a21cf31b-d332-4fe4-9ba9-7b91ae902287">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Goh Chok Tong">Goh Chok Tong</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-21194e59-c6a2-4e1b-ab7f-71f5749e60d0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Grace Fu Hai Yien">Grace Fu Hai Yien</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-49ce3a5a-ce86-4257-9200-da228bb874a5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Halimah Yacob">Halimah Yacob</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-10bfde8a-a624-45fe-b75d-bb74a224e349">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Heng Chee How">Heng Chee How</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2a0b0fbe-4e77-4e67-b9c5-3fd8805f0c2d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Heng Swee Keat">Heng Swee Keat</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c04bffc-1802-4e34-9de3-7bc74cca5b4e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Indranee Rajah">Indranee Rajah</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-26af0194-c286-4446-bf89-24a0289864fd">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Intan Azura Binte Mokhtar">Intan Azura Binte Mokhtar</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6dc2d78e-fa29-4925-969e-38400ac54af4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Janil Puthucheary">Janil Puthucheary</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5a67a8e4-3d39-40d8-9050-cdbb80922ef1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Jessica Tan Soon Neo">Jessica Tan Soon Neo</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-789cf330-43c4-4030-b4d2-f29ac7078897">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joan Pereira">Joan Pereira</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a3217533-c6c9-4693-b713-544d651a0d1b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Josephine Teo">Josephine Teo</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ecf741b2-5555-4a85-b55e-efcf5bda1b6b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="K Shanmugam">K Shanmugam</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bac95736-f7af-47f8-8985-96eef7adc221">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Khaw Boon Wan">Khaw Boon Wan</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1b8a5170-3c36-4a03-9e04-13536a02e4ed">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Koh Poh Koon">Koh Poh Koon</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b58fc312-2ff8-4d65-bf6f-729fee8a7ebf">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kwek Hian Chuan Henry">Kwek Hian Chuan Henry</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ead408ca-57a3-448e-a9b9-0cf0f9cde7cc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lam Pin Min">Lam Pin Min</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e1b27df3-8373-4f9e-ab6f-405ad84c1340">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lawrence Wong">Lawrence Wong</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d9bed5ad-d299-4640-a3c4-095429273891">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lee Hsien Loong">Lee Hsien Loong</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b54a36e8-6518-4128-a46f-6eb0825e435a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lee Li Lian">Lee Li Lian</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f83f570-11bf-4dea-8e4a-8b29b376ccbc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lee Yi Shyan">Lee Yi Shyan</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f5abb42f-eed8-46d8-91ca-e456afc47f49">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Leon Perera">Leon Perera</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4b6bff7f-3849-4629-889f-14a47b212eee">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Liang Eng Hwa">Liang Eng Hwa</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fe96b5c0-3ab8-4083-878c-33812b601614">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lily Neo">Lily Neo</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-fda8a8ea-a155-4f43-87a6-de1de21642ff">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lim Biow Chuan">Lim Biow Chuan</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1141e0ee-9cb6-4ab6-ba8e-13784856b03a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lim Hng Kiang">Lim Hng Kiang</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-ca36788c-596d-423b-9ed0-8e687edb5c2a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lim Swee Say">Lim Swee Say</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b0a1677-c6d7-4ddd-ad6f-0da23e2dd212">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lim Wee Kiak">Lim Wee Kiak</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-aa61a5be-9609-47b1-9c7b-0e3ee2f6bf81">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Louis Ng Kok Kwang">Louis Ng Kok Kwang</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8ba5b71b-a431-48e5-9328-3832ba5bed11">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Low Thia Khiang">Low Thia Khiang</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-32915a61-1521-4612-b229-4f92f6d0899c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Low Yen Ling">Low Yen Ling</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-00d1693d-1449-4739-bf80-f86b5440db27">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Masagos Zulkifli Bin Masagos Mohamad">Masagos Zulkifli Bin Masagos Mohamad</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-76a6937d-3e0b-46f5-b736-eb03515e5175">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Melvin Yong Yik Chye">Melvin Yong Yik Chye</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-13321235-08ff-4c83-b471-be831ee7accb">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mohamad Maliki Bin Osman">Mohamad Maliki Bin Osman</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c5c56dcb-c810-46e9-abd5-63aaf50b4484">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Muhamad Faisal Bin Abdul Manap">Muhamad Faisal Bin Abdul Manap</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b5dae549-835c-4f10-94a5-3fdff21596cc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Muhammad Faishal Ibrahim">Muhammad Faishal Ibrahim</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-30161889-8a34-45b8-9123-7c14ca24da05">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ng Chee Meng">Ng Chee Meng</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-768ca2dc-e664-450b-bbaf-a5d1fbca59ea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ng Eng Hen">Ng Eng Hen</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7c1cb562-ac24-4060-a3b3-a0c58379a30a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ong Teng Koon">Ong Teng Koon</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8dd38623-8cc5-42cd-8220-1ad33529d717">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ong Ye Kung">Ong Ye Kung</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e8bf13c2-166b-44be-b97a-d347b92bba9e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Patrick Tay Teck Guan">Patrick Tay Teck Guan</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-17f94221-4230-40ff-9dd8-78ed1e7a16b6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Png Eng Huat">Png Eng Huat</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e2a128dc-935f-44ad-b0e9-32737944316e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Pritam Singh">Pritam Singh</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1765706e-9b21-49c4-b35c-205ed06df31e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rahayu Mahzam">Rahayu Mahzam</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-89fe73ce-939d-4a9a-bb5d-5b4a4faeee3b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="S Iswaran">S Iswaran</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2997c850-84ee-43d6-8e8d-241b7087810f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saktiandi Supaat">Saktiandi Supaat</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4c6263ad-763e-4e3f-b995-7791900fa562">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sam Tan Chin Siong">Sam Tan Chin Siong</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-40a40594-a680-4e0e-80c4-2e03cdeedd39">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Seah Kian Peng">Seah Kian Peng</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-56f27061-23f9-4cf3-b923-1bf8df5d2479">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sim Ann">Sim Ann</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cc27533a-76af-43bd-86ea-dbeff896ed7b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sitoh Yih Pin">Sitoh Yih Pin</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b334893-ed06-4285-b429-5aff7329fe1b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sun Xueling">Sun Xueling</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a697465c-da33-481b-94ee-b4902397c017">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sylvia Lim">Sylvia Lim</td>
-                      
-                        <td>Workers’ Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-f30ebd88-1e88-4f24-b5fe-37fc47fd2096">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tan Chuan-Jin">Tan Chuan-Jin</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-173b2c59-186e-40fe-9b34-6e1485c4aad1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tan Wu Meng">Tan Wu Meng</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b6d7c646-d945-41c1-a16a-bcc7ed6883a6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Teo Chee Hean">Teo Chee Hean</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-bd1cde0c-16f9-4c64-9e89-cc4448fed801">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Teo Ho Pin">Teo Ho Pin</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-66b1d9f0-689c-4543-903e-13cb7c8cf071">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Teo Ser Luck">Teo Ser Luck</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4a6184c5-2d5d-4b94-8d0e-885aadf70fda">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tharman Shanmugaratnam">Tharman Shanmugaratnam</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5f8ffc2b-a8ad-4af5-b01b-7630fb000ab9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Tin Pei Ling">Tin Pei Ling</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0815c593-27f9-40b9-9bda-c5958938a9f1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vikram Nair">Vikram Nair</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8c1dace8-c264-4ee8-9359-e129f57ed136">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Vivian Balakrishnan">Vivian Balakrishnan</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-939dc13c-015a-49aa-a242-32651e0b69b0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yaacob Ibrahim">Yaacob Ibrahim</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6861814d-e9a0-4163-8fdd-36f4ee78c7d7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yee Chia Hsing">Yee Chia Hsing</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b3ed686d-de1a-461f-985b-518788cc6dc1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zainal Bin Sapari">Zainal Bin Sapari</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6ba14abe-020a-48ff-95c4-c6a2ebcbfaaa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zaqy Mohamad">Zaqy Mohamad</td>
-                      
-                        <td>People’s Action Party</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5c08647-6257-40ad-b06b-dbf1dec17d0c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f5c08647-6257-40ad-b06b-dbf1dec17d0c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f5c08647-6257-40ad-b06b-dbf1dec17d0c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Alex Yam Ziming</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-77fdfe95-2f28-472e-a649-5233d26c1408">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/77fdfe95-2f28-472e-a649-5233d26c1408/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/77fdfe95-2f28-472e-a649-5233d26c1408/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Amrin Amin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e84f9fac-fb7f-4962-aea3-e77c3b3fcd8c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e84f9fac-fb7f-4962-aea3-e77c3b3fcd8c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e84f9fac-fb7f-4962-aea3-e77c3b3fcd8c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Amy Khor Lean Suan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-02521068-88e6-431f-a88c-3462e69976f7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/02521068-88e6-431f-a88c-3462e69976f7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/02521068-88e6-431f-a88c-3462e69976f7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ang Hin Kee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8a87ed72-2427-484b-a4ca-31b3f871e915">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8a87ed72-2427-484b-a4ca-31b3f871e915/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8a87ed72-2427-484b-a4ca-31b3f871e915/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ang Wei Neng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ebc77af-86f6-49fe-92d2-c37b75f636ad">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8ebc77af-86f6-49fe-92d2-c37b75f636ad/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8ebc77af-86f6-49fe-92d2-c37b75f636ad/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Baey Yam Keng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d969547c-41ed-4b28-9424-e400b1de520d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/d969547c-41ed-4b28-9424-e400b1de520d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/d969547c-41ed-4b28-9424-e400b1de520d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Cedric Foo Chee Keng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5689d0ec-bde3-4ad0-8fa1-fff826e40b5a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/5689d0ec-bde3-4ad0-8fa1-fff826e40b5a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/5689d0ec-bde3-4ad0-8fa1-fff826e40b5a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chan Chun Sing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6c546e1e-61ef-4dc2-93a4-cc2bb855131c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6c546e1e-61ef-4dc2-93a4-cc2bb855131c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6c546e1e-61ef-4dc2-93a4-cc2bb855131c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Charles Chong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b87469c3-d70b-411c-8b1a-092e86f0c79d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b87469c3-d70b-411c-8b1a-092e86f0c79d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b87469c3-d70b-411c-8b1a-092e86f0c79d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chee Hong Tat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9fe6d23a-9658-47ab-a828-51843967eb96">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/9fe6d23a-9658-47ab-a828-51843967eb96/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/9fe6d23a-9658-47ab-a828-51843967eb96/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chen Show Mao</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8aeb2af3-a266-4ba0-bdca-67ced16acb5e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8aeb2af3-a266-4ba0-bdca-67ced16acb5e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8aeb2af3-a266-4ba0-bdca-67ced16acb5e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Cheng Li Hui</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f437c075-1efc-4539-b2ce-528e3befdf01">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f437c075-1efc-4539-b2ce-528e3befdf01/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f437c075-1efc-4539-b2ce-528e3befdf01/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Cheryl Chan Wei Ling</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-20812976-2713-4d32-a45d-e26006e36a05">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/20812976-2713-4d32-a45d-e26006e36a05/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/20812976-2713-4d32-a45d-e26006e36a05/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chia Shi-Lu</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-91f8f58d-362a-44cf-a4e5-88a66eb5aacb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/91f8f58d-362a-44cf-a4e5-88a66eb5aacb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/91f8f58d-362a-44cf-a4e5-88a66eb5aacb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chong Kee Hiong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66f4e10b-a983-420f-ad3f-68532ecddca3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/66f4e10b-a983-420f-ad3f-68532ecddca3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/66f4e10b-a983-420f-ad3f-68532ecddca3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Christopher De Souza</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-592fd60e-bcef-4dee-be95-cbd40414e771">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/592fd60e-bcef-4dee-be95-cbd40414e771/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/592fd60e-bcef-4dee-be95-cbd40414e771/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Daniel Goh Pei Siong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b2107137-0cc5-45d2-a558-d4dfb3e9ad41">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b2107137-0cc5-45d2-a558-d4dfb3e9ad41/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b2107137-0cc5-45d2-a558-d4dfb3e9ad41/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Darryl David</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a2ff2db-8421-4afb-bbc4-de4c6dd5420d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4a2ff2db-8421-4afb-bbc4-de4c6dd5420d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4a2ff2db-8421-4afb-bbc4-de4c6dd5420d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">David Ong Kim Huat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-438bc934-3386-4ce8-9f4f-7a54bfa3e770">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/438bc934-3386-4ce8-9f4f-7a54bfa3e770/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/438bc934-3386-4ce8-9f4f-7a54bfa3e770/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Denise Phua Lay Peng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f6f31de2-4d43-4c60-9911-d3dbffca4922">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f6f31de2-4d43-4c60-9911-d3dbffca4922/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f6f31de2-4d43-4c60-9911-d3dbffca4922/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dennis Tan Lip Fong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3dd4a24b-00e8-4182-8da0-401f39239de4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/3dd4a24b-00e8-4182-8da0-401f39239de4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/3dd4a24b-00e8-4182-8da0-401f39239de4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Desmond Choo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-15139953-a9b0-4358-a59d-813185268131">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/15139953-a9b0-4358-a59d-813185268131/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/15139953-a9b0-4358-a59d-813185268131/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Desmond Lee</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-57887ba4-027b-4c53-a801-70424d3a009b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/57887ba4-027b-4c53-a801-70424d3a009b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/57887ba4-027b-4c53-a801-70424d3a009b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Dr Lee Bee Wah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d94b81d7-3043-4f5a-a3a9-2ae5804f0d43">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/d94b81d7-3043-4f5a-a3a9-2ae5804f0d43/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/d94b81d7-3043-4f5a-a3a9-2ae5804f0d43/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Edwin Tong Chun Fai</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c7a17b34-9c4a-4484-a441-e58def2c1ad9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/c7a17b34-9c4a-4484-a441-e58def2c1ad9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/c7a17b34-9c4a-4484-a441-e58def2c1ad9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Fatimah Lateef</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e080611d-d641-4b49-9a51-0788dd0e0006">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e080611d-d641-4b49-9a51-0788dd0e0006/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e080611d-d641-4b49-9a51-0788dd0e0006/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Foo Mee Har</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e544dbae-f1ab-4215-9f02-d3beeef4cb21">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e544dbae-f1ab-4215-9f02-d3beeef4cb21/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e544dbae-f1ab-4215-9f02-d3beeef4cb21/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gan Kim Yong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f0b6ebb-932d-48ae-9f87-2c95bf8a33ee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8f0b6ebb-932d-48ae-9f87-2c95bf8a33ee/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8f0b6ebb-932d-48ae-9f87-2c95bf8a33ee/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gan Thiam Poh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a21cf31b-d332-4fe4-9ba9-7b91ae902287">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/a21cf31b-d332-4fe4-9ba9-7b91ae902287/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/a21cf31b-d332-4fe4-9ba9-7b91ae902287/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Goh Chok Tong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-21194e59-c6a2-4e1b-ab7f-71f5749e60d0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/21194e59-c6a2-4e1b-ab7f-71f5749e60d0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/21194e59-c6a2-4e1b-ab7f-71f5749e60d0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Grace Fu Hai Yien</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-49ce3a5a-ce86-4257-9200-da228bb874a5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/49ce3a5a-ce86-4257-9200-da228bb874a5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/49ce3a5a-ce86-4257-9200-da228bb874a5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Halimah Yacob</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-10bfde8a-a624-45fe-b75d-bb74a224e349">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/10bfde8a-a624-45fe-b75d-bb74a224e349/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/10bfde8a-a624-45fe-b75d-bb74a224e349/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Heng Chee How</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2a0b0fbe-4e77-4e67-b9c5-3fd8805f0c2d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/2a0b0fbe-4e77-4e67-b9c5-3fd8805f0c2d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/2a0b0fbe-4e77-4e67-b9c5-3fd8805f0c2d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Heng Swee Keat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c04bffc-1802-4e34-9de3-7bc74cca5b4e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8c04bffc-1802-4e34-9de3-7bc74cca5b4e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8c04bffc-1802-4e34-9de3-7bc74cca5b4e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Indranee Rajah</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-26af0194-c286-4446-bf89-24a0289864fd">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/26af0194-c286-4446-bf89-24a0289864fd/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/26af0194-c286-4446-bf89-24a0289864fd/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Intan Azura Binte Mokhtar</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6dc2d78e-fa29-4925-969e-38400ac54af4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6dc2d78e-fa29-4925-969e-38400ac54af4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6dc2d78e-fa29-4925-969e-38400ac54af4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Janil Puthucheary</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5a67a8e4-3d39-40d8-9050-cdbb80922ef1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/5a67a8e4-3d39-40d8-9050-cdbb80922ef1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/5a67a8e4-3d39-40d8-9050-cdbb80922ef1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Jessica Tan Soon Neo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-789cf330-43c4-4030-b4d2-f29ac7078897">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/789cf330-43c4-4030-b4d2-f29ac7078897/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/789cf330-43c4-4030-b4d2-f29ac7078897/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joan Pereira</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a3217533-c6c9-4693-b713-544d651a0d1b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/a3217533-c6c9-4693-b713-544d651a0d1b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/a3217533-c6c9-4693-b713-544d651a0d1b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Josephine Teo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ecf741b2-5555-4a85-b55e-efcf5bda1b6b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/ecf741b2-5555-4a85-b55e-efcf5bda1b6b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/ecf741b2-5555-4a85-b55e-efcf5bda1b6b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">K Shanmugam</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bac95736-f7af-47f8-8985-96eef7adc221">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/bac95736-f7af-47f8-8985-96eef7adc221/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/bac95736-f7af-47f8-8985-96eef7adc221/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Khaw Boon Wan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1b8a5170-3c36-4a03-9e04-13536a02e4ed">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/1b8a5170-3c36-4a03-9e04-13536a02e4ed/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/1b8a5170-3c36-4a03-9e04-13536a02e4ed/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Koh Poh Koon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b58fc312-2ff8-4d65-bf6f-729fee8a7ebf">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b58fc312-2ff8-4d65-bf6f-729fee8a7ebf/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b58fc312-2ff8-4d65-bf6f-729fee8a7ebf/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kwek Hian Chuan Henry</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ead408ca-57a3-448e-a9b9-0cf0f9cde7cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/ead408ca-57a3-448e-a9b9-0cf0f9cde7cc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/ead408ca-57a3-448e-a9b9-0cf0f9cde7cc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lam Pin Min</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e1b27df3-8373-4f9e-ab6f-405ad84c1340">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e1b27df3-8373-4f9e-ab6f-405ad84c1340/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e1b27df3-8373-4f9e-ab6f-405ad84c1340/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lawrence Wong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d9bed5ad-d299-4640-a3c4-095429273891">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/d9bed5ad-d299-4640-a3c4-095429273891/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/d9bed5ad-d299-4640-a3c4-095429273891/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lee Hsien Loong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b54a36e8-6518-4128-a46f-6eb0825e435a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b54a36e8-6518-4128-a46f-6eb0825e435a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b54a36e8-6518-4128-a46f-6eb0825e435a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lee Li Lian</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f83f570-11bf-4dea-8e4a-8b29b376ccbc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/9f83f570-11bf-4dea-8e4a-8b29b376ccbc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/9f83f570-11bf-4dea-8e4a-8b29b376ccbc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lee Yi Shyan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f5abb42f-eed8-46d8-91ca-e456afc47f49">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f5abb42f-eed8-46d8-91ca-e456afc47f49/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f5abb42f-eed8-46d8-91ca-e456afc47f49/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Leon Perera</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4b6bff7f-3849-4629-889f-14a47b212eee">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4b6bff7f-3849-4629-889f-14a47b212eee/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4b6bff7f-3849-4629-889f-14a47b212eee/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Liang Eng Hwa</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fe96b5c0-3ab8-4083-878c-33812b601614">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/fe96b5c0-3ab8-4083-878c-33812b601614/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/fe96b5c0-3ab8-4083-878c-33812b601614/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lily Neo</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-fda8a8ea-a155-4f43-87a6-de1de21642ff">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/fda8a8ea-a155-4f43-87a6-de1de21642ff/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/fda8a8ea-a155-4f43-87a6-de1de21642ff/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lim Biow Chuan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1141e0ee-9cb6-4ab6-ba8e-13784856b03a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/1141e0ee-9cb6-4ab6-ba8e-13784856b03a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/1141e0ee-9cb6-4ab6-ba8e-13784856b03a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lim Hng Kiang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-ca36788c-596d-423b-9ed0-8e687edb5c2a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/ca36788c-596d-423b-9ed0-8e687edb5c2a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/ca36788c-596d-423b-9ed0-8e687edb5c2a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lim Swee Say</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b0a1677-c6d7-4ddd-ad6f-0da23e2dd212">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8b0a1677-c6d7-4ddd-ad6f-0da23e2dd212/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8b0a1677-c6d7-4ddd-ad6f-0da23e2dd212/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lim Wee Kiak</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aa61a5be-9609-47b1-9c7b-0e3ee2f6bf81">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/aa61a5be-9609-47b1-9c7b-0e3ee2f6bf81/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/aa61a5be-9609-47b1-9c7b-0e3ee2f6bf81/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Louis Ng Kok Kwang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8ba5b71b-a431-48e5-9328-3832ba5bed11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8ba5b71b-a431-48e5-9328-3832ba5bed11/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8ba5b71b-a431-48e5-9328-3832ba5bed11/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Low Thia Khiang</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-32915a61-1521-4612-b229-4f92f6d0899c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/32915a61-1521-4612-b229-4f92f6d0899c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/32915a61-1521-4612-b229-4f92f6d0899c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Low Yen Ling</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-00d1693d-1449-4739-bf80-f86b5440db27">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/00d1693d-1449-4739-bf80-f86b5440db27/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/00d1693d-1449-4739-bf80-f86b5440db27/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Masagos Zulkifli Bin Masagos Mohamad</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-76a6937d-3e0b-46f5-b736-eb03515e5175">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/76a6937d-3e0b-46f5-b736-eb03515e5175/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/76a6937d-3e0b-46f5-b736-eb03515e5175/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Melvin Yong Yik Chye</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-13321235-08ff-4c83-b471-be831ee7accb">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/13321235-08ff-4c83-b471-be831ee7accb/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/13321235-08ff-4c83-b471-be831ee7accb/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mohamad Maliki Bin Osman</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c5c56dcb-c810-46e9-abd5-63aaf50b4484">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/c5c56dcb-c810-46e9-abd5-63aaf50b4484/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/c5c56dcb-c810-46e9-abd5-63aaf50b4484/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Muhamad Faisal Bin Abdul Manap</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5dae549-835c-4f10-94a5-3fdff21596cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b5dae549-835c-4f10-94a5-3fdff21596cc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b5dae549-835c-4f10-94a5-3fdff21596cc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Muhammad Faishal Ibrahim</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-30161889-8a34-45b8-9123-7c14ca24da05">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/30161889-8a34-45b8-9123-7c14ca24da05/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/30161889-8a34-45b8-9123-7c14ca24da05/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ng Chee Meng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-768ca2dc-e664-450b-bbaf-a5d1fbca59ea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/768ca2dc-e664-450b-bbaf-a5d1fbca59ea/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/768ca2dc-e664-450b-bbaf-a5d1fbca59ea/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ng Eng Hen</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7c1cb562-ac24-4060-a3b3-a0c58379a30a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/7c1cb562-ac24-4060-a3b3-a0c58379a30a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/7c1cb562-ac24-4060-a3b3-a0c58379a30a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ong Teng Koon</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8dd38623-8cc5-42cd-8220-1ad33529d717">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8dd38623-8cc5-42cd-8220-1ad33529d717/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8dd38623-8cc5-42cd-8220-1ad33529d717/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ong Ye Kung</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e8bf13c2-166b-44be-b97a-d347b92bba9e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e8bf13c2-166b-44be-b97a-d347b92bba9e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e8bf13c2-166b-44be-b97a-d347b92bba9e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Patrick Tay Teck Guan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-17f94221-4230-40ff-9dd8-78ed1e7a16b6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/17f94221-4230-40ff-9dd8-78ed1e7a16b6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/17f94221-4230-40ff-9dd8-78ed1e7a16b6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Png Eng Huat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e2a128dc-935f-44ad-b0e9-32737944316e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e2a128dc-935f-44ad-b0e9-32737944316e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/e2a128dc-935f-44ad-b0e9-32737944316e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Pritam Singh</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1765706e-9b21-49c4-b35c-205ed06df31e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/1765706e-9b21-49c4-b35c-205ed06df31e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/1765706e-9b21-49c4-b35c-205ed06df31e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rahayu Mahzam</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-89fe73ce-939d-4a9a-bb5d-5b4a4faeee3b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/89fe73ce-939d-4a9a-bb5d-5b4a4faeee3b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/89fe73ce-939d-4a9a-bb5d-5b4a4faeee3b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">S Iswaran</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2997c850-84ee-43d6-8e8d-241b7087810f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/2997c850-84ee-43d6-8e8d-241b7087810f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/2997c850-84ee-43d6-8e8d-241b7087810f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saktiandi Supaat</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4c6263ad-763e-4e3f-b995-7791900fa562">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4c6263ad-763e-4e3f-b995-7791900fa562/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4c6263ad-763e-4e3f-b995-7791900fa562/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sam Tan Chin Siong</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-40a40594-a680-4e0e-80c4-2e03cdeedd39">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/40a40594-a680-4e0e-80c4-2e03cdeedd39/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/40a40594-a680-4e0e-80c4-2e03cdeedd39/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Seah Kian Peng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-56f27061-23f9-4cf3-b923-1bf8df5d2479">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/56f27061-23f9-4cf3-b923-1bf8df5d2479/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/56f27061-23f9-4cf3-b923-1bf8df5d2479/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sim Ann</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cc27533a-76af-43bd-86ea-dbeff896ed7b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/cc27533a-76af-43bd-86ea-dbeff896ed7b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/cc27533a-76af-43bd-86ea-dbeff896ed7b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sitoh Yih Pin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b334893-ed06-4285-b429-5aff7329fe1b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8b334893-ed06-4285-b429-5aff7329fe1b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8b334893-ed06-4285-b429-5aff7329fe1b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sun Xueling</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a697465c-da33-481b-94ee-b4902397c017">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/a697465c-da33-481b-94ee-b4902397c017/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/a697465c-da33-481b-94ee-b4902397c017/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sylvia Lim</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Workers’ Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-f30ebd88-1e88-4f24-b5fe-37fc47fd2096">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f30ebd88-1e88-4f24-b5fe-37fc47fd2096/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/f30ebd88-1e88-4f24-b5fe-37fc47fd2096/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tan Chuan-Jin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-173b2c59-186e-40fe-9b34-6e1485c4aad1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/173b2c59-186e-40fe-9b34-6e1485c4aad1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/173b2c59-186e-40fe-9b34-6e1485c4aad1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tan Wu Meng</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b6d7c646-d945-41c1-a16a-bcc7ed6883a6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b6d7c646-d945-41c1-a16a-bcc7ed6883a6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b6d7c646-d945-41c1-a16a-bcc7ed6883a6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Teo Chee Hean</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-bd1cde0c-16f9-4c64-9e89-cc4448fed801">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/bd1cde0c-16f9-4c64-9e89-cc4448fed801/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/bd1cde0c-16f9-4c64-9e89-cc4448fed801/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Teo Ho Pin</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-66b1d9f0-689c-4543-903e-13cb7c8cf071">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/66b1d9f0-689c-4543-903e-13cb7c8cf071/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/66b1d9f0-689c-4543-903e-13cb7c8cf071/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Teo Ser Luck</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4a6184c5-2d5d-4b94-8d0e-885aadf70fda">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4a6184c5-2d5d-4b94-8d0e-885aadf70fda/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/4a6184c5-2d5d-4b94-8d0e-885aadf70fda/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tharman Shanmugaratnam</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5f8ffc2b-a8ad-4af5-b01b-7630fb000ab9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/5f8ffc2b-a8ad-4af5-b01b-7630fb000ab9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/5f8ffc2b-a8ad-4af5-b01b-7630fb000ab9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Tin Pei Ling</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+                        <div class="person-card__more">
+                          
+                            <p>
+                                <span class="person-card__more__label">Twitter</span>
+                                <a href="https://twitter.com/tinpeiling">@tinpeiling</a>
+                            </p>
+                          
+                          
+                            <p>
+                                <span class="person-card__more__label">Facebook</span>
+                                <a href="https://facebook.com/tinpeiling.official">tinpeiling.official</a>
+                            </p>
+                          
+                          
+                        </div>
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0815c593-27f9-40b9-9bda-c5958938a9f1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/0815c593-27f9-40b9-9bda-c5958938a9f1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/0815c593-27f9-40b9-9bda-c5958938a9f1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vikram Nair</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8c1dace8-c264-4ee8-9359-e129f57ed136">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8c1dace8-c264-4ee8-9359-e129f57ed136/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/8c1dace8-c264-4ee8-9359-e129f57ed136/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Vivian Balakrishnan</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-939dc13c-015a-49aa-a242-32651e0b69b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/939dc13c-015a-49aa-a242-32651e0b69b0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/939dc13c-015a-49aa-a242-32651e0b69b0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Yaacob Ibrahim</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6861814d-e9a0-4163-8fdd-36f4ee78c7d7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6861814d-e9a0-4163-8fdd-36f4ee78c7d7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6861814d-e9a0-4163-8fdd-36f4ee78c7d7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Yee Chia Hsing</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b3ed686d-de1a-461f-985b-518788cc6dc1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b3ed686d-de1a-461f-985b-518788cc6dc1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/b3ed686d-de1a-461f-985b-518788cc6dc1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zainal Bin Sapari</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6ba14abe-020a-48ff-95c4-c6a2ebcbfaaa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6ba14abe-020a-48ff-95c4-c6a2ebcbfaaa/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Singapore/Parliament/6ba14abe-020a-48ff-95c4-c6a2ebcbfaaa/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zaqy Mohamad</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              People’s Action Party
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 

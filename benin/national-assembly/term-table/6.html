@@ -16,9 +16,12 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
     <meta property="og:title" content="6e législature" />
     <meta property="og:type" content="article" />
@@ -89,7 +92,7 @@
             <div class="party-groupings__title">
                 <h2>Party Groupings</h2>
             </div>
-            <ul class="grid-list">
+            <ul class="grid-list grid-list--vertically-center">
               
                 <li id="party-refondation_paix_et_développement"><div class="avatar-unit">
                     <span class="avatar"><i class="fa fa-users"></i></span>
@@ -155,1043 +158,2616 @@
         </div>
     </div>
 
-    <div class="page-section page-section">
+  
+
+    <div class="page-section page-section--grey">
         <div class="container">
 
-            <table class="term-membership-table js-sortable">
-                <thead class="js-fixed-thead">
-                    <tr>
-                        <td colspan="4">
-                            <div class="term-membership-table__title">
+            
 
-                                <div class="download-options">
-                                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
-                                    <input class="houdini-input" type="checkbox" id="download-options">
-                                    <div class="houdini-target download-options__dropdown">
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fd19803/data/Benin/National_Assembly/term-6.csv">
-                                            <h3>Download as CSV</h3>
-                                            <p>Core data on these politicians, perfect for quick analysis</p>
-                                        </a>
-                                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fd19803/data/Benin/National_Assembly/ep-popolo-v1.0.json">
-                                            <h3>Download as JSON</h3>
-                                            <p>All the data we hold on this legislature (including historic)</p>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="term-membership-table__title">
+                <h2>Members</h2>
 
-                                <h2>Members</h2>
+                <span class="person-card-filter">
+                    <label for="filter-input" class="fa fa-search"></label>
+                    <input type="text" class="js-filter-input" id="filter-input" placeholder="Filter list…">
+                </span>
 
-                            </div>
-                        </td>
-                    </tr>
+                <div class="download-options">
+                    <label class="houdini-label button button--tertiary" for="download-options">Download</label>
+                    <input class="houdini-input" type="checkbox" id="download-options">
+                    <div class="houdini-target download-options__dropdown">
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fd19803/data/Benin/National_Assembly/term-6.csv">
+                            <h3>Download as CSV</h3>
+                            <p>Core data on these politicians, perfect for quick analysis</p>
+                        </a>
+                        <a href="https://cdn.rawgit.com/everypolitician/everypolitician-data/fd19803/data/Benin/National_Assembly/ep-popolo-v1.0.json">
+                            <h3>Download as JSON</h3>
+                            <p>All the data we hold on this legislature (including historic)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <tr>
-                        <th data-sortable-presorted="a-z">Name</th>
-                        <th>Group</th>
-                        <th>Area</th>
-                        
-                        
-                    </tr>
-                </thead>
+            <div class="grid-list">
 
               
-                  
-                  
-                    <tr id="mem-aea7ea59-ed00-4fef-a200-a16039768763">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="A. Edmond AGOUA">A. Edmond AGOUA</td>
-                      
-                        <td>unknown</td>
-                        <td>Collines</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6de30f3e-fc39-47b8-889c-fe04afa54834">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Amoudatou AHLONSOU G.">Amoudatou AHLONSOU G.</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>ATLANTIQUE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1b2c6405-05fc-40e5-9542-06eec12c8645">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="André OKOUNLOLA-BIAOU">André OKOUNLOLA-BIAOU</td>
-                      
-                        <td>Autre</td>
-                        <td>Collines</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4e85e426-915a-4d6a-9d93-11f25bc62279">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ange Marie Bruno AMOUSSOU">Ange Marie Bruno AMOUSSOU</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>COUFFO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-efa7a5e5-6ba8-4f4c-8401-bfb3b0c6b2c4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Antoine DAYORI">Antoine DAYORI</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>ATACORA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7df9a02c-1a28-4954-ac04-2490d9988be4">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Antoine IDJI">Antoine IDJI</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>PLATEAU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-63025fdb-d367-4b55-b0f7-15dfd306afc0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Augustin AHOUANVOEBLA">Augustin AHOUANVOEBLA</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c739121a-decd-4e2c-80c2-bcad58f1202d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ayouba SANNI">Ayouba SANNI</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>ALIBORI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c3e88a43-8e14-40ee-a6b6-89baa7171af6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Babatundé KAKPO ZANNOU">Babatundé KAKPO ZANNOU</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>PLATEAU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-86e902b9-b922-4ab1-b997-3b925a45a5a7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bado GOBI">Bado GOBI</td>
-                      
-                        <td>unknown</td>
-                        <td>DONGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-468e7d16-46d0-4d13-8784-8f7fbc5838e7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Benjamin Clotaire ABLO">Benjamin Clotaire ABLO</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-44f3e44a-8d67-4086-a1f8-2108455aac97">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Bida Nouhoume YOUSSOUPHOU A.">Bida Nouhoume YOUSSOUPHOU A.</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>DONGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6bbfbfa4-f644-4e3a-a12a-2d17cf9e2ca3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Boni Gansè Raoul BIO KANSI">Boni Gansè Raoul BIO KANSI</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>ALIBORI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-58bdb4bf-581f-4b42-bad1-7cc6be84bfb7">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Boniface YEHOUETOME">Boniface YEHOUETOME</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>ZOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8fc5062f-9e5c-4086-9016-ec7ed1e25662">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Boubacar DJAOUGA MAMADOU">Boubacar DJAOUGA MAMADOU</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-200a9998-1246-4ed9-8737-74b9dc615636">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Candide A. M. AZANNAÏ">Candide A. M. AZANNAÏ</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-96e2185e-b3b8-4553-ba68-e0374fb146b0">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Chabi Félicien ZACHARIE">Chabi Félicien ZACHARIE</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>Collines</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-012624ce-0b2b-49dd-9038-278da0a18596">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Charlemagne HONFO">Charlemagne HONFO</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-18917d9e-ab3a-461a-95f4-da2b2921c2ea">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Christophe HOUSSOU">Christophe HOUSSOU</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1678e5ef-c90c-495d-b06b-820067108aca">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Claudine PRUDENCIO">Claudine PRUDENCIO</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>ATLANTIQUE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3bb12326-0653-48d4-a1de-2d293d539480">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Cyriaque DOMINGO">Cyriaque DOMINGO</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-663a8c2a-f261-475c-b49c-2a9badc394e2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Célestin GOUTOLOU">Célestin GOUTOLOU</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b31475d-8bcb-4851-a4b5-1505245d5f11">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="D. S. Patrick YERIMA PIERRE">D. S. Patrick YERIMA PIERRE</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>ALIBORI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-91de7e01-e744-4077-91f1-40ece0e75c3a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Daouda TAKPARA">Daouda TAKPARA</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>DONGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a0a02824-948b-4473-b1ec-005490e2013e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="David GBAHOUNGBA">David GBAHOUNGBA</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>COUFFO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29172612-afe2-4864-8a99-69376adec3f3">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Djibril DEBOUROU">Djibril DEBOUROU</td>
-                      
-                        <td>Autre</td>
-                        <td>BORGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8b1ec0a0-9053-4af9-8663-c94623b9edf1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Edmond A. ZINSOU">Edmond A. ZINSOU</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8f553a17-ab43-4637-9e5c-3d917eeb6102">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emile TOSSOU">Emile TOSSOU</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-9f2afa33-82e8-4e6d-972b-2e6b25145345">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Emmanuel GOLOU">Emmanuel GOLOU</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>COUFFO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e2b993a4-1cf4-4cb8-9b2e-98a7f988b00c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Epiphane QUENUM POSSY BERRY">Epiphane QUENUM POSSY BERRY</td>
-                      
-                        <td>unknown</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c406d12e-3820-407a-94d5-aab8c8189e32">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Eric Louis Camille HOUNDETE">Eric Louis Camille HOUNDETE</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>ATLANTIQUE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-39e31ac4-d8ac-4be7-8ef9-708be40b8269">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Francis Frank Sedozan LOKO">Francis Frank Sedozan LOKO</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-6759794a-3eee-438f-a49e-b998053c5bae">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gabriel TCHOCODO">Gabriel TCHOCODO</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>COUFFO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b5c0d06c-ff5b-43ae-9029-479b32a853c9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Georges BADA">Georges BADA</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>ATLANTIQUE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5891fe02-03f2-4069-af12-f5660f81912e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gilbert BANGANA">Gilbert BANGANA</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>ATACORA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3102714a-6019-4fde-a573-e10833c9023a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Gobi Gaston YOROU">Gobi Gaston YOROU</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>BORGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-dbfc6529-595d-4cbf-b078-0ba89b716ff5">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Grégoire Arsène AKOFODJI">Grégoire Arsène AKOFODJI</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>ATLANTIQUE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c7ce81e3-b0e7-4d09-a873-2eee2a5169b1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Grégoire LAOUROU">Grégoire LAOUROU</td>
-                      
-                        <td>unknown</td>
-                        <td>COLLINE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d06b1ef7-ea0e-4d9b-8b68-b257d9c45c42">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Guéné OROU SE">Guéné OROU SE</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>BORGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a20d9e93-d9ef-4e86-a439-332751cc50cc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Hélène KEKE AHOLOU">Hélène KEKE AHOLOU</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e28041a6-7592-42b6-a29c-24257bd463da">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joachim ADANTINNON">Joachim ADANTINNON</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5bb5db05-0ee1-4079-af03-bb41fa80685f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Joachim DAHISSIHO">Joachim DAHISSIHO</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>ZOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b1e4d015-8584-4d64-ae43-73db49299e64">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Justin AGBODJETE HOUNSA">Justin AGBODJETE HOUNSA</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-407a3ce9-17f0-4043-a9e2-913864c642ce">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Justin W. SAGUI Y.">Justin W. SAGUI Y.</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>ATACORA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-08540355-7c84-4183-8db1-678e86ed1a40">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Karimou CHABI-SIKA">Karimou CHABI-SIKA</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>BORGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8e63d4a4-64bb-4ac0-a218-d30843159c45">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Koffi AHOUANOUGAN">Koffi AHOUANOUGAN</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-27616f4b-bd40-4901-be93-005a5b7800d9">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Kotchami Nicaise FAGNON">Kotchami Nicaise FAGNON</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>COLLINE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7bcdaa3e-a3e1-4733-ad9d-970d3203af64">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ladekpo Séfou FAGBOHOUN">Ladekpo Séfou FAGBOHOUN</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>PLATEAU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2994970a-098a-442b-86b8-ee4c19d8fa6e">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Ladélé Akambi Firmin BIOKOU">Ladélé Akambi Firmin BIOKOU</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>PLATEAU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-64dd25c2-0b2e-412b-a0d3-1a669187b13f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lazare Maurice SEHOUETO">Lazare Maurice SEHOUETO</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>ZOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7f9f9532-a0ac-4202-959d-89835579062c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Louïs VLAVONOU">Louïs VLAVONOU</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>PLATEAU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-30900dc8-704a-4840-b472-682ef775b228">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Lucien K. HOUNGNIBO">Lucien K. HOUNGNIBO</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-1c129121-23a5-474d-a700-c163ea77e552">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Léon Comlan AHOSSI">Léon Comlan AHOSSI</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>MONO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b9378f11-4ebc-40ae-9550-15dcbe891322">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mathurin Coffi NAGO">Mathurin Coffi NAGO</td>
-                      
-                        <td>Autre</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3b5a7dd1-f16b-4273-a849-fb02275efe13">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mensah Evariste SINKPOTA">Mensah Evariste SINKPOTA</td>
-                      
-                        <td>unknown</td>
-                        <td></td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c833d4e6-090d-4091-b245-f75cefc48f1d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mohamed Ali CAMAROU">Mohamed Ali CAMAROU</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5af93cd3-5ffc-4051-8b08-3f550c96719a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Mohamed Atao HINNOUHO">Mohamed Atao HINNOUHO</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-7881a6d8-0d14-4f7a-b6c0-6af357bd5fb1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Moumouni ADAM BAGRI">Moumouni ADAM BAGRI</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>ATACORA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-8e38b0e0-cfe7-4f17-b8b4-f90d58aabea6">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Moussou MONHOUSSOU">Moussou MONHOUSSOU</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>COUFFO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-4f5f68f8-142c-479c-b66d-6ac4974d82ef">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nazaire SADO">Nazaire SADO</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>ZOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-0e769e2c-7be5-48d0-a230-af0aed28aa49">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Noudokpo Pascal ESSOU">Noudokpo Pascal ESSOU</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>COUFFO</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-cf38cf66-3683-49f9-a517-6c8820ae1d90">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Nourenou ATCHADE">Nourenou ATCHADE</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>DONGA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a0b09970-0b17-4494-aa51-ee2feb0fc84c">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Orou Dèkè GONROUDOBOU">Orou Dèkè GONROUDOBOU</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>ATACORA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-18af8342-66a4-41ba-bc0b-7ca9809ad188">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Parfait HOUANGNI">Parfait HOUANGNI</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>ZOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3d1930d4-c4fd-414a-b636-e24bd5a1439a">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rachidi GBADAMASSI">Rachidi GBADAMASSI</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>BORGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-17599d48-4158-45b0-aab3-d9bcc346f3fa">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Raphaël AKOTEGNON">Raphaël AKOTEGNON</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-b5ac444d-0c58-4b9d-acfb-3e2698d5d84b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Rosine VIEYRA SOGLO">Rosine VIEYRA SOGLO</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>LITTORAL</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-29cff30d-6ac0-48d0-a38f-8409f38620f8">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sabi Moussa SOULE">Sabi Moussa SOULE</td>
-                      
-                        <td>UMPP Unité – Solidarité – Progrès</td>
-                        <td>ALIBORI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-e41c0616-16af-46bd-91c1-c17cbb7e285d">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sacca FIKARA">Sacca FIKARA</td>
-                      
-                        <td>Union fait la Nation</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-2f247e6b-8287-411e-ae37-d7e30eee4fa2">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sacca LAFIA">Sacca LAFIA</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>BORGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-38ee3e70-f15e-42fe-8d8c-43d69533b4dc">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Saguifa WAKOUTE">Saguifa WAKOUTE</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>ATACORA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-73ba819c-691c-4ec1-8e5b-d8541f69b397">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Salifou ISSA">Salifou ISSA</td>
-                      
-                        <td>unknown</td>
-                        <td>ALIBORI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a80d5982-ce33-46e9-accd-a7ede132640b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Samari BANI">Samari BANI</td>
-                      
-                        <td>unknown</td>
-                        <td>ALIBORI</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-5bcdd91e-c7ac-4a08-bb0d-23bb2b263703">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sedozon Jonas GBENAMETO">Sedozon Jonas GBENAMETO</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-3f97c4ef-d800-45b9-b9cb-3a435f6d2278">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Sofiatou Modjisola SCHANOU AROUNA">Sofiatou Modjisola SCHANOU AROUNA</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a23db922-31f3-4567-870d-2929a09a7e3b">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Valentin Aditi HOUDE">Valentin Aditi HOUDE</td>
-                      
-                        <td>Non inscrit</td>
-                        <td>ATLANTIQUE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-589db5e5-e50b-4b73-877e-b16f0f467548">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Valère TCHOBO">Valère TCHOBO</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>COLLINE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-94a1e176-0fcb-4091-b533-15591cb844be">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Venance Lubin GNIGLA">Venance Lubin GNIGLA</td>
-                      
-                        <td>unknown</td>
-                        <td>ATLANTIQUE</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-a37f0c5b-53b9-423b-8e96-8413f34d3394">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Victor DANGNON">Victor DANGNON</td>
-                      
-                        <td>Refondation et Progrès</td>
-                        <td>ATACORA</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-c49d8763-1918-4e66-9f4d-2e784653cd44">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yacoubou MALEHOSSOU">Yacoubou MALEHOSSOU</td>
-                      
-                        <td>Nation et Développement</td>
-                        <td>ZOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-880f7dc5-6d4f-4c5d-a4fe-8e7efa14876f">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Yibatou SANI GLELE">Yibatou SANI GLELE</td>
-                      
-                        <td>PRD - Union fait la Nation</td>
-                        <td>OUEME</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-17222536-34d5-41ff-92e8-ff596398e9f1">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zimé KORA GOUNOU">Zimé KORA GOUNOU</td>
-                      
-                        <td>Refondation, Paix et Développement</td>
-                        <td>BORGOU</td>
-                      
-                    </tr>
-                  
-              
-                  
-                  
-                    <tr id="mem-d0ddd180-bc75-477c-b1ad-b2df4cc2ba33">
-                      
-                        <td rowspan="1" data-sortable-sortvalue="Zéphirin KINDJANHOUNDE">Zéphirin KINDJANHOUNDE</td>
-                      
-                        <td>Refondation et Emergence</td>
-                        <td>ZOU</td>
-                      
-                    </tr>
-                  
-              
-            </table>
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-aea7ea59-ed00-4fef-a200-a16039768763">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/aea7ea59-ed00-4fef-a200-a16039768763/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/aea7ea59-ed00-4fef-a200-a16039768763/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">A. Edmond AGOUA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Collines
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6de30f3e-fc39-47b8-889c-fe04afa54834">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/6de30f3e-fc39-47b8-889c-fe04afa54834/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/6de30f3e-fc39-47b8-889c-fe04afa54834/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Amoudatou AHLONSOU G.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — ATLANTIQUE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1b2c6405-05fc-40e5-9542-06eec12c8645">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/1b2c6405-05fc-40e5-9542-06eec12c8645/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/1b2c6405-05fc-40e5-9542-06eec12c8645/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">André OKOUNLOLA-BIAOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Autre — Collines
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4e85e426-915a-4d6a-9d93-11f25bc62279">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/4e85e426-915a-4d6a-9d93-11f25bc62279/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/4e85e426-915a-4d6a-9d93-11f25bc62279/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ange Marie Bruno AMOUSSOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — COUFFO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-efa7a5e5-6ba8-4f4c-8401-bfb3b0c6b2c4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/efa7a5e5-6ba8-4f4c-8401-bfb3b0c6b2c4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/efa7a5e5-6ba8-4f4c-8401-bfb3b0c6b2c4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Antoine DAYORI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — ATACORA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7df9a02c-1a28-4954-ac04-2490d9988be4">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7df9a02c-1a28-4954-ac04-2490d9988be4/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7df9a02c-1a28-4954-ac04-2490d9988be4/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Antoine IDJI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — PLATEAU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-63025fdb-d367-4b55-b0f7-15dfd306afc0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/63025fdb-d367-4b55-b0f7-15dfd306afc0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/63025fdb-d367-4b55-b0f7-15dfd306afc0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Augustin AHOUANVOEBLA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c739121a-decd-4e2c-80c2-bcad58f1202d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c739121a-decd-4e2c-80c2-bcad58f1202d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c739121a-decd-4e2c-80c2-bcad58f1202d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ayouba SANNI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — ALIBORI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c3e88a43-8e14-40ee-a6b6-89baa7171af6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c3e88a43-8e14-40ee-a6b6-89baa7171af6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c3e88a43-8e14-40ee-a6b6-89baa7171af6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Babatundé KAKPO ZANNOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — PLATEAU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-86e902b9-b922-4ab1-b997-3b925a45a5a7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/86e902b9-b922-4ab1-b997-3b925a45a5a7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/86e902b9-b922-4ab1-b997-3b925a45a5a7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bado GOBI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              DONGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-468e7d16-46d0-4d13-8784-8f7fbc5838e7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/468e7d16-46d0-4d13-8784-8f7fbc5838e7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/468e7d16-46d0-4d13-8784-8f7fbc5838e7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Benjamin Clotaire ABLO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-44f3e44a-8d67-4086-a1f8-2108455aac97">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/44f3e44a-8d67-4086-a1f8-2108455aac97/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/44f3e44a-8d67-4086-a1f8-2108455aac97/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Bida Nouhoume YOUSSOUPHOU A.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — DONGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6bbfbfa4-f644-4e3a-a12a-2d17cf9e2ca3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/6bbfbfa4-f644-4e3a-a12a-2d17cf9e2ca3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/6bbfbfa4-f644-4e3a-a12a-2d17cf9e2ca3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Boni Gansè Raoul BIO KANSI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — ALIBORI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-58bdb4bf-581f-4b42-bad1-7cc6be84bfb7">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/58bdb4bf-581f-4b42-bad1-7cc6be84bfb7/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/58bdb4bf-581f-4b42-bad1-7cc6be84bfb7/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Boniface YEHOUETOME</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — ZOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8fc5062f-9e5c-4086-9016-ec7ed1e25662">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8fc5062f-9e5c-4086-9016-ec7ed1e25662/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8fc5062f-9e5c-4086-9016-ec7ed1e25662/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Boubacar DJAOUGA MAMADOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-200a9998-1246-4ed9-8737-74b9dc615636">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/200a9998-1246-4ed9-8737-74b9dc615636/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/200a9998-1246-4ed9-8737-74b9dc615636/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Candide A. M. AZANNAÏ</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-96e2185e-b3b8-4553-ba68-e0374fb146b0">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/96e2185e-b3b8-4553-ba68-e0374fb146b0/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/96e2185e-b3b8-4553-ba68-e0374fb146b0/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Chabi Félicien ZACHARIE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — Collines
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-012624ce-0b2b-49dd-9038-278da0a18596">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/012624ce-0b2b-49dd-9038-278da0a18596/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/012624ce-0b2b-49dd-9038-278da0a18596/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Charlemagne HONFO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-18917d9e-ab3a-461a-95f4-da2b2921c2ea">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/18917d9e-ab3a-461a-95f4-da2b2921c2ea/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/18917d9e-ab3a-461a-95f4-da2b2921c2ea/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Christophe HOUSSOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1678e5ef-c90c-495d-b06b-820067108aca">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/1678e5ef-c90c-495d-b06b-820067108aca/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/1678e5ef-c90c-495d-b06b-820067108aca/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Claudine PRUDENCIO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — ATLANTIQUE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3bb12326-0653-48d4-a1de-2d293d539480">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3bb12326-0653-48d4-a1de-2d293d539480/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3bb12326-0653-48d4-a1de-2d293d539480/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Cyriaque DOMINGO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-663a8c2a-f261-475c-b49c-2a9badc394e2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/663a8c2a-f261-475c-b49c-2a9badc394e2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/663a8c2a-f261-475c-b49c-2a9badc394e2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Célestin GOUTOLOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b31475d-8bcb-4851-a4b5-1505245d5f11">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8b31475d-8bcb-4851-a4b5-1505245d5f11/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8b31475d-8bcb-4851-a4b5-1505245d5f11/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">D. S. Patrick YERIMA PIERRE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — ALIBORI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-91de7e01-e744-4077-91f1-40ece0e75c3a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/91de7e01-e744-4077-91f1-40ece0e75c3a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/91de7e01-e744-4077-91f1-40ece0e75c3a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Daouda TAKPARA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — DONGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a0a02824-948b-4473-b1ec-005490e2013e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a0a02824-948b-4473-b1ec-005490e2013e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a0a02824-948b-4473-b1ec-005490e2013e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">David GBAHOUNGBA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — COUFFO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29172612-afe2-4864-8a99-69376adec3f3">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/29172612-afe2-4864-8a99-69376adec3f3/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/29172612-afe2-4864-8a99-69376adec3f3/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Djibril DEBOUROU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Autre — BORGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8b1ec0a0-9053-4af9-8663-c94623b9edf1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8b1ec0a0-9053-4af9-8663-c94623b9edf1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8b1ec0a0-9053-4af9-8663-c94623b9edf1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Edmond A. ZINSOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8f553a17-ab43-4637-9e5c-3d917eeb6102">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8f553a17-ab43-4637-9e5c-3d917eeb6102/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8f553a17-ab43-4637-9e5c-3d917eeb6102/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emile TOSSOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-9f2afa33-82e8-4e6d-972b-2e6b25145345">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/9f2afa33-82e8-4e6d-972b-2e6b25145345/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/9f2afa33-82e8-4e6d-972b-2e6b25145345/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Emmanuel GOLOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — COUFFO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e2b993a4-1cf4-4cb8-9b2e-98a7f988b00c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/e2b993a4-1cf4-4cb8-9b2e-98a7f988b00c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/e2b993a4-1cf4-4cb8-9b2e-98a7f988b00c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Epiphane QUENUM POSSY BERRY</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c406d12e-3820-407a-94d5-aab8c8189e32">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c406d12e-3820-407a-94d5-aab8c8189e32/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c406d12e-3820-407a-94d5-aab8c8189e32/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Eric Louis Camille HOUNDETE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — ATLANTIQUE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-39e31ac4-d8ac-4be7-8ef9-708be40b8269">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/39e31ac4-d8ac-4be7-8ef9-708be40b8269/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/39e31ac4-d8ac-4be7-8ef9-708be40b8269/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Francis Frank Sedozan LOKO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-6759794a-3eee-438f-a49e-b998053c5bae">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/6759794a-3eee-438f-a49e-b998053c5bae/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/6759794a-3eee-438f-a49e-b998053c5bae/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gabriel TCHOCODO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — COUFFO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5c0d06c-ff5b-43ae-9029-479b32a853c9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b5c0d06c-ff5b-43ae-9029-479b32a853c9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b5c0d06c-ff5b-43ae-9029-479b32a853c9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Georges BADA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — ATLANTIQUE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5891fe02-03f2-4069-af12-f5660f81912e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5891fe02-03f2-4069-af12-f5660f81912e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5891fe02-03f2-4069-af12-f5660f81912e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gilbert BANGANA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — ATACORA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3102714a-6019-4fde-a573-e10833c9023a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3102714a-6019-4fde-a573-e10833c9023a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3102714a-6019-4fde-a573-e10833c9023a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Gobi Gaston YOROU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — BORGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-dbfc6529-595d-4cbf-b078-0ba89b716ff5">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/dbfc6529-595d-4cbf-b078-0ba89b716ff5/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/dbfc6529-595d-4cbf-b078-0ba89b716ff5/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Grégoire Arsène AKOFODJI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — ATLANTIQUE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c7ce81e3-b0e7-4d09-a873-2eee2a5169b1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c7ce81e3-b0e7-4d09-a873-2eee2a5169b1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c7ce81e3-b0e7-4d09-a873-2eee2a5169b1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Grégoire LAOUROU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              COLLINE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d06b1ef7-ea0e-4d9b-8b68-b257d9c45c42">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/d06b1ef7-ea0e-4d9b-8b68-b257d9c45c42/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/d06b1ef7-ea0e-4d9b-8b68-b257d9c45c42/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Guéné OROU SE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — BORGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a20d9e93-d9ef-4e86-a439-332751cc50cc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a20d9e93-d9ef-4e86-a439-332751cc50cc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a20d9e93-d9ef-4e86-a439-332751cc50cc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Hélène KEKE AHOLOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e28041a6-7592-42b6-a29c-24257bd463da">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/e28041a6-7592-42b6-a29c-24257bd463da/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/e28041a6-7592-42b6-a29c-24257bd463da/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joachim ADANTINNON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5bb5db05-0ee1-4079-af03-bb41fa80685f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5bb5db05-0ee1-4079-af03-bb41fa80685f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5bb5db05-0ee1-4079-af03-bb41fa80685f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Joachim DAHISSIHO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — ZOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b1e4d015-8584-4d64-ae43-73db49299e64">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b1e4d015-8584-4d64-ae43-73db49299e64/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b1e4d015-8584-4d64-ae43-73db49299e64/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Justin AGBODJETE HOUNSA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-407a3ce9-17f0-4043-a9e2-913864c642ce">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/407a3ce9-17f0-4043-a9e2-913864c642ce/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/407a3ce9-17f0-4043-a9e2-913864c642ce/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Justin W. SAGUI Y.</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — ATACORA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-08540355-7c84-4183-8db1-678e86ed1a40">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/08540355-7c84-4183-8db1-678e86ed1a40/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/08540355-7c84-4183-8db1-678e86ed1a40/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Karimou CHABI-SIKA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — BORGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e63d4a4-64bb-4ac0-a218-d30843159c45">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8e63d4a4-64bb-4ac0-a218-d30843159c45/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8e63d4a4-64bb-4ac0-a218-d30843159c45/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Koffi AHOUANOUGAN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-27616f4b-bd40-4901-be93-005a5b7800d9">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/27616f4b-bd40-4901-be93-005a5b7800d9/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/27616f4b-bd40-4901-be93-005a5b7800d9/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Kotchami Nicaise FAGNON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — COLLINE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7bcdaa3e-a3e1-4733-ad9d-970d3203af64">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7bcdaa3e-a3e1-4733-ad9d-970d3203af64/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7bcdaa3e-a3e1-4733-ad9d-970d3203af64/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ladekpo Séfou FAGBOHOUN</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — PLATEAU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2994970a-098a-442b-86b8-ee4c19d8fa6e">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/2994970a-098a-442b-86b8-ee4c19d8fa6e/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/2994970a-098a-442b-86b8-ee4c19d8fa6e/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Ladélé Akambi Firmin BIOKOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — PLATEAU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-64dd25c2-0b2e-412b-a0d3-1a669187b13f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/64dd25c2-0b2e-412b-a0d3-1a669187b13f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/64dd25c2-0b2e-412b-a0d3-1a669187b13f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lazare Maurice SEHOUETO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — ZOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7f9f9532-a0ac-4202-959d-89835579062c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7f9f9532-a0ac-4202-959d-89835579062c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7f9f9532-a0ac-4202-959d-89835579062c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Louïs VLAVONOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — PLATEAU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-30900dc8-704a-4840-b472-682ef775b228">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/30900dc8-704a-4840-b472-682ef775b228/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/30900dc8-704a-4840-b472-682ef775b228/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Lucien K. HOUNGNIBO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-1c129121-23a5-474d-a700-c163ea77e552">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/1c129121-23a5-474d-a700-c163ea77e552/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/1c129121-23a5-474d-a700-c163ea77e552/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Léon Comlan AHOSSI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — MONO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b9378f11-4ebc-40ae-9550-15dcbe891322">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b9378f11-4ebc-40ae-9550-15dcbe891322/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b9378f11-4ebc-40ae-9550-15dcbe891322/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mathurin Coffi NAGO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Autre
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3b5a7dd1-f16b-4273-a849-fb02275efe13">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3b5a7dd1-f16b-4273-a849-fb02275efe13/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3b5a7dd1-f16b-4273-a849-fb02275efe13/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mensah Evariste SINKPOTA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c833d4e6-090d-4091-b245-f75cefc48f1d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c833d4e6-090d-4091-b245-f75cefc48f1d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c833d4e6-090d-4091-b245-f75cefc48f1d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mohamed Ali CAMAROU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5af93cd3-5ffc-4051-8b08-3f550c96719a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5af93cd3-5ffc-4051-8b08-3f550c96719a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5af93cd3-5ffc-4051-8b08-3f550c96719a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Mohamed Atao HINNOUHO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-7881a6d8-0d14-4f7a-b6c0-6af357bd5fb1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7881a6d8-0d14-4f7a-b6c0-6af357bd5fb1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/7881a6d8-0d14-4f7a-b6c0-6af357bd5fb1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Moumouni ADAM BAGRI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — ATACORA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-8e38b0e0-cfe7-4f17-b8b4-f90d58aabea6">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8e38b0e0-cfe7-4f17-b8b4-f90d58aabea6/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/8e38b0e0-cfe7-4f17-b8b4-f90d58aabea6/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Moussou MONHOUSSOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — COUFFO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-4f5f68f8-142c-479c-b66d-6ac4974d82ef">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/4f5f68f8-142c-479c-b66d-6ac4974d82ef/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/4f5f68f8-142c-479c-b66d-6ac4974d82ef/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nazaire SADO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — ZOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-0e769e2c-7be5-48d0-a230-af0aed28aa49">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/0e769e2c-7be5-48d0-a230-af0aed28aa49/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/0e769e2c-7be5-48d0-a230-af0aed28aa49/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Noudokpo Pascal ESSOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — COUFFO
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-cf38cf66-3683-49f9-a517-6c8820ae1d90">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/cf38cf66-3683-49f9-a517-6c8820ae1d90/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/cf38cf66-3683-49f9-a517-6c8820ae1d90/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Nourenou ATCHADE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — DONGA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a0b09970-0b17-4494-aa51-ee2feb0fc84c">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a0b09970-0b17-4494-aa51-ee2feb0fc84c/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a0b09970-0b17-4494-aa51-ee2feb0fc84c/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Orou Dèkè GONROUDOBOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — ATACORA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-18af8342-66a4-41ba-bc0b-7ca9809ad188">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/18af8342-66a4-41ba-bc0b-7ca9809ad188/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/18af8342-66a4-41ba-bc0b-7ca9809ad188/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Parfait HOUANGNI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — ZOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3d1930d4-c4fd-414a-b636-e24bd5a1439a">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3d1930d4-c4fd-414a-b636-e24bd5a1439a/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3d1930d4-c4fd-414a-b636-e24bd5a1439a/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rachidi GBADAMASSI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — BORGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-17599d48-4158-45b0-aab3-d9bcc346f3fa">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/17599d48-4158-45b0-aab3-d9bcc346f3fa/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/17599d48-4158-45b0-aab3-d9bcc346f3fa/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Raphaël AKOTEGNON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-b5ac444d-0c58-4b9d-acfb-3e2698d5d84b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b5ac444d-0c58-4b9d-acfb-3e2698d5d84b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/b5ac444d-0c58-4b9d-acfb-3e2698d5d84b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Rosine VIEYRA SOGLO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — LITTORAL
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-29cff30d-6ac0-48d0-a38f-8409f38620f8">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/29cff30d-6ac0-48d0-a38f-8409f38620f8/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/29cff30d-6ac0-48d0-a38f-8409f38620f8/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sabi Moussa SOULE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              UMPP Unité – Solidarité – Progrès — ALIBORI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-e41c0616-16af-46bd-91c1-c17cbb7e285d">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/e41c0616-16af-46bd-91c1-c17cbb7e285d/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/e41c0616-16af-46bd-91c1-c17cbb7e285d/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sacca FIKARA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Union fait la Nation — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-2f247e6b-8287-411e-ae37-d7e30eee4fa2">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/2f247e6b-8287-411e-ae37-d7e30eee4fa2/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/2f247e6b-8287-411e-ae37-d7e30eee4fa2/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sacca LAFIA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — BORGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-38ee3e70-f15e-42fe-8d8c-43d69533b4dc">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/38ee3e70-f15e-42fe-8d8c-43d69533b4dc/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/38ee3e70-f15e-42fe-8d8c-43d69533b4dc/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Saguifa WAKOUTE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — ATACORA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-73ba819c-691c-4ec1-8e5b-d8541f69b397">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/73ba819c-691c-4ec1-8e5b-d8541f69b397/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/73ba819c-691c-4ec1-8e5b-d8541f69b397/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Salifou ISSA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALIBORI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a80d5982-ce33-46e9-accd-a7ede132640b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a80d5982-ce33-46e9-accd-a7ede132640b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a80d5982-ce33-46e9-accd-a7ede132640b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Samari BANI</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ALIBORI
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-5bcdd91e-c7ac-4a08-bb0d-23bb2b263703">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5bcdd91e-c7ac-4a08-bb0d-23bb2b263703/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/5bcdd91e-c7ac-4a08-bb0d-23bb2b263703/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sedozon Jonas GBENAMETO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-3f97c4ef-d800-45b9-b9cb-3a435f6d2278">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3f97c4ef-d800-45b9-b9cb-3a435f6d2278/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/3f97c4ef-d800-45b9-b9cb-3a435f6d2278/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Sofiatou Modjisola SCHANOU AROUNA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a23db922-31f3-4567-870d-2929a09a7e3b">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a23db922-31f3-4567-870d-2929a09a7e3b/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a23db922-31f3-4567-870d-2929a09a7e3b/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Valentin Aditi HOUDE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Non inscrit — ATLANTIQUE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-589db5e5-e50b-4b73-877e-b16f0f467548">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/589db5e5-e50b-4b73-877e-b16f0f467548/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/589db5e5-e50b-4b73-877e-b16f0f467548/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Valère TCHOBO</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — COLLINE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-94a1e176-0fcb-4091-b533-15591cb844be">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/94a1e176-0fcb-4091-b533-15591cb844be/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/94a1e176-0fcb-4091-b533-15591cb844be/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Venance Lubin GNIGLA</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              ATLANTIQUE
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-a37f0c5b-53b9-423b-8e96-8413f34d3394">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a37f0c5b-53b9-423b-8e96-8413f34d3394/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/a37f0c5b-53b9-423b-8e96-8413f34d3394/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Victor DANGNON</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Progrès — ATACORA
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-c49d8763-1918-4e66-9f4d-2e784653cd44">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c49d8763-1918-4e66-9f4d-2e784653cd44/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/c49d8763-1918-4e66-9f4d-2e784653cd44/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Yacoubou MALEHOSSOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Nation et Développement — ZOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-880f7dc5-6d4f-4c5d-a4fe-8e7efa14876f">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/880f7dc5-6d4f-4c5d-a4fe-8e7efa14876f/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/880f7dc5-6d4f-4c5d-a4fe-8e7efa14876f/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Yibatou SANI GLELE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              PRD - Union fait la Nation — OUEME
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-17222536-34d5-41ff-92e8-ff596398e9f1">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/17222536-34d5-41ff-92e8-ff596398e9f1/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/17222536-34d5-41ff-92e8-ff596398e9f1/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zimé KORA GOUNOU</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation, Paix et Développement — BORGOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+                <div class="js-filter-target">
+                    <div class="person-card" id="mem-d0ddd180-bc75-477c-b1ad-b2df4cc2ba33">
+
+                        <div class="person-card__primary">
+
+                          
+                          
+                            <img src="/images/person-placeholder-108px.png"
+                                 data-src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/d0ddd180-bc75-477c-b1ad-b2df4cc2ba33/140x140.jpeg"
+                                 style="display: none"
+                                 class="person-card__image">
+                            <noscript><img src="https://mysociety.github.io/politician-image-proxy/Benin/National-Assembly/d0ddd180-bc75-477c-b1ad-b2df4cc2ba33/140x140.jpeg" class="person-card__image"></noscript>
+                          
+
+                            <h3 class="person-card__name">Zéphirin KINDJANHOUNDE</h3>
+
+                          
+                            <p class="person-card__politics">
+
+                              Refondation et Emergence — ZOU
+
+                              
+                            </p>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+              
+
+            </div>
+
         </div>
     </div>
 
