@@ -2,6 +2,14 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
+    
+    <!-- 
+      http://everypolitician.org/submitting.html (this page)
+      is now at http://docs.everypolitician.org/submitting.html
+    -->
+    <meta http-equiv="refresh" content="0; url=http://docs.everypolitician.org/submitting.html">
+    <link rel="canonical" href="http://docs.everypolitician.org/submitting.html/" />
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/javascript/jquery-ui-1.11.4.custom/jquery-ui.css">
@@ -10,39 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/main.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="/javascript/modernizr.js"></script>
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-    <script src="/javascript/jquery.select-to-autocomplete.js"></script>
-    <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="/javascript/main.js"></script>
-    <meta property="og:title" content="EveryPolitician" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://everypolitician.org/images/avatar.png" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:width" content="300" />
-    <meta property="og:site_name" content="EveryPolitician" />
-    <meta property="og:description" content="Data about every national legislature in the world, freely available for you to use.">
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@mysocietyIntl" />
-    <meta name="twitter:title" content="EveryPolitician" />
-    <meta property="twitter:image" content="http://everypolitician.org/images/avatar.png" />
-    <meta property="twitter:image:height" content="400" />
-    <meta property="twitter:image:width" content="400" />
-    <meta name="twitter:description" content="Data about every national legislature in the world, freely available for you to use."  />
     <title>EveryPolitician</title>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-660910-34', 'auto');
-      ga('send', 'pageview');
-    </script>
 </head>
 <body>
     <div id="wrapper">
@@ -64,193 +40,28 @@
                 <div class="site-header__navigation site-header__navigation--secondary">
                     <nav role="navigation">
                         <a href="/countries.html">Data</a>
-                        <a href="/about.html">About</a>
+                        <a href="http://docs.everypolitician.org/">Documentation</a>
                     </nav>
                 </div>
             </div>
         </header>
 
         <div class="site-content">
-            <div class="container" id="contribute">
-  <div class="page-section">
-    <div class="row">
-      <div class="column-one-quarter">
-         <ul class="unstyled-list">
-  <li><a href="about.html">What is EveryPolitician?</a></li>
-  <li><a href="data_summary.html">What’s in the data?</a></li>
-  <li><a href="contribute.html">How to contribute</a></li>
-  <li>Technical details:</li>
-  <li>
-      <ul class="unstyled-list">
-        <a href="technical.html">CSV and JSON</a></li>
-        <li><a href="data_structure.html">Data structure</a></li>
-        <li><a href="repo_structure.html">Getting most recent data</a></li>
-        <li><a href="use_the_data.html">Using the data</a></li>
-        <li><a href="submitting.html">How we import data</a></li>
-        <li><a href="scrapers.html">Writing a scraper</a></li>
-      </ul>
-  </li>
-</ul>
-      </div>
-      <div class="column-three-quarters">
+            <div class="hero hero--jazzy">
+    <div class="container">
         <h1>How We Import Data</h1>
-
-        <p class="section-intro">EveryPolitician exists to share politicians' data &mdash; but
-          before we can put it out, we have to get it in. Our general requirements
-          for importing data are described on this page.
-        </p>
-        <p>
-          Read on if you
-          have a data set you think we could use, or if you're one of
-          the wonderful people who's thinking of
-          <a href="scrapers.html">writing a scraper</a> for us.
-          </p>
-          
-        <p><strong>Our preferred format for data that we are importing is simple comma-separated value (CSV).</strong></p>
-
-        <p>At a minimum this should have fields for:</p>
-
-        <ul>
-          <li><code>id</code>, or <code>identifier__<em>xxx</em></code>: a unique identifier for the politician
-              <p>
-                We add a unique <code>id</code> to every politician we import into EveryPolitician
-                (it's a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>, and
-                if we know two records are for the same politician, we give them both the same <code>id</code>).
-                If you provide your own <code>id</code>, we can use it to identify the politician
-                <em>during</em> the import, but it will be overwritten with ours.
-              </p>
-              <p>
-                However, if that ID would be useful in the EveryPolitician data
-                because it maps to some external data set, you can make it
-                persist by using the name <code>identifier__<em>xxx</em></code>
-                (note: two underscores), where <code><em>xxx</em></code>
-                indicates the local ID scheme it is from. Our import mechanism
-                treats this like another <code>id</code>, that is, recognises
-                that it's a unique identifier (albeit perhaps with local scope,
-                such as its country).
-              </p>
-              <p>
-                For example, in the UK, parliament allocates a unique ID to all
-                politicians within their own system, called <a
-                href="https://en.wikipedia.org/wiki/Parliamentary_Information_Management_System">PIMS</a>,
-                so when we import that data, we add that ID as
-                <code>identifier__pims</code> in the CSV to import. That will be
-                combined with other IDs from other sources (if any — in the
-                example below, we've added Wikidata too, as
-                <code>identifier__wikidata</code>), and ultimately it appears
-                in the JSON as an (<code>identifier</code>,
-                <code>scheme</code>) pair. Here's an extract from a JSON Popolo
-                file showing how it ultimately appears within a person's entry:
-              </p>
-              <pre>
-"id": "e09079a7-6609-4fe8-93b4-bd499637e130",
-"identifiers": [
-  {
-    "identifier": "4734",
-    "scheme": "pims"
-  },
-  {
-    "identifier": "Q258473",
-    "scheme": "wikidata"
-  }
-],
-              </pre>
-              </p>
-          </li>
-          <li><tt>name</tt>: their name</li>
-          <li><tt>area</tt>: the <a href="https://en.wikipedia.org/wiki/Electoral_district">constituency/district</a> they represent (if appropriate)</li>
-          <li><tt>group</tt>: the <a href="https://en.wikipedia.org/wiki/Parliamentary_group">party or faction</a> they’re part of (if appropriate)</li>
-          <li><tt>term</tt>: the legislative period this membership represents (e.g. ‘19’ for the Nineteenth Assembly)</li>
-          <li><tt>start_date</tt>: if the person joined later than the start of the term</li>
-          <li><tt>end_date</tt>: if they left before the end of the term</li>
-		  <li><tt>source</tt>:
-			  the URL of the main source for this information (for example, if
-			  this data has been scraped from a single page or API call for this person
-			  then that's ideal; but if it's just an entry on a page listing many
-			  politicians, then that page's URL is fine)
-		  </li>
-        </ul>
-
-        <p>If you have data for multiple legislative periods (and the more the
-        better!) these can either be included in the same file, or provided
-        in a single file per per term.</p>
-
-        <p>If someone changed party/faction affilation in the middle of the
-        term, you should include two entries, with the relevant start/end
-        dates set. For example:</p>
-
-        <table border="1">
-          <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>area</th>
-            <th>group</th>
-            <th>term</th>
-            <th>start_date</th>
-            <th>end_date</th>
-            <th>source</th>
-          </tr>
-          <tr>
-            <td>1681</td>
-            <td>Joe Smith</td>
-            <td>Easthill</td>
-            <td>White Party</td>
-            <td>19</td>
-            <td></td>
-            <td>2011-04-14</td>
-            <td>http://example.com/jsmith</td>
-          </tr>
-          <tr>
-            <td>1681</td>
-            <td>Joe Smith</td>
-            <td>Easthill</td>
-            <td>Black Party</td>
-            <td>19</td>
-            <td>2011-04-14</td>
-            <td></td>
-            <td>http://example.com/jsmith</td>
-          </tr>
-        </table> 
-
-        <p>Other fields we can automatically process include:</p>
-
-        <ul>
-          <li><tt>given_name</tt></li>
-          <li><tt>family_name</tt></li>
-          <li><tt>honorific_prefix</tt></li>
-          <li><tt>honorific_suffix</tt></li>
-          <li><tt>patronymic_name</tt></li>
-          <li><tt>sort_name</tt></li>
-          <li><tt>email</tt></li>
-          <li><tt>phone</tt></li>
-          <li><tt>fax</tt></li>
-          <li><tt>cell</tt></li>
-          <li><tt>gender</tt></li>
-          <li><tt>birth_date</tt></li>
-          <li><tt>death_date</tt></li>
-          <li><tt>image</tt></li>
-          <li><tt>summary</tt></li>
-          <li><tt>national_identity</tt></li>
-          <li><tt>twitter</tt></li>
-          <li><tt>facebook</tt></li>
-          <li><tt>blog</tt></li>
-          <li><tt>flickr</tt></li>
-          <li><tt>instagram</tt></li>
-          <li><tt>wikipedia</tt></li>
-          <li><tt>website</tt></li>
-        </ul>
-
-        <p>Ideally you would publish this file somewhere online, and keep it
-        updated with changes, but if that’s too much work, we’ll happily
-        accept a one-time file (perhaps with occasional later updates).
-        Either way, we’re happy to chat first about what will be easiest for
-        both you and us! Just drop us an email to <a
-        href="mailto:team@everypolitician.org">team@everypolitician.org</a>,
-        and let’s get more data released!</p>
-
-      </div>
     </div>
-  </div>
+</div>
+
+<div class="page-section">
+    <div class="container centered">
+        <p class="lead">Redirecting to <a href="http://docs.everypolitician.org/submitting.html">docs.everypolitician.org</a></p>
+        <p class="fourohfour-suggestions">
+            <a href="/" class="button button--primary">Go home</a>
+            <span class="fourohfour-suggestions__or">or</span>
+            <a href="http://docs.everypolitician.org/submitting.html" class="button button--secondary">Load page</a>
+        </p>
+    </div>
 </div>
 
         </div>
