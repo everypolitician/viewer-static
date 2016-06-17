@@ -2,6 +2,8 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=http://docs.everypolitician.org/repo_structure.html">
+	<link rel="canonical" href="http://docs.everypolitician.org/repo_structure.html"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/javascript/jquery-ui-1.11.4.custom/jquery-ui.css">
@@ -16,11 +18,14 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
-    <meta property="og:title" content="EveryPolitician" />
+    <meta property="og:title" content="Getting the most recent data" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="http://everypolitician.org/images/avatar.png" />
     <meta property="og:image:height" content="300" />
@@ -28,13 +33,13 @@
     <meta property="og:site_name" content="EveryPolitician" />
     <meta property="og:description" content="Data about every national legislature in the world, freely available for you to use.">
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@mysocietyIntl" />
-    <meta name="twitter:title" content="EveryPolitician" />
+    <meta name="twitter:site" content="@everypolitbot" />
+    <meta name="twitter:title" content="Getting the most recent data" />
     <meta property="twitter:image" content="http://everypolitician.org/images/avatar.png" />
     <meta property="twitter:image:height" content="400" />
     <meta property="twitter:image:width" content="400" />
     <meta name="twitter:description" content="Data about every national legislature in the world, freely available for you to use."  />
-    <title>EveryPolitician</title>
+    <title>Getting the most recent data</title>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -64,212 +69,30 @@
                 <div class="site-header__navigation site-header__navigation--secondary">
                     <nav role="navigation">
                         <a href="/countries.html">Data</a>
-                        <a href="/about.html">About</a>
+                        <a href="http://docs.everypolitician.org/">Documentation</a>
                     </nav>
                 </div>
             </div>
         </header>
 
         <div class="site-content">
-            <div class="container" id="about">
-  <div class="page-section">
-    <div class="row">
-      <div class="column-one-quarter">
-         <ul class="unstyled-list">
-  <li><a href="about.html">What is EveryPolitician?</a></li>
-  <li><a href="data_summary.html">What’s in the data?</a></li>
-  <li><a href="contribute.html">How to contribute</a></li>
-  <li>Technical details:</li>
-  <li>
-      <ul class="unstyled-list">
-        <a href="technical.html">CSV and JSON</a></li>
-        <li><a href="data_structure.html">Data structure</a></li>
-        <li><a href="repo_structure.html">Getting most recent data</a></li>
-        <li><a href="use_the_data.html">Using the data</a></li>
-        <li><a href="submitting.html">How we import data</a></li>
-        <li><a href="scrapers.html">Writing a scraper</a></li>
-      </ul>
-  </li>
-</ul>
-      </div>
-      <div class="column-three-quarters">
-        <h1> Getting the most recent data </h1>
-        <p class="section-intro">
-          If you just browse the site, you’ll find that EveryPolitician links to
-          the most recently updated version of its data files.
-        </p>
-        <p>
-          But if you’re accessing the data programmatically, that might not work
-          nicely for you because the data is hosted on GitHub, which doesn’t
-          serve the right Content-type when your application fetches the data.
-          Instead, <a href="use_the_data.html#rawgit">you should get it from
-          <code>cdn.rawgit.com</code></a> (while you’re there, you should also read
-          our notes on <a href="use_the_data.html">using the data</a> in
-          general). To do that you’ll need to know the URL of the most recent
-          data &mdash; and that means determining the SHA of the git commit
-          that put it there. You get that SHA from the current
-          <code>countries.json</code>, as shown below.
-        </p>
-        
-        <h3>
-          Example URLs
-        </h3>
-        <p>
-          This is what an EveryPolitician data URL looks like:
-        </p>
-        <p class="url-demo-box">
-          <code><span class="url-part-domain">https://<em>domain</em></span><br>
-          &nbsp;&nbsp;
-          /everypolitician/everypolitician-data<br>
-          &nbsp;&nbsp;
-          /<span class="url-part-sha">commit-SHA</span><br>
-          &nbsp;&nbsp;
-          /<span class="url-part-file">path-to-data-file</span></code>
-        </p>
-        <p>
-          You might expect the domain to be <code>https://github.com/</code>, but for
-          your application <a href="/use_the_data.html#rawgit">we recommend you use <code><span class="url-part-domain">https://cdn.rawgit.com</span></code></a>.
-        </p>
-        <p>
-          Wherever you’re getting <code>countries.json</code> from, the <code>data/</code> directory
-          will be a sibling of that.
-        </p>
-        <p>
-          For example: the URLs for the most recent (at time of writing — and
-          that’s <em>already out of date</em>, which neatly demonstrates
-          why you need to know how to determine these SHAs) politicians’
-          data for the UK’s House of Commons legislature, for the 56th term
-          (which started 2015-05-08), look like this:
-        </p>
-        <ul>
-          <li>
-            JSON: <a style="font-size:80%;padding-left:0.5em" href="https://cdn.rawgit.com/everypolitician/everypolitician-data/0b47c0c/data/UK/Commons/ep-popolo-v1.0.json">try it</a>
-            <br>
-            <code><span span class="url-part-domain">https://cdn.rawgit.com</span>/everypolitician/everypolitician-data/<span span class="url-part-sha">0b47c0c</span>/<span class="url-part-file">data/UK/Commons/ep-popolo-v1.0.json</span></code>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            CSV for the term &ldquo;56th Parliament of the United Kingdom&rdquo;:
-            <a style="font-size:80%;padding-left:0.5em" href="https://cdn.rawgit.com/everypolitician/everypolitician-data/0b47c0c/data/UK/Commons/term-56.csv">try it</a>
-            <br>
-            <code><span class="url-part-domain">https://cdn.rawgit.com</span>/everypolitician/everypolitician-data</span>/<span class="url-part-sha">0b47c0c</span>/<span class="url-part-file-alt">data/UK/Commons/term-56.csv</span></code>
-          </li>
-        </ul>
-        <p>
-          ...because the <code>countries.json</code> contained this:
-        </p>
-        <pre>
-{
-  "name": "United Kingdom",
-  "country": "United Kingdom",
-  "code": "GB",
-  "slug": "UK",
-  "legislatures": [
-    {
-      "name": "House of Commons",
-      "slug": "Commons",
-      "sources_directory": "data/UK/Commons/sources",
-      "<strong>popolo</strong>": "<span class="url-part-file">data/UK/Commons/ep-popolo-v1.0.json</span>",
-      "lastmod": "1445087100",
-      "person_count": 1337,
-      "<strong>sha</strong>": "<span class="url-part-sha">0b47c0c</span>",
-      "legislative_periods": [
-        {
-          "id": "term/56",
-          "name": "56th Parliament of the United Kingdom",
-          "start_date": "2015-05-08",
-          "wikidata": "Q21084473",
-          "slug": "56",
-          "<strong>csv</strong>": "<span class="url-part-file-alt">data/UK/Commons/term-56.csv</span>"
-        },
-        {
-          "id": "term/55",
-          "name": "55th Parliament of the United Kingdom",
-          "start_date": "2010-05-06",
-          "end_date": "2015-03-30",
-          ...
-        },
-        ...
-      ]
-    }
-  ]
-}
-        </pre>
-        <h3>
-          Explaining <code>countries.json</code>
-        </h3>
-        <p>
-          EveryPolitician publishes a list in JSON format of
-          all the countries we have data for:
-          <a href="https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json"><code>countries.json</code></a>.
-          This file includes metadata about what’s available to download.
-        </p>
-        <p>
-          Key fields that <code>countries.json</code> has for each country include:
-        </p>
-        <ul>
-          <li>
-            <code>name</code>:
-            the name of the country to help human-reading of the data
-          </li>
-          <li>
-            <code>slug</code>:
-            the name with spaces replaced by hyphens and punctuation
-            stripped, so suitable for use in URLs and directory names
-          </li>
-          <li>
-            <code>code</code>:
-            the country code (for example, <code>EE</code> for Estonia),
-            which helps with programmatic lookups. We’re using 
-            <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
-            country codes where possible (with additional ISO 3166-2 
-            three-letter codes where appropriate: for example, <code>GB-WLS</code> for Wales).
-          </li>
-          <li>
-            <code>legislatures</code>:
-            a list of legislatures within this county.  There are lots of
-            ways governments are organised. Some have a single house, others
-            have separate upper and lower chambers. Sometimes a country
-            changes its entire legislative process completely, such as the
-            Council of Deputies in Libya replaced the General National
-            Congress. We separate each of these out individually.
-          </li>
-        </ul>
-        <p>
-          Within the legislatures, in addition to a similar <code>name</code>
-          and <code>slug</code>, these fields help you identify and locate the
-          data you want:
-        </p>
-        <ul>
-          <li>
-            <code>popolo</code>:
-            the path to the Popolo JSON file
-          </li>
-          <li>
-            <code>lastmod</code>:
-            Unix time when the data was last modified
-          </li>
-          <li>
-            <code>sha</code>:
-            git’s hash for the commit in which the data was last modified (see following section)
-          </li>
-          <li>
-            <code>legislative_periods</code>:
-            a list of each of the terms, or periods. Each one of those has these fields:
-            <ul>
-              <li><code>id</code>, <code>name</code>, <code>start_date</code>, and <code>slug</code></li>
-              <li>
-                and also a path (from the directory containing <code>countries.json</code>) to the CSV file containing the data for this term of this legislature
-                (for example, <code>data/Bangladesh/House/term-10.csv</code>)
-              </li>
-            </ul>
-          </li>
-        </ul>    
-      </div>
+            <div class="hero hero--jazzy">
+    <div class="container">
+        <h1>Getting the most recent data</h1>
     </div>
-  </div>
 </div>
+
+<div class="page-section">
+    <div class="container centered">
+        <p class="lead">Redirecting to <a href="http://docs.everypolitician.org/">docs.everypolitician.org</a></p>
+        <p class="fourohfour-suggestions">
+            <a href="/" class="button button--primary">Go home</a>
+            <span class="fourohfour-suggestions__or">or</span>
+            <a href="http://docs.everypolitician.org/" class="button button--secondary">Load page</a>
+        </p>
+    </div>
+</div>
+
         </div>
 
         <footer class="site-footer ms-footer">

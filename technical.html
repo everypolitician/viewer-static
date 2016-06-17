@@ -2,6 +2,8 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=http://docs.everypolitician.org/technical.html">
+	<link rel="canonical" href="http://docs.everypolitician.org/technical.html"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/javascript/jquery-ui-1.11.4.custom/jquery-ui.css">
@@ -16,11 +18,14 @@
     <script src="/javascript/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/javascript/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/javascript/ep-card-filter.js"></script>
     <script src="/javascript/jquery.select-to-autocomplete.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="/javascript/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/javascript/Chart.min.js"></script>
+    <script src="/javascript/blazy.min.js"></script>
     <script src="/javascript/main.js"></script>
-    <meta property="og:title" content="EveryPolitician" />
+    <meta property="og:title" content="Technical overview" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="http://everypolitician.org/images/avatar.png" />
     <meta property="og:image:height" content="300" />
@@ -28,13 +33,13 @@
     <meta property="og:site_name" content="EveryPolitician" />
     <meta property="og:description" content="Data about every national legislature in the world, freely available for you to use.">
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@mysocietyIntl" />
-    <meta name="twitter:title" content="EveryPolitician" />
+    <meta name="twitter:site" content="@everypolitbot" />
+    <meta name="twitter:title" content="Technical overview" />
     <meta property="twitter:image" content="http://everypolitician.org/images/avatar.png" />
     <meta property="twitter:image:height" content="400" />
     <meta property="twitter:image:width" content="400" />
     <meta name="twitter:description" content="Data about every national legislature in the world, freely available for you to use."  />
-    <title>EveryPolitician</title>
+    <title>Technical overview</title>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -64,92 +69,28 @@
                 <div class="site-header__navigation site-header__navigation--secondary">
                     <nav role="navigation">
                         <a href="/countries.html">Data</a>
-                        <a href="/about.html">About</a>
+                        <a href="http://docs.everypolitician.org/">Documentation</a>
                     </nav>
                 </div>
             </div>
         </header>
 
         <div class="site-content">
-            <div class="container" id="about">
-  <div class="page-section">
-    <div class="row">
-      <div class="column-one-quarter">
-         <ul class="unstyled-list">
-  <li><a href="about.html">What is EveryPolitician?</a></li>
-  <li><a href="data_summary.html">What’s in the data?</a></li>
-  <li><a href="contribute.html">How to contribute</a></li>
-  <li>Technical details:</li>
-  <li>
-      <ul class="unstyled-list">
-        <a href="technical.html">CSV and JSON</a></li>
-        <li><a href="data_structure.html">Data structure</a></li>
-        <li><a href="repo_structure.html">Getting most recent data</a></li>
-        <li><a href="use_the_data.html">Using the data</a></li>
-        <li><a href="submitting.html">How we import data</a></li>
-        <li><a href="scrapers.html">Writing a scraper</a></li>
-      </ul>
-  </li>
-</ul>
-      </div>
-      <div class="column-three-quarters">
+            <div class="hero hero--jazzy">
+    <div class="container">
         <h1>Technical overview</h1>
-        <p class="section-intro">
-          <a href="/">EveryPolitician</a> makes data about politicians
-          available in a consistent manner. If you’re a developer who wants
-          to write code that consumes that data, this page is for you.
-        </p>
-        <h2>The data: CSV or JSON (Popolo)</h2>
-        <p>
-          EveryPolitician publishes the data so you can use it however you want.
-          Use it to power your tools, to drive data-based projects, and to help
-          people know more about who their politicians are. It’s available to
-          download in either <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> or
-          <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> formats.
-        </p>
-        <p>
-          Broadly speaking, we provide the complete, rich data in JSON. We use the <a
-          href="http://www.popoloproject.com/">Popolo standard</a> &mdash; if
-          you’re a developer that’s great for you because you get every
-          detail of the data. The CSV data is simpler &mdash; it’s ideal for
-          dropping into a spreadsheet or displaying in a web page.
-        </p>
-        <p>
-          For example, if someone's name changes during a period (eg. if
-          they get married), the later version will be presented as their
-          name in the CSV. But if you dive into the JSON data you’re be able
-          to see the dates when this new name applied, and what it was
-          before. You can think of the JSON as the full data in its raw
-          form, and the CSVs as the refined, more pragmatic version.
-        </p>
-        <p>
-          EveryPolitician doesn’t provide an API for you to query the data
-          &mdash; we simply make the whole lot available for download, and if you
-          need to be selective about which bits to use, you can do that
-          processing at your end. 
-        </p>
-        <p>
-          However, we <em>do</em> slice the CSV data up into separate files
-          for each legislative period for a country.  We use these
-          "parliamentary terms" because pretty much every legislature in the
-          world can be broken down in this way, and applications often only
-          really want to know data about the people currently in these
-          positions. For many countries we currently only <em>have</em> data
-          for the current period, but we‘re very keen to also add older,
-          "historic" data too.
-        </p>
-
-        <p>
-          Read more about:
-          <ul>
-            <li><a href="/data_structure.html">the data structure</a></li>
-            <li><a href="/repo_structure.html">the repository structure</a></li>
-            <li><a href="/data_summary.html">what’s in the data</a></li>
-          </ul>
-        </p>
-      </div>
     </div>
-  </div>
+</div>
+
+<div class="page-section">
+    <div class="container centered">
+        <p class="lead">Redirecting to <a href="http://docs.everypolitician.org/">docs.everypolitician.org</a></p>
+        <p class="fourohfour-suggestions">
+            <a href="/" class="button button--primary">Go home</a>
+            <span class="fourohfour-suggestions__or">or</span>
+            <a href="http://docs.everypolitician.org/" class="button button--secondary">Load page</a>
+        </p>
+    </div>
 </div>
 
         </div>
